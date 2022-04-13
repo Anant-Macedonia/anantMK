@@ -1,21 +1,14 @@
 import { client } from "../lib/apollo";
 import { gql } from "@apollo/client";
-import Link from "next/link";
+
+import CardsSection from "../components/Widgets/Dashboard/CardsSection/CardsSection";
+import FeaturedSection from "../components/Widgets/Dashboard/FeaturedSection/FeaturedSection";
 
 export default function Home({ posts, title }) {
   return (
     <div>
-      <h1>{title}</h1>
-      {posts.map((post) => {
-        return (
-          <div key={post.slug}>
-            <Link href={`/blog/${post.slug}`}>
-              <a>{post.title}</a>
-            </Link>
-            <p>{post.date}</p>
-          </div>
-        );
-      })}
+      <CardsSection />
+      <FeaturedSection posts={posts} title={title} />
     </div>
   );
 }
