@@ -1,6 +1,6 @@
 import { ApolloProvider } from "@apollo/client";
+import Layout from "../components/Layout/Layout";
 import { client } from "../lib/apollo";
-import Layout from "../components/Layout";
 
 import "../styles/globals.css";
 

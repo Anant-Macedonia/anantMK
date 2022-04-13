@@ -14,3 +14,16 @@ a {
 * {
   box-sizing: border-box;
 }
+
+a {
+  font-size: 12px;
+  text-decoration: none;
+  color: black;
+  text-transform: uppercase;
+  margin: 15px;
+  transition: color 0.5s;
+}
+a:hover {
+  color: orange;
+  transition: color 0.3;
+}

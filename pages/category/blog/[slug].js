@@ -1,5 +1,5 @@
 import { gql } from "@apollo/client";
-import { client } from "../../lib/apollo";
+import { client } from "../../../lib/apollo";
 
 const BlogPage = ({ post }) => {
   console.log(post);

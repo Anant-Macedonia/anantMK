@@ -1,0 +1,89 @@
+import React, { useState } from "react";
+import Link from "next/link";
+import {
+  AppBar,
+  Toolbar,
+  Container,
+  Avatar,
+  Hidden,
+  Typography,
+} from "@mui/material";
+import MenuIcon from "@mui/icons-material/Menu";
+import IconButton from "@mui/material/IconButton";
+import SwipeableDrawer from "@mui/material/SwipeableDrawer";
+import Divider from "@mui/material/Divider";
+import ChevronRightIcon from "@mui/icons-material/ChevronRight";
+import { List } from "@mui/material";
+import { ListItem } from "@mui/material";
+import classes from "./navigation.module.css";
+const navigationLinks = [
+  { name: "Home", href: "/" },
+  { name: "Services", href: "/services" },
+  { name: "Technologies", href: "/technologies" },
+  { name: "Our Work", href: "/our-work" },
+  { name: "Blog", href: "/category/blog" },
+];
+function Navigation() {
+  const [open, setOpen] = useState(false);
+  return (
+    <AppBar className={classes.nav} position="sticky">
+      <Container maxWidth="md">
+        <Toolbar disableGutters>
+          <Typography
+            color="textPrimary"
+            variant="h6"
+            noWrap
+            component="div"
+            sx={{ mr: 2, display: { xs: "none", md: "flex" } }}>
+            LOGO
+          </Typography>
+          <Hidden smDown>
+            {navigationLinks.map((item) => {
+              return (
+                <Link
+                  key={item.name}
+                  style={{ textDecoration: "none" }}
+                  className={classes.link}
+                  href={item.href}>
+                  {item.name}
+                </Link>
+              );
+            })}
+          </Hidden>
+          <Hidden smUp>
+            <IconButton>
+              <MenuIcon onClick={() => setOpen(true)} />
+            </IconButton>
+          </Hidden>
+        </Toolbar>
+      </Container>
+      <SwipeableDrawer
+        anchor="right"
+        open={open}
+        onOpen={() => setOpen(true)}
+        onClose={() => setOpen(false)}>
+        <div>
+          <IconButton>
+            <ChevronRightIcon onClick={() => setOpen(false)} />
+          </IconButton>
+        </div>
+        <Divider />
+        <List>
+          {navigationLinks.map((item) => {
+            return (
+              <ListItem key={item.name}>
+                <Link
+                  style={{ textDecoration: "none" }}
+                  className={classes.link}
+                  href={item.href}>
+                  {item.name}
+                </Link>
+              </ListItem>
+            );
+          })}
+        </List>
+      </SwipeableDrawer>
+    </AppBar>
+  );
+}
+export default Navigation;
