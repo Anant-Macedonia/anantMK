@@ -1,5 +1,6 @@
 .nav {
-  background-color: white;
+  background-color: transparent;
+  position: absolute;
 }
 .nav__logo {
   margin-right: auto;
