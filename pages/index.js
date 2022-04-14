@@ -4,13 +4,17 @@ import { Grid } from "@mui/material";
 import { Container } from "@mui/material";
 import CardsSection from "../components/Widgets/Dashboard/CardsSection/CardsSection";
 import FeaturedSection from "../components/Widgets/Dashboard/FeaturedSection/FeaturedSection";
+import CustomCarousel from "../components/Carousel/Carousel";
 
 export default function Home({ posts, title }) {
   return (
-    <Container>
-      <CardsSection />
-      <FeaturedSection posts={posts} title={title} />
-    </Container>
+    <>
+      <CustomCarousel />
+      <Container>
+        <CardsSection />
+        <FeaturedSection posts={posts} title={title} />
+      </Container>
+    </>
   );
 }
 

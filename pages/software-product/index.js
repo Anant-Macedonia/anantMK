@@ -1,6 +1,8 @@
+import classes from "./software-product.module.css";
+
 const SoftwareProduct = () => {
   return (
-    <div>
+    <div className={classes.softwareProduct}>
       <h1>Software Product </h1>
     </div>
   );
