@@ -1,10 +1,12 @@
 import { client } from "../lib/apollo";
 import { gql } from "@apollo/client";
 import Link from "next/link";
+import CustomCarousel from "../components/Carousel/Carousel";
 
 export default function Home({ posts, title }) {
   return (
     <div>
+      <CustomCarousel />
       <h1>{title}</h1>
       {posts.map((post) => {
         return (
