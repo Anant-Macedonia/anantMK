@@ -27,15 +27,16 @@ function Navigation() {
   const [open, setOpen] = useState(false);
   return (
     <AppBar className={classes.nav} position="sticky">
-      <Container maxWidth="md">
+      <Container>
         <Toolbar disableGutters>
           <Typography
+            className={classes.nav__logo}
             color="textPrimary"
             variant="h6"
             noWrap
             component="div"
             sx={{ mr: 2, display: { xs: "none", md: "flex" } }}>
-            LOGO
+            Anant Macedonia
           </Typography>
           <Hidden smDown>
             {navigationLinks.map((item) => {

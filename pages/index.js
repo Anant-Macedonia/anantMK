@@ -1,15 +1,17 @@
 import { client } from "../lib/apollo";
 import { gql } from "@apollo/client";
+import { Grid } from "@mui/material";
+import { Container } from "@mui/material";
 
 import CardsSection from "../components/Widgets/Dashboard/CardsSection/CardsSection";
 import FeaturedSection from "../components/Widgets/Dashboard/FeaturedSection/FeaturedSection";
 
 export default function Home({ posts, title }) {
   return (
-    <div>
+    <Container>
       <CardsSection />
       <FeaturedSection posts={posts} title={title} />
-    </div>
+    </Container>
   );
 }
 
