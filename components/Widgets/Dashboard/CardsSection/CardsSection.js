@@ -1,4 +1,4 @@
-import { Grid } from "@mui/material";
+import { Grid, Typography } from "@mui/material";
 import CustomCard from "../../../UI/Card/Card";
 import AppSettingsAltIcon from "@mui/icons-material/AppSettingsAlt";
 import AcUnitIcon from "@mui/icons-material/AcUnit";
@@ -8,13 +8,15 @@ const CardsSection = () => {
     <>
       <Grid container spacing={2} mt={6}>
         <Grid item xs={4}>
-          <h1>Delivering Software Engineering Excellence</h1>
-          <p>
+          <Typography variant="h2" gutterBottom>
+            Delivering Software Engineering Excellence
+          </Typography>
+          <Typography gutterBottom>
             We are a custom software development company that identifies the gap
             and opportunities, and crafts web, mobile and IoT based solutions
             that help you disrupt, attain efficiency & accelerated business
             performance.
-          </p>
+          </Typography>
         </Grid>
         <Grid item xs={4}>
           <CustomCard

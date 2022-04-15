@@ -1,11 +1,11 @@
 import { client } from "../lib/apollo";
 import { gql } from "@apollo/client";
-import { Grid } from "@mui/material";
 import { Container } from "@mui/material";
 import CardsSection from "../components/Widgets/Dashboard/CardsSection/CardsSection";
 import FeaturedSection from "../components/Widgets/Dashboard/FeaturedSection/FeaturedSection";
 import CustomCarousel from "../components/Carousel/Carousel";
 import PortfolioSection from "../components/Widgets/Dashboard/portfolioSection/portfolioSection";
+import WhyUs from "../components/Widgets/Dashboard/WhyUsSection/WhyUs";
 
 export default function Home({ posts, title }) {
   return (
@@ -14,6 +14,7 @@ export default function Home({ posts, title }) {
       <Container>
         <CardsSection />
         <PortfolioSection />
+        <WhyUs />
         {/* <FeaturedSection posts={posts} title={title} /> */}
       </Container>
     </>

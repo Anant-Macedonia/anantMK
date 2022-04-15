@@ -2,7 +2,7 @@ import { Carousel } from "react-bootstrap";
 import classes from "./carousel.module.css";
 const CustomCarousel = () => {
   return (
-    <Carousel fade>
+    <Carousel fade className={classes.carousel}>
       <Carousel.Item className={classes.carouselItem}>
         <img
           className={classes.image}

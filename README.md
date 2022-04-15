@@ -1,3 +1,15 @@
+## How To Start Existing App
+
+1. Download and Install [`Local Wordpress Local`] [`Local Wordpress Local`](https://localwp.com)
+2. Setup Local Wordpress
+3. Log In in Wordpress Dashboard
+4. Install plugin wpgraphql
+5. git clone <repository>
+6. npm install
+7. if you work on Windows you need to install this dependencies @next/swc-win32-x64-msvc
+8. npm install @next/swc-win32-x64-msvc
+9. npm run dev
+
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
 ## Getting Started

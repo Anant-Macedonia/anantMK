@@ -1,5 +1,5 @@
 import { Grid, Typography } from "@mui/material";
-import CustomButton from "../../../UI/Button/Button";
+import { CustomButton } from "../../../UI/Button/Button";
 import classes from "./portfolioSection.module.css";
 
 const PortfolioSection = () => {

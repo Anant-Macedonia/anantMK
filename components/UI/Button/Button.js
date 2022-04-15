@@ -7,4 +7,13 @@ const CustomButton = ({ buttonText }) => {
     </Button>
   );
 };
-export default CustomButton;
+
+const ClickButton = ({ buttonText }) => {
+  return (
+    <Button variant="contained" color="warning">
+      {buttonText}
+    </Button>
+  );
+};
+
+export { CustomButton, ClickButton };

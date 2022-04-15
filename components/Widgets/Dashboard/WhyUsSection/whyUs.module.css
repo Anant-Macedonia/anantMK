@@ -1,0 +1,19 @@
+.whyUs {
+  text-align: center;
+}
+
+/* .whyUsHeader {
+  text-align: center;
+} */
+
+.whyUsContent {
+  margin: 80px 0;
+}
+
+.whyUsItems {
+  padding: 15px 50px;
+}
+
+.btn {
+  margin: 20px 0;
+}
