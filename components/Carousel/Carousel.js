@@ -17,7 +17,7 @@ const CustomCarousel = () => {
       <Carousel.Item className={classes.carouselItem}>
         <img
           className={classes.image}
-          src="https://picsum.photos/1000/1200?grayscale"
+          src="https://cdn.pixabay.com/photo/2022/04/05/17/56/trees-7114155_1280.jpg"
           alt="Second slide"
         />
         <Carousel.Caption>

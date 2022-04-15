@@ -2,7 +2,6 @@ import { gql } from "@apollo/client";
 import { client } from "../../../lib/apollo";
 
 const BlogPage = ({ post }) => {
-  console.log(post);
   return (
     <div>
       <h1>{post.title}</h1>
