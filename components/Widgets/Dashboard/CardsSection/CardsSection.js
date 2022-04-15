@@ -21,7 +21,7 @@ const CardsSection = () => {
         <Grid item xs={4}>
           <CustomCard
             link={"/software-product"}
-            image={AppSettingsAltIcon}
+            icon={AppSettingsAltIcon}
             title={"Software Product Manager"}
             content={
               "We are software craftsman building scalable products users love to"
@@ -31,7 +31,7 @@ const CardsSection = () => {
         <Grid item xs={4}>
           <CustomCard
             link={"/app-development"}
-            image={AcUnitIcon}
+            icon={AcUnitIcon}
             title={"App Development"}
             content={
               "We are software craftsman building scalable products users love to"
@@ -41,7 +41,7 @@ const CardsSection = () => {
         <Grid item xs={4}>
           <CustomCard
             link={"/digital-transformation"}
-            image={AcUnitIcon}
+            icon={AcUnitIcon}
             title={"Digital Transformation"}
             content={
               "We are software craftsman building scalable products users love to"
@@ -51,7 +51,7 @@ const CardsSection = () => {
         <Grid item xs={4}>
           <CustomCard
             link={"/user-exprience"}
-            image={AcUnitIcon}
+            icon={AcUnitIcon}
             title={"User Exprience Design"}
             content={
               "We are software craftsman building scalable products users love to"
@@ -61,7 +61,7 @@ const CardsSection = () => {
         <Grid item xs={4}>
           <CustomCard
             link={"/technology-consulting"}
-            image={AcUnitIcon}
+            icon={AcUnitIcon}
             title={"Technology Consulting"}
             content={
               "We are software craftsman building scalable products users love to"

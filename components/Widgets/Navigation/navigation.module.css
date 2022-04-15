@@ -6,3 +6,9 @@
 .nav__logo {
   margin-right: auto;
 }
+
+.nav a {
+  font-size: 12px;
+  margin: 15px;
+  text-transform: uppercase;
+}
