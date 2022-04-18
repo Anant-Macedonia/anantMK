@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import Link from "next/link";
 import {
   AppBar,
@@ -25,8 +25,25 @@ const navigationLinks = [
 ];
 function Navigation() {
   const [open, setOpen] = useState(false);
+  const [customClass, setCustomClass] = useState(classes.nav);
+
+  const controlNavbar = () => {
+    if (window.scrollY > 250) {
+      setCustomClass(classes.whiteNav);
+    } else {
+      setCustomClass(classes.nav);
+    }
+  };
+
+  useEffect(() => {
+    window.addEventListener("scroll", controlNavbar);
+    return () => {
+      window.removeEventListener("scroll", controlNavbar);
+    };
+  }, []);
+
   return (
-    <AppBar className={classes.nav} position="sticky">
+    <AppBar className={customClass} position="sticky">
       <Container>
         <Toolbar disableGutters>
           <Link href="/" passHref>
@@ -36,7 +53,8 @@ function Navigation() {
               variant="h6"
               noWrap
               component="div"
-              sx={{ mr: 2, display: { xs: "none", md: "flex" } }}>
+              sx={{ mr: 2, display: { xs: "none", md: "flex" } }}
+            >
               Anant Macedonia
             </Typography>
           </Link>
@@ -48,7 +66,8 @@ function Navigation() {
                   key={item.name}
                   style={{ textDecoration: "none" }}
                   className={classes.link}
-                  href={item.href}>
+                  href={item.href}
+                >
                   {item.name}
                 </Link>
               );
@@ -65,7 +84,8 @@ function Navigation() {
         anchor="right"
         open={open}
         onOpen={() => setOpen(true)}
-        onClose={() => setOpen(false)}>
+        onClose={() => setOpen(false)}
+      >
         <div>
           <IconButton>
             <ChevronRightIcon onClick={() => setOpen(false)} />
@@ -79,7 +99,8 @@ function Navigation() {
                 <Link
                   style={{ textDecoration: "none" }}
                   className={classes.link}
-                  href={item.href}>
+                  href={item.href}
+                >
                   {item.name}
                 </Link>
               </ListItem>

@@ -12,3 +12,13 @@
   margin: 15px;
   text-transform: uppercase;
 }
+
+.whiteNav {
+  background-color: white;
+}
+
+.whiteNav a {
+  font-size: 12px;
+  margin: 15px;
+  text-transform: uppercase;
+}
