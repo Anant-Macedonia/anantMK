@@ -14,7 +14,7 @@ export default function Home({ posts, title }) {
       <Container>
         <CardsSection />
         <PortfolioSection />
-        <WhyUs />
+        <WhyUs buttonText={"LET'S PLAN YOUR PROJECT"} />
         <BlogSection posts={posts} title={title} />
       </Container>
     </>

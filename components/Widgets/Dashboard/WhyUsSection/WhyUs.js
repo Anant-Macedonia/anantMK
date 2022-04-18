@@ -1,9 +1,9 @@
-import { Grid, Typography } from "@mui/material";
+import { Container, Grid, Typography } from "@mui/material";
 import classes from "./whyUs.module.css";
 import CelebrationIcon from "@mui/icons-material/Celebration";
 import { ClickButton } from "../../../UI/Button/Button";
 
-const WhyUs = () => {
+const WhyUs = ({ buttonText }) => {
   return (
     <Grid container className={classes.whyUs}>
       <Grid item xs={12} className={classes.whyUsHeader}>
@@ -78,9 +78,11 @@ const WhyUs = () => {
             also certified.
           </Typography>
         </Grid>
-        <Grid item xs={12} className={classes.btn}>
-          <ClickButton buttonText={"Submit"} />
-        </Grid>
+        {buttonText && (
+          <Grid item xs={12} className={classes.btn}>
+            <ClickButton buttonText={buttonText} />
+          </Grid>
+        )}
       </Grid>
     </Grid>
   );

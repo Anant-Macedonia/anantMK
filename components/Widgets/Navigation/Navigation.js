@@ -29,15 +29,18 @@ function Navigation() {
     <AppBar className={classes.nav} position="sticky">
       <Container>
         <Toolbar disableGutters>
-          <Typography
-            className={classes.nav__logo}
-            color="textPrimary"
-            variant="h6"
-            noWrap
-            component="div"
-            sx={{ mr: 2, display: { xs: "none", md: "flex" } }}>
-            Anant Macedonia
-          </Typography>
+          <Link href="/" passHref>
+            <Typography
+              className={classes.nav__logo}
+              color="textPrimary"
+              variant="h6"
+              noWrap
+              component="div"
+              sx={{ mr: 2, display: { xs: "none", md: "flex" } }}>
+              Anant Macedonia
+            </Typography>
+          </Link>
+
           <Hidden smDown>
             {navigationLinks.map((item) => {
               return (

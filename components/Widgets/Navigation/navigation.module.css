@@ -1,10 +1,10 @@
 .nav {
   background-color: transparent;
-  position: absolute;
 }
 
 .nav__logo {
   margin-right: auto;
+  cursor: pointer;
 }
 
 .nav a {

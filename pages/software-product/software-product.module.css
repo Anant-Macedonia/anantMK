@@ -1,3 +1,10 @@
-.softwareProduct {
-  margin-top: 80px;
+.softwareServices {
+  width: 100%;
+  text-align: center;
+  margin: 80px 0;
+}
+
+.softwareItems {
+  justify-content: center;
+  margin: 40px 0;
 }
