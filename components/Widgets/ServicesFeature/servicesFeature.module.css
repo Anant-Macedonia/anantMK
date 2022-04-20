@@ -1,0 +1,12 @@
+.image {
+  width: 100%;
+}
+
+.serviceContent {
+  align-self: center;
+  padding: 0 80px;
+}
+
+.serviceContainer:nth-of-type(even) .image {
+  order: 2;
+}

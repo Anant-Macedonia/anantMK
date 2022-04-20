@@ -18,15 +18,18 @@ const SoftwareProduct = ({ posts }) => {
   // ];
   return (
     <>
-      <PagesHeader
-        title={"Engineering Awesome Products And Customer Success"}
-        description={
-          "Your technology partner in building flawless web apps and products at an affordable cost that make you more efficient, successful and profitable."
-        }
-        buttonText={"Submit"}
-        // link={links}
-        link={"true"}
-      />
+      <Grid container className={classes.softwareContainer}>
+        <PagesHeader
+          title={"Engineering Awesome Products And Customer Success"}
+          description={
+            "Your technology partner in building flawless web apps and products at an affordable cost that make you more efficient, successful and profitable."
+          }
+          buttonText={"Submit"}
+          // link={links}
+          link={"true"}
+        />
+      </Grid>
+
       <Container>
         <Grid className={classes.softwareServices}>
           <Grid>
