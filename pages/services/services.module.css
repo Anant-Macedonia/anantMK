@@ -1,0 +1,13 @@
+.servicesContainer {
+  background-image: url("https://cdn.pixabay.com/photo/2022/03/30/14/32/tree-7101268_1280.jpg");
+  /* background-position: center; */
+  background-size: cover;
+  background-repeat: no-repeat;
+  height: 50vh;
+  align-items: center;
+}
+
+.servicesHeading {
+  text-align: center;
+  margin: 40px 0;
+}

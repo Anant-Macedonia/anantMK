@@ -8,7 +8,7 @@ import { ClickButton } from "../../UI/Button/Button";
 
 const PagesHeader = ({ title, description, link, buttonText }) => {
   return (
-    <Grid container className={classes.pagesHeader}>
+    <Grid container>
       <Grid className={classes.pagesHeaderContent}>
         <Typography variant="h2">{title}</Typography>
         <Typography>{description}</Typography>
