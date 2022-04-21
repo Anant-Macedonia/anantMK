@@ -12,7 +12,7 @@ const BlogSection = ({ posts }) => {
 
       {posts.map((post) => {
         return (
-          <Grid item xs={4}>
+          <Grid key={post.slug} item xs={4}>
             {/* <CustomCard
               title={post.title}
               link={`/category/blog/${post.slug}`}

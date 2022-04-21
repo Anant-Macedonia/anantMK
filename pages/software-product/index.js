@@ -101,7 +101,7 @@ export async function getStaticProps() {
   return {
     props: {
       posts: result.data.posts.nodes,
-      title: result.data.pageBy.title,
+      // title: result.data.pageBy.title,
     },
   };
 }

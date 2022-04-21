@@ -14,9 +14,9 @@ const ServicesFeature = ({ title, description, links, imageUrl }) => {
         </Typography>
         <Typography gutterBottom>{description}</Typography>
         <Typography component="ul">
-          {links.map((link) => {
+          {links.map((link, index) => {
             return (
-              <Typography component="li">
+              <Typography key={index} component="li">
                 <Link href={link.url}>{link.name}</Link>
               </Typography>
             );

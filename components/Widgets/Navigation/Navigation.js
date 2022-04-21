@@ -53,8 +53,7 @@ function Navigation() {
               variant="h6"
               noWrap
               component="div"
-              sx={{ mr: 2, display: { xs: "none", md: "flex" } }}
-            >
+              sx={{ mr: 2, display: { xs: "none", md: "flex" } }}>
               Anant Macedonia
             </Typography>
           </Link>
@@ -66,16 +65,15 @@ function Navigation() {
                   key={item.name}
                   style={{ textDecoration: "none" }}
                   className={classes.link}
-                  href={item.href}
-                >
+                  href={item.href}>
                   {item.name}
                 </Link>
               );
             })}
           </Hidden>
           <Hidden smUp>
-            <IconButton>
-              <MenuIcon onClick={() => setOpen(true)} />
+            <IconButton onClick={() => setOpen(true)}>
+              <MenuIcon />
             </IconButton>
           </Hidden>
         </Toolbar>
@@ -84,11 +82,10 @@ function Navigation() {
         anchor="right"
         open={open}
         onOpen={() => setOpen(true)}
-        onClose={() => setOpen(false)}
-      >
+        onClose={() => setOpen(false)}>
         <div>
-          <IconButton>
-            <ChevronRightIcon onClick={() => setOpen(false)} />
+          <IconButton onClick={() => setOpen(false)}>
+            <ChevronRightIcon />
           </IconButton>
         </div>
         <Divider />
@@ -99,8 +96,7 @@ function Navigation() {
                 <Link
                   style={{ textDecoration: "none" }}
                   className={classes.link}
-                  href={item.href}
-                >
+                  href={item.href}>
                   {item.name}
                 </Link>
               </ListItem>
