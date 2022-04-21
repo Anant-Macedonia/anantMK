@@ -13,12 +13,12 @@ const BlogSection = ({ posts }) => {
       {posts.map((post) => {
         return (
           <Grid item xs={4}>
-            <CustomCard
+            {/* <CustomCard
               title={post.title}
               link={`/category/blog/${post.slug}`}
               image={post.featuredImage.node.link}
               content={post.content}
-            />
+            /> */}
           </Grid>
         );
       })}

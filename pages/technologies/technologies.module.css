@@ -1,0 +1,19 @@
+.technologiesContainer {
+  background-image: url("https://cdn.pixabay.com/photo/2022/04/18/13/56/flower-7140630_1280.jpg");
+  /* background-position: center; */
+  background-size: cover;
+  background-repeat: no-repeat;
+  height: 50vh;
+  align-items: center;
+}
+
+.technologiesHeading {
+  text-align: center;
+  margin: 40px 0;
+}
+
+.technologiesContentSection {
+  width: 100%;
+  margin-top: 80px;
+  text-align: center;
+}

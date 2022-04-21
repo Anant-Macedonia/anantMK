@@ -1,0 +1,16 @@
+.technologiesSectionHeading {
+  background-color: rgb(238, 238, 238);
+  padding: 8px 4px;
+  margin-right: 50px;
+  text-align: center;
+  align-self: center;
+}
+
+.technologiesImagesContainer {
+  border-bottom: 2px dashed rgb(238, 238, 238);
+}
+
+.technologiesImage {
+  margin: 20px 0;
+  margin-right: 40px;
+}
