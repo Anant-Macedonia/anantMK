@@ -5,7 +5,7 @@ import classes from "./blogSection.module.css";
 
 const BlogSection = ({ posts }) => {
   return (
-    <Grid container>
+    <Grid container key={'key'}>
       <Grid item xs={12} className={classes.blogSectionHeader}>
         <Typography variant="h2">Featured Blogs</Typography>
       </Grid>
@@ -15,6 +15,7 @@ const BlogSection = ({ posts }) => {
         return (
           <Grid key={post.slug} item xs={4}>
             <CustomCard
+              key={post.slug}
               title={post.title}
               link={`/category/blog/${post.slug}`}
               image={post.featuredImage.node.link}
