@@ -11,14 +11,15 @@ const BlogSection = ({ posts }) => {
       </Grid>
 
       {posts.map((post) => {
+        console.log(post.featuredImage.node.link);
         return (
           <Grid key={post.slug} item xs={4}>
-            {/* <CustomCard
+            <CustomCard
               title={post.title}
               link={`/category/blog/${post.slug}`}
               image={post.featuredImage.node.link}
               content={post.content}
-            /> */}
+            />
           </Grid>
         );
       })}
