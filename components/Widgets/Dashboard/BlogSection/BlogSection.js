@@ -11,14 +11,14 @@ const BlogSection = ({ posts }) => {
       </Grid>
 
       {posts.map((post) => {
-        console.log(post.featuredImage.node.link);
+        console.log(post.featuredImage.node.sourceUrl);
         return (
           <Grid key={post.slug} item xs={4}>
             <CustomCard
               key={post.slug}
               title={post.title}
               link={`/category/blog/${post.slug}`}
-              image={post.featuredImage.node.link}
+              image={post.featuredImage.node.sourceUrl}
               content={post.content}
             />
           </Grid>
