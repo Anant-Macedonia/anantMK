@@ -11,3 +11,16 @@
   text-align: center;
   margin: 40px 0;
 }
+
+.image {
+  width: 100%;
+}
+
+.serviceContent {
+  align-self: center;
+  padding: 0 80px;
+}
+
+.serviceContainer:nth-of-type(even) .image {
+  order: 2;
+}

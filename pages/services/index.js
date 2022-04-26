@@ -41,6 +41,7 @@ const Services = () => {
         title="Web Application Development"
         description="Evolving online markets, changing market dynamics and tech-savvy consumers; have you transformed enough to gain or sustain competitive edge?"
         links={webAppLinks}
+        className={classes}
       />
       <ServicesFeature
         imageUrl={
@@ -49,6 +50,7 @@ const Services = () => {
         title="Mobile App Development"
         description="Mobile is changing business dynamics. Have you thought of converting Emerging Mobile Technologies into Business opportunity?"
         links={mobileAppLinks}
+        className={classes}
       />
       <ServicesFeature
         imageUrl={
@@ -57,6 +59,7 @@ const Services = () => {
         title="Product Consulting"
         description="With user centered approach, we help you align your IT and online strategy with business strategy to gain competitive edge and drive growth."
         links={productConsultingLinks}
+        className={classes}
       />
       <Form />
     </Grid>
