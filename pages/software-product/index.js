@@ -76,11 +76,7 @@ const SoftwareProduct = ({ posts }) => {
 export async function getStaticProps() {
   const result = await client.query({
     query: gql`
-      query GetHomeAndPosts {
-        pageBy(uri: "/") {
-          title
-        }
-
+      query GetPosts {
         posts(first: 3) {
           nodes {
             title
@@ -89,7 +85,7 @@ export async function getStaticProps() {
             slug
             featuredImage {
               node {
-                link
+                sourceUrl
               }
             }
           }
@@ -101,7 +97,6 @@ export async function getStaticProps() {
   return {
     props: {
       posts: result.data.posts.nodes,
-      // title: result.data.pageBy.title,
     },
   };
 }

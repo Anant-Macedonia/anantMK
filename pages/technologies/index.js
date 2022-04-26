@@ -8,11 +8,11 @@ import {
   FrontEndTechnologies,
   Database,
 } from "../../lib/MockData/technologiesSectionImages";
-import Link from "next/link";
 import TechnologyListPagesSection from "../../components/Widgets/Technologies/TechnologyListPages/TechnologyListPagesSection";
 import TechnologyTypesSection from "../../components/Widgets/Technologies/TechnologyTypesSection/TechnologyTypesSection";
+import BlogSection from "../../components/Widgets/Dashboard/BlogSection/BlogSection";
 
-const TechnologiesPage = ({ pages }) => {
+const TechnologiesPage = ({ pages, posts }) => {
   return (
     <Grid>
       <Grid container className={classes.technologiesContainer}>
@@ -48,7 +48,10 @@ const TechnologiesPage = ({ pages }) => {
               <Typography>Here is the bunch of solutions we offer</Typography>
             </Grid>
             <Grid>
-              <TechnologyListPagesSection pages={pages} />
+              <TechnologyListPagesSection pages={pages} posts={posts} />
+            </Grid>
+            <Grid>
+              <BlogSection posts={posts} />
             </Grid>
           </Grid>
         </Container>
@@ -60,7 +63,21 @@ const TechnologiesPage = ({ pages }) => {
 export async function getStaticProps() {
   const result = await client.query({
     query: gql`
-      query GetPages {
+      query GetPagesAndPosts {
+        posts(first: 3) {
+          nodes {
+            title
+            content
+            date
+            slug
+            featuredImage {
+              node {
+                sourceUrl
+              }
+            }
+          }
+        }
+
         pages {
           nodes {
             slug
@@ -75,6 +92,7 @@ export async function getStaticProps() {
 
   return {
     props: {
+      posts: result.data.posts.nodes,
       pages: result.data.pages.nodes,
     },
   };

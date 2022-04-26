@@ -7,7 +7,7 @@ import PortfolioSection from "../components/Widgets/Dashboard/PortfolioSection/P
 import WhyUs from "../components/Widgets/Dashboard/WhyUsSection/WhyUs";
 import BlogSection from "../components/Widgets/Dashboard/BlogSection/BlogSection";
 
-export default function Home({ posts, title }) {
+export default function Home({ posts }) {
   return (
     <>
       <CustomCarousel />
@@ -15,7 +15,7 @@ export default function Home({ posts, title }) {
         <CardsSection />
         <PortfolioSection />
         <WhyUs buttonText={"LET'S PLAN YOUR PROJECT"} />
-        <BlogSection posts={posts} title={title} />
+        <BlogSection posts={posts} />
       </Container>
     </>
   );
@@ -25,10 +25,6 @@ export async function getStaticProps() {
   const result = await client.query({
     query: gql`
       query GetHomeAndPosts {
-        pageBy(uri: "/") {
-          title
-        }
-
         posts(first: 3) {
           nodes {
             title
@@ -49,7 +45,6 @@ export async function getStaticProps() {
   return {
     props: {
       posts: result.data.posts.nodes,
-      // title: result.data.pageBy.title,
     },
   };
 }
