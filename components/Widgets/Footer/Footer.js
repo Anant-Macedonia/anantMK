@@ -30,7 +30,7 @@ const Footer = () => {
         </Grid>
         <Grid item xs={6} className={classes.footerWorkPolicy}>
           <Link href="/"> Work Policy </Link> | <Link href="/"> Careers </Link>{" "}
-          |<Link href="/"> Blog </Link> | <Link href="/"> Contact </Link>
+          |<Link href="/"> Blog </Link> | <Link href="/contact"> Contact </Link>
         </Grid>
       </Grid>
     </Grid>
