@@ -1,11 +1,4 @@
-import {
-  Grid,
-  Typography,
-  Container,
-  Toolbar,
-  AppBar,
-  Link,
-} from "@mui/material";
+import { Grid, Typography, Link } from "@mui/material";
 import classes from "./footer.module.css";
 
 const Footer = () => {
@@ -22,7 +15,8 @@ const Footer = () => {
       <Grid container className={classes.footerNavigation}>
         <Grid item xs={6}>
           <Grid>
-            <Link href="/">Home </Link> |<Link href="/"> About Us </Link> |
+            <Link href="/">Home </Link> |
+            <Link href="/about-us"> About Us </Link> |
             <Link href="/"> Industries </Link> |
             <Link href="/"> Success Stories </Link>
           </Grid>
@@ -30,9 +24,8 @@ const Footer = () => {
             <Typography gutterBottom>
               © 2022 Anant Macedonia. All Rights Reserved.
             </Typography>
-            <Link href="/">Terms & Conditions </Link> |
-            <Link href="/"> Privacy Policy </Link> |
-            <Link href="/"> Cookie Policy </Link>
+            <Link href="/terms-conditions">Terms & Conditions </Link> |
+            <Link href="/privacy-policy"> Privacy Policy </Link>
           </Grid>
         </Grid>
         <Grid item xs={6} className={classes.footerWorkPolicy}>

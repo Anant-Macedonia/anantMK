@@ -21,7 +21,7 @@ const navigationLinks = [
   { name: "Services", href: "/services" },
   { name: "Technologies", href: "/technologies" },
   { name: "Our Work", href: "/our-work" },
-  { name: "Blog", href: "/category/blog" },
+  { name: "Blog", href: "/blog" },
 ];
 function Navigation() {
   const [open, setOpen] = useState(false);

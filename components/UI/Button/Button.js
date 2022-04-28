@@ -2,7 +2,7 @@ import { Button } from "@mui/material";
 
 const CustomButton = ({ buttonText }) => {
   return (
-    <Button variant="contained" color="warning" href="/category/blog">
+    <Button variant="contained" color="warning" href="/blog">
       {buttonText}
     </Button>
   );

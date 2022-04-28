@@ -1,0 +1,9 @@
+.aboutUsHeading {
+  margin: 40px 0;
+  text-align: center;
+}
+
+.contentContainer figure {
+  display: flex;
+  justify-content: center;
+}

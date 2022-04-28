@@ -19,7 +19,7 @@ const BlogSection = ({ posts }) => {
             <CustomCard
               key={post.slug}
               title={post.title}
-              link={`/category/blog/${post.slug}`}
+              link={`/blog/${post.slug}`}
               image={post.featuredImage.node.sourceUrl}
               content={post.content}
             />

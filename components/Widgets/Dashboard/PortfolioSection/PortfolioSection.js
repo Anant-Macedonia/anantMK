@@ -26,7 +26,7 @@ const PortfolioSection = () => {
             Airways, Finnish airways and others for their 50000+ enterprise
             users.
           </Typography>
-          <CustomButton href={"/category/blog"} buttonText={"Case Study"} />
+          <CustomButton href={"/blog"} buttonText={"Case Study"} />
         </Grid>
         <Grid item xs={6} className={classes.portfolioImage}>
           <img src="https://sp-ao.shortpixel.ai/client/q_glossy,ret_img,w_480,h_500/https://www.finoit.com/wp-content/themes/finoit/assets/layouts/img/portfolio/home/twoway-thumb.png" />

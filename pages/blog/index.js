@@ -1,7 +1,7 @@
 import { gql } from "@apollo/client";
-import { client } from "../../../lib/apollo";
+import { client } from "../../lib/apollo";
 import { Container, Grid } from "@mui/material";
-import BlogSection from "../../../components/Widgets/Dashboard/BlogSection/BlogSection";
+import BlogSection from "../../components/Widgets/Dashboard/BlogSection/BlogSection";
 
 const Blog = ({ posts }) => {
   return (

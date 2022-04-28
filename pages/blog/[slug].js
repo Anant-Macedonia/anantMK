@@ -1,12 +1,21 @@
 import { gql } from "@apollo/client";
-import { client } from "../../../lib/apollo";
+import { client } from "../../lib/apollo";
+import Head from "next/head";
+import { Grid, Typography } from "@mui/material";
 
 const BlogPage = ({ post }) => {
+  const { seo } = post;
   return (
-    <div>
-      <h1>{post.title}</h1>
-      <div dangerouslySetInnerHTML={{ __html: post.content }} />
-    </div>
+    <Grid>
+      <Head>
+        <title>{seo.title}</title>
+        <meta name="description" content={seo.description} />
+      </Head>
+      <Grid>
+        <Typography>{post.title}</Typography>
+        <Grid dangerouslySetInnerHTML={{ __html: post.content }} />
+      </Grid>
+    </Grid>
   );
 };
 
@@ -41,6 +50,11 @@ export async function getStaticProps({ params }) {
         postBy(slug: $slug) {
           title
           content
+          seo {
+            metaDesc
+            title
+            fullHead
+          }
         }
       }
     `,
