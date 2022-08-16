@@ -1,0 +1,27 @@
+.cassandraSectionContainer {
+  background-color: #f1f1f1;
+  margin-top: 110px;
+  padding: 25px 0;
+}
+
+.cassandraImageContainer {
+  height: 100%;
+  background-repeat: no-repeat;
+  background-position: right;
+  background-size: contain;
+}
+
+.cassandraTitle {
+  line-height: 40px;
+}
+
+.cassandraDescription {
+  margin-top: 22px;
+  margin-bottom: 50px;
+}
+
+.btnCassandra {
+  border-radius: 20px;
+  width: 152px;
+  height: 42px;
+}

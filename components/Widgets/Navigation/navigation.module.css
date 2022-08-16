@@ -1,23 +1,26 @@
 .nav {
-  background-color: transparent;
+  background-color: black;
 }
 
 .nav__logo {
+  color: white;
   margin-right: auto;
   cursor: pointer;
 }
 
 .nav a {
+  color: white;
   font-size: 12px;
   margin: 15px;
   text-transform: uppercase;
 }
 
 .whiteNav {
-  background-color: white;
+  background-color: black;
 }
 
 .whiteNav a {
+  color: white;
   font-size: 12px;
   margin: 15px;
   text-transform: uppercase;

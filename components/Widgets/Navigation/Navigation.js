@@ -54,7 +54,7 @@ function Navigation() {
               noWrap
               component="div"
               sx={{ mr: 2, display: { xs: "none", md: "flex" } }}>
-              Anant Macedonia
+              Anant US
             </Typography>
           </Link>
 

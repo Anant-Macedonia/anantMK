@@ -1,0 +1,45 @@
+.testimonailSectionContainer {
+  background: #f1f1f1;
+  margin: 110px 0;
+  padding: 135px 0;
+}
+
+.testimonialCardContainer {
+  background: white;
+  padding: 40px;
+  box-shadow: 4px 4px 15px rgba(0, 0, 0, 0.25);
+  border-radius: 20px;
+}
+
+.imageContainer {
+  margin-right: 20px;
+  margin-bottom: 20px;
+}
+
+.testimonialCardHeader {
+  display: flex;
+  align-items: center;
+}
+
+.clientName {
+  font-weight: 700;
+  line-height: 41px;
+  color: #2161ff;
+}
+
+.readBlogContainer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: white;
+  width: 550px;
+  height: 40px;
+  border-radius: 20px;
+  padding-left: 20px;
+  margin-top: 50px;
+}
+
+.btn {
+  width: 180px;
+  border-radius: 20px;
+}

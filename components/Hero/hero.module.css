@@ -1,0 +1,39 @@
+.heroContainer {
+  /* margin-top: -64px; */
+  height: 100vh;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.textContainer {
+  height: 100%;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  /* align-items: center; */
+}
+
+.heroTitle {
+  width: 70%;
+  color: white;
+  line-height: 70px;
+  margin-bottom: 20px;
+}
+
+.heroDescription {
+  width: 50%;
+  color: white;
+  line-height: 23px;
+}
+
+.btnContainer {
+  display: flex;
+  margin-top: 100px;
+}
+
+.btn {
+  border-radius: 20px;
+  width: 152px;
+  height: 42px;
+}
