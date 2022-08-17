@@ -1,9 +1,26 @@
 .card {
-  /* padding: 50px 24px; */
+  width: 450px;
+  height: 250px;
   margin: 0 auto;
+  box-shadow: 4px 4px 15px rgba(0, 0, 0, 0.25);
+  border-radius: 20px;
+  overflow: hidden;
+  margin-bottom: 80px;
 }
 
-.image {
+.cardHeaderContainer {
   width: 100%;
-  height: 250px;
+  height: 50px;
+  background: black;
+}
+
+.cardContentContainer {
+  padding: 20px 40px;
+}
+
+.btn {
+  background-color: black;
+  margin-top: 40px;
+  padding: 2.5px 15px;
+  border-radius: 20px;
 }
