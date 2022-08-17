@@ -1,0 +1,25 @@
+.contactSectionContainer {
+  padding-bottom: 100px;
+}
+
+.contactTitle {
+  line-height: 40px;
+}
+
+.contactDescription {
+  margin-top: 22px;
+  margin-bottom: 50px;
+}
+
+.contactBtn {
+  border-radius: 20px;
+  width: 152px;
+  height: 42px;
+}
+
+.contactImageContainer {
+  height: 100%;
+  background-repeat: no-repeat;
+  background-position: right;
+  background-size: contain;
+}

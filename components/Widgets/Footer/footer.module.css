@@ -1,48 +1,36 @@
-.footer {
-  /* position: fixed; */
-  width: 100%;
-  bottom: 0;
-  left: 0;
+.footerContainer {
+  background-color: #f1f1f1;
 }
 
-.footer a {
-  color: black;
-  transition: color 0.5s;
-  text-decoration: none;
+.githubIcon {
+  margin-right: 10px;
 }
 
-.footer a:hover {
-  color: orange;
-  transition: color 0.3;
+.twitterIcon {
+  margin-right: 10px;
+  color: #1da1f2;
 }
 
-.footerHeader {
-  display: flex;
-  align-items: center;
+.youtubeIcon {
+  margin-right: 10px;
+  color: #ff0000;
+}
+
+.facebookIcon {
+  margin-right: 10px;
+  color: #4267b2;
+}
+
+.linkedinIcon {
+  margin-right: 10px;
+  color: #0a66c2;
+}
+
+.footerLogoContainer {
   margin-top: 80px;
-  background: orange;
-  color: white;
-  height: 60px;
-  padding: 0 160px;
+  margin-bottom: 40px;
 }
 
-.footer__logo {
-  margin-right: auto;
-}
-
-.footerMail {
-  text-align: end;
-}
-
-.footerNavigation {
-  padding: 0 160px;
-  margin: 40px 0 20px 0;
-}
-
-.footerWorkPolicy {
-  text-align: end;
-}
-
-.footerNavigationTerms {
-  margin-top: 20px;
+.footerLinksHeader {
+  margin-bottom: 35px;
 }
