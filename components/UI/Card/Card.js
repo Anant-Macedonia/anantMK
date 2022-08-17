@@ -1,7 +1,6 @@
 import * as React from "react";
 import Typography from "@mui/material/Typography";
-import { Button, CardActionArea, Grid } from "@mui/material";
-import Link from "next/link";
+import { Button, Grid } from "@mui/material";
 import classes from "./card.module.css";
 import { Box } from "@mui/system";
 

@@ -33,33 +33,36 @@ const EnterpriseSection = ({ enterpriseData, enterpriseCardData }) => {
             return (
               <SwiperSlide className="swiperSlide" key={i}>
                 {({ isActive }) => (
-                  <Grid
-                    item
-                    key={i}
-                    className={
-                      isActive
-                        ? `${classes.enterpriseCardContainerActive}`
-                        : `${classes.enterpriseCardContainerNoActive}`
-                    }>
-                    <Box className={classes.imageContainer}>
-                      <img
-                        className={classes.enterpriseImage}
-                        src={
-                          data.enterpriseCardFields.enterpriseImage.sourceUrl
-                        }
-                        alt={data.enterpriseCardFields.enterpriseTitle}
-                      />
-                    </Box>
+                  console.log("Enter", isActive),
+                  (
+                    <Grid
+                      item
+                      key={i}
+                      className={
+                        isActive
+                          ? `${classes.enterpriseCardContainerActive}`
+                          : `${classes.enterpriseCardContainerNoActive}`
+                      }>
+                      <Box className={classes.imageContainer}>
+                        <img
+                          className={classes.enterpriseImage}
+                          src={
+                            data.enterpriseCardFields.enterpriseImage.sourceUrl
+                          }
+                          alt={data.enterpriseCardFields.enterpriseTitle}
+                        />
+                      </Box>
 
-                    <Typography
-                      variant="h4"
-                      className={classes.enterpriseTitle}>
-                      {data.enterpriseCardFields.enterpriseTitle}
-                    </Typography>
-                    <Typography className={classes.enterpriseDescription}>
-                      {data.enterpriseCardFields.enterpriseDescription}
-                    </Typography>
-                  </Grid>
+                      <Typography
+                        variant="h4"
+                        className={classes.enterpriseTitle}>
+                        {data.enterpriseCardFields.enterpriseTitle}
+                      </Typography>
+                      <Typography className={classes.enterpriseDescription}>
+                        {data.enterpriseCardFields.enterpriseDescription}
+                      </Typography>
+                    </Grid>
+                  )
                 )}
               </SwiperSlide>
             );

@@ -1,4 +1,5 @@
 import React from "react";
+import Image from "next/image";
 import {
   Box,
   Button,
@@ -8,53 +9,104 @@ import {
   Grid,
   Typography,
 } from "@mui/material";
+import { Swiper, SwiperSlide } from "swiper/react";
+import { Navigation } from "swiper";
+import QuoteUpImage from "../../../../public/quotes-up.png";
+import QuoteDownImage from "../../../../public/quotes-down.png";
+// Import Swiper styles
+import "swiper/css";
+import "swiper/css/navigation";
+
 import classes from "./testimonialSection.module.css";
 
 const TestimonialSection = ({ testimonialData }) => {
   return (
     <Box className={classes.testimonailSectionContainer}>
-      <Container>
-        <Grid container spacing={6}>
+      <Grid container spacing={6}>
+        <Swiper
+          slidesPerView={1.5}
+          spaceBetween={100}
+          loop={true}
+          loopFillGroupWithBlank={true}
+          navigation={true}
+          modules={[Navigation]}
+          className={classes.swiper}>
           {testimonialData.map((data, i) => {
             return (
-              <Grid
-                className={classes.testimonialCardContainer}
-                item
-                md={6}
-                key={i}>
-                <Box className={classes.testimonialCardHeader}>
-                  <Box className={classes.imageContainer}>
-                    <img
-                      alt={data.acfTestimonialCardFields.clientName}
-                      src={data.acfTestimonialCardFields.clientImage.sourceUrl}
-                    />
-                  </Box>
-                  <Box>
-                    <Typography variant="h4" className={classes.clientName}>
-                      {data.acfTestimonialCardFields.clientName}
-                    </Typography>
-                    <Typography
-                      variant="h5"
-                      className={classes.clientJobPosition}>
-                      {data.acfTestimonialCardFields.clientJobPosition}
-                    </Typography>
-                  </Box>
-                </Box>
+              <SwiperSlide className={classes.swiperSlide} key={i}>
+                {({ isActive }) => (
+                  <>
+                    <Box
+                      className={
+                        isActive
+                          ? `${classes.quotesUpImageActive}`
+                          : `${classes.quotesUpImageNoActive}`
+                      }>
+                      <Image
+                        width={65}
+                        height={45}
+                        src={QuoteUpImage}
+                        alt="quotes"
+                      />
+                    </Box>
 
-                <Typography variant="body2">
-                  {data.acfTestimonialCardFields.testamonialText}
-                </Typography>
-              </Grid>
+                    <Grid
+                      className={
+                        isActive
+                          ? `${classes.testimonialContainerActive}`
+                          : `${classes.testimonialContainerNoActive}`
+                      }
+                      item
+                      key={i}>
+                      <Box className={classes.testimonialCardHeader}>
+                        <Box className={classes.imageContainer}>
+                          <img
+                            alt={data.acfTestimonialCardFields.clientName}
+                            src={
+                              data.acfTestimonialCardFields.clientImage
+                                .sourceUrl
+                            }
+                          />
+                        </Box>
+                        <Box>
+                          <Typography
+                            variant="h4"
+                            className={classes.clientName}>
+                            {data.acfTestimonialCardFields.clientName}
+                          </Typography>
+                          <Typography
+                            variant="h5"
+                            className={classes.clientJobPosition}>
+                            {data.acfTestimonialCardFields.clientJobPosition}
+                          </Typography>
+                        </Box>
+                      </Box>
+
+                      <Typography variant="body2">
+                        {data.acfTestimonialCardFields.testamonialText}
+                      </Typography>
+                    </Grid>
+                    <Box className={classes.quotesDownImage}>
+                      <Image
+                        width={65}
+                        height={45}
+                        src={QuoteDownImage}
+                        alt="quotes"
+                      />
+                    </Box>
+                  </>
+                )}
+              </SwiperSlide>
             );
           })}
-        </Grid>
-        <Box className={classes.readBlogContainer}>
-          <Typography>Read our blog</Typography>
-          <Button className={classes.btn} variant="contained">
-            Check Out Now
-          </Button>
-        </Box>
-      </Container>
+        </Swiper>
+      </Grid>
+      <Box className={classes.readBlogContainer}>
+        <Typography>Read our blog</Typography>
+        <Button className={classes.btn} variant="contained">
+          Check Out Now
+        </Button>
+      </Box>
     </Box>
   );
 };
