@@ -17,9 +17,9 @@ const ClientsSection = ({ clientsData, clientsTitle }) => {
       </Typography>
       <Container className={classes.clientsLogoContainer}>
         <Grid container spacing={6}>
-          {clientsData.map((client) => {
+          {clientsData.map((client, i) => {
             return (
-              <Grid item md={4}>
+              <Grid item md={4} key={i}>
                 <Card>
                   <CardMedia
                     component="img"
