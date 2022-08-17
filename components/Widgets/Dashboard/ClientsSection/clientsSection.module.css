@@ -1,0 +1,38 @@
+.clientsContainer {
+  margin-top: 140px;
+}
+
+.clientsSectionTitle {
+  position: relative;
+  color: #2161ff;
+  z-index: 1;
+  overflow: hidden;
+  margin-bottom: 50px;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+.clientsLogoContainer {
+  margin-top: 100px;
+}
+
+.clientsSectionTitle:before,
+.clientsSectionTitle:after {
+  position: absolute;
+  top: 51%;
+  overflow: hidden;
+  width: 50%;
+  height: 3px;
+  content: "\a0";
+  background-color: black;
+}
+
+.clientsSectionTitle:before {
+  margin-left: -50%;
+  text-align: right;
+}
+
+.clientsSectionTitle {
+  font-weight: 600;
+  margin: 20px 0;
+}

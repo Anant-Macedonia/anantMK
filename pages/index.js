@@ -1,6 +1,6 @@
 import { client } from "../lib/apollo";
 import { gql } from "@apollo/client";
-import { Container } from "@mui/material";
+import { Container, Divider } from "@mui/material";
 import Head from "next/head";
 import CardsSection from "../components/Widgets/Dashboard/CardsSection/CardsSection";
 import PortfolioSection from "../components/Widgets/Dashboard/PortfolioSection/PortfolioSection";
@@ -10,6 +10,8 @@ import Hero from "../components/Hero/Hero";
 import CassandraSection from "../components/Widgets/Dashboard/CassandraSection";
 import EnterpriseSection from "../components/Widgets/Dashboard/EnterpriseSection";
 import TestimonialSection from "../components/Widgets/Dashboard/TestimonialSection";
+import ClientsSection from "../components/Widgets/Dashboard/ClientsSection";
+import ContactSection from "../components/Widgets/Dashboard/ContactSection";
 
 export default function Home({
   homepage,
@@ -19,7 +21,6 @@ export default function Home({
   enterpriseCards,
   testimonialCards,
 }) {
-  console.log(enterpriseCards);
   return (
     <>
       <Head>
@@ -34,6 +35,16 @@ export default function Home({
         enterpriseCardData={enterpriseCards}
       />
       <TestimonialSection testimonialData={testimonialCards} />
+      <ClientsSection clientsData={clients} clientsTitle={homepage} />
+      <Divider
+        sx={{
+          borderBottomWidth: 3,
+          marginTop: "100px",
+          marginBottom: "100px",
+          opacity: "1",
+        }}
+      />
+      <ContactSection contactData={homepage} />
     </>
   );
 }

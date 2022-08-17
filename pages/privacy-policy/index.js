@@ -4,7 +4,6 @@ import { client } from "../../lib/apollo";
 import classes from "./privacyPolicy.module.css";
 
 const PrivacyPolicy = ({ page }) => {
-  console.log(page);
   return (
     <Grid>
       <Container>

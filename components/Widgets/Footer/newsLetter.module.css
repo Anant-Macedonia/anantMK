@@ -1,0 +1,55 @@
+.newsLetterContainer {
+  background-color: white;
+  margin-top: 120px;
+  margin-bottom: 120px;
+  background: #ffffff;
+  box-shadow: 4.04896px 4.04896px 15.1836px rgba(0, 0, 0, 0.25);
+  border-radius: 20px;
+}
+
+.newsletterBox {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.title {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.newsLetterText {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.newsLetterBtnContainer,
+.formGroup {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.formGroup {
+  border: none;
+}
+
+.newsLetterInput {
+  width: 500px;
+  height: 40px;
+  background: #000000;
+  border-radius: 12px;
+  color: #ffffff;
+  padding-left: 15px;
+}
+
+.newsLetterBtnContainer {
+  margin: 29px 0;
+}
+
+.subscribeBtn {
+  border-radius: 20px;
+  width: 150px;
+  height: 40px;
+  font-size: 18px;
+}
