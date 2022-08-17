@@ -10,7 +10,9 @@ const CardsSection = ({ cardsData }) => {
           return (
             <Grid item xs={12} md={6} key={data.acfHomeCardFields.title}>
               <CustomCard
-                link={"/software-product"}
+                target={data.acfHomeCardFields.buttonLink.target}
+                buttonText={data.acfHomeCardFields.buttonLink.title}
+                link={data.acfHomeCardFields.buttonLink.url}
                 icon={AppSettingsAltIcon}
                 title={data.acfHomeCardFields.title}
                 content={data.acfHomeCardFields.description}

@@ -90,6 +90,11 @@ export async function getStaticProps() {
         homecards {
           nodes {
             acfHomeCardFields {
+              buttonLink {
+                title
+                url
+                target
+              }
               title
               description
             }
