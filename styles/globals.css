@@ -8,8 +8,6 @@
 
 html,
 body {
-  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
-    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
   font-size: 16px;
 }
 
@@ -19,7 +17,12 @@ a {
   text-decoration: none;
 }
 
-a:hover {
-  color: orange;
-  transition: color 0.3;
+/* .swiper-button-prev {
+  color: black !important;
+  left: 30% !important;
 }
+
+.swiper-button-next {
+  color: black !important;
+  right: 30% !important;
+} */
