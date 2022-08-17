@@ -60,7 +60,9 @@ const TestimonialSection = ({ testimonialData }) => {
                       key={i}>
                       <Box className={classes.testimonialCardHeader}>
                         <Box className={classes.imageContainer}>
-                          <img
+                          <Image
+                            width={100}
+                            height={100}
                             alt={data.acfTestimonialCardFields.clientName}
                             src={
                               data.acfTestimonialCardFields.clientImage
@@ -82,7 +84,9 @@ const TestimonialSection = ({ testimonialData }) => {
                         </Box>
                       </Box>
 
-                      <Typography variant="body2">
+                      <Typography
+                        variant="h5"
+                        className={classes.testimonialText}>
                         {data.acfTestimonialCardFields.testamonialText}
                       </Typography>
                     </Grid>

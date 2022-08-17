@@ -1,4 +1,5 @@
 import { Box, Button, Container, Grid, Typography } from "@mui/material";
+import Image from "next/image";
 import React from "react";
 import classes from "./cassandraSection.module.css";
 
@@ -21,11 +22,20 @@ const CassandraSection = ({ cassandraData }) => {
             </Grid>
 
             <Grid item md={5}>
-              <Box
+              <Box className={classes.cassandraImageContainer}>
+                <Image
+                  src={cassandraData.cassandraLinkImage.sourceUrl}
+                  width={279}
+                  height={187}
+                  alt="Cassandra Logo"
+                />
+              </Box>
+
+              {/* <Box
                 className={classes.cassandraImageContainer}
                 sx={{
                   backgroundImage: `url(${cassandraData.cassandraLinkImage.sourceUrl})`,
-                }}></Box>
+                }}></Box> */}
             </Grid>
           </Grid>
         </Container>

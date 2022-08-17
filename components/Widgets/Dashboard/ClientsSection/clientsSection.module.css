@@ -36,3 +36,10 @@
   font-weight: 600;
   margin: 20px 0;
 }
+
+.logoContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+}

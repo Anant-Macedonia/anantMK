@@ -8,6 +8,7 @@ import "swiper/css/pagination";
 import "swiper/css/navigation";
 
 import classes from "./enterpriseSection.module.css";
+import Image from "next/image";
 
 const EnterpriseSection = ({ enterpriseData, enterpriseCardData }) => {
   return (
@@ -42,8 +43,9 @@ const EnterpriseSection = ({ enterpriseData, enterpriseCardData }) => {
                         : `${classes.enterpriseCardContainerNoActive}`
                     }>
                     <Box className={classes.imageContainer}>
-                      <img
-                        className={classes.enterpriseImage}
+                      <Image
+                        width={200}
+                        height={200}
                         src={
                           data.enterpriseCardFields.enterpriseImage.sourceUrl
                         }

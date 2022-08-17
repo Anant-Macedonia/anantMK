@@ -5,10 +5,12 @@
 }
 
 .cassandraImageContainer {
-  height: 100%;
+  display: flex;
+  justify-content: flex-end;
+  /* height: 100%;
   background-repeat: no-repeat;
   background-position: right;
-  background-size: contain;
+  background-size: contain; */
 }
 
 .cassandraTitle {
