@@ -15,7 +15,7 @@ const ClientsSection = ({ clientsData, clientsTitle }) => {
       <Typography className={classes.clientsSectionTitle} variant="h1">
         {clientsTitle.clientSectionTitle}
       </Typography>
-      <Container>
+      <Container className={classes.clientsLogoContainer}>
         <Grid container spacing={6}>
           {clientsData.map((client) => {
             return (

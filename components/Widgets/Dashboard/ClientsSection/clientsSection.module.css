@@ -12,6 +12,10 @@
   text-transform: uppercase;
 }
 
+.clientsLogoContainer {
+  margin-top: 100px;
+}
+
 .clientsSectionTitle:before,
 .clientsSectionTitle:after {
   position: absolute;
