@@ -5,10 +5,10 @@ import AppSettingsAltIcon from "@mui/icons-material/AppSettingsAlt";
 const CardsSection = ({ cardsData }) => {
   return (
     <Container>
-      <Grid container mt={6}>
+      <Grid container spacing={2} mt={6}>
         {cardsData.map((data) => {
           return (
-            <Grid item xs={6} key={data.acfHomeCardFields.title}>
+            <Grid item xs={12} md={6} key={data.acfHomeCardFields.title}>
               <CustomCard
                 link={"/software-product"}
                 icon={AppSettingsAltIcon}

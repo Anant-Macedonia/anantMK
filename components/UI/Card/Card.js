@@ -7,19 +7,20 @@ import { Box } from "@mui/system";
 
 const CustomCard = ({ title, content, link }) => {
   return (
-    <Box container className={classes.card}>
+    <Grid container className={classes.card}>
       <Box className={classes.cardHeaderContainer}></Box>
       <Box className={classes.cardContentContainer}>
         <Typography gutterBottom variant="h5" component="div">
           {title}
         </Typography>
         <Typography>{content}</Typography>
-
-        <Button className={classes.btn} variant="contained">
-          Click Here
-        </Button>
+        <Box className={classes.btnContainer}>
+          <Button className={classes.btn} variant="contained">
+            Click Here
+          </Button>
+        </Box>
       </Box>
-    </Box>
+    </Grid>
   );
 };
 
