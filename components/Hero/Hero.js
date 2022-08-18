@@ -1,9 +1,7 @@
 import { Box, Button, Container, Typography } from "@mui/material";
-import Image from "next/image";
 import classes from "./hero.module.css";
 
 const Hero = ({ heroData }) => {
-  console.log(heroData.image.sourceUrl);
   return (
     <>
       <Box
