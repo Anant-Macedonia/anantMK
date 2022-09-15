@@ -6,15 +6,15 @@ export const heroContainer = {
 };
 
 export const heroImageContainer = {
-  width: "500px",
-  height: "500px",
+  width: "400px",
+  height: "400px",
   borderRadius: "100%",
   backgroundColor: "gold",
 
   display: "flex",
   position: "absolute",
-  right: "5%",
-  top: "10%",
+  right: "8%",
+  top: "15%",
   zIndex: "-10",
 };
 

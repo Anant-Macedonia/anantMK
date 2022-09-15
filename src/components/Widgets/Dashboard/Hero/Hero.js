@@ -10,13 +10,15 @@ import {
   heroDesc,
   btnContainer,
   heroSubtitle,
+  animationLineContainer,
 } from "./heroStyle";
 import OutlinedButton from "../../../UI/Buttons/OutlinedButton/OutlinedButton";
+import LineAnimation from "../../../UI/LineAnimation/LineAnimation";
 
 const Hero = ({ heroData, primaryBtnText, secondaryBtnText }) => {
   return (
     <Container>
-      <Box sx={{ height: "600px" }}>
+      <Box sx={{ height: "100vh" }}>
         <Grid container sx={heroContainer}>
           <Grid item sm={12} md={7.4}>
             <Typography sx={heroTitle} variant="h1">
@@ -55,6 +57,8 @@ const Hero = ({ heroData, primaryBtnText, secondaryBtnText }) => {
               alt="Hero Image"
             /> */}
           </Box>
+
+          <LineAnimation />
         </Grid>
       </Box>
     </Container>
