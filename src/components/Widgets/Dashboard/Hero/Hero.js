@@ -1,7 +1,8 @@
-import Image from "next/image";
+import Image from "next/future/image";
 import { Box, Container, Grid, Typography } from "@mui/material";
 import PrimaryButton from "../../../UI/Buttons/PrimaryButton/PrimaryButton";
 import SecondaryButton from "../../../UI/Buttons/SecondaryButton/SecondaryButton";
+import heroImage from "../../../../../public/Hero-img.png";
 
 import {
   heroContainer,
@@ -10,15 +11,13 @@ import {
   heroDesc,
   btnContainer,
   heroSubtitle,
-  animationLineContainer,
 } from "./heroStyle";
 import OutlinedButton from "../../../UI/Buttons/OutlinedButton/OutlinedButton";
-import LineAnimation from "../../../UI/LineAnimation/LineAnimation";
 
 const Hero = ({ heroData, primaryBtnText, secondaryBtnText }) => {
   return (
     <Container>
-      <Box sx={{ height: "100vh" }}>
+      <Box sx={{}}>
         <Grid container sx={heroContainer}>
           <Grid item sm={12} md={7.4}>
             <Typography sx={heroTitle} variant="h1">
@@ -49,16 +48,8 @@ const Hero = ({ heroData, primaryBtnText, secondaryBtnText }) => {
             </Box>
           </Grid>
           <Box sx={heroImageContainer}>
-            {/* <Image
-              src={heroData?.heroImage?.sourceUrl}
-              width={heroData?.heroImage?.mediaDetails?.width}
-              height={heroData?.heroImage?.mediaDetails?.height}
-              quality={100}
-              alt="Hero Image"
-            /> */}
+            <Image src={heroImage} width={500} quality={100} alt="Hero Image" />
           </Box>
-
-          <LineAnimation />
         </Grid>
       </Box>
     </Container>

@@ -3,18 +3,14 @@ export const heroContainer = {
   alignItems: "center",
   height: "100%",
   position: "relative",
+  marginTop: "150px",
+  marginBottom: "200px",
 };
 
 export const heroImageContainer = {
-  width: "400px",
-  height: "400px",
-  borderRadius: "100%",
-  backgroundColor: "gold",
-
-  display: "flex",
   position: "absolute",
-  right: "8%",
-  top: "15%",
+  right: "-5%",
+  // top: "25%",
   zIndex: "-10",
 };
 
@@ -24,6 +20,8 @@ export const heroTitle = {
   fontSize: "50px",
   lineHeight: "128%",
   letterSpacing: "-0.02em,",
+  color: "#EE6F57",
+  marginBottom: "30px",
 };
 
 export const heroSubtitle = {
@@ -39,5 +37,5 @@ export const heroDesc = {
 };
 
 export const btnContainer = {
-  marginTop: "60px",
+  marginTop: "130px",
 };

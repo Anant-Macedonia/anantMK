@@ -1,6 +1,7 @@
 export const nav = {
-  backgroundColor: "#2f2e2e",
+  backgroundColor: "#003049",
   boxShadow: "none",
+  padding: "15px 0",
 };
 
 export const navLogo = {

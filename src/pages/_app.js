@@ -10,8 +10,8 @@ import "../../styles/global.css";
 const darkTheme = createTheme({
   palette: {
     background: {
-      default: "#2f2e2e",
-      paper: "#2f2e2e",
+      default: "#003049",
+      paper: "#003049",
     },
     text: {
       primary: "#fff",

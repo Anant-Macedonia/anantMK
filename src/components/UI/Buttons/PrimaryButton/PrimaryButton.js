@@ -1,12 +1,12 @@
 import Link from "next/link";
 import { Button } from "@mui/material";
 import ButtonIcon from "../../ButtonIcon/ButtonIcon";
-import { primaryBtn, primaryBtnMargin } from "./primaryButtonStyle";
+import { primaryBtn } from "./primaryButtonStyle";
 
 const PrimaryButton = ({ btnText, btnClass, link }) => {
   return (
     <Link href="/" passHref>
-      <Button sx={btnClass === "btnMargin" ? primaryBtnMargin : primaryBtn}>
+      <Button sx={primaryBtn}>
         {btnText}
         <ButtonIcon />
       </Button>
