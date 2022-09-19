@@ -1,0 +1,26 @@
+.aboutUsSectionContainer {
+  margin-top: 170px;
+  margin-bottom: 170px;
+}
+
+.aboutUsSectionContainer p {
+  font-size: 18px;
+}
+
+.aboutUsTitle {
+  color: #ee6f57;
+  font-size: 50px;
+  font-weight: 600;
+  margin-bottom: 80px;
+}
+
+.aboutUsSubtitle {
+  font-size: 30px;
+  font-weight: 700;
+  margin-bottom: 30px;
+}
+
+.ourGoals,
+.ourIdeas {
+  margin-bottom: 40px;
+}
