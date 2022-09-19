@@ -1,11 +1,11 @@
 import Link from "next/link";
 import { Button } from "@mui/material";
-import { contactBtn } from "./contactButtonStyle";
+import styles from "./contactButton.module.css";
 
 const PrimaryButton = ({ btnText, link }) => {
   return (
     <Link href="/contact" passHref>
-      <Button sx={contactBtn}>{btnText}</Button>
+      <Button className={styles.contactBtn}>{btnText}</Button>
     </Link>
   );
 };

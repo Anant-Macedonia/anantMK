@@ -1,10 +1,10 @@
 import { Box } from "@mui/material";
 import { BsArrowRight } from "react-icons/bs";
-import { iconContainer } from "./buttonIconStyle";
+import styles from "./buttonIcon.module.css";
 
 const ButtonIcon = () => {
   return (
-    <Box component="span" sx={iconContainer}>
+    <Box component="span" className={styles.iconContainer}>
       <BsArrowRight />
     </Box>
   );
