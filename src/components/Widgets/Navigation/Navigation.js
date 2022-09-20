@@ -51,7 +51,7 @@ function Navigation() {
         <Toolbar disableGutters>
           <Box sx={navLogo}>
             <Link href="/" passHref>
-              <Image src={logo} height={50} />
+              <Image src={logo} height={50} alt="logo" />
             </Link>
           </Box>
 

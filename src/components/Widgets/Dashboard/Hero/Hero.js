@@ -1,9 +1,7 @@
-import Image from "next/future/image";
 import { Box, Container, Grid, Typography } from "@mui/material";
+import Lottie from "react-lottie";
 import PrimaryButton from "../../../UI/Buttons/PrimaryButton/PrimaryButton";
-import SecondaryButton from "../../../UI/Buttons/SecondaryButton/SecondaryButton";
-import heroImage from "../../../../../public/Hero-img.png";
-
+import OutlinedButton from "../../../UI/Buttons/OutlinedButton/OutlinedButton";
 import {
   heroContainer,
   heroImageContainer,
@@ -12,9 +10,15 @@ import {
   btnContainer,
   heroSubtitle,
 } from "./heroStyle";
-import OutlinedButton from "../../../UI/Buttons/OutlinedButton/OutlinedButton";
+import animationData from "../../../../lottie/heroAnimation.json";
 
 const Hero = ({ heroData, primaryBtnText, secondaryBtnText }) => {
+  const defaultOptions = {
+    loop: true,
+    autoplay: true,
+    animationData: animationData,
+  };
+
   return (
     <Container>
       <Box sx={{}}>
@@ -48,7 +52,7 @@ const Hero = ({ heroData, primaryBtnText, secondaryBtnText }) => {
             </Box>
           </Grid>
           <Box sx={heroImageContainer}>
-            <Image src={heroImage} width={500} quality={100} alt="Hero Image" />
+            <Lottie options={defaultOptions} height={450} width={500} />
           </Box>
         </Grid>
       </Box>
