@@ -1,16 +1,13 @@
 export const heroContainer = {
-  display: "flex",
-  alignItems: "center",
-  height: "100%",
+  height: "800px",
   position: "relative",
-  marginTop: "150px",
-  marginBottom: "200px",
+  marginTop: "135px",
 };
 
 export const heroImageContainer = {
   position: "absolute",
+  top: "-20px",
   right: "-5%",
-  // top: "25%",
   zIndex: "-10",
 };
 
@@ -34,8 +31,10 @@ export const heroDesc = {
   fontSize: "18px",
   fontWeight: 400,
   lineHeight: "130%",
+  letterSpacing: "-7%",
+  maxWidth: "700px",
 };
 
 export const btnContainer = {
-  marginTop: "130px",
+  marginTop: "128px",
 };

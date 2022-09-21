@@ -51,7 +51,7 @@ function Navigation() {
         <Toolbar disableGutters>
           <Box sx={navLogo}>
             <Link href="/" passHref>
-              <Image src={logo} height={50} alt="logo" />
+              <Image src={logo} width={184} alt="logo" />
             </Link>
           </Box>
 
@@ -62,8 +62,7 @@ function Navigation() {
                   key={item.name}
                   style={{ textDecoration: "none" }}
                   href={item.href}
-                  passHref
-                >
+                  passHref>
                   <Typography sx={link}>{item.name}</Typography>
                 </Link>
               );
@@ -81,8 +80,7 @@ function Navigation() {
         anchor="right"
         open={open}
         onOpen={() => setOpen(true)}
-        onClose={() => setOpen(false)}
-      >
+        onClose={() => setOpen(false)}>
         <div>
           <IconButton onClick={() => setOpen(false)}>
             <ChevronRightIcon />
@@ -97,8 +95,7 @@ function Navigation() {
                   key={item.name}
                   style={{ textDecoration: "none" }}
                   href={item.href}
-                  passHref
-                >
+                  passHref>
                   <Typography sx={link}>{item.name}</Typography>
                 </Link>
               </ListItem>

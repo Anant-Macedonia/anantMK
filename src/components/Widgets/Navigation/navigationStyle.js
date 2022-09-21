@@ -1,7 +1,8 @@
 export const nav = {
   backgroundColor: "#003049",
   boxShadow: "none",
-  padding: "15px 0",
+  height: "75px",
+  marginTop: "55px",
 };
 
 export const navLogo = {
@@ -14,6 +15,6 @@ export const link = {
   fontWeight: 400,
   fontSize: "16px",
   lineHeight: "19px",
-  margin: "15px",
+  marginRight: "30px",
   textTransform: "capitalize",
 };

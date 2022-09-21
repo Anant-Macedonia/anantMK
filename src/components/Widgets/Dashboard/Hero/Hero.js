@@ -21,12 +21,15 @@ const Hero = ({ heroData, primaryBtnText, secondaryBtnText }) => {
 
   return (
     <Container>
-      <Box sx={{}}>
-        <Grid container sx={heroContainer}>
-          <Grid item sm={12} md={7.4}>
+      <Box sx={heroContainer}>
+        <Grid container>
+          <Grid item sm={12} md={7.5}>
             <Typography sx={heroTitle} variant="h1">
               {heroData?.heroTitle}
-              Your Business, your Goal. Our Mission to make it Grow!
+              Your Business, your Goal.{" "}
+              <Box variant="span" sx={{ fontWeight: 700 }}>
+                Our Mission to make it Grow!
+              </Box>
             </Typography>
             {heroData?.heroSubtitle && (
               <Typography sx={heroSubtitle} variant="h2">
@@ -35,10 +38,10 @@ const Hero = ({ heroData, primaryBtnText, secondaryBtnText }) => {
             )}
             <Typography sx={heroDesc} variant="h3">
               {heroData?.heroDescription}
-              We add value to your business by providing the best experience the
-              users can have, along with the most appealing interface according
-              to the latest trends, all together developed in one perfect
-              digital package.
+              We add value to your business by providing the best experience
+              <br /> the users can have, along with the most appealing interface
+              according <br /> to the latest trends, all together developed in
+              one perfect digital package.
             </Typography>
             <Box sx={btnContainer}>
               <PrimaryButton btnText="Work with Us" btnClass="btnMargin" />

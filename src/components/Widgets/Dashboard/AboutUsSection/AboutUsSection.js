@@ -1,21 +1,28 @@
 import { Box, Container, Grid, Typography } from "@mui/material";
 import React from "react";
-import styles from "./aboutUsSection.module.css";
+import {
+  aboutText,
+  aboutUsSectionContainer,
+  aboutUsSubtitle,
+  aboutUsTitle,
+  ourGoals,
+  ourIdeas,
+} from "./aboutUsSectionStyle.js";
 
 const AboutUsSection = () => {
   return (
-    <Container className={styles.aboutUsSectionContainer}>
+    <Container sx={aboutUsSectionContainer}>
       <Grid container>
         <Grid item xs={12} md={8}>
-          <Typography variant="h2" className={styles.aboutUsTitle}>
+          <Typography variant="h2" sx={aboutUsTitle}>
             Learn more about us.
           </Typography>
         </Grid>
-        <Grid item xs={12} md={8} className={styles.ourGoals}>
-          <Typography variant="h3" className={styles.aboutUsSubtitle}>
+        <Grid item xs={12} md={8} sx={ourGoals}>
+          <Typography variant="h3" sx={aboutUsSubtitle}>
             Our Goals
           </Typography>
-          <Typography>
+          <Typography sx={aboutText}>
             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque
             mollis lectus id quam posuere ultrices. Donec magna metus, porttitor
             in enim sed, vestibulum eleifend purus. Morbi mauris orci, mollis
@@ -24,11 +31,11 @@ const AboutUsSection = () => {
             sem interdum scelerisque sed a neque.
           </Typography>
         </Grid>
-        <Grid item xs={12} md={8} className={styles.ourIdeas}>
-          <Typography variant="h3" className={styles.aboutUsSubtitle}>
+        <Grid item xs={12} md={8} sx={ourIdeas}>
+          <Typography variant="h3" sx={aboutUsSubtitle}>
             Our Ideas
           </Typography>
-          <Typography>
+          <Typography sx={aboutText}>
             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque
             mollis lectus id quam posuere ultrices. Donec magna metus, porttitor
             in enim sed, vestibulum eleifend purus. Morbi mauris orci, mollis

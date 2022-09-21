@@ -18,6 +18,15 @@ const darkTheme = createTheme({
       secondary: grey[500],
     },
   },
+  components: {
+    MuiContainer: {
+      styleOverrides: {
+        maxWidthLg: {
+          maxWidth: "1200px",
+        },
+      },
+    },
+  },
 });
 
 function MyApp({ Component, pageProps }) {
