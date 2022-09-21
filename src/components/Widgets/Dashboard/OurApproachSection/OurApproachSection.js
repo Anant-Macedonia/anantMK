@@ -47,8 +47,7 @@ const OurApproach = ({ heroData, primaryBtnText, secondaryBtnText }) => {
         paddingBottom: "280px",
         backgroundColor: "#145374",
         marginBottom: "150px",
-      }}
-    >
+      }}>
       <Container>
         <Grid container spacing={8}>
           <Grid item sm={12} md={7.6} sx={{ ourApproachContainer }}>
@@ -93,19 +92,26 @@ const OurApproach = ({ heroData, primaryBtnText, secondaryBtnText }) => {
             </Typography>
           </Grid>
           <Grid item md={4.4} sx={{ marginTop: "30px" }}>
-            <Image
-              src={ellipseImage}
-              quality={100}
-              alt="Hero Image"
-              className={`${css}`}
-            />
+            <div className={styles.container}>
+              <div className={styles.circle}>
+                <Image
+                  src={ellipseImage}
+                  quality={100}
+                  width={210}
+                  height={210}
+                  alt="Hero Image"
+                  className={styles.ellipseImage1}
+                />
+              </div>
+            </div>
 
+            {/* 
             <Image
               src={circleImage}
               quality={100}
               alt="Hero "
               className={styles.approachImage}
-            />
+            /> */}
 
             <Button variant="contained" onClick={() => setNum(num - 1)}>
               -

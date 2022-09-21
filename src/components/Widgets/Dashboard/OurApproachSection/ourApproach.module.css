@@ -1,4 +1,65 @@
+.container {
+}
+
+.circle {
+  width: 420px;
+  height: 420px;
+  background: url("../../../../../public/circle.svg");
+  background-repeat: no-repeat;
+  background-position: center;
+  border-radius: 100%;
+}
+
 .ellipseImage1 {
+  transform-origin: bottom right;
+  animation: rotate 20s 5s infinite;
+}
+
+@keyframes rotate {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  25% {
+    transform: rotate(90deg);
+  }
+
+  50% {
+    transform: rotate(180deg);
+  }
+
+  75% {
+    transform: rotate(270deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+/* @keyframes rotate {
+  0% {
+    transform: rotate(0deg) translate(-50px, -50px);
+  }
+
+  25% {
+    transform: rotate(90deg) translate(-60px, 100px);
+  }
+
+  50% {
+    transform: rotate(180deg) translate(80px, 150px);
+  }
+
+  75% {
+    transform: rotate(270deg) translate(60px, 100px);
+  }
+
+  100% {
+    transform: rotate(360deg) translate(-50px, -50px);
+  }
+} */
+
+/* .ellipseImage1 {
   margin-bottom: -250px;
   transform: translateX(-28px);
   z-index: 10;
@@ -60,4 +121,4 @@
   to {
     opacity: 1;
   }
-}
+} */
