@@ -15,26 +15,8 @@ import {
 import { useEffect, useRef, useState } from "react";
 
 const OurApproach = ({ heroData, primaryBtnText, secondaryBtnText }) => {
-  const [imageClass, setImageClass] = useState("ellipseImage1");
   const [num, setNum] = useState(1);
-
-  // useEffect(() => {
-  //   function changeImg() {
-  //     setTimeout(() => {
-  //       if (num === 1) {
-  //         setNum(2);
-  //         setImageClass(`ellipseImage2`);
-  //       } else if (num < 4) {
-  //         setNum((prevNum) => prevNum + 1);
-  //         setImageClass(`ellipseImage${num + 1}`);
-  //       } else {
-  //         setNum(1);
-  //         setImageClass(`ellipseImage1`);
-  //       }
-  //     }, "5000");
-  //   }
-  //   changeImg();
-  // }, [num]);
+  let imageClass = `ellipseImage${num}`;
 
   const css = imageClass
     .trim()
@@ -42,18 +24,22 @@ const OurApproach = ({ heroData, primaryBtnText, secondaryBtnText }) => {
     .map((c) => styles[c])
     .join(" ");
 
-  const clickHandler = () => {
-    if (num === 1) {
-      setNum(2);
-      setImageClass(`ellipseImage2`);
-    } else if (num < 4) {
-      setNum((prevNum) => prevNum + 1);
-      setImageClass(`ellipseImage${num + 1}`);
-    } else {
-      setNum(1);
-      setImageClass(`ellipseImage1`);
-    }
-  };
+  if (num > 4) {
+    setNum(1);
+  }
+
+  if (num === 0) {
+    setNum(4);
+  }
+
+  useEffect(() => {
+    const interval = setInterval(
+      () => setNum((prevCount) => prevCount + 1),
+      5000
+    );
+    return () => clearInterval(interval);
+  }, []);
+
   return (
     <Box
       sx={{
@@ -120,7 +106,11 @@ const OurApproach = ({ heroData, primaryBtnText, secondaryBtnText }) => {
               alt="Hero "
               className={styles.approachImage}
             />
-            <Button variant="contained" onClick={() => clickHandler()}>
+
+            <Button variant="contained" onClick={() => setNum(num - 1)}>
+              -
+            </Button>
+            <Button variant="contained" onClick={() => setNum(num + 1)}>
               +
             </Button>
           </Grid>
