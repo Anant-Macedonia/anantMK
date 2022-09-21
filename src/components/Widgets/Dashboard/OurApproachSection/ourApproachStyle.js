@@ -1,12 +1,4 @@
-export const ourApproachContainer = {
-  //   display: "flex",
-  //   alignItems: "center",
-  //   height: "100%",
-  position: "relative",
-  //   marginTop: "150px",
-  //   marginBottom: "180px",
-  //   paddingTop: "150px",
-};
+export const ourApproachContainer = {};
 
 export const ourApproachImageContainer = {
   position: "absolute",
@@ -34,4 +26,5 @@ export const ourApproachDesc = {
   fontSize: "18px",
   fontWeight: 400,
   lineHeight: "130%",
+  maxWidth: "620px",
 };

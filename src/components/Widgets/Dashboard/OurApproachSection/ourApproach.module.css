@@ -1,0 +1,63 @@
+.ellipseImage1 {
+  margin-bottom: -250px;
+  transform: translateX(-28px);
+  z-index: 10;
+  animation: circleAnimation1 0.5s ease-in-out;
+}
+
+.ellipseImage2 {
+  margin-bottom: -250px;
+  transform: translateX(145px) rotate(90deg);
+  z-index: 10;
+  animation: circleAnimation2 0.5s ease-in-out;
+}
+
+.ellipseImage3 {
+  margin-bottom: -420px;
+  transform: translateX(145px) rotate(180deg);
+  z-index: 10;
+  animation: circleAnimation3 0.5s ease-in-out;
+}
+
+.ellipseImage4 {
+  margin-bottom: -420px;
+  transform: translateX(-28px) rotate(270deg);
+  z-index: 10;
+  animation: circleAnimation4 0.5s ease-in-out;
+}
+
+@keyframes circleAnimation1 {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes circleAnimation2 {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes circleAnimation3 {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes circleAnimation4 {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
