@@ -1,20 +1,22 @@
+import { useEffect, useState } from "react";
 import Image from "next/future/image";
-import { useAnimation, motion, transform } from "framer-motion";
+// import { useAnimation, motion, transform } from "framer-motion";
 import { Box, Button, Container, Grid, Typography } from "@mui/material";
+import PrimaryButton from "../../../UI/Buttons/PrimaryButton/PrimaryButton.js";
 // import circleImage from "../../../../../public/CircleGroup.svg"
-import circleImage from "../../../../../public/circle.svg";
+// import circleImage from "../../../../../public/circle.svg";
 import ellipseImage from "../../../../../public/ellipse.svg";
 import styles from "./ourApproach.module.css";
 
 import {
+  ourApproachContainer,
+  ourApproachTitle,
+  ourApproachSubtitle,
   ourApproachDesc,
   ourApproachImageContainer,
-  ourApproachSubtitle,
-  ourApproachTitle,
-  ourApproachContainer,
   ellipseImage1,
+  imageContainer,
 } from "./ourApproachStyle";
-import { useEffect, useRef, useState } from "react";
 
 const OurApproach = ({ heroData, primaryBtnText, secondaryBtnText }) => {
   const [deg, setDeg] = useState(0);
@@ -58,15 +60,10 @@ const OurApproach = ({ heroData, primaryBtnText, secondaryBtnText }) => {
   }, []);
 
   return (
-    <Box
-      sx={{
-        backgroundColor: "#145374",
-        height: "660px",
-        paddingTop: "110px",
-      }}>
+    <Box sx={ourApproachContainer}>
       <Container>
         <Grid container>
-          <Grid item sm={12} md={7.6} sx={{ ourApproachContainer }}>
+          <Grid item sm={12} md={8.5}>
             <Typography sx={ourApproachTitle} variant="h1">
               {heroData?.heroTitle}
               Learn more about us and take a look at our approach.
@@ -106,8 +103,9 @@ const OurApproach = ({ heroData, primaryBtnText, secondaryBtnText }) => {
               id tincidunt quam, id sodales lectus. Nullam quis leo ex. Mauri
               quis dolor rutrum sem interdum scelerisque sed a neque.
             </Typography>
+            <PrimaryButton btnText="Learn More" />
           </Grid>
-          <Grid item md={4.4} sx={{ marginTop: "30px" }}>
+          <Grid item md={3.5} sx={imageContainer}>
             <div className={styles.container}>
               <div className={styles.circle}>
                 <Box
@@ -153,12 +151,12 @@ const OurApproach = ({ heroData, primaryBtnText, secondaryBtnText }) => {
               className={styles.approachImage}
             /> */}
 
-            <Button variant="contained" onClick={clickHandler}>
+            {/* <Button variant="contained" onClick={clickHandler}>
               -
             </Button>
             <Button variant="contained" onClick={clickHandler}>
               +
-            </Button>
+            </Button> */}
           </Grid>
         </Grid>
       </Container>

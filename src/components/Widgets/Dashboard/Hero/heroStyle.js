@@ -1,7 +1,8 @@
 export const heroContainer = {
-  height: "770px",
+  // height: "570px",
   position: "relative",
   marginTop: "140px",
+  marginBottom: "200px",
 };
 
 export const heroImageContainer = {
