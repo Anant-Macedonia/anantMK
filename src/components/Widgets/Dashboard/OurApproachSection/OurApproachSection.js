@@ -24,8 +24,8 @@ const OurApproach = ({ heroData, primaryBtnText, secondaryBtnText }) => {
 
   const needDeg = deg + currentDeg;
 
-  console.log(!isTrue ? "false" : "rotate 20s 5s infinite");
-  console.log(deg);
+  // console.log(!isTrue ? "false" : "rotate 20s 5s infinite");
+  // console.log(deg);
 
   // const css = imageClass
   //   .trim()

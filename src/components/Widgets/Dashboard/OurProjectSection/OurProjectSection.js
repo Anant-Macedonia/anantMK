@@ -118,7 +118,9 @@ const OurProjectSection = () => {
               }`,
               marginRight: "18px",
               transform: `${projectNum === 0 && "scale(1.3)"}`,
-            }}></Box>
+              cursor: "pointer",
+            }}
+            onClick={() => setProjectNum(0)}></Box>
           <Box
             sx={{
               width: "18px",
@@ -129,7 +131,9 @@ const OurProjectSection = () => {
               }`,
               marginRight: "18px",
               transform: `${projectNum === 1 && "scale(1.3)"}`,
-            }}></Box>
+              cursor: "pointer",
+            }}
+            onClick={() => setProjectNum(1)}></Box>
           <Box
             sx={{
               width: "18px",
@@ -139,7 +143,9 @@ const OurProjectSection = () => {
                 projectNum === 2 ? "#DF6B56" : "rgba(223, 107, 86, 0.88)"
               }`,
               transform: `${projectNum === 2 && "scale(1.3)"}`,
-            }}></Box>
+              cursor: "pointer",
+            }}
+            onClick={() => setProjectNum(2)}></Box>
         </Grid>
       </Box>
     </Container>
