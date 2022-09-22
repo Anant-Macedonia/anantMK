@@ -1,13 +1,13 @@
 export const heroContainer = {
   // height: "570px",
   position: "relative",
-  marginTop: "140px",
+  marginTop: "165px",
   marginBottom: "200px",
 };
 
 export const heroImageContainer = {
   position: "absolute",
-  top: "-20px",
+  top: "-45px",
   right: "-3%",
   zIndex: "-10",
 };
@@ -17,7 +17,7 @@ export const heroTitle = {
   fontWeight: 500,
   fontSize: "50px",
   lineHeight: "128%",
-  letterSpacing: "-0.02em,",
+  letterSpacing: "-0.035em,",
   color: "#EE6F57",
   marginBottom: "30px",
 };
@@ -30,10 +30,9 @@ export const heroSubtitle = {
 export const heroDesc = {
   fontFamily: "Montserrat",
   fontSize: "18px",
-  fontWeight: 400,
   lineHeight: "130%",
-  letterSpacing: "-7%",
-  maxWidth: "700px",
+  letterSpacing: "-0.07em",
+  // maxWidth: "700px",
 };
 
 export const btnContainer = {

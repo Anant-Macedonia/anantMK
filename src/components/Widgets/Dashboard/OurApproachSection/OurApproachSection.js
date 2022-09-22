@@ -62,8 +62,8 @@ const OurApproach = ({ heroData, primaryBtnText, secondaryBtnText }) => {
   return (
     <Box sx={ourApproachContainer}>
       <Container>
-        <Grid container>
-          <Grid item sm={12} md={8.5}>
+        <Grid container sx={{ columnGap: "75px" }}>
+          <Grid item sm={12} md={7.2}>
             <Typography sx={ourApproachTitle} variant="h1">
               {heroData?.heroTitle}
               Learn more about us and take a look at our approach.
@@ -105,7 +105,7 @@ const OurApproach = ({ heroData, primaryBtnText, secondaryBtnText }) => {
             </Typography>
             <PrimaryButton btnText="Learn More" />
           </Grid>
-          <Grid item md={3.5} sx={imageContainer}>
+          <Grid item md={4} sx={imageContainer}>
             <div className={styles.container}>
               <div className={styles.circle}>
                 <Box

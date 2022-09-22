@@ -14,9 +14,8 @@ export const ourApproachTitle = {
   fontFamily: "Poppins",
   fontWeight: 600,
   fontSize: "50px",
-  maxWidth: "715px",
   marginBottom: "70px",
-  letterSpacing: "-3.5%",
+  letterSpacing: "-0.015em",
   lineHeight: "63px",
 };
 
@@ -27,17 +26,15 @@ export const ourApproachSubtitle = {
   color: "#FFFFFF",
   marginBottom: "30px",
   lineHeight: "39px",
-  letterSpacing: "-7%",
+  letterSpacing: "-0.03em",
 };
 
 export const ourApproachDesc = {
   fontFamily: "Montserrat",
   fontSize: "18px",
-  fontWeight: 400,
-  maxWidth: "700px",
   marginBottom: "35px",
   lineHeight: "23px",
-  letterSpacing: "-7%",
+  letterSpacing: "-0.03em",
 };
 export const imageContainer = {
   marginTop: "30px",
