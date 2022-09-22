@@ -1,72 +1,146 @@
-import React from "react";
-import { Box, Container, Grid, Typography } from "@mui/material";
+import React, { useEffect, useState } from "react";
+import { Box, Button, Container, Grid, Typography } from "@mui/material";
 import PrimaryButton from "../../../UI/Buttons/PrimaryButton/PrimaryButton";
-import projectImage from "../../../../../public/projectImage.png";
+import AnantUs from "../../../../../public/anant-us.png";
+import CassandraLink from "../../../../../public/cassandra-link.png";
+import CassandraTools from "../../../../../public/cassandra-tools.png";
 import Image from "next/future/image";
+import {
+  ourProjectSectionContainer,
+  ourProjectSectionTitle,
+  ourProjectContainer,
+  projectTitle,
+  projectDesc,
+} from "./ourProjectStyle";
 
 const OurProjectSection = () => {
+  const [projectNum, setProjectNum] = useState(0);
+
+  if (projectNum > 2) {
+    setProjectNum(0);
+  }
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setProjectNum((prevProjectNum) => prevProjectNum + 1);
+    }, 5000);
+    return () => clearInterval(interval);
+  }, []);
+
   return (
     <Container>
-      <Box sx={{ marginTop: "160px", marginBottom: "155px" }}>
-        <Typography
-          sx={{
-            color: "#EE6F57",
-            fontFamily: "Poppins",
-            fontWeight: 600,
-            fontSize: "50px",
-            lineHeight: "63px",
-            letterSpacing: "0.035em",
-          }}>
+      <Box sx={ourProjectSectionContainer}>
+        <Typography sx={ourProjectSectionTitle}>
           Take a look at some of our projects.
         </Typography>
-        <Box
-          sx={{
-            height: "460px",
-            background: "#145374",
-            boxShadow: "2.6px 2.6px 19.5px rgba(20, 83, 116, 0.54)",
-            borderRadius: "26px",
-            marginTop: "58px",
-          }}>
+        <Box sx={ourProjectContainer}>
           <Grid container sx={{ padding: "34px 55px" }}>
             <Grid item md={7.5} sx={{ paddingRight: "20px" }}>
-              <Typography
-                sx={{
-                  fontFamily: "Montserrat",
-                  fontWeight: 700,
-                  fontSize: "36px",
-                  lineHeight: "47px",
-                  letterSpacing: " -0.07em",
-                  marginTop: "28px",
-                  marginBottom: "30px",
-                }}>
-                Corporate Website Design - Anant.US
-              </Typography>
-              <Typography
-                sx={{
-                  fontFamily: "Montserrat",
-                  fontWeight: 400,
-                  fontSize: "18px",
-                  lineHeight: "20px",
-                  letterSpacing: "-0.04em",
-                  maxWidth: "590px",
-                  marginBottom: "50px",
-                }}>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-                eiusmod tempor incididunt ut labore et dolore magna aliqua.
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-                eiusmod tempor incididunt ut labore et dolore magna aliqua.
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-                eiusmod tempor incididunt ut labore et dolore magna aliqua.
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-                eiusmod tempor incididunt ut labore et dolore magna aliqua.
-              </Typography>
-              <PrimaryButton btnText="View Project" />
+              {projectNum === 0 && (
+                <>
+                  <Typography sx={projectTitle}>
+                    Open Source Tools - Cassandra.Tools
+                  </Typography>
+                  <Typography sx={projectDesc}>
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
+                    do eiusmod tempor incididunt ut labore et dolore magna
+                    aliqua. Lorem ipsum dolor sit amet, consectetur adipiscing
+                    elit, sed do eiusmod tempor incididunt ut labore et dolore
+                    magna aliqua. Lorem ipsum dolor sit amet, consectetur
+                    adipiscing elit, sed do eiusmod tempor incididunt ut labore
+                    et dolore magna aliqua. Lorem ipsum dolor sit amet,
+                    consectetur adipiscing elit, sed do eiusmod tempor
+                    incididunt ut labore et dolore magna aliqua.
+                  </Typography>
+                  <PrimaryButton btnText="View Project" />
+                </>
+              )}
+              {projectNum === 1 && (
+                <>
+                  <Typography sx={projectTitle}>
+                    Corporate Website Design - Anant.US
+                  </Typography>
+                  <Typography sx={projectDesc}>
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
+                    do eiusmod tempor incididunt ut labore et dolore magna
+                    aliqua. Lorem ipsum dolor sit amet, consectetur adipiscing
+                    elit, sed do eiusmod tempor incididunt ut labore et dolore
+                    magna aliqua. Lorem ipsum dolor sit amet, consectetur
+                    adipiscing elit, sed do eiusmod tempor incididunt ut labore
+                    et dolore magna aliqua. Lorem ipsum dolor sit amet,
+                    consectetur adipiscing elit, sed do eiusmod tempor
+                    incididunt ut labore et dolore magna aliqua.
+                  </Typography>
+                  <PrimaryButton btnText="View Project" />
+                </>
+              )}
+              {projectNum === 2 && (
+                <>
+                  <Typography sx={projectTitle}>
+                    Knowledge Base - Cassandra.Link
+                  </Typography>
+                  <Typography sx={projectDesc}>
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
+                    do eiusmod tempor incididunt ut labore et dolore magna
+                    aliqua. Lorem ipsum dolor sit amet, consectetur adipiscing
+                    elit, sed do eiusmod tempor incididunt ut labore et dolore
+                    magna aliqua. Lorem ipsum dolor sit amet, consectetur
+                    adipiscing elit, sed do eiusmod tempor incididunt ut labore
+                    et dolore magna aliqua. Lorem ipsum dolor sit amet,
+                    consectetur adipiscing elit, sed do eiusmod tempor
+                    incididunt ut labore et dolore magna aliqua.
+                  </Typography>
+                  <PrimaryButton btnText="View Project" />
+                </>
+              )}
             </Grid>
             <Grid item md={4.5}>
-              <Image src={projectImage} alt="project image" />
+              {projectNum === 0 && (
+                <Image src={CassandraTools} alt="cassandra tools" />
+              )}
+              {projectNum === 1 && <Image src={AnantUs} alt="anant us" />}
+              {projectNum === 2 && (
+                <Image src={CassandraLink} alt="cassandra link" />
+              )}
             </Grid>
           </Grid>
         </Box>
+        <Grid
+          container
+          sx={{ display: "flex", justifyContent: "center", marginTop: "51px" }}>
+          <Box
+            sx={{
+              width: "18px",
+              height: "18px",
+              borderRadius: "100%",
+              background: `${
+                projectNum === 0 ? "#DF6B56" : "rgba(223, 107, 86, 0.88)"
+              }`,
+              marginRight: "18px",
+              transform: `${projectNum === 0 && "scale(1.3)"}`,
+            }}></Box>
+          <Box
+            sx={{
+              width: "18px",
+              height: "18px",
+              borderRadius: "100%",
+              background: `${
+                projectNum === 1 ? "#DF6B56" : "rgba(223, 107, 86, 0.88)"
+              }`,
+              marginRight: "18px",
+              transform: `${projectNum === 1 && "scale(1.3)"}`,
+            }}></Box>
+          <Box
+            sx={{
+              width: "18px",
+              height: "18px",
+              borderRadius: "100%",
+              background: `${
+                projectNum === 2 ? "#DF6B56" : "rgba(223, 107, 86, 0.88)"
+              }`,
+              transform: `${projectNum === 2 && "scale(1.3)"}`,
+            }}></Box>
+        </Grid>
       </Box>
     </Container>
   );
