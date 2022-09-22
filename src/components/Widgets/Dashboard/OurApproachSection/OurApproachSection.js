@@ -23,10 +23,6 @@ const OurApproach = ({ heroData, primaryBtnText, secondaryBtnText }) => {
   const [slider, setSlider] = useState(0);
 
   const needDeg = deg + currentDeg;
-
-  console.log(!isTrue ? "false" : "rotate 20s 5s infinite");
-  console.log(deg);
-
   // const css = imageClass
   //   .trim()
   //   .split(" ")
@@ -63,7 +59,8 @@ const OurApproach = ({ heroData, primaryBtnText, secondaryBtnText }) => {
         backgroundColor: "#145374",
         height: "660px",
         paddingTop: "110px",
-      }}>
+      }}
+    >
       <Container>
         <Grid container>
           <Grid item sm={12} md={7.6} sx={{ ourApproachContainer }}>
@@ -134,7 +131,8 @@ const OurApproach = ({ heroData, primaryBtnText, secondaryBtnText }) => {
                         transform: `rotate(${360 + needDeg}deg)`,
                       },
                     },
-                  }}>
+                  }}
+                >
                   <Image
                     src={ellipseImage}
                     quality={100}

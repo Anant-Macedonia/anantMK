@@ -11,6 +11,7 @@ const Footer = () => {
     <Container>
       <Grid
         container
+        spacing={4}
         className={classes.footer}
         sx={{ justifyContent: "space-between" }}
       >
