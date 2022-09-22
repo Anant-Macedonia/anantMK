@@ -1,13 +1,13 @@
 export const heroContainer = {
-  height: "800px",
+  height: "770px",
   position: "relative",
-  marginTop: "135px",
+  marginTop: "140px",
 };
 
 export const heroImageContainer = {
   position: "absolute",
   top: "-20px",
-  right: "-5%",
+  right: "-3%",
   zIndex: "-10",
 };
 

@@ -2,8 +2,8 @@
 }
 
 .circle {
-  width: 420px;
-  height: 420px;
+  width: 438px;
+  height: 438px;
   background: url("../../../../../public/circle.svg");
   background-repeat: no-repeat;
   background-position: center;
@@ -11,11 +11,12 @@
 }
 
 .ellipseImage1 {
-  transform-origin: bottom right;
-  animation: rotate 20s 5s infinite;
+  /* margin-left: -40px; */
+  /* transform-origin: bottom right; */
+  /* animation: rotate 20s 5s infinite; */
 }
 
-@keyframes rotate {
+/* @keyframes rotate {
   0% {
     transform: rotate(0deg);
   }
@@ -35,7 +36,7 @@
   100% {
     transform: rotate(360deg);
   }
-}
+} */
 
 /* @keyframes rotate {
   0% {

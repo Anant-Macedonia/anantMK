@@ -1,4 +1,5 @@
 import Image from "next/future/image";
+import { useAnimation, motion, transform } from "framer-motion";
 import { Box, Button, Container, Grid, Typography } from "@mui/material";
 // import circleImage from "../../../../../public/CircleGroup.svg"
 import circleImage from "../../../../../public/circle.svg";
@@ -11,70 +12,85 @@ import {
   ourApproachSubtitle,
   ourApproachTitle,
   ourApproachContainer,
+  ellipseImage1,
 } from "./ourApproachStyle";
 import { useEffect, useRef, useState } from "react";
 
 const OurApproach = ({ heroData, primaryBtnText, secondaryBtnText }) => {
-  const [num, setNum] = useState(1);
-  let imageClass = `ellipseImage${num}`;
+  const [deg, setDeg] = useState(0);
+  const [currentDeg, setCurrentDeg] = useState(0);
+  const [isTrue, setIsTrue] = useState("running");
+  const [slider, setSlider] = useState(0);
 
-  const css = imageClass
-    .trim()
-    .split(" ")
-    .map((c) => styles[c])
-    .join(" ");
+  const needDeg = deg + currentDeg;
 
-  if (num > 4) {
-    setNum(1);
+  console.log(!isTrue ? "false" : "rotate 20s 5s infinite");
+  console.log(deg);
+
+  // const css = imageClass
+  //   .trim()
+  //   .split(" ")
+  //   .map((c) => styles[c])
+  //   .join(" ");
+
+  if (slider === 360) {
+    setSlider(0);
   }
 
-  if (num === 0) {
-    setNum(4);
-  }
+  // if (num === 0) {
+  //   setNum(4);
+  // }
+
+  const clickHandler = () => {
+    setDeg(deg + 90);
+    setIsTrue("paused");
+    const interval = setInterval(() => {
+      setIsTrue("running");
+    }, 5000);
+    return () => clearInterval(interval);
+  };
 
   useEffect(() => {
-    const interval = setInterval(
-      () => setNum((prevCount) => prevCount + 1),
-      5000
-    );
+    const interval = setInterval(() => {
+      setSlider((prevSlider) => prevSlider + 90);
+    }, 5000);
     return () => clearInterval(interval);
   }, []);
 
   return (
     <Box
       sx={{
-        paddingTop: "150px",
-        paddingBottom: "280px",
         backgroundColor: "#145374",
-        marginBottom: "150px",
+        height: "660px",
+        paddingTop: "110px",
       }}>
       <Container>
-        <Grid container spacing={8}>
+        <Grid container>
           <Grid item sm={12} md={7.6} sx={{ ourApproachContainer }}>
             <Typography sx={ourApproachTitle} variant="h1">
               {heroData?.heroTitle}
-              Take a look at our approach.
+              Learn more about us and take a look at our approach.
             </Typography>
 
-            {num == 1 && (
+            {slider == 0 && (
               <Typography sx={ourApproachSubtitle} variant="h2">
                 {heroData?.heroSubtitle}
                 Research and Design Strategy
               </Typography>
             )}
-            {num == 2 && (
+            {slider == 90 && (
               <Typography sx={ourApproachSubtitle} variant="h2">
                 {heroData?.heroSubtitle}
                 Design Thinking Methodology
               </Typography>
             )}
-            {num == 3 && (
+            {slider == 180 && (
               <Typography sx={ourApproachSubtitle} variant="h2">
                 {heroData?.heroSubtitle}
                 Product Development
               </Typography>
             )}
-            {num == 4 && (
+            {slider == 270 && (
               <Typography sx={ourApproachSubtitle} variant="h2">
                 {heroData?.heroSubtitle}
                 Product Testing
@@ -94,14 +110,38 @@ const OurApproach = ({ heroData, primaryBtnText, secondaryBtnText }) => {
           <Grid item md={4.4} sx={{ marginTop: "30px" }}>
             <div className={styles.container}>
               <div className={styles.circle}>
-                <Image
-                  src={ellipseImage}
-                  quality={100}
-                  width={210}
-                  height={210}
-                  alt="Hero Image"
-                  className={styles.ellipseImage1}
-                />
+                <Box
+                  sx={{
+                    width: "220px",
+                    height: "220px",
+                    transformOrigin: "bottom right",
+                    animation: "rotate 20s 5s infinite",
+                    animationPlayState: `${isTrue}`,
+                    "@keyframes rotate": {
+                      "0%": {
+                        transform: `rotate(${0 + needDeg}deg)`,
+                      },
+                      "25%": {
+                        transform: `rotate(${90 + needDeg}deg)`,
+                      },
+                      "50%": {
+                        transform: `rotate(${180 + needDeg}deg)`,
+                      },
+                      "75%": {
+                        transform: `rotate(${270 + needDeg}deg)`,
+                      },
+                      "100%": {
+                        transform: `rotate(${360 + needDeg}deg)`,
+                      },
+                    },
+                  }}>
+                  <Image
+                    src={ellipseImage}
+                    quality={100}
+                    alt="Hero Image"
+                    className={styles.ellipseImage1}
+                  />
+                </Box>
               </div>
             </div>
 
@@ -113,10 +153,10 @@ const OurApproach = ({ heroData, primaryBtnText, secondaryBtnText }) => {
               className={styles.approachImage}
             /> */}
 
-            <Button variant="contained" onClick={() => setNum(num - 1)}>
+            <Button variant="contained" onClick={clickHandler}>
               -
             </Button>
-            <Button variant="contained" onClick={() => setNum(num + 1)}>
+            <Button variant="contained" onClick={clickHandler}>
               +
             </Button>
           </Grid>
