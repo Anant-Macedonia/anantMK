@@ -1,7 +1,8 @@
-import { Box, Container, Grid, Typography } from "@mui/material";
-import Image from "next/future/image";
 import React from "react";
+import Image from "next/future/image";
+import { Box, Container, Grid, Typography } from "@mui/material";
 import PrimaryButton from "../../../UI/Buttons/PrimaryButton/PrimaryButton";
+import TalkImage from "../../../../../public/talk-us.png";
 
 const TalkSection = () => {
   return (
@@ -10,7 +11,7 @@ const TalkSection = () => {
         <Grid
           container
           sx={{ display: "flex", justifyContent: "space-between" }}>
-          <Grid item md={6}>
+          <Grid item md={5}>
             <Typography
               sx={{
                 color: "#EE6F57",
@@ -39,16 +40,8 @@ const TalkSection = () => {
             </Typography>
             <PrimaryButton btnText="Contact Us" />
           </Grid>
-          <Grid item md={4.1}>
-            <Box
-              sx={{
-                width: "100%",
-                height: "305px",
-                background: "white",
-                borderRadius: "20px",
-                marginRight: "0",
-              }}></Box>
-            {/* <Image src={projectImage} alt="project image" /> */}
+          <Grid item md={5}>
+            <Image src={TalkImage} alt="project image" />
           </Grid>
         </Grid>
       </Box>
