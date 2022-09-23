@@ -36,7 +36,7 @@ const TalkSection = () => {
               }}>
               We help businesses make the most of the web. <br /> If you have
               any questions about our services, our work, <br /> or anything
-              about us, please don’t hesitate to contact us.
+              about us, please dont hesitate to contact us.
             </Typography>
             <PrimaryButton btnText="Contact Us" />
           </Grid>
