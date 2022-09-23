@@ -23,6 +23,7 @@ const OurApproach = ({ heroData, primaryBtnText, secondaryBtnText }) => {
   const [slider, setSlider] = useState(0);
 
   const needDeg = deg + currentDeg;
+  
   // const css = imageClass
   //   .trim()
   //   .split(" ")
