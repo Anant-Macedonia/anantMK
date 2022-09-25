@@ -1,5 +1,5 @@
 export const nav = {
-  backgroundColor: "#003049",
+  backgroundColor: "transparent",
   boxShadow: "none",
   height: "75px",
   marginTop: "55px",
@@ -17,4 +17,5 @@ export const link = {
   lineHeight: "19px",
   marginRight: "30px",
   textTransform: "capitalize",
+  cursor: "pointer",
 };

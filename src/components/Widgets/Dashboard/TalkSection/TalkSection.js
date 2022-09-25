@@ -4,36 +4,21 @@ import { Box, Container, Grid, Typography } from "@mui/material";
 import PrimaryButton from "../../../UI/Buttons/PrimaryButton/PrimaryButton";
 import TalkImage from "../../../../../public/talk-us.png";
 
+import {
+  talkSectionContainer,
+  talkContentContainer,
+  talkSectionDesc,
+  talkSectionTitle,
+} from "./talkStyle";
+
 const TalkSection = () => {
   return (
     <Container>
-      <Box sx={{ marginBottom: "130px" }}>
-        <Grid
-          container
-          sx={{ display: "flex", justifyContent: "space-between" }}>
+      <Box sx={talkSectionContainer}>
+        <Grid container sx={talkContentContainer}>
           <Grid item md={5}>
-            <Typography
-              sx={{
-                color: "#EE6F57",
-                fontFamily: "Poppins",
-                fontWeight: 600,
-                fontSize: "50px",
-                lineHeight: "63px",
-                letterSpacing: " -0.035em",
-                marginBottom: "43px",
-              }}>
-              Let’s Talk
-            </Typography>
-            <Typography
-              sx={{
-                fontFamily: "Montserrat",
-                fontWeight: 400,
-                fontSize: "20px",
-                lineHeight: "26px",
-                letterSpacing: "-0.07em",
-                maxWidth: "490px",
-                marginBottom: "65px",
-              }}>
+            <Typography sx={talkSectionTitle}>Let’s Talk</Typography>
+            <Typography sx={talkSectionDesc}>
               We help businesses make the most of the web. <br /> If you have
               any questions about our services, our work, <br /> or anything
               about us, please dont hesitate to contact us.
