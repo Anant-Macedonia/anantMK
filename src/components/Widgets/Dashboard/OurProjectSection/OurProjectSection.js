@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from "react";
 import { Box, Button, Container, Grid, Typography } from "@mui/material";
 import PrimaryButton from "../../../UI/Buttons/PrimaryButton/PrimaryButton";
-import AnantUs from "../../../../../public/anant-us.png";
-import CassandraLink from "../../../../../public/cassandra-link.png";
-import CassandraTools from "../../../../../public/cassandra-tools.png";
+import AnantUs from "../../../../../public/anant-us.svg";
+import CassandraLink from "../../../../../public/cassandra-link.svg";
+import CassandraTools from "../../../../../public/cassandra-tools.svg";
 import Image from "next/future/image";
 import {
   ourProjectSectionContainer,
@@ -96,11 +96,17 @@ const OurProjectSection = () => {
             </Grid>
             <Grid item md={4.5}>
               {projectNum === 0 && (
-                <Image src={CassandraTools} alt="cassandra tools" />
+                <Image
+                  src={CassandraTools}
+                  alt="cassandra tools"
+                  quality={100}
+                />
               )}
-              {projectNum === 1 && <Image src={AnantUs} alt="anant us" />}
+              {projectNum === 1 && (
+                <Image src={AnantUs} alt="anant us" quality={100} />
+              )}
               {projectNum === 2 && (
-                <Image src={CassandraLink} alt="cassandra link" />
+                <Image src={CassandraLink} alt="cassandra link" quality={100} />
               )}
             </Grid>
           </Grid>

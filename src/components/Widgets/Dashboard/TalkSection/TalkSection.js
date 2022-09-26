@@ -2,7 +2,7 @@ import React from "react";
 import Image from "next/future/image";
 import { Box, Container, Grid, Typography } from "@mui/material";
 import PrimaryButton from "../../../UI/Buttons/PrimaryButton/PrimaryButton";
-import TalkImage from "../../../../../public/talk-us.png";
+import TalkImage from "../../../../../public/talk-us.svg";
 
 import {
   talkSectionContainer,
@@ -25,7 +25,7 @@ const TalkSection = () => {
             </Typography>
             <PrimaryButton btnText="Contact Us" />
           </Grid>
-          <Grid item md={5}>
+          <Grid item md={5.5}>
             <Image src={TalkImage} alt="project image" />
           </Grid>
         </Grid>
