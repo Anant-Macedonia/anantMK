@@ -10,7 +10,7 @@ export const contactBtn = {
   textTransform: "capitalize",
   transition: "all 350ms ease-in-out",
   "&:hover": {
-    backgroundColor: "#bab6b6",
-    color: "#ffffff",
+    backgroundColor: "#ffffff",
+    color: "#000000",
   },
 };

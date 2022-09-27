@@ -2,7 +2,7 @@ export const primaryBtn = {
   backgroundColor: "#EE6F57",
   color: "#ffffff",
   fontFamily: "Mulish !important",
-  fontSize: "18px",
+  fontSize: "17px",
   fontWeight: 800,
   width: "180px",
   height: "40px",
@@ -12,7 +12,7 @@ export const primaryBtn = {
   textTransform: "capitalize",
   transition: "all 350ms ease-in-out",
   "&:hover": {
-    backgroundColor: "#BAB6B6;",
-    color: "#ffffff",
+    backgroundColor: "#ffffff",
+    color: "#000000",
   },
 };

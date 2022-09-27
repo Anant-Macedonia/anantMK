@@ -12,6 +12,6 @@ export const outlinedBtn = {
   "&:hover": {
     color: "#BAB6B6",
     backgroundColor: "transparent",
-    borderColor: "#BAB6B6",
+    borderColor: "#ffffff",
   },
 };

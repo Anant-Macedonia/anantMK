@@ -30,9 +30,8 @@ export const heroSubtitle = {
 export const heroDesc = {
   fontFamily: "Montserrat",
   fontSize: "18px",
-  lineHeight: "130%",
+  lineHeight: "23px",
   letterSpacing: "-0.07em",
-  // maxWidth: "700px",
 };
 
 export const btnContainer = {

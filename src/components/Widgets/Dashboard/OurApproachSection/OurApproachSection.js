@@ -25,7 +25,7 @@ const OurApproach = ({ heroData, primaryBtnText, secondaryBtnText }) => {
   const [slider, setSlider] = useState(0);
 
   const needDeg = deg + currentDeg;
-  
+
   // const css = imageClass
   //   .trim()
   //   .split(" ")
@@ -110,7 +110,7 @@ const OurApproach = ({ heroData, primaryBtnText, secondaryBtnText }) => {
                     width: "220px",
                     height: "220px",
                     transformOrigin: "bottom right",
-                    animation: "rotate 20s 5s infinite",
+                    animation: "rotate 20s 0.5s infinite",
                     animationPlayState: `${isTrue}`,
                     "@keyframes rotate": {
                       "0%": {
@@ -129,8 +129,7 @@ const OurApproach = ({ heroData, primaryBtnText, secondaryBtnText }) => {
                         transform: `rotate(${360 + needDeg}deg)`,
                       },
                     },
-                  }}
-                >
+                  }}>
                   <Image
                     src={ellipseImage}
                     quality={100}
