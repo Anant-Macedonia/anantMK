@@ -44,8 +44,8 @@ const Hero = ({ heroData, primaryBtnText, secondaryBtnText }) => {
               one perfect digital package.
             </Typography>
             <Box sx={btnContainer}>
-              <PrimaryButton btnText="Work with Us" btnClass="btnMargin" />
-              <OutlinedButton btnText="Portfolio" />
+              <PrimaryButton btnText="Start a Project" btnClass="btnMargin" />
+              <OutlinedButton btnText="Services" />
               {primaryBtnText && (
                 <PrimaryButton btnText={primaryBtnText} btnClass="btnMargin" />
               )}

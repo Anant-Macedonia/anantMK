@@ -46,7 +46,7 @@ function Navigation() {
   // }, []);
 
   return (
-    <AppBar sx={nav} position="sticky">
+    <AppBar sx={nav} position="static">
       <Container>
         <Toolbar disableGutters>
           <Box sx={navLogo}>
@@ -62,7 +62,8 @@ function Navigation() {
                   key={item.name}
                   style={{ textDecoration: "none" }}
                   href={item.href}
-                  passHref>
+                  passHref
+                >
                   <Typography sx={link}>{item.name}</Typography>
                 </Link>
               );
@@ -80,7 +81,8 @@ function Navigation() {
         anchor="right"
         open={open}
         onOpen={() => setOpen(true)}
-        onClose={() => setOpen(false)}>
+        onClose={() => setOpen(false)}
+      >
         <div>
           <IconButton onClick={() => setOpen(false)}>
             <ChevronRightIcon />
@@ -95,7 +97,8 @@ function Navigation() {
                   key={item.name}
                   style={{ textDecoration: "none" }}
                   href={item.href}
-                  passHref>
+                  passHref
+                >
                   <Typography sx={link}>{item.name}</Typography>
                 </Link>
               </ListItem>
