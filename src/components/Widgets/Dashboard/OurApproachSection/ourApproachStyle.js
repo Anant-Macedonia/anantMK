@@ -63,3 +63,5 @@ export const imageContainer = {
 //     },
 //   },
 // };
+
+// transition: opacity 5000ms, transform 5000ms;

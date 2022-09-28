@@ -20,32 +20,15 @@ import {
 
 const OurApproach = ({ heroData, primaryBtnText, secondaryBtnText }) => {
   const [deg, setDeg] = useState(0);
-  const [currentDeg, setCurrentDeg] = useState(0);
-  const [isTrue, setIsTrue] = useState(true);
   const [slider, setSlider] = useState(0);
-
-  // const css = imageClass
-  //   .trim()
-  //   .split(" ")
-  //   .map((c) => styles[c])
-  //   .join(" ");
 
   if (slider === 360) {
     setSlider(0);
   }
 
-  // if (num === 0) {
-  //   setNum(4);
-  // }
-
   const clickHandler = () => {
-    setIsTrue("paused");
-    setDeg(deg + 90);
-    setSlider(slider + 90);
-    const interval = setInterval(() => {
-      setIsTrue("");
-    }, 5000);
-    return () => clearInterval(interval);
+    setSlider((prevSlider) => prevSlider + 90);
+    setDeg((prevDeg) => prevDeg + 90);
   };
 
   useEffect(() => {
@@ -109,20 +92,33 @@ const OurApproach = ({ heroData, primaryBtnText, secondaryBtnText }) => {
                     width: "220px",
                     height: "220px",
                     transformOrigin: "bottom right",
-                    animation: "rotate 20s 0.5s infinite",
-                    animationPlayState: `${isTrue}`,
+                    animation: "rotate 20s infinite",
+                    animationDelay: "5s",
+                    // animationPlayState: `${isTrue}`,
                     "@keyframes rotate": {
                       "0%": {
                         transform: `rotate(${0 + deg}deg)`,
                       },
+                      "5%": {
+                        transform: `rotate(${90 + deg}deg)`,
+                      },
                       "25%": {
                         transform: `rotate(${90 + deg}deg)`,
+                      },
+                      "30%": {
+                        transform: `rotate(${180 + deg}deg)`,
                       },
                       "50%": {
                         transform: `rotate(${180 + deg}deg)`,
                       },
+                      "55%": {
+                        transform: `rotate(${270 + deg}deg)`,
+                      },
                       "75%": {
                         transform: `rotate(${270 + deg}deg)`,
+                      },
+                      "80%": {
+                        transform: `rotate(${360 + deg}deg)`,
                       },
                       "100%": {
                         transform: `rotate(${360 + deg}deg)`,
@@ -140,17 +136,6 @@ const OurApproach = ({ heroData, primaryBtnText, secondaryBtnText }) => {
               </div>
             </div>
 
-            {/* 
-            <Image
-              src={circleImage}
-              quality={100}
-              alt="Hero "
-              className={styles.approachImage}
-            /> */}
-
-            <Button variant="contained" onClick={clickHandler}>
-              -
-            </Button>
             <Button variant="contained" onClick={clickHandler}>
               +
             </Button>
