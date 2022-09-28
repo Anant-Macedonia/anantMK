@@ -36,7 +36,7 @@ const ServicesSection = () => {
             <Box sx={cardLine}></Box>
             <Card sx={servicesCard}>
               <Box sx={imageContainer}>
-                <Image src={uxImage} />
+                <Image src={uxImage} alt="ux-image" />
               </Box>
 
               <CardContent>
@@ -56,7 +56,7 @@ const ServicesSection = () => {
             <Box sx={cardLine}></Box>
             <Card sx={servicesCard}>
               <Box sx={imageContainer}>
-                <Image src={developImage} />
+                <Image src={developImage} alt="develop" />
               </Box>
               <CardContent>
                 <Typography sx={cardTitle}>Development</Typography>
