@@ -21,14 +21,22 @@ import {
 const OurApproach = ({ heroData, primaryBtnText, secondaryBtnText }) => {
   const [deg, setDeg] = useState(0);
   const [slider, setSlider] = useState(0);
-
+  const [delay, setDelay] = useState("5s");
+  const [play, setPlay] = useState("running");
   if (slider === 360) {
     setSlider(0);
   }
 
   const clickHandler = () => {
     setSlider((prevSlider) => prevSlider + 90);
-    setDeg((prevDeg) => prevDeg + 90);
+    if (deg == 0 && delay == "5s") {
+      setDeg(0);
+      setDelay("0s");
+      // setPlay("paused");
+    } else {
+      setDeg((prevDeg) => prevDeg + 90);
+      // setPlay("paused");
+    }
   };
 
   useEffect(() => {
@@ -92,9 +100,10 @@ const OurApproach = ({ heroData, primaryBtnText, secondaryBtnText }) => {
                     width: "220px",
                     height: "220px",
                     transformOrigin: "bottom right",
-                    animation: "rotate 20s infinite",
-                    animationDelay: "5s",
-                    // animationPlayState: `${isTrue}`,
+                    animation: "rotate 20s infinite ",
+
+                    animationDelay: delay,
+                    animationPlayState: play,
                     "@keyframes rotate": {
                       "0%": {
                         transform: `rotate(${0 + deg}deg)`,

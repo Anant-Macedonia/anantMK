@@ -25,7 +25,7 @@ const OurProjectSection = () => {
       setProjectNum((prevProjectNum) => prevProjectNum + 1);
     }, 5000);
     return () => clearInterval(interval);
-  }, []);
+  }, [projectNum]);
 
   return (
     <Container>
@@ -113,7 +113,8 @@ const OurProjectSection = () => {
         </Box>
         <Grid
           container
-          sx={{ display: "flex", justifyContent: "center", marginTop: "51px" }}>
+          sx={{ display: "flex", justifyContent: "center", marginTop: "51px" }}
+        >
           <Box
             sx={{
               width: "18px",
@@ -126,7 +127,8 @@ const OurProjectSection = () => {
               transform: `${projectNum === 0 && "scale(1.3)"}`,
               cursor: "pointer",
             }}
-            onClick={() => setProjectNum(0)}></Box>
+            onClick={() => setProjectNum(0)}
+          ></Box>
           <Box
             sx={{
               width: "18px",
@@ -139,7 +141,8 @@ const OurProjectSection = () => {
               transform: `${projectNum === 1 && "scale(1.3)"}`,
               cursor: "pointer",
             }}
-            onClick={() => setProjectNum(1)}></Box>
+            onClick={() => setProjectNum(1)}
+          ></Box>
           <Box
             sx={{
               width: "18px",
@@ -151,7 +154,8 @@ const OurProjectSection = () => {
               transform: `${projectNum === 2 && "scale(1.3)"}`,
               cursor: "pointer",
             }}
-            onClick={() => setProjectNum(2)}></Box>
+            onClick={() => setProjectNum(2)}
+          ></Box>
         </Grid>
       </Box>
     </Container>
