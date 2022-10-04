@@ -1,5 +1,5 @@
 export const ourProjectSectionContainer = {
-  marginTop: "160px",
+  marginTop: "60px",
   marginBottom: "155px",
 };
 

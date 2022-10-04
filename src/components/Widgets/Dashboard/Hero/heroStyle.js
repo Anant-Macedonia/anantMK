@@ -1,8 +1,10 @@
 export const heroContainer = {
-  // height: "570px",
-  position: "relative",
-  marginTop: "165px",
-  marginBottom: "200px",
+  display: "flex",
+  justifyContent: "center",
+  alignItems: "center",
+  marginTop: "-75px",
+  paddingTop: "215px",
+  paddingBottom: "180px",
 };
 
 export const heroImageContainer = {

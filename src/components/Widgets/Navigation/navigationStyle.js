@@ -2,13 +2,12 @@ export const nav = {
   backgroundColor: "transparent",
   boxShadow: "none",
   height: "75px",
-  marginTop: "55px",
+  paddingTop: "55px",
 };
 
 export const navLogo = {
   marginRight: "auto",
   cursor: "pointer",
-  //   display: { xs: "none", md: "flex" }
 };
 
 export const link = {

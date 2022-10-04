@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import Link from "next/link";
 import Image from "next/future/image";
 import {
@@ -8,7 +8,6 @@ import {
   Hidden,
   Typography,
   Box,
-  Button,
 } from "@mui/material";
 import MenuIcon from "@mui/icons-material/Menu";
 import IconButton from "@mui/material/IconButton";
@@ -28,22 +27,6 @@ const navigationLinks = [
 
 function Navigation() {
   const [open, setOpen] = useState(false);
-  // const [customClass, setCustomClass] = useState(classes.nav);
-
-  // const controlNavbar = () => {
-  //   if (window.scrollY > 250) {
-  //     setCustomClass(classes.whiteNav);
-  //   } else {
-  //     setCustomClass(classes.nav);
-  //   }
-  // };
-
-  // useEffect(() => {
-  //   window.addEventListener("scroll", controlNavbar);
-  //   return () => {
-  //     window.removeEventListener("scroll", controlNavbar);
-  //   };
-  // }, []);
 
   return (
     <AppBar sx={nav} position="static">
