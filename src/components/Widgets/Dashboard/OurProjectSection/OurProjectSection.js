@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from "react";
 import { Box, Button, Container, Grid, Typography } from "@mui/material";
 import PrimaryButton from "../../../UI/Buttons/PrimaryButton/PrimaryButton";
-import AnantUs from "../../../../../public/anant-us.svg";
-import CassandraLink from "../../../../../public/cassandra-link.svg";
-import CassandraTools from "../../../../../public/cassandra-tools.svg";
+import AnantUs from "../../../../../public/mock-anant-us.png";
+import CassandraLink from "../../../../../public/mock-c-link.png";
+import CassandraTools from "../../../../../public/mock-c-tools.png";
 import Image from "next/future/image";
 import {
   ourProjectSectionContainer,
@@ -99,14 +99,20 @@ const OurProjectSection = () => {
                 <Image
                   src={CassandraTools}
                   alt="cassandra tools"
+                  width={398}
                   quality={100}
                 />
               )}
               {projectNum === 1 && (
-                <Image src={AnantUs} alt="anant us" quality={100} />
+                <Image src={AnantUs} alt="anant us" width={398} quality={100} />
               )}
               {projectNum === 2 && (
-                <Image src={CassandraLink} alt="cassandra link" quality={100} />
+                <Image
+                  src={CassandraLink}
+                  alt="cassandra link"
+                  width={398}
+                  quality={100}
+                />
               )}
             </Grid>
           </Grid>
