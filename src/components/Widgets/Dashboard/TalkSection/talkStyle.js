@@ -1,3 +1,9 @@
+export const talkContainer = {
+  background: "linear-gradient(#003049, #145374)",
+  paddingTop: "110px",
+  paddingBottom: "85px",
+};
+
 export const talkSectionContainer = { marginBottom: "130px" };
 
 export const talkContentContainer = {

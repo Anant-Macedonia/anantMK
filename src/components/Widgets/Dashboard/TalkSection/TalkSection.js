@@ -9,28 +9,31 @@ import {
   talkContentContainer,
   talkSectionDesc,
   talkSectionTitle,
+  talkContainer,
 } from "./talkStyle";
 
 const TalkSection = () => {
   return (
-    <Container>
-      <Box sx={talkSectionContainer}>
-        <Grid container sx={talkContentContainer}>
-          <Grid item md={5}>
-            <Typography sx={talkSectionTitle}>Let’s Talk</Typography>
-            <Typography sx={talkSectionDesc}>
-              We help businesses make the most of the web. <br /> If you have
-              any questions about our services, our work, <br /> or anything
-              about us, please dont hesitate to contact us.
-            </Typography>
-            <PrimaryButton btnText="Contact Us" />
+    <Box sx={talkContainer}>
+      <Container>
+        <Box sx={talkSectionContainer}>
+          <Grid container sx={talkContentContainer}>
+            <Grid item md={5}>
+              <Typography sx={talkSectionTitle}>Let’s Talk</Typography>
+              <Typography sx={talkSectionDesc}>
+                We help businesses make the most of the web. <br /> If you have
+                any questions about our services, our work, <br /> or anything
+                about us, please dont hesitate to contact us.
+              </Typography>
+              <PrimaryButton btnText="Contact Us" />
+            </Grid>
+            <Grid item md={5.5}>
+              <Image src={TalkImage} alt="project image" />
+            </Grid>
           </Grid>
-          <Grid item md={5.5}>
-            <Image src={TalkImage} alt="project image" />
-          </Grid>
-        </Grid>
-      </Box>
-    </Container>
+        </Box>
+      </Container>
+    </Box>
   );
 };
 

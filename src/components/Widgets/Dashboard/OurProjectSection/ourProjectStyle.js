@@ -15,7 +15,7 @@ export const ourProjectSectionTitle = {
 export const ourProjectContainer = {
   height: "460px",
   background: "#145374",
-  boxShadow: "2.6px 2.6px 19.5px rgba(20, 83, 116, 0.54)",
+  boxShadow: "7px 10px 7px rgba(0, 0, 0, 0.2)",
   borderRadius: "26px",
   marginTop: "58px",
 };

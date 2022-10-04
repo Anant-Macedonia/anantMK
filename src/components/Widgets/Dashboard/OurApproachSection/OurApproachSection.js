@@ -145,9 +145,9 @@ const OurApproach = ({ heroData, primaryBtnText, secondaryBtnText }) => {
               </div>
             </div>
 
-            <Button variant="contained" onClick={clickHandler}>
+            {/* <Button variant="contained" onClick={clickHandler}>
               +
-            </Button>
+            </Button> */}
           </Grid>
         </Grid>
       </Container>

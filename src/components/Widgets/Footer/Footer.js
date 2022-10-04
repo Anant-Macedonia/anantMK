@@ -13,7 +13,8 @@ const Footer = () => {
         container
         spacing={4}
         className={classes.footer}
-        sx={{ justifyContent: "space-between" }}>
+        sx={{ justifyContent: "space-between" }}
+      >
         <Grid
           item
           xs={12}
@@ -21,22 +22,30 @@ const Footer = () => {
             marginBottom: "20px",
 
             maxHeight: "125px",
-          }}>
+          }}
+        >
           <Image src={logo} alt="anant.mk logo" />
         </Grid>
         <Grid item xs={6} md={2.7}>
           <Typography
             variant="h6"
-            sx={{ marginBottom: "25px", fontSize: "22px", fontWeight: 600 }}>
+            sx={{
+              marginBottom: "25px",
+              fontSize: "22px",
+              fontWeight: 600,
+              letterSpacing: "0.15em",
+            }}
+          >
             Anant Macedonia
           </Typography>
           <Typography
             sx={{
               fontSize: "16px",
-              letterSpacing: " -0.07em",
+              letterSpacing: " -0.04em",
               fontWeight: 400,
               lineHeight: "20x",
-            }}>
+            }}
+          >
             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque
             mollis lectus id quam posuere ultrices. Donec magna metus, porttitor
             in enim sed, vestibulum eleifend purus. Morbi mauris orci, mollis
@@ -46,7 +55,8 @@ const Footer = () => {
         <Grid item xs={6} md={1.8}>
           <Typography
             variant="h6"
-            sx={{ marginBottom: "25px", fontSize: "22px", fontWeight: 600 }}>
+            sx={{ marginBottom: "25px", fontSize: "22px", fontWeight: 600 }}
+          >
             Browse
           </Typography>
           <Link>
@@ -65,7 +75,8 @@ const Footer = () => {
         <Grid item xs={6} md={1.8}>
           <Typography
             variant="h6"
-            sx={{ marginBottom: "25px", fontSize: "22px", fontWeight: 600 }}>
+            sx={{ marginBottom: "25px", fontSize: "22px", fontWeight: 600 }}
+          >
             Services
           </Typography>
           <Link>
@@ -79,7 +90,8 @@ const Footer = () => {
           <Box>
             <Typography
               variant="h6"
-              sx={{ marginBottom: "25px", fontSize: "22px", fontWeight: 600 }}>
+              sx={{ marginBottom: "25px", fontSize: "22px", fontWeight: 600 }}
+            >
               Contact
             </Typography>
             <Typography sx={contactText}>info@anantmacedonia.mk</Typography>
@@ -91,10 +103,12 @@ const Footer = () => {
       <Grid
         container
         spacing={2}
-        sx={{ justifyContent: "space-between", paddingBottom: "50px" }}>
+        sx={{ justifyContent: "space-between", paddingBottom: "50px" }}
+      >
         <Grid item xs={6} md={5}>
           <Typography
-            sx={{ fontSize: "18px", display: "flex", alignItems: "center" }}>
+            sx={{ fontSize: "18px", display: "flex", alignItems: "center" }}
+          >
             <AiOutlineCopyrightCircle style={{ marginRight: "10px" }} />{" "}
             Copyright - Anant Macedonia, Skopje 2022
           </Typography>
@@ -103,7 +117,8 @@ const Footer = () => {
           <Typography
             sx={{
               fontSize: "22px",
-            }}>
+            }}
+          >
             Folow Us <AiOutlineGithub style={{ marginLeft: "30px" }} />
             <BsLinkedin style={{ marginLeft: "12px" }} />
           </Typography>
