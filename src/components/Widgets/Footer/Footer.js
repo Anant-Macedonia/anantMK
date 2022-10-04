@@ -20,7 +20,7 @@ const Footer = () => {
           xs={12}
           sx={{
             marginBottom: "20px",
-
+            marginTop: "65px",
             maxHeight: "125px",
           }}
         >
