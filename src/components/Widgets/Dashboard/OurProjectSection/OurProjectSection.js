@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from "react";
 import { Box, Button, Container, Grid, Typography } from "@mui/material";
 import PrimaryButton from "../../../UI/Buttons/PrimaryButton/PrimaryButton";
-import AnantUs from "../../../../../public/mock-anant-us.png";
-import CassandraLink from "../../../../../public/mock-c-link.png";
-import CassandraTools from "../../../../../public/mock-c-tools.png";
+import AnantUs from "../../../../../public/mock-AnantUs.png";
+import CassandraLink from "../../../../../public/mock-CLink.png";
+import CassandraTools from "../../../../../public/mock-CTools.png";
 import Image from "next/future/image";
 import {
   ourProjectSectionContainer,
@@ -34,8 +34,8 @@ const OurProjectSection = () => {
           Take a look at some of our projects.
         </Typography>
         <Box sx={ourProjectContainer}>
-          <Grid container sx={{ padding: "34px 55px" }}>
-            <Grid item md={7.5} sx={{ paddingRight: "20px" }}>
+          <Grid container sx={{ padding: "34px 50px" }}>
+            <Grid item md={7.2}>
               {projectNum === 0 && (
                 <>
                   <Typography sx={projectTitle}>
@@ -94,23 +94,27 @@ const OurProjectSection = () => {
                 </>
               )}
             </Grid>
-            <Grid item md={4.5}>
+            <Grid
+              item
+              md={4.8}
+              sx={{ display: "flex", alignItems: "center", paddingTop: "25px" }}
+            >
               {projectNum === 0 && (
                 <Image
                   src={CassandraTools}
                   alt="cassandra tools"
-                  width={398}
+                  width={428}
                   quality={100}
                 />
               )}
               {projectNum === 1 && (
-                <Image src={AnantUs} alt="anant us" width={398} quality={100} />
+                <Image src={AnantUs} alt="anant us" width={428} quality={100} />
               )}
               {projectNum === 2 && (
                 <Image
                   src={CassandraLink}
                   alt="cassandra link"
-                  width={398}
+                  width={428}
                   quality={100}
                 />
               )}

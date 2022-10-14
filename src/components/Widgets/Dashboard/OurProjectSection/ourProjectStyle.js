@@ -1,6 +1,7 @@
 export const ourProjectSectionContainer = {
   marginTop: "60px",
   marginBottom: "155px",
+  fontSize: "36px",
 };
 
 export const ourProjectSectionTitle = {
@@ -26,7 +27,7 @@ export const projectTitle = {
   fontSize: "36px",
   lineHeight: "47px",
   letterSpacing: " -0.07em",
-  marginTop: "28px",
+  marginTop: "25px",
   marginBottom: "30px",
 };
 
