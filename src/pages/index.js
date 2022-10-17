@@ -10,7 +10,17 @@ import TalkSection from "../components/Widgets/Dashboard/TalkSection/TalkSection
 export default function Home() {
   return (
     <>
-      <Hero />
+      <Hero
+        title="Your Business, your Goal."
+        subtitle=" Our Mission to make it Grow!"
+        description="We add value to your business by providing the best experience
+                 the users can have, along with the most appealing
+                interface according  to the latest trends, all together
+                developed in one perfect digital package."
+        primaryBtnText="Start a Project"
+        secondaryBtnText="Services"
+        homeAnimation
+      />
       <OurApproach />
       <ServicesSection />
       <OurProjectSection />

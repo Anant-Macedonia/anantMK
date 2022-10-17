@@ -13,7 +13,15 @@ import {
 import styles from "./hero.module.css";
 import animationData from "../../../../lottie/heroAnimation.json";
 
-const Hero = ({ heroData, primaryBtnText, secondaryBtnText }) => {
+const Hero = ({
+  heroData,
+  primaryBtnText,
+  secondaryBtnText,
+  title,
+  subtitle,
+  description,
+  homeAnimation,
+}) => {
   const defaultOptions = {
     loop: true,
     autoplay: true,
@@ -27,27 +35,25 @@ const Hero = ({ heroData, primaryBtnText, secondaryBtnText }) => {
           <Grid container>
             <Grid item sm={12} md={7.5} sx={{ marginTop: "40px" }}>
               <Typography sx={heroTitle} variant="h1">
-                {heroData?.heroTitle}
-                Your Business, your Goal.{" "}
+                {/* {heroData?.heroTitle} */}
+                {title}
+
                 <Box variant="span" sx={{ fontWeight: 700 }}>
-                  Our Mission to make it Grow!
+                  {subtitle}
                 </Box>
               </Typography>
-              {heroData?.heroSubtitle && (
+              {/* {heroData?.heroSubtitle && (
                 <Typography sx={heroSubtitle} variant="h2">
                   {heroData?.heroSubtitle}
                 </Typography>
-              )}
+              )} */}
               <Typography sx={heroDesc} variant="h3">
-                {heroData?.heroDescription}
-                We add value to your business by providing the best experience
-                <br /> the users can have, along with the most appealing
-                interface according <br /> to the latest trends, all together
-                developed in one perfect digital package.
+                {/* {heroData?.heroDescription} */}
+                {description}
               </Typography>
               <Box sx={btnContainer}>
-                <PrimaryButton btnText="Start a Project" btnClass="btnMargin" />
-                <OutlinedButton btnText="Services" />
+                {/* <PrimaryButton btnText={primaryBtnText} btnClass="btnMargin" />
+                <OutlinedButton btnText="Services" /> */}
                 {primaryBtnText && (
                   <PrimaryButton
                     btnText={primaryBtnText}
@@ -59,9 +65,11 @@ const Hero = ({ heroData, primaryBtnText, secondaryBtnText }) => {
                 )}
               </Box>
             </Grid>
-            <Grid item md={4.5}>
-              <Lottie options={defaultOptions} height={450} width={500} />
-            </Grid>
+            {homeAnimation && (
+              <Grid item md={4.5}>
+                <Lottie options={defaultOptions} height={450} width={500} />
+              </Grid>
+            )}
           </Grid>
         </Box>
       </Container>
