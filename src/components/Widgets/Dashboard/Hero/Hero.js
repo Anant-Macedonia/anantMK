@@ -12,6 +12,8 @@ import {
 } from "./heroStyle";
 import styles from "./hero.module.css";
 import animationData from "../../../../lottie/heroAnimation.json";
+import Image from "next/future/image";
+import developmentImage from "../../../../../public/development-service.svg";
 
 const Hero = ({
   heroData,
@@ -65,9 +67,21 @@ const Hero = ({
                 )}
               </Box>
             </Grid>
-            {homeAnimation && (
+            {homeAnimation ? (
               <Grid item md={4.5}>
                 <Lottie options={defaultOptions} height={450} width={500} />
+              </Grid>
+            ) : (
+              <Grid
+                item
+                md={4.5}
+                sx={{
+                  justifyContent: "center",
+                  alignItems: "center",
+                  display: "flex",
+                }}
+              >
+                <Image src={developmentImage} />
               </Grid>
             )}
           </Grid>
