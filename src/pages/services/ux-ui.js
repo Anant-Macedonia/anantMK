@@ -4,7 +4,7 @@ import ServiceSteps from "../../components/Widgets/Dashboard/ServiceSteps/Servic
 import OurProjectSection from "../../components/Widgets/Dashboard/OurProjectSection/OurProjectSection.js";
 import TalkSection from "../../components/Widgets/Dashboard/TalkSection/TalkSection.js";
 
-const UiUx = () => {
+const UxUi = () => {
   return (
     <div>
       <Hero
@@ -19,4 +19,4 @@ const UiUx = () => {
   );
 };
 
-export default UiUx;
+export default UxUi;
