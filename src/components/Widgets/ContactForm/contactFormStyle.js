@@ -25,6 +25,7 @@ export const formInput = {
   borderRadius: "26px",
   background: "#145374",
   boxShadow: "7px 10px 7px rgba(0, 0, 0, 0.2)",
+  paddingLeft: "22px",
 };
 
 export const formTextBox = {
@@ -33,4 +34,5 @@ export const formTextBox = {
   borderRadius: "26px",
   width: "571px",
   marginBottom: "47px",
+  paddingLeft: "22px",
 };
