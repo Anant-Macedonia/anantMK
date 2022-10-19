@@ -36,6 +36,16 @@ export const heroDesc = {
   letterSpacing: "-0.07em",
 };
 
+export const contactInfoText = {
+  fontFamily: "Montserrat",
+  fontWeight: 500,
+  fontSize: "18px",
+  lineHeight: "36px",
+  textDecoration: "underline",
+  display: "flex",
+  alignItems: "center",
+};
+
 export const btnContainer = {
   marginTop: "128px",
 };
