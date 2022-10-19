@@ -81,7 +81,7 @@ const Hero = ({
                   display: "flex",
                 }}
               >
-                <Image src={developmentImage} />
+                <Image src={developmentImage} alt="development img" />
               </Grid>
             )}
           </Grid>
