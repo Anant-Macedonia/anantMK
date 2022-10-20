@@ -23,3 +23,17 @@ a:hover {
   color: orange;
   transition: color 0.3;
 }
+
+.swiper-pagination-bullet {
+  width: 21px !important;
+  height: 21px !important;
+  margin-right: 28px !important;
+  background-color: #df6b56e0 !important;
+  opacity: 1 !important;
+}
+
+.swiper-pagination-bullet-active {
+  width: 30px !important;
+  height: 30px !important;
+  background-color: #df6b56 !important;
+}
