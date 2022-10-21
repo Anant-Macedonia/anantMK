@@ -20,7 +20,7 @@ import logo from "../../../../public/logo-anant-mk.svg";
 import { link, nav, navLogo } from "./navigationStyle";
 
 const navigationLinks = [
-  { name: "Our Company", href: "/" },
+  { name: "Our Company", href: "/company" },
   { name: "Services", href: "/services" },
   { name: "Portfolio", href: "/portfolio" },
 ];

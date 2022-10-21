@@ -37,3 +37,7 @@ a:hover {
   height: 30px !important;
   background-color: #df6b56 !important;
 }
+
+.MuiInputLabel-root {
+  color: white !important;
+}

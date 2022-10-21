@@ -126,7 +126,7 @@ const ContactForm = () => {
                   value={formValues.message}
                   onChange={handleInputChange}
                   multiline
-                  minRows={8}
+                  minRows={7}
                   disableUnderline
                   style={formTextBox}
                 />
