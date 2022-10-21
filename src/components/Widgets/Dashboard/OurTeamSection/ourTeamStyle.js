@@ -19,6 +19,8 @@ export const teamCardContainerNoActive = {
   borderRadius: "20px",
   overflow: "hidden",
   marginBottom: "110px",
+  background: "rgba(20, 83, 116, 0.2)",
+  opacity: 0.6,
 };
 
 export const imageContainerActive = {};

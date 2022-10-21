@@ -11,7 +11,12 @@ import {
   Typography,
 } from "@mui/material";
 import { Swiper, SwiperSlide } from "swiper/react";
-import { Pagination, Navigation } from "swiper";
+import { Pagination, Navigation, Autoplay } from "swiper";
+
+import kire from "../../../../../public/kire1.png";
+import petar from "../../../../../public/petar.png";
+import stefan from "../../../../../public/stefan.png";
+
 // Import Swiper styles
 import "swiper/css";
 import "swiper/css/pagination";
@@ -34,11 +39,11 @@ const OurTeamSection = () => {
   const [projectNum, setProjectNum] = useState(0);
 
   const teamMembers = [
-    { name: "Stefan Nikolovski", image: {} },
-    { name: "Kire Zdraveski", image: {} },
-    { name: "Petar Gjuzelov", image: {} },
-    { name: "Tijana Conevska", image: {} },
-    { name: "Tom Trajceski", image: {} },
+    { name: "Stefan Nikolovski", profileImage: stefan },
+    { name: "Kire Zdraveski", profileImage: kire },
+    { name: "Petar Gjuzelov", profileImage: petar },
+    { name: "Tijana Conevska", profileImage: kire },
+    { name: "Tom Trajceski", profileImage: kire },
   ];
   return (
     <Container sx={{ marginTop: "105px" }}>
@@ -46,7 +51,7 @@ const OurTeamSection = () => {
 
       <Swiper
         slidesPerView={3}
-        spaceBetween={60}
+        spaceBetween={120}
         slidesPerGroup={1}
         centeredSlides={true}
         loop={true}
@@ -54,8 +59,8 @@ const OurTeamSection = () => {
         pagination={{
           clickable: true,
         }}
-        // navigation={true}
-        modules={[Pagination, Navigation]}
+        autoplay={{ delay: 5000 }}
+        modules={[Pagination, Navigation, Autoplay]}
         className={classes.swiper}
       >
         {teamMembers.map((data, i) => {
@@ -73,11 +78,14 @@ const OurTeamSection = () => {
                     sx={{
                       height: "336px",
                       width: "300px",
-                      backgroundColor: "yellow",
-                      borderTopRightRadius: "20px",
                     }}
                   >
-                    {/* <Image src={petel} width={370} height={415} /> */}
+                    <Image
+                      src={data.profileImage}
+                      width={300}
+                      height={336.53}
+                      style={{ borderTopRightRadius: "20px" }}
+                    />
                   </Box>
 
                   <Box
