@@ -29,6 +29,9 @@ const Hero = ({
   description,
   contactInfo,
   homeAnimation,
+  contactEmail,
+  contactMobile,
+  contactPhone,
 }) => {
   const defaultOptions = {
     loop: true,
@@ -60,24 +63,25 @@ const Hero = ({
                   {heroData?.heroSubtitle}
                 </Typography>
               )} */}
-              <Typography sx={heroDesc} variant="h3">
-                {/* {heroData?.heroDescription} */}
-                {description}
-              </Typography>
+              <Box
+                sx={heroDesc}
+                dangerouslySetInnerHTML={{ __html: description }}
+              />
+
               {contactInfo && (
                 <>
                   <Box sx={{ marginTop: "63px" }}>
                     <Typography sx={contactInfoText}>
                       <AiOutlineMail style={{ marginRight: "15px" }} />
-                      info@anantmacedonia.mk
+                      {contactEmail}
                     </Typography>
                     <Typography sx={contactInfoText}>
-                      <MdPhonelinkRing style={{ marginRight: "15px" }} />{" "}
-                      0038970 333 333
+                      <MdPhonelinkRing style={{ marginRight: "15px" }} />
+                      {contactMobile}
                     </Typography>
                     <Typography sx={contactInfoText}>
-                      <MdPhonelinkRing style={{ marginRight: "15px" }} />{" "}
-                      0038970 333 333
+                      <MdPhonelinkRing style={{ marginRight: "15px" }} />
+                      {contactPhone}
                     </Typography>
                   </Box>
                   <Box sx={{ marginTop: "42px" }}>

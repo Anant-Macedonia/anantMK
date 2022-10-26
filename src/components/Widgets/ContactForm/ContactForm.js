@@ -30,7 +30,6 @@ const ContactForm = () => {
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    console.log(formValues);
   };
 
   return (
