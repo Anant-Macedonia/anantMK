@@ -12,7 +12,7 @@ import {
   talkContainer,
 } from "./talkStyle";
 
-const TalkSection = ({ title, description, talkImage }) => {
+const TalkSection = ({ title, description, talkImage, talkButton }) => {
   return (
     <Box sx={talkContainer}>
       <Container>
@@ -24,7 +24,10 @@ const TalkSection = ({ title, description, talkImage }) => {
                 sx={talkSectionDesc}
                 dangerouslySetInnerHTML={{ __html: description }}
               />
-              <PrimaryButton btnText="Contact Us" />
+              <PrimaryButton
+                btnText={talkButton.talkButtonText}
+                link={talkButton.talkButtonLink.uri}
+              />
             </Grid>
             <Grid item md={5.5}>
               <Image

@@ -9,17 +9,22 @@ import TalkSection from "../../components/Widgets/Dashboard/TalkSection/TalkSect
 import { GET_PROJECTS_DATA } from "../../queries/getProjects.js";
 
 const Development = (props) => {
-  const { heroTitle, heroDescription, heroImage } = props.developmentData.hero;
+  const { heroTitle, heroDescription, heroImage, buttons } =
+    props.developmentData.hero;
   const { steps } = props.developmentData;
-  const { talkSectionTitle, talkSectionDescription, talkSectionImage } =
-    props.talkSectionData.talk;
+  const {
+    talkSectionTitle,
+    talkSectionDescription,
+    talkSectionImage,
+    talkButton,
+  } = props.talkSectionData.talk;
   return (
     <div>
       <Hero
         title={heroTitle}
         description={heroDescription}
         heroImage={heroImage}
-        primaryBtnText="Start A Project"
+        buttons={buttons}
       />
       <ServiceSteps steps={steps} />
       <OurProjectSection projects={props.projectsData.projects} />
@@ -27,6 +32,7 @@ const Development = (props) => {
         title={talkSectionTitle}
         description={talkSectionDescription}
         talkImage={talkSectionImage}
+        talkButton={talkButton}
       />
     </div>
   );

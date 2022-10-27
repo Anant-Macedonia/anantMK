@@ -75,7 +75,7 @@ const Services = () => {
               <Box sx={subTitle}>Testing</Box>
             </Stack>
             <Box sx={{ marginTop: "125px" }}>
-              <SecondaryButton href="/services/ux-ui" btnText="Learn More" />
+              <SecondaryButton link="/services/ux-ui" btnText="Learn More" />
             </Box>
           </Grid>
           <Grid
@@ -114,7 +114,7 @@ const Services = () => {
               </Stack>
               <Box sx={{ marginTop: "125px" }}>
                 <SecondaryButton
-                  href="/services/development"
+                  link="/services/development"
                   btnText="Learn More"
                 />
               </Box>

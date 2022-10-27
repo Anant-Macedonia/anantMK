@@ -11,6 +11,15 @@ export const GET_TALK_SECTION_DATA = gql`
           talkSectionImage {
             sourceUrl
           }
+          talkButton {
+            talkButtonText
+            talkButtonLink {
+              ... on Page {
+                id
+                uri
+              }
+            }
+          }
         }
       }
     }

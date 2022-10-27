@@ -1,9 +1,6 @@
-import AboutUsSection from "../components/Widgets/Dashboard/AboutUsSection/AboutUsSection";
-import Hello from "../components/Widgets/Dashboard/HelloSection/Hello";
 import Hero from "../components/Widgets/Dashboard/Hero/Hero";
 import OurApproach from "../components/Widgets/Dashboard/OurApproachSection/OurApproachSection";
 import OurProjectSection from "../components/Widgets/Dashboard/OurProjectSection/OurProjectSection";
-import OurWork from "../components/Widgets/Dashboard/OurWorkSection/OurWork";
 import ServicesSection from "../components/Widgets/Dashboard/ServicesSection/ServicesSection";
 import TalkSection from "../components/Widgets/Dashboard/TalkSection/TalkSection";
 import { client } from "../lib/apollo.js";
@@ -13,10 +10,15 @@ import { GET_PROJECTS_DATA } from "../queries/getProjects.js";
 import { GET_APPROACH_SECTION_DATA } from "../queries/getApproachSection";
 
 export default function Home(props) {
-  const { heroTitle, heroSubtitle, heroDescription } = props.homeData.hero;
+  const { heroTitle, heroSubtitle, heroDescription, buttons } =
+    props.homeData.hero;
 
-  const { talkSectionTitle, talkSectionDescription, talkSectionImage } =
-    props.talkSectionData.talk;
+  const {
+    talkSectionTitle,
+    talkSectionDescription,
+    talkSectionImage,
+    talkButton,
+  } = props.talkSectionData.talk;
 
   const { approachInfo } = props.approachSectionData;
 
@@ -26,8 +28,7 @@ export default function Home(props) {
         title={heroTitle}
         subtitle={heroSubtitle}
         description={heroDescription}
-        primaryBtnText="Start a Project"
-        secondaryBtnText="Services"
+        buttons={buttons}
         homeAnimation
       />
       <OurApproach approachInfo={approachInfo} />
@@ -37,6 +38,7 @@ export default function Home(props) {
         title={talkSectionTitle}
         description={talkSectionDescription}
         talkImage={talkSectionImage}
+        talkButton={talkButton}
       />
     </>
   );

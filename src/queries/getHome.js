@@ -9,6 +9,20 @@ export const GET_HOME_DATA = gql`
           heroTitle
           heroSubtitle
           heroDescription
+          buttons {
+            primaryButtonText
+            primaryButtonLink {
+              ... on Page {
+                uri
+              }
+            }
+            secondaryButtonText
+            secondaryButtonLink {
+              ... on Page {
+                uri
+              }
+            }
+          }
         }
       }
     }

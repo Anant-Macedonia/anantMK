@@ -12,8 +12,12 @@ import { GET_APPROACH_SECTION_DATA } from "../../queries/getApproachSection";
 
 const Company = (props) => {
   const { members } = props.teamMembersData;
-  const { talkSectionTitle, talkSectionDescription, talkSectionImage } =
-    props.talkSectionData.talk;
+  const {
+    talkSectionTitle,
+    talkSectionDescription,
+    talkSectionImage,
+    talkButton,
+  } = props.talkSectionData.talk;
   const { approachInfo } = props.approachSectionData;
   return (
     <Box sx={{ marginTop: "105px" }}>
@@ -26,6 +30,7 @@ const Company = (props) => {
         title={talkSectionTitle}
         description={talkSectionDescription}
         talkImage={talkSectionImage}
+        talkButton={talkButton}
       />
     </Box>
   );

@@ -11,6 +11,15 @@ export const GET_UX_UI_DATA = gql`
           heroImage {
             sourceUrl
           }
+          buttons {
+            primaryButtonText
+            primaryButtonLink {
+              ... on Page {
+                id
+                uri
+              }
+            }
+          }
         }
       }
     }

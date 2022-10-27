@@ -4,11 +4,9 @@ import PrimaryButton from "../../../UI/Buttons/PrimaryButton/PrimaryButton";
 import OutlinedButton from "../../../UI/Buttons/OutlinedButton/OutlinedButton";
 import {
   heroContainer,
-  heroImageContainer,
   heroTitle,
   heroDesc,
   btnContainer,
-  heroSubtitle,
   contactInfoText,
 } from "./heroStyle";
 import { AiOutlineGithub, AiOutlineMail } from "react-icons/ai";
@@ -21,9 +19,6 @@ import developmentImage from "../../../../../public/development-service.svg";
 import contactImage from "../../../../../public/talk-us.svg";
 
 const Hero = ({
-  heroData,
-  primaryBtnText,
-  secondaryBtnText,
   title,
   subtitle,
   description,
@@ -32,6 +27,7 @@ const Hero = ({
   contactEmail,
   contactMobile,
   contactPhone,
+  buttons,
 }) => {
   const defaultOptions = {
     loop: true,
@@ -51,18 +47,11 @@ const Hero = ({
               sx={{ marginTop: "40px" }}
             >
               <Typography sx={heroTitle} variant="h1">
-                {/* {heroData?.heroTitle} */}
                 {title}
-
                 <Box variant="span" sx={{ fontWeight: 700 }}>
                   {subtitle}
                 </Box>
               </Typography>
-              {/* {heroData?.heroSubtitle && (
-                <Typography sx={heroSubtitle} variant="h2">
-                  {heroData?.heroSubtitle}
-                </Typography>
-              )} */}
               <Box
                 sx={heroDesc}
                 dangerouslySetInnerHTML={{ __html: description }}
@@ -98,16 +87,18 @@ const Hero = ({
               )}
 
               <Box sx={btnContainer}>
-                {/* <PrimaryButton btnText={primaryBtnText} btnClass="btnMargin" />
-                <OutlinedButton btnText="Services" /> */}
-                {primaryBtnText && (
+                {buttons?.primaryButtonText && (
                   <PrimaryButton
-                    btnText={primaryBtnText}
+                    btnText={buttons.primaryButtonText}
                     btnClass="btnMargin"
+                    link={buttons.primaryButtonLink.uri}
                   />
                 )}
-                {secondaryBtnText && (
-                  <OutlinedButton btnText={secondaryBtnText} />
+                {buttons?.secondaryButtonText && (
+                  <OutlinedButton
+                    btnText={buttons.secondaryButtonText}
+                    link={buttons.secondaryButtonLink.uri}
+                  />
                 )}
               </Box>
             </Grid>
