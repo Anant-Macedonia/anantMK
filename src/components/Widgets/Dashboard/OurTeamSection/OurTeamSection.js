@@ -1,21 +1,9 @@
 import Image from "next/future/image";
 import { useState } from "react";
 import React from "react";
-import {
-  Box,
-  Card,
-  CardActionArea,
-  CardContent,
-  Container,
-  Grid,
-  Typography,
-} from "@mui/material";
+import { Box, Container, Typography } from "@mui/material";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Pagination, Navigation, Autoplay } from "swiper";
-
-import kire from "../../../../../public/kire1.png";
-import petar from "../../../../../public/petar.png";
-import stefan from "../../../../../public/stefan.png";
 
 // Import Swiper styles
 import "swiper/css";
@@ -23,11 +11,6 @@ import "swiper/css/pagination";
 import "swiper/css/navigation";
 
 import {
-  enterpriseCardContainerActive,
-  enterpriseCardContainerNoActive,
-  imageContainer,
-  enterpriseTitle,
-  enterpriseDesc,
   teamCardContainerActive,
   teamCardContainerNoActive,
   teamCardTitle,
@@ -35,16 +18,9 @@ import {
 } from "./ourTeamStyle.js";
 import classes from "./ourTeam.module.css";
 
-const OurTeamSection = () => {
+const OurTeamSection = ({ teamMembers }) => {
   const [projectNum, setProjectNum] = useState(0);
 
-  const teamMembers = [
-    { name: "Stefan Nikolovski", profileImage: stefan },
-    { name: "Kire Zdraveski", profileImage: kire },
-    { name: "Petar Gjuzelov", profileImage: petar },
-    { name: "Tijana Conevska", profileImage: kire },
-    { name: "Tom Trajceski", profileImage: kire },
-  ];
   return (
     <Container sx={{ marginTop: "105px" }}>
       <Typography sx={teamSectionTitle}>Meet Our Team...</Typography>
@@ -81,7 +57,7 @@ const OurTeamSection = () => {
                     }}
                   >
                     <Image
-                      src={data.profileImage}
+                      src={data.teamMemberFields.image.sourceUrl}
                       width={300}
                       height={336.53}
                       style={{ borderTopRightRadius: "20px" }}
@@ -97,7 +73,9 @@ const OurTeamSection = () => {
                       borderBottomRightRadius: "20px",
                     }}
                   >
-                    <Typography sx={teamCardTitle}>{data.name}</Typography>
+                    <Typography sx={teamCardTitle}>
+                      {data.teamMemberFields.fullName}
+                    </Typography>
                   </Box>
                 </Box>
               )}
