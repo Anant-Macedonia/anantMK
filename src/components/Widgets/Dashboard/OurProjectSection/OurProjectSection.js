@@ -81,7 +81,7 @@ const OurProjectSection = ({ projects }) => {
             sx={{
               display: "flex",
               justifyContent: "center",
-              marginTop: "51px",
+              marginTop: "90px",
             }}
           >
             {projects.map((item, key) => {

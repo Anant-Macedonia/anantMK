@@ -7,14 +7,18 @@ import TalkSection from "../../components/Widgets/Dashboard/TalkSection/TalkSect
 import { GET_TALK_SECTION_DATA } from "../../queries/getTalkSection";
 import { GET_PROJECTS_DATA } from "../../queries/getProjects";
 import { client } from "../../lib/apollo";
+import { GET_TEAM_MEMBERS_DATA } from "../../queries/getTeamMembers";
+import { GET_APPROACH_SECTION_DATA } from "../../queries/getApproachSection";
 
 const Company = (props) => {
+  const { members } = props.teamMembersData;
   const { talkSectionTitle, talkSectionDescription, talkSectionImage } =
     props.talkSectionData.talk;
+  const { approachInfo } = props.approachSectionData;
   return (
     <Box sx={{ marginTop: "105px" }}>
-      <OurApproach />
-      <OurTeamSection />
+      <OurApproach approachInfo={approachInfo} />
+      <OurTeamSection teamMembers={members} />
       <Box sx={{ marginTop: "180px" }}>
         <OurProjectSection projects={props.projectsData.projects} />
       </Box>
@@ -38,6 +42,14 @@ export async function getStaticProps() {
     query: GET_PROJECTS_DATA,
   });
 
+  const { data: teamMembersData } = await client.query({
+    query: GET_TEAM_MEMBERS_DATA,
+  });
+
+  const { data: approachSectionData } = await client.query({
+    query: GET_APPROACH_SECTION_DATA,
+  });
+
   return {
     props: {
       talkSectionData: {
@@ -45,6 +57,12 @@ export async function getStaticProps() {
       },
       projectsData: {
         projects: projectsData?.projects?.nodes,
+      },
+      teamMembersData: {
+        members: teamMembersData?.teamMembers?.nodes,
+      },
+      approachSectionData: {
+        approachInfo: approachSectionData?.approachSections?.nodes,
       },
     },
   };

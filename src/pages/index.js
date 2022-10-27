@@ -10,12 +10,16 @@ import { client } from "../lib/apollo.js";
 import { GET_HOME_DATA } from "../queries/getHome";
 import { GET_TALK_SECTION_DATA } from "../queries/getTalkSection";
 import { GET_PROJECTS_DATA } from "../queries/getProjects.js";
+import { GET_APPROACH_SECTION_DATA } from "../queries/getApproachSection";
 
 export default function Home(props) {
   const { heroTitle, heroSubtitle, heroDescription } = props.homeData.hero;
 
   const { talkSectionTitle, talkSectionDescription, talkSectionImage } =
     props.talkSectionData.talk;
+
+  const { approachInfo } = props.approachSectionData;
+
   return (
     <>
       <Hero
@@ -26,7 +30,7 @@ export default function Home(props) {
         secondaryBtnText="Services"
         homeAnimation
       />
-      <OurApproach />
+      <OurApproach approachInfo={approachInfo} />
       <ServicesSection services={props.homeData.serviceSection} />
       <OurProjectSection projects={props.projectsData.projects} />
       <TalkSection
@@ -51,6 +55,10 @@ export async function getStaticProps() {
     query: GET_PROJECTS_DATA,
   });
 
+  const { data: approachSectionData } = await client.query({
+    query: GET_APPROACH_SECTION_DATA,
+  });
+
   return {
     props: {
       homeData: {
@@ -62,6 +70,9 @@ export async function getStaticProps() {
       },
       projectsData: {
         projects: projectsData?.projects?.nodes,
+      },
+      approachSectionData: {
+        approachInfo: approachSectionData?.approachSections?.nodes,
       },
     },
   };
