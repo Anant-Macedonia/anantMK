@@ -1,3 +1,4 @@
 .heroContainer {
   background-image: url("../../../../../public/anantmk-background-comp.svg");
+  background-size: contain;
 }
