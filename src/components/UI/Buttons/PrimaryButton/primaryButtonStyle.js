@@ -1,4 +1,4 @@
-export const primaryBtn = {
+export const primaryBtn = (theme) => ({
   backgroundColor: "#EE6F57",
   color: "#ffffff",
   fontFamily: "Mulish !important",
@@ -15,4 +15,9 @@ export const primaryBtn = {
     backgroundColor: "#ffffff",
     color: "#000000",
   },
-};
+  [theme.breakpoints.down("sm")]: {
+    marginRight: "15px",
+    width: "156px",
+    height: "34px",
+  },
+});

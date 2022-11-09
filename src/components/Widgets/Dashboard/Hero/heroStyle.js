@@ -1,11 +1,17 @@
-export const heroContainer = {
-  display: "flex",
-  justifyContent: "center",
-  alignItems: "center",
-  marginTop: "-75px",
-  paddingTop: "215px",
-  paddingBottom: "180px",
-};
+export const heroContainer = (theme) => ({
+  [theme.breakpoints.up("sm")]: {
+    display: "flex",
+    justifyContent: "center",
+    alignItems: "center",
+    marginTop: "-75px",
+    paddingTop: "215px",
+    paddingBottom: "180px",
+  },
+  [theme.breakpoints.down("sm")]: {
+    paddingTop: "37px",
+    paddingBottom: "53px",
+  },
+});
 
 export const heroImageContainer = {
   position: "absolute",
@@ -46,6 +52,12 @@ export const contactInfoText = {
   alignItems: "center",
 };
 
-export const btnContainer = {
-  marginTop: "128px",
-};
+export const btnContainer = (theme) => ({
+  [theme.breakpoints.up("sm")]: {
+    marginTop: "128px",
+  },
+  [theme.breakpoints.down("sm")]: {
+    display: "flex",
+    marginTop: "35px",
+  },
+});

@@ -1,4 +1,11 @@
-import { Box, Container, Grid, Typography } from "@mui/material";
+import {
+  Box,
+  Container,
+  Grid,
+  Typography,
+  createTheme,
+  useMediaQuery,
+} from "@mui/material";
 import Lottie from "react-lottie";
 import PrimaryButton from "../../../UI/Buttons/PrimaryButton/PrimaryButton";
 import OutlinedButton from "../../../UI/Buttons/OutlinedButton/OutlinedButton";
@@ -17,6 +24,19 @@ import animationData from "../../../../lottie/heroAnimation.json";
 import Image from "next/future/image";
 import developmentImage from "../../../../../public/development-service.svg";
 import contactImage from "../../../../../public/talk-us.svg";
+import { useTheme } from "@mui/material/styles";
+
+const theme = createTheme({
+  breakpoints: {
+    values: {
+      xs: 0,
+      sm: 600,
+      md: 900,
+      lg: 1280,
+      xl: 1920,
+    },
+  },
+});
 
 const Hero = ({
   title,
@@ -34,6 +54,10 @@ const Hero = ({
     autoplay: true,
     animationData: animationData,
   };
+
+  const smallScreenSize = useMediaQuery(theme.breakpoints.down("sm"));
+
+  console.log(smallScreenSize);
 
   return (
     <Box className={styles.heroContainer}>
@@ -102,34 +126,24 @@ const Hero = ({
                 )}
               </Box>
             </Grid>
-            {homeAnimation ? (
+            {homeAnimation && !smallScreenSize ? (
               <Grid item md={4.5}>
                 <Lottie options={defaultOptions} height={450} width={500} />
               </Grid>
-            ) : contactInfo ? (
-              <Grid
-                item
-                md={7}
-                sx={{
-                  justifyContent: "flex-end",
-                  alignItems: "center",
-                  display: "flex",
-                }}
-              >
-                <Image src={contactImage} alt="development img" />
-              </Grid>
             ) : (
-              <Grid
-                item
-                md={4.5}
-                sx={{
-                  justifyContent: "center",
-                  alignItems: "center",
-                  display: "flex",
-                }}
-              >
-                <Image src={developmentImage} alt="development img" />
-              </Grid>
+              contactInfo && (
+                <Grid
+                  item
+                  md={7}
+                  sx={{
+                    justifyContent: "flex-end",
+                    alignItems: "center",
+                    display: "flex",
+                  }}
+                >
+                  <Image src={contactImage} alt="development img" />
+                </Grid>
+              )
             )}
           </Grid>
         </Box>
