@@ -85,6 +85,7 @@ const OurTeamSection = () => {
                       width={300}
                       height={336.53}
                       style={{ borderTopRightRadius: "20px" }}
+                      alt=""
                     />
                   </Box>
 

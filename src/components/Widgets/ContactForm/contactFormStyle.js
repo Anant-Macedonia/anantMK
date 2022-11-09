@@ -26,6 +26,7 @@ export const formInput = {
   background: "#145374",
   boxShadow: "7px 10px 7px rgba(0, 0, 0, 0.2)",
   paddingLeft: "22px",
+  paddingTop: "22px",
 };
 
 export const formTextBox = {
