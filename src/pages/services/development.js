@@ -9,17 +9,15 @@ import TalkSection from "../../components/Widgets/Dashboard/TalkSection/TalkSect
 import { GET_PROJECTS_DATA } from "../../queries/getProjects.js";
 
 const Development = (props) => {
-  console.log("dev props", props);
-
   const { heroTitle, heroDescription, heroImage, buttons } =
-    props.developmentData.hero;
-  const { steps } = props.developmentData;
+    props?.developmentData?.hero;
+  const { steps } = props?.developmentData;
   const {
     talkSectionTitle,
     talkSectionDescription,
     talkSectionImage,
     talkButton,
-  } = props.talkSectionData.talk;
+  } = props?.talkSectionData?.talk;
 
   return (
     <div>
@@ -31,7 +29,7 @@ const Development = (props) => {
         primaryButtonLink="/contact"
       /> */}
       <ServiceSteps steps={steps} />
-      <OurProjectSection projects={props.projectsData.projects} />
+      <OurProjectSection projects={props?.projectsData?.projects} />
       <TalkSection
         title={talkSectionTitle}
         description={talkSectionDescription}

@@ -5,7 +5,6 @@ import Hero from "../../components/Widgets/Dashboard/Hero/Hero";
 import { GET_CONTACT_DATA } from "../../queries/getContact";
 
 const Contact = (props) => {
-  console.log("contact props", props);
   const {
     heroTitle,
     heroDescription,
@@ -13,7 +12,7 @@ const Contact = (props) => {
     contactEmail,
     contactMobile,
     contactPhone,
-  } = props.contactData.hero;
+  } = props?.contactData?.hero;
   return (
     <div>
       {/* <Hero

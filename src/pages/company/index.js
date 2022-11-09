@@ -11,21 +11,20 @@ import { GET_TEAM_MEMBERS_DATA } from "../../queries/getTeamMembers";
 import { GET_APPROACH_SECTION_DATA } from "../../queries/getApproachSection";
 
 const Company = (props) => {
-  console.log("company props", props);
-  const { members } = props.teamMembersData;
+  const { members } = props?.teamMembersData;
   const {
     talkSectionTitle,
     talkSectionDescription,
     talkSectionImage,
     talkButton,
-  } = props.talkSectionData.talk;
-  const { approachInfo } = props.approachSectionData;
+  } = props?.talkSectionData?.talk;
+  const { approachInfo } = props?.approachSectionData;
   return (
     <Box sx={{ marginTop: "105px" }}>
       <OurApproach approachInfo={approachInfo} />
       <OurTeamSection teamMembers={members} />
       <Box sx={{ marginTop: "180px" }}>
-        <OurProjectSection projects={props.projectsData.projects} />
+        <OurProjectSection projects={props?.projectsData?.projects} />
       </Box>
       <TalkSection
         title={talkSectionTitle}
