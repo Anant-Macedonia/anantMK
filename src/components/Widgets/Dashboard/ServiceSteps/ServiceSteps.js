@@ -13,24 +13,73 @@ import {
   stepsTitle,
 } from "./serviceStepsStyle";
 
-const ServiceSteps = () => {
-  const [step, setStep] = useState(1);
+const ServiceSteps = ({ steps }) => {
+  const [stepNum, setStepNum] = useState(0);
 
-  if (step > 4) {
-    setStep(1);
+  if (stepNum > 3) {
+    setStepNum(0);
   }
 
   useEffect(() => {
     const interval = setInterval(() => {
-      setStep((prevStepNum) => prevStepNum + 1);
+      setStepNum((prevStepNum) => prevStepNum + 1);
     }, 5000);
     return () => clearInterval(interval);
-  }, [step]);
+  }, [stepNum]);
 
   return (
     <Container sx={{ marginBottom: "160px", marginTop: "95px" }}>
       <Grid container sx={{ justifyContent: "center" }}>
-        <Grid item xs={12} sm={6} md={2.4} sx={serviceStepsContainer}>
+        {steps.map((step, key) => {
+          return (
+            <Grid
+              item
+              xs={12}
+              sm={6}
+              md={2.4}
+              sx={serviceStepsContainer}
+              key={key}
+            >
+              <Box>
+                <Box
+                  sx={
+                    stepNum === key
+                      ? activeStepsNumberContainer
+                      : stepsNumberContainer
+                  }
+                >
+                  <Typography
+                    sx={stepNum === key ? activeStepNumber : stepsNumber}
+                  >
+                    {key + 1}
+                  </Typography>
+                </Box>
+                <Box sx={stepsTextContainer}>
+                  <Typography variant="h3" sx={stepsTitle}>
+                    {step.uxStepFields
+                      ? step.uxStepFields.title
+                      : step.developmentStepFileds &&
+                        step.developmentStepFileds.title}
+                  </Typography>
+
+                  <Box
+                    sx={cardDescription}
+                    dangerouslySetInnerHTML={{
+                      __html: step.uxStepFields
+                        ? step.uxStepFields.description
+                        : step.developmentStepFileds &&
+                          step.developmentStepFileds.description,
+                    }}
+                  />
+                </Box>
+              </Box>
+              <Box sx={btnContainer}>
+                {/* <ServiceStepsButton btnText="Read more" /> */}
+              </Box>
+            </Grid>
+          );
+        })}
+        {/* <Grid item xs={12} sm={6} md={2.4} sx={serviceStepsContainer}>
           <Box>
             <Box
               sx={
@@ -148,7 +197,7 @@ const ServiceSteps = () => {
           <Box sx={btnContainer}>
             <ServiceStepsButton btnText="Read more" />
           </Box>
-        </Grid>
+        </Grid> */}
       </Grid>
     </Container>
   );

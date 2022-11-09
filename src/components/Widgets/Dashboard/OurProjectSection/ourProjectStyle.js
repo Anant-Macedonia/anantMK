@@ -19,6 +19,7 @@ export const ourProjectContainer = {
   boxShadow: "7px 10px 7px rgba(0, 0, 0, 0.2)",
   borderRadius: "26px",
   marginTop: "58px",
+  padding: "34px 50px",
 };
 
 export const projectTitle = {

@@ -4,11 +4,9 @@ import PrimaryButton from "../../../UI/Buttons/PrimaryButton/PrimaryButton";
 import OutlinedButton from "../../../UI/Buttons/OutlinedButton/OutlinedButton";
 import {
   heroContainer,
-  heroImageContainer,
   heroTitle,
   heroDesc,
   btnContainer,
-  heroSubtitle,
   contactInfoText,
 } from "./heroStyle";
 import { AiOutlineGithub, AiOutlineMail } from "react-icons/ai";
@@ -21,14 +19,17 @@ import developmentImage from "../../../../../public/development-service.svg";
 import contactImage from "../../../../../public/talk-us.svg";
 
 const Hero = ({
-  heroData,
-  primaryBtnText,
-  secondaryBtnText,
   title,
   subtitle,
   description,
   contactInfo,
   homeAnimation,
+  contactEmail,
+  contactMobile,
+  contactPhone,
+  buttons,
+  primaryButtonLink,
+  secondaryButtonLink,
 }) => {
   const defaultOptions = {
     loop: true,
@@ -48,36 +49,30 @@ const Hero = ({
               sx={{ marginTop: "40px" }}
             >
               <Typography sx={heroTitle} variant="h1">
-                {/* {heroData?.heroTitle} */}
                 {title}
-
                 <Box variant="span" sx={{ fontWeight: 700 }}>
                   {subtitle}
                 </Box>
               </Typography>
-              {/* {heroData?.heroSubtitle && (
-                <Typography sx={heroSubtitle} variant="h2">
-                  {heroData?.heroSubtitle}
-                </Typography>
-              )} */}
-              <Typography sx={heroDesc} variant="h3">
-                {/* {heroData?.heroDescription} */}
-                {description}
-              </Typography>
+              <Box
+                sx={heroDesc}
+                dangerouslySetInnerHTML={{ __html: description }}
+              />
+
               {contactInfo && (
                 <>
                   <Box sx={{ marginTop: "63px" }}>
                     <Typography sx={contactInfoText}>
                       <AiOutlineMail style={{ marginRight: "15px" }} />
-                      info@anantmacedonia.mk
+                      {contactEmail}
                     </Typography>
                     <Typography sx={contactInfoText}>
-                      <MdPhonelinkRing style={{ marginRight: "15px" }} />{" "}
-                      0038970 333 333
+                      <MdPhonelinkRing style={{ marginRight: "15px" }} />
+                      {contactMobile}
                     </Typography>
                     <Typography sx={contactInfoText}>
-                      <MdPhonelinkRing style={{ marginRight: "15px" }} />{" "}
-                      0038970 333 333
+                      <MdPhonelinkRing style={{ marginRight: "15px" }} />
+                      {contactPhone}
                     </Typography>
                   </Box>
                   <Box sx={{ marginTop: "42px" }}>
@@ -92,20 +87,23 @@ const Hero = ({
                   </Box>
                 </>
               )}
-
-              <Box sx={btnContainer}>
-                {/* <PrimaryButton btnText={primaryBtnText} btnClass="btnMargin" />
-                <OutlinedButton btnText="Services" /> */}
-                {primaryBtnText && (
-                  <PrimaryButton
-                    btnText={primaryBtnText}
-                    btnClass="btnMargin"
-                  />
-                )}
-                {secondaryBtnText && (
-                  <OutlinedButton btnText={secondaryBtnText} />
-                )}
-              </Box>
+              {buttons && (
+                <Box sx={btnContainer}>
+                  {/* {buttons?.primaryButtonText && (
+                    <PrimaryButton
+                      btnText={buttons.primaryButtonText}
+                      btnClass="btnMargin"
+                      link={primaryButtonLink}
+                    />
+                  )} */}
+                  {/* {buttons?.secondaryButtonText && (
+                    <OutlinedButton
+                      btnText={buttons.secondaryButtonText}
+                      link={secondaryButtonLink}
+                    />
+                  )} */}
+                </Box>
+              )}
             </Grid>
             {homeAnimation ? (
               <Grid item md={4.5}>

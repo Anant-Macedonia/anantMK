@@ -36,4 +36,5 @@ export const formTextBox = {
   width: "571px",
   marginBottom: "47px",
   paddingLeft: "22px",
+  paddingTop: "22px",
 };

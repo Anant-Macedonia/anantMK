@@ -1,14 +1,17 @@
 import { Button } from "@mui/material";
+import Link from "next/link";
 import React from "react";
 import ButtonIcon from "../../ButtonIcon/ButtonIcon";
 import { secondaryButton } from "./secondaryButtonStyle";
 
-const SecondaryButton = ({ btnText, href }) => {
+const SecondaryButton = ({ btnText, link }) => {
   return (
-    <Button href={href} sx={secondaryButton}>
-      {btnText}
-      <ButtonIcon />
-    </Button>
+    <Link href={link} passHref>
+      <Button sx={secondaryButton}>
+        {btnText}
+        <ButtonIcon />
+      </Button>
+    </Link>
   );
 };
 

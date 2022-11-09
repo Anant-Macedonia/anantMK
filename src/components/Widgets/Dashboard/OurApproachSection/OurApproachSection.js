@@ -18,30 +18,35 @@ import {
   imageContainer,
 } from "./ourApproachStyle";
 
-const OurApproach = ({ heroData, primaryBtnText, secondaryBtnText }) => {
+const OurApproach = ({
+  heroData,
+  primaryBtnText,
+  secondaryBtnText,
+  approachInfo,
+}) => {
   const [deg, setDeg] = useState(0);
   const [slider, setSlider] = useState(0);
   const [delay, setDelay] = useState("5s");
   const [play, setPlay] = useState("running");
-  if (slider === 360) {
+  if (slider >= 3) {
     setSlider(0);
   }
 
-  const clickHandler = () => {
-    setSlider((prevSlider) => prevSlider + 90);
-    if (deg == 0 && delay == "5s") {
-      setDeg(0);
-      setDelay("0s");
-      // setPlay("paused");
-    } else {
-      setDeg((prevDeg) => prevDeg + 90);
-      // setPlay("paused");
-    }
-  };
+  // const clickHandler = () => {
+  //   setSlider((prevSlider) => prevSlider + 1);
+  //   if (deg == 0 && delay == "5s") {
+  //     setDeg(0);
+  //     setDelay("0s");
+  //     // setPlay("paused");
+  //   } else {
+  //     setDeg((prevDeg) => prevDeg + 90);
+  //     // setPlay("paused");
+  //   }
+  // };
 
   useEffect(() => {
     const interval = setInterval(() => {
-      setSlider((prevSlider) => prevSlider + 90);
+      setSlider((prevSlider) => prevSlider + 1);
     }, 5000);
     return () => clearInterval(interval);
   }, []);
@@ -56,41 +61,25 @@ const OurApproach = ({ heroData, primaryBtnText, secondaryBtnText }) => {
               Learn more about us and take a look at our approach.
             </Typography>
 
-            {slider === 0 && (
-              <Typography sx={ourApproachSubtitle} variant="h2">
-                {heroData?.heroSubtitle}
-                Research and Design Strategy
-              </Typography>
-            )}
-            {slider == 90 && (
-              <Typography sx={ourApproachSubtitle} variant="h2">
-                {heroData?.heroSubtitle}
-                Design Thinking Methodology
-              </Typography>
-            )}
-            {slider == 180 && (
-              <Typography sx={ourApproachSubtitle} variant="h2">
-                {heroData?.heroSubtitle}
-                Product Development
-              </Typography>
-            )}
-            {slider == 270 && (
-              <Typography sx={ourApproachSubtitle} variant="h2">
-                {heroData?.heroSubtitle}
-                Product Testing
-              </Typography>
-            )}
+            {approachInfo.map((info, key) => {
+              return (
+                slider === key && (
+                  <Box key={key}>
+                    <Typography sx={ourApproachSubtitle} variant="h2">
+                      {info?.approachFields?.title}
+                    </Typography>
+                    <Box
+                      sx={ourApproachDesc}
+                      dangerouslySetInnerHTML={{
+                        __html: info?.approachFields?.description,
+                      }}
+                    />
 
-            <Typography sx={ourApproachDesc} variant="h3">
-              {heroData?.heroDescription}
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque
-              mollis lectus id quam posuere ultrices. Donec magna metus,
-              porttitor in enim sed, vestibulum eleifend purus. Morbi mauris
-              orci, mollis non enim vitae, euismod pellentesque mauris. Quisque
-              id tincidunt quam, id sodales lectus. Nullam quis leo ex. Mauri
-              quis dolor rutrum sem interdum scelerisque sed a neque.
-            </Typography>
-            <PrimaryButton btnText="Learn More" />
+                    {/* <PrimaryButton btnText="Learn More" link="/contact" /> */}
+                  </Box>
+                )
+              );
+            })}
           </Grid>
           <Grid item md={4} sx={imageContainer}>
             <div className={styles.container}>

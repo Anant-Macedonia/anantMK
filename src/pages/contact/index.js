@@ -1,19 +1,46 @@
 import React from "react";
+import { client } from "../../lib/apollo.js";
 import ContactForm from "../../components/Widgets/ContactForm/ContactForm";
 import Hero from "../../components/Widgets/Dashboard/Hero/Hero";
+import { GET_CONTACT_DATA } from "../../queries/getContact";
 
-const Contact = () => {
+const Contact = (props) => {
+  const {
+    heroTitle,
+    heroDescription,
+    heroImage,
+    contactEmail,
+    contactMobile,
+    contactPhone,
+  } = props?.contactData?.hero;
   return (
     <div>
-      <Hero
-        title="Let’s Work Together"
-        description="We  help businesses make the most of the web. 
-  If you have any questions about our services, our work, or anything about us, please don’t hesitate to contact us."
+      {/* <Hero
+        title={heroTitle}
+        description={heroDescription}
+        heroImage={heroImage}
+        contactEmail={contactEmail}
+        contactMobile={contactMobile}
+        contactPhone={contactPhone}
         contactInfo
-      />
-      <ContactForm />
+      /> */}
+      {/* <ContactForm /> */}
     </div>
   );
 };
 
 export default Contact;
+
+export async function getStaticProps() {
+  const { data: contactData } = await client.query({
+    query: GET_CONTACT_DATA,
+  });
+
+  return {
+    props: {
+      contactData: {
+        hero: contactData?.nodeByUri?.contactFields,
+      },
+    },
+  };
+}

@@ -1,9 +1,6 @@
-import AboutUsSection from "../components/Widgets/Dashboard/AboutUsSection/AboutUsSection";
-import Hello from "../components/Widgets/Dashboard/HelloSection/Hello";
 import Hero from "../components/Widgets/Dashboard/Hero/Hero";
 import OurApproach from "../components/Widgets/Dashboard/OurApproachSection/OurApproachSection";
 import OurProjectSection from "../components/Widgets/Dashboard/OurProjectSection/OurProjectSection";
-import OurWork from "../components/Widgets/Dashboard/OurWorkSection/OurWork";
 import ServicesSection from "../components/Widgets/Dashboard/ServicesSection/ServicesSection";
 import TalkSection from "../components/Widgets/Dashboard/TalkSection/TalkSection";
 import { client } from "../lib/apollo.js";
@@ -25,6 +22,17 @@ export default function Home(props) {
         primaryBtnText="Start a Project"
         secondaryBtnText="Services"
         homeAnimation
+        primaryButtonLink="/contact"
+        secondaryButtonLink="/services"
+      />
+      <OurApproach approachInfo={approachInfo} />
+      <ServicesSection services={props?.homeData?.serviceSection} />
+      <OurProjectSection projects={props?.projectsData?.projects} />
+      <TalkSection
+        title={talkSectionTitle}
+        description={talkSectionDescription}
+        talkImage={talkSectionImage}
+        talkButton={talkButton}
       />
       <OurApproach />
       <ServicesSection />
