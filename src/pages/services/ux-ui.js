@@ -10,6 +10,7 @@ import { GET_TALK_SECTION_DATA } from "../../queries/getTalkSection.js";
 import { GET_PROJECTS_DATA } from "../../queries/getProjects.js";
 
 const UxUi = (props) => {
+  console.log("ux props", props);
   const { heroTitle, heroDescription, heroImage, buttons } =
     props.uxUiData.hero;
   const { steps } = props.uxUiData;
@@ -21,13 +22,13 @@ const UxUi = (props) => {
   } = props.talkSectionData.talk;
   return (
     <div>
-      <Hero
+      {/* <Hero
         title={heroTitle}
         description={heroDescription}
         heroImage={heroImage}
         buttons={buttons}
         primaryButtonLink="/contact"
-      />
+      /> */}
       <ServiceSteps steps={steps} />
       <OurProjectSection projects={props.projectsData.projects} />
       <TalkSection

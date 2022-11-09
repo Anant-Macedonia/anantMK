@@ -11,6 +11,7 @@ import { GET_TEAM_MEMBERS_DATA } from "../../queries/getTeamMembers";
 import { GET_APPROACH_SECTION_DATA } from "../../queries/getApproachSection";
 
 const Company = (props) => {
+  console.log("company props", props);
   const { members } = props.teamMembersData;
   const {
     talkSectionTitle,

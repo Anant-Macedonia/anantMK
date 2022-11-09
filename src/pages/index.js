@@ -10,6 +10,7 @@ import { GET_PROJECTS_DATA } from "../queries/getProjects.js";
 import { GET_APPROACH_SECTION_DATA } from "../queries/getApproachSection";
 
 export default function Home(props) {
+  console.log("home props", props);
   const { heroTitle, heroSubtitle, heroDescription, buttons } =
     props.homeData.hero;
 
@@ -24,7 +25,7 @@ export default function Home(props) {
 
   return (
     <>
-      <Hero
+      {/* <Hero
         title={heroTitle}
         subtitle={heroSubtitle}
         description={heroDescription}
@@ -32,7 +33,7 @@ export default function Home(props) {
         homeAnimation
         primaryButtonLink="/contact"
         secondaryButtonLink="/services"
-      />
+      /> */}
       <OurApproach approachInfo={approachInfo} />
       <ServicesSection services={props.homeData.serviceSection} />
       <OurProjectSection projects={props.projectsData.projects} />

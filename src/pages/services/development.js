@@ -9,6 +9,8 @@ import TalkSection from "../../components/Widgets/Dashboard/TalkSection/TalkSect
 import { GET_PROJECTS_DATA } from "../../queries/getProjects.js";
 
 const Development = (props) => {
+  console.log("dev props", props);
+
   const { heroTitle, heroDescription, heroImage, buttons } =
     props.developmentData.hero;
   const { steps } = props.developmentData;
@@ -18,15 +20,16 @@ const Development = (props) => {
     talkSectionImage,
     talkButton,
   } = props.talkSectionData.talk;
+
   return (
     <div>
-      <Hero
+      {/* <Hero
         title={heroTitle}
         description={heroDescription}
         heroImage={heroImage}
         buttons={buttons}
         primaryButtonLink="/contact"
-      />
+      /> */}
       <ServiceSteps steps={steps} />
       <OurProjectSection projects={props.projectsData.projects} />
       <TalkSection
