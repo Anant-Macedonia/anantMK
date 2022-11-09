@@ -6,12 +6,16 @@ import { secondaryButton } from "./secondaryButtonStyle";
 
 const SecondaryButton = ({ btnText, link }) => {
   return (
-    <Link href={link ? link : "/"} passHref>
-      <Button sx={secondaryButton}>
-        {btnText}
-        <ButtonIcon />
-      </Button>
-    </Link>
+    <>
+      {link && (
+        <Link href={link} passHref>
+          <Button sx={secondaryButton}>
+            {btnText}
+            <ButtonIcon />
+          </Button>
+        </Link>
+      )}
+    </>
   );
 };
 

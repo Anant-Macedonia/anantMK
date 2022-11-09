@@ -4,13 +4,18 @@ import ButtonIcon from "../../ButtonIcon/ButtonIcon";
 import { primaryBtn } from "./primaryButtonStyle";
 
 const PrimaryButton = ({ btnText, btnClass, link, handleSubmit }) => {
+  console.log("LINK", link);
   return (
-    <Link href={link ? link : "/"} passHref>
-      <Button sx={primaryBtn} onClick={handleSubmit}>
-        {btnText}
-        <ButtonIcon />
-      </Button>
-    </Link>
+    <>
+      {link && (
+        <Link href={link} passHref>
+          <Button sx={primaryBtn} onClick={handleSubmit}>
+            {btnText}
+            <ButtonIcon />
+          </Button>
+        </Link>
+      )}
+    </>
   );
 };
 
