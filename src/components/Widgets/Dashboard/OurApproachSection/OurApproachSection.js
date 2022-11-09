@@ -75,7 +75,7 @@ const OurApproach = ({
                       }}
                     />
 
-                    <PrimaryButton btnText="Learn More" link="/contact" />
+                    {/* <PrimaryButton btnText="Learn More" link="/contact" /> */}
                   </Box>
                 )
               );

@@ -25,7 +25,7 @@ const Contact = (props) => {
         contactPhone={contactPhone}
         contactInfo
       /> */}
-      <ContactForm />
+      {/* <ContactForm /> */}
     </div>
   );
 };

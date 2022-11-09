@@ -89,19 +89,19 @@ const Hero = ({
               )}
               {buttons && (
                 <Box sx={btnContainer}>
-                  {buttons?.primaryButtonText && (
+                  {/* {buttons?.primaryButtonText && (
                     <PrimaryButton
                       btnText={buttons.primaryButtonText}
                       btnClass="btnMargin"
                       link={primaryButtonLink}
                     />
-                  )}
-                  {buttons?.secondaryButtonText && (
+                  )} */}
+                  {/* {buttons?.secondaryButtonText && (
                     <OutlinedButton
                       btnText={buttons.secondaryButtonText}
                       link={secondaryButtonLink}
                     />
-                  )}
+                  )} */}
                 </Box>
               )}
             </Grid>
