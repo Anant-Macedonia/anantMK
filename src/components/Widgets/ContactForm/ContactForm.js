@@ -130,7 +130,11 @@ const ContactForm = () => {
                   style={formTextBox}
                 />
               </Box>
-              <PrimaryButton btnText="Submit" handleSubmit={handleSubmit} />
+              {/* <PrimaryButton
+                btnText="Submit"
+                link={null}
+                handleSubmit={handleSubmit}
+              /> */}
             </FormControl>
           </Grid>
         </Grid>

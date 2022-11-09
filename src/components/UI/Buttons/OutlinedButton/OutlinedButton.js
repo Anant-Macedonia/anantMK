@@ -5,16 +5,12 @@ import { outlinedBtn } from "./outlinedButtonStyle";
 
 const OutlinedButton = ({ btnText, link }) => {
   return (
-    <>
-      {link && (
-        <Link href={link} passHref>
-          <Button sx={outlinedBtn}>
-            {btnText}
-            <ButtonIcon />
-          </Button>
-        </Link>
-      )}
-    </>
+    <Link href={link} passHref>
+      <Button sx={outlinedBtn}>
+        {btnText}
+        <ButtonIcon />
+      </Button>
+    </Link>
   );
 };
 
