@@ -47,10 +47,7 @@ const OurProjectSection = ({ projects }) => {
                         }}
                       />
 
-                      <PrimaryButton
-                        btnText="View Project"
-                        link={project.projectFields.projectLink}
-                      />
+                      <PrimaryButton btnText="View Project" link="/contact" />
                     </>
                   )}
                 </Grid>

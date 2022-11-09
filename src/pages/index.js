@@ -30,6 +30,8 @@ export default function Home(props) {
         description={heroDescription}
         buttons={buttons}
         homeAnimation
+        primaryButtonLink="/contact"
+        secondaryButtonLink="/services"
       />
       <OurApproach approachInfo={approachInfo} />
       <ServicesSection services={props.homeData.serviceSection} />

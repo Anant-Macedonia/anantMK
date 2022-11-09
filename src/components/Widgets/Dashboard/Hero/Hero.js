@@ -28,6 +28,8 @@ const Hero = ({
   contactMobile,
   contactPhone,
   buttons,
+  primaryButtonLink,
+  secondaryButtonLink,
 }) => {
   const defaultOptions = {
     loop: true,
@@ -85,22 +87,23 @@ const Hero = ({
                   </Box>
                 </>
               )}
-
-              <Box sx={btnContainer}>
-                {buttons?.primaryButtonText && (
-                  <PrimaryButton
-                    btnText={buttons.primaryButtonText}
-                    btnClass="btnMargin"
-                    link={buttons.primaryButtonLink.uri}
-                  />
-                )}
-                {buttons?.secondaryButtonText && (
-                  <OutlinedButton
-                    btnText={buttons.secondaryButtonText}
-                    link={buttons.secondaryButtonLink.uri}
-                  />
-                )}
-              </Box>
+              {buttons && (
+                <Box sx={btnContainer}>
+                  {buttons?.primaryButtonText && (
+                    <PrimaryButton
+                      btnText={buttons.primaryButtonText}
+                      btnClass="btnMargin"
+                      link={primaryButtonLink}
+                    />
+                  )}
+                  {buttons?.secondaryButtonText && (
+                    <OutlinedButton
+                      btnText={buttons.secondaryButtonText}
+                      link={secondaryButtonLink}
+                    />
+                  )}
+                </Box>
+              )}
             </Grid>
             {homeAnimation ? (
               <Grid item md={4.5}>

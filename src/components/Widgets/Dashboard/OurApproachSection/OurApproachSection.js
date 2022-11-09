@@ -75,10 +75,7 @@ const OurApproach = ({
                       }}
                     />
 
-                    <PrimaryButton
-                      btnText="Learn More"
-                      link={info.approachFields.button.buttonLink.uri}
-                    />
+                    <PrimaryButton btnText="Learn More" link="/contact" />
                   </>
                 )
               );

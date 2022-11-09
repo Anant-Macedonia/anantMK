@@ -26,7 +26,7 @@ const TalkSection = ({ title, description, talkImage, talkButton }) => {
               />
               <PrimaryButton
                 btnText={talkButton.talkButtonText}
-                link={talkButton.talkButtonLink.uri}
+                link="/contact"
               />
             </Grid>
             <Grid item md={5.5}>

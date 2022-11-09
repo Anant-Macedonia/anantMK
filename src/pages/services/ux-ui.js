@@ -26,6 +26,7 @@ const UxUi = (props) => {
         description={heroDescription}
         heroImage={heroImage}
         buttons={buttons}
+        primaryButtonLink="/contact"
       />
       <ServiceSteps steps={steps} />
       <OurProjectSection projects={props.projectsData.projects} />
