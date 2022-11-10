@@ -22,9 +22,7 @@ import { BsLinkedin } from "react-icons/bs";
 import styles from "./hero.module.css";
 import animationData from "../../../../lottie/heroAnimation.json";
 import Image from "next/future/image";
-import developmentImage from "../../../../../public/development-service.svg";
 import contactImage from "../../../../../public/talk-us.svg";
-import { useTheme } from "@mui/material/styles";
 
 const theme = createTheme({
   breakpoints: {
@@ -58,8 +56,6 @@ const Hero = ({
   };
 
   const smallScreenSize = useMediaQuery(theme.breakpoints.down("sm"));
-
-  console.log(smallScreenSize);
 
   return (
     <Box className={styles.heroContainer}>
@@ -113,19 +109,19 @@ const Hero = ({
               )}
               {buttons && (
                 <Box sx={btnContainer}>
-                  {/* {buttons?.primaryButtonText && (
+                  {buttons?.primaryButtonText && (
                     <PrimaryButton
                       btnText={buttons.primaryButtonText}
                       btnClass="btnMargin"
                       link={primaryButtonLink}
                     />
-                  )} */}
-                  {/* {buttons?.secondaryButtonText && (
+                  )}
+                  {buttons?.secondaryButtonText && (
                     <OutlinedButton
                       btnText={buttons.secondaryButtonText}
                       link={secondaryButtonLink}
                     />
-                  )} */}
+                  )}
                 </Box>
               )}
             </Grid>

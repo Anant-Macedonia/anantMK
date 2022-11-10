@@ -24,7 +24,7 @@ export default function Home(props) {
 
   return (
     <>
-      {/* <Hero
+      <Hero
         title={heroTitle}
         subtitle={heroSubtitle}
         description={heroDescription}
@@ -32,7 +32,7 @@ export default function Home(props) {
         homeAnimation
         primaryButtonLink="/contact"
         secondaryButtonLink="/services"
-      /> */}
+      />
       <OurApproach approachInfo={approachInfo} />
       <ServicesSection services={props?.homeData?.serviceSection} />
       <OurProjectSection projects={props?.projectsData?.projects} />

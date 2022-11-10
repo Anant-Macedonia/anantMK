@@ -44,10 +44,10 @@ const TalkSection = ({ title, description, talkImage, talkButton }) => {
                 sx={talkSectionDesc}
                 dangerouslySetInnerHTML={{ __html: description }}
               />
-              {/* <PrimaryButton
+              <PrimaryButton
                 btnText={talkButton.talkButtonText}
                 link="/contact"
-              /> */}
+              />
             </Grid>
 
             <Grid item xs={12} md={5.5}>

@@ -15,7 +15,7 @@ const Contact = (props) => {
   } = props?.contactData?.hero;
   return (
     <div>
-      {/* <Hero
+      <Hero
         title={heroTitle}
         description={heroDescription}
         heroImage={heroImage}
@@ -23,8 +23,8 @@ const Contact = (props) => {
         contactMobile={contactMobile}
         contactPhone={contactPhone}
         contactInfo
-      /> */}
-      {/* <ContactForm /> */}
+      />
+      <ContactForm />
     </div>
   );
 };

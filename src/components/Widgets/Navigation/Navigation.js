@@ -51,7 +51,7 @@ function Navigation() {
                 </Link>
               );
             })}
-            {/* <ContactButton btnText="Contact Us" /> */}
+            <ContactButton btnText="Contact Us" />
           </Hidden>
           <Hidden smUp>
             <IconButton onClick={() => setOpen(true)}>
@@ -87,7 +87,7 @@ function Navigation() {
               </ListItem>
             );
           })}
-          {/* <ContactButton btnText="Contact Us" /> */}
+          <ContactButton btnText="Contact Us" />
         </List>
       </SwipeableDrawer>
     </AppBar>

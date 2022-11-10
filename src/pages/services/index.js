@@ -75,7 +75,7 @@ const Services = () => {
               <Box sx={subTitle}>Testing</Box>
             </Stack>
             <Box sx={{ marginTop: "125px" }}>
-              {/* <SecondaryButton link="/services/ux-ui" btnText="Learn More" /> */}
+              <SecondaryButton link="/services/ux-ui" btnText="Learn More" />
             </Box>
           </Grid>
           <Grid
@@ -113,10 +113,10 @@ const Services = () => {
                 <Box sx={developmentSubTitle}>Testing</Box>
               </Stack>
               <Box sx={{ marginTop: "125px" }}>
-                {/* <SecondaryButton
+                <SecondaryButton
                   link="/services/development"
                   btnText="Learn More"
-                /> */}
+                />
               </Box>
             </Grid>
           </>

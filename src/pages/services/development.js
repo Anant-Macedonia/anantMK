@@ -21,13 +21,13 @@ const Development = (props) => {
 
   return (
     <div>
-      {/* <Hero
+      <Hero
         title={heroTitle}
         description={heroDescription}
         heroImage={heroImage}
         buttons={buttons}
         primaryButtonLink="/contact"
-      /> */}
+      />
       <ServiceSteps steps={steps} />
       <OurProjectSection projects={props?.projectsData?.projects} />
       <TalkSection
