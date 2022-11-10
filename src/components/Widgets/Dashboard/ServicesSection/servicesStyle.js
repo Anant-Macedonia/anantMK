@@ -16,20 +16,37 @@ export const cardLine = {
   marginBottom: "16px",
 };
 
-export const servicesCard = {
-  maxWidth: "470px",
-  background: " #124F70",
-  boxShadow: "7px 10px 7px rgba(0, 0, 0, 0.2)",
-  borderRadius: "20px",
-};
+export const servicesCard = (theme) => ({
+  [theme.breakpoints.up("sm")]: {
+    maxWidth: "470px",
+    background: " #124F70",
+    boxShadow: "7px 10px 7px rgba(0, 0, 0, 0.2)",
+    borderRadius: "20px",
+  },
+  [theme.breakpoints.down("sm")]: {
+    maxWidth: "225px",
+    background: " #124F70",
+    boxShadow: "7px 10px 7px rgba(0, 0, 0, 0.2)",
+    borderRadius: "20px",
+  },
+});
 
-export const imageContainer = {
-  background: "#EE6F57",
-  display: "flex",
-  justifyContent: "center",
-  alignItems: "center",
-  height: "185px",
-};
+export const imageContainer = (theme) => ({
+  [theme.breakpoints.up("sm")]: {
+    background: "#EE6F57",
+    display: "flex",
+    justifyContent: "center",
+    alignItems: "center",
+    height: "185px",
+  },
+  [theme.breakpoints.down("sm")]: {
+    background: "#EE6F57",
+    display: "flex",
+    justifyContent: "center",
+    alignItems: "center",
+    height: "120px",
+  },
+});
 
 export const cardTitle = {
   fontFamily: "Montserrat",

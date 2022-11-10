@@ -7,6 +7,8 @@ import {
   Typography,
   Box,
   Stack,
+  createTheme,
+  useMediaQuery,
 } from "@mui/material";
 import {
   cardDescription,
@@ -18,7 +20,20 @@ import {
 } from "./servicesStyle";
 import styles from "./servicesSection.module.css";
 
+const theme = createTheme({
+  breakpoints: {
+    values: {
+      xs: 0,
+      sm: 600,
+      md: 900,
+      lg: 1280,
+      xl: 1920,
+    },
+  },
+});
+
 const ServicesSection = ({ services }) => {
+  const smallScreenSize = useMediaQuery(theme.breakpoints.down("sm"));
   return (
     <Box
       className={styles.servicesContainer}
@@ -36,13 +51,13 @@ const ServicesSection = ({ services }) => {
             {services.map((service, key) => {
               return (
                 <Box key={key}>
-                  <Box sx={cardLine}></Box>
+                  {!smallScreenSize && <Box sx={cardLine}></Box>}
                   <Card sx={servicesCard}>
                     <Box sx={imageContainer}>
                       <Image
                         src={service.serviceFileds.serviceImage.sourceUrl}
-                        width={248}
-                        height={170}
+                        width={!smallScreenSize ? 248 : 132}
+                        height={!smallScreenSize ? 170 : 86}
                         alt="ux-image"
                       />
                     </Box>

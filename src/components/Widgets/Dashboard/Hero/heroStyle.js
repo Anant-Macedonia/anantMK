@@ -58,6 +58,7 @@ export const btnContainer = (theme) => ({
   },
   [theme.breakpoints.down("sm")]: {
     display: "flex",
+    justifyContent: "space-between",
     marginTop: "35px",
   },
 });
