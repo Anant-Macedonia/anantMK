@@ -1,7 +1,15 @@
 import { useEffect, useState } from "react";
 import Image from "next/future/image";
 // import { useAnimation, motion, transform } from "framer-motion";
-import { Box, Button, Container, Grid, Typography } from "@mui/material";
+import {
+  Box,
+  Button,
+  Container,
+  Grid,
+  Typography,
+  createTheme,
+  useMediaQuery,
+} from "@mui/material";
 import PrimaryButton from "../../../UI/Buttons/PrimaryButton/PrimaryButton.js";
 // import circleImage from "../../../../../public/CircleGroup.svg"
 // import circleImage from "../../../../../public/circle.svg";
@@ -17,6 +25,18 @@ import {
   ellipseImage1,
   imageContainer,
 } from "./ourApproachStyle";
+
+const theme = createTheme({
+  breakpoints: {
+    values: {
+      xs: 0,
+      sm: 600,
+      md: 900,
+      lg: 1280,
+      xl: 1920,
+    },
+  },
+});
 
 const OurApproach = ({
   heroData,
@@ -51,6 +71,8 @@ const OurApproach = ({
     return () => clearInterval(interval);
   }, []);
 
+  const smallScreenSize = useMediaQuery(theme.breakpoints.down("sm"));
+
   return (
     <Box sx={ourApproachContainer}>
       <Container>
@@ -81,63 +103,65 @@ const OurApproach = ({
               );
             })}
           </Grid>
-          <Grid item md={4} sx={imageContainer}>
-            <div className={styles.container}>
-              <div className={styles.circle}>
-                <Box
-                  sx={{
-                    width: "220px",
-                    height: "220px",
-                    transformOrigin: "bottom right",
-                    animation: "rotate 20s infinite ",
+          {!smallScreenSize && (
+            <Grid item md={4} sx={imageContainer}>
+              <div className={styles.container}>
+                <div className={styles.circle}>
+                  <Box
+                    sx={{
+                      width: "220px",
+                      height: "220px",
+                      transformOrigin: "bottom right",
+                      animation: "rotate 20s infinite ",
 
-                    animationDelay: delay,
-                    animationPlayState: play,
-                    "@keyframes rotate": {
-                      "0%": {
-                        transform: `rotate(${0 + deg}deg)`,
+                      animationDelay: delay,
+                      animationPlayState: play,
+                      "@keyframes rotate": {
+                        "0%": {
+                          transform: `rotate(${0 + deg}deg)`,
+                        },
+                        "5%": {
+                          transform: `rotate(${90 + deg}deg)`,
+                        },
+                        "25%": {
+                          transform: `rotate(${90 + deg}deg)`,
+                        },
+                        "30%": {
+                          transform: `rotate(${180 + deg}deg)`,
+                        },
+                        "50%": {
+                          transform: `rotate(${180 + deg}deg)`,
+                        },
+                        "55%": {
+                          transform: `rotate(${270 + deg}deg)`,
+                        },
+                        "75%": {
+                          transform: `rotate(${270 + deg}deg)`,
+                        },
+                        "80%": {
+                          transform: `rotate(${360 + deg}deg)`,
+                        },
+                        "100%": {
+                          transform: `rotate(${360 + deg}deg)`,
+                        },
                       },
-                      "5%": {
-                        transform: `rotate(${90 + deg}deg)`,
-                      },
-                      "25%": {
-                        transform: `rotate(${90 + deg}deg)`,
-                      },
-                      "30%": {
-                        transform: `rotate(${180 + deg}deg)`,
-                      },
-                      "50%": {
-                        transform: `rotate(${180 + deg}deg)`,
-                      },
-                      "55%": {
-                        transform: `rotate(${270 + deg}deg)`,
-                      },
-                      "75%": {
-                        transform: `rotate(${270 + deg}deg)`,
-                      },
-                      "80%": {
-                        transform: `rotate(${360 + deg}deg)`,
-                      },
-                      "100%": {
-                        transform: `rotate(${360 + deg}deg)`,
-                      },
-                    },
-                  }}
-                >
-                  <Image
-                    src={ellipseImage}
-                    quality={100}
-                    alt="Hero Image"
-                    className={styles.ellipseImage1}
-                  />
-                </Box>
+                    }}
+                  >
+                    <Image
+                      src={ellipseImage}
+                      quality={100}
+                      alt="Hero Image"
+                      className={styles.ellipseImage1}
+                    />
+                  </Box>
+                </div>
               </div>
-            </div>
 
-            {/* <Button variant="contained" onClick={clickHandler}>
+              {/* <Button variant="contained" onClick={clickHandler}>
               +
             </Button> */}
-          </Grid>
+            </Grid>
+          )}
         </Grid>
       </Container>
     </Box>

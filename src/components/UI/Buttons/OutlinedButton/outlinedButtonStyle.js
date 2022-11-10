@@ -1,4 +1,4 @@
-export const outlinedBtn = {
+export const outlinedBtn = (theme) => ({
   color: "#EE6F57",
   fontFamily: "Mulish !important",
   fontSize: "18px",
@@ -14,4 +14,9 @@ export const outlinedBtn = {
     backgroundColor: "transparent",
     borderColor: "#ffffff",
   },
-};
+  [theme.breakpoints.down("sm")]: {
+    marginRight: "15px",
+    width: "156px",
+    height: "34px",
+  },
+});

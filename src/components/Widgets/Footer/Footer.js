@@ -1,4 +1,13 @@
-import { Grid, Typography, Link, Box, Divider, Container } from "@mui/material";
+import {
+  Grid,
+  Typography,
+  Link,
+  Box,
+  Divider,
+  Container,
+  createTheme,
+  useMediaQuery,
+} from "@mui/material";
 import Image from "next/image";
 import classes from "./footer.module.css";
 import logo from "../../../../public/footer-logo.png";
@@ -6,7 +15,20 @@ import { AiOutlineGithub, AiOutlineCopyrightCircle } from "react-icons/ai";
 import { BsLinkedin } from "react-icons/bs";
 import { contactText, linkText } from "./footerStyles";
 
+const theme = createTheme({
+  breakpoints: {
+    values: {
+      xs: 0,
+      sm: 600,
+      md: 900,
+      lg: 1280,
+      xl: 1920,
+    },
+  },
+});
+
 const Footer = () => {
+  const smallScreenSize = useMediaQuery(theme.breakpoints.down("sm"));
   return (
     <Container>
       <Grid
@@ -17,16 +39,25 @@ const Footer = () => {
       >
         <Grid
           item
-          xs={12}
-          sx={{
-            marginBottom: "20px",
-            marginTop: "65px",
-            maxHeight: "125px",
-          }}
+          xs={4}
+          md={12}
+          sx={
+            !smallScreenSize
+              ? {
+                  marginBottom: "20px",
+                  marginTop: "65px",
+                  maxHeight: "125px",
+                }
+              : {
+                  marginBottom: "0",
+                  marginTop: "0",
+                  maxHeight: "125px",
+                }
+          }
         >
           <Image src={logo} alt="anant.mk logo" />
         </Grid>
-        <Grid item xs={6} md={2.7}>
+        <Grid item xs={8} md={2.7}>
           <Typography
             variant="h6"
             sx={{
@@ -38,19 +69,21 @@ const Footer = () => {
           >
             Anant Macedonia
           </Typography>
-          <Typography
-            sx={{
-              fontSize: "16px",
-              letterSpacing: " -0.04em",
-              fontWeight: 400,
-              lineHeight: "20x",
-            }}
-          >
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque
-            mollis lectus id quam posuere ultrices. Donec magna metus, porttitor
-            in enim sed, vestibulum eleifend purus. Morbi mauris orci, mollis
-            non enim vitae, euismod pellentesque
-          </Typography>
+          {!smallScreenSize && (
+            <Typography
+              sx={{
+                fontSize: "16px",
+                letterSpacing: " -0.04em",
+                fontWeight: 400,
+                lineHeight: "20x",
+              }}
+            >
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque
+              mollis lectus id quam posuere ultrices. Donec magna metus,
+              porttitor in enim sed, vestibulum eleifend purus. Morbi mauris
+              orci, mollis non enim vitae, euismod pellentesque
+            </Typography>
+          )}
         </Grid>
         <Grid item xs={6} md={1.8}>
           <Typography

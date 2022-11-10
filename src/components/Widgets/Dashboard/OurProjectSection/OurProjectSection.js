@@ -1,5 +1,12 @@
 import React, { useEffect, useState } from "react";
-import { Box, Container, Grid, Typography } from "@mui/material";
+import {
+  Box,
+  Container,
+  Grid,
+  Typography,
+  createTheme,
+  useMediaQuery,
+} from "@mui/material";
 import PrimaryButton from "../../../UI/Buttons/PrimaryButton/PrimaryButton";
 import Image from "next/future/image";
 import {
@@ -10,7 +17,20 @@ import {
   projectDesc,
 } from "./ourProjectStyle";
 
+const theme = createTheme({
+  breakpoints: {
+    values: {
+      xs: 0,
+      sm: 600,
+      md: 900,
+      lg: 1280,
+      xl: 1920,
+    },
+  },
+});
+
 const OurProjectSection = ({ projects }) => {
+  const smallScreenSize = useMediaQuery(theme.breakpoints.down("sm"));
   const [projectNum, setProjectNum] = useState(0);
 
   if (projectNum > 2) {
@@ -31,48 +51,52 @@ const OurProjectSection = ({ projects }) => {
           Take a look at some of our projects.
         </Typography>
         <Box sx={ourProjectContainer}>
-          {projects.map((project, key) => {
-            return (
-              <Grid container key={key}>
-                <Grid item md={7.2}>
-                  {projectNum === key && (
-                    <>
-                      <Typography sx={projectTitle}>
-                        {project.projectFields.projectTitle}
-                      </Typography>
-                      <Box
-                        sx={projectDesc}
-                        dangerouslySetInnerHTML={{
-                          __html: project.projectFields.projectDescription,
-                        }}
-                      />
-
-                      {/* <PrimaryButton btnText="View Project" link="/contact" /> */}
-                    </>
-                  )}
-                </Grid>
-                <Grid
-                  item
-                  md={4.8}
-                  sx={{
-                    display: "flex",
-                    alignItems: "center",
-                  }}
-                >
-                  {projectNum === key && (
-                    <Image
-                      src={project.projectFields.projectImage.sourceUrl}
-                      alt=" "
-                      width={428}
-                      height={360}
-                      quality={100}
-                      style={{ marginTop: "25px" }}
-                    />
-                  )}
-                </Grid>
-              </Grid>
-            );
-          })}
+          {!smallScreenSize
+            ? projects.map((project, key) => {
+                return (
+                  <Grid container key={key}>
+                    <Grid item md={7.2}>
+                      {projectNum === key && (
+                        <>
+                          <Typography sx={projectTitle}>
+                            {project.projectFields.projectTitle}
+                          </Typography>
+                          <Box
+                            sx={projectDesc}
+                            dangerouslySetInnerHTML={{
+                              __html: project.projectFields.projectDescription,
+                            }}
+                          />
+                          <PrimaryButton
+                            btnText="View Project"
+                            link={project.projectFields.projectLink}
+                          />
+                        </>
+                      )}
+                    </Grid>
+                    <Grid
+                      item
+                      md={4.8}
+                      sx={{
+                        display: "flex",
+                        alignItems: "center",
+                      }}
+                    >
+                      {projectNum === key && (
+                        <Image
+                          src={project.projectFields.projectImage.sourceUrl}
+                          alt=" "
+                          width={428}
+                          height={360}
+                          quality={100}
+                          style={{ marginTop: "25px" }}
+                        />
+                      )}
+                    </Grid>
+                  </Grid>
+                );
+              })
+            : "image"}
           <Grid
             container
             sx={{

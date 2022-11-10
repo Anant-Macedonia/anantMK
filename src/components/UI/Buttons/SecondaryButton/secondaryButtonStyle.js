@@ -1,4 +1,4 @@
-export const secondaryButton = {
+export const secondaryButton = (theme) => ({
   transition: "all 350ms ease-in-out",
   background: "#F5F5F5",
   borderRadius: "20px",
@@ -14,4 +14,9 @@ export const secondaryButton = {
     backgroundColor: "#ffffff",
     color: "#000000",
   },
-};
+  [theme.breakpoints.down("sm")]: {
+    marginRight: "15px",
+    width: "156px",
+    height: "34px",
+  },
+});
