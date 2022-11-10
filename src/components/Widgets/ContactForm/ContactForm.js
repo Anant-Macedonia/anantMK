@@ -8,7 +8,6 @@ import {
   Typography,
 } from "@mui/material";
 import React, { useState } from "react";
-import PrimaryButton from "../../UI/Buttons/PrimaryButton/PrimaryButton";
 import {
   contactContainer,
   formInput,
@@ -130,7 +129,11 @@ const ContactForm = () => {
                   style={formTextBox}
                 />
               </Box>
-              <PrimaryButton btnText="Submit" handleSubmit={handleSubmit} />
+              {/* <PrimaryButton
+                btnText="Submit"
+                link={null}
+                handleSubmit={handleSubmit}
+              /> */}
             </FormControl>
           </Grid>
         </Grid>

@@ -74,7 +74,7 @@ const ServiceSteps = ({ steps }) => {
                 </Box>
               </Box>
               <Box sx={btnContainer}>
-                <ServiceStepsButton btnText="Read more" />
+                {/* <ServiceStepsButton btnText="Read more" /> */}
               </Box>
             </Grid>
           );

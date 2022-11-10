@@ -67,7 +67,6 @@ const OurProjectSection = ({ projects }) => {
                               __html: project.projectFields.projectDescription,
                             }}
                           />
-
                           <PrimaryButton
                             btnText="View Project"
                             link={project.projectFields.projectLink}

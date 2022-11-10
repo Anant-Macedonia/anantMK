@@ -6,7 +6,7 @@ import { secondaryButton } from "./secondaryButtonStyle";
 
 const SecondaryButton = ({ btnText, link }) => {
   return (
-    <Link href={link ? link : "/"} passHref>
+    <Link href={link} passHref>
       <Button sx={secondaryButton}>
         {btnText}
         <ButtonIcon />

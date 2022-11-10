@@ -5,7 +5,7 @@ import { outlinedBtn } from "./outlinedButtonStyle";
 
 const OutlinedButton = ({ btnText, link }) => {
   return (
-    <Link href={link ? link : "/"} passHref>
+    <Link href={link} passHref>
       <Button sx={outlinedBtn}>
         {btnText}
         <ButtonIcon />

@@ -11,29 +11,31 @@ import { GET_APPROACH_SECTION_DATA } from "../queries/getApproachSection";
 
 export default function Home(props) {
   const { heroTitle, heroSubtitle, heroDescription, buttons } =
-    props.homeData.hero;
+    props?.homeData?.hero;
 
   const {
     talkSectionTitle,
     talkSectionDescription,
     talkSectionImage,
     talkButton,
-  } = props.talkSectionData.talk;
+  } = props?.talkSectionData?.talk;
 
-  const { approachInfo } = props.approachSectionData;
+  const { approachInfo } = props?.approachSectionData;
 
   return (
     <>
-      <Hero
+      {/* <Hero
         title={heroTitle}
         subtitle={heroSubtitle}
         description={heroDescription}
         buttons={buttons}
         homeAnimation
-      />
+        primaryButtonLink="/contact"
+        secondaryButtonLink="/services"
+      /> */}
       <OurApproach approachInfo={approachInfo} />
-      <ServicesSection services={props.homeData.serviceSection} />
-      <OurProjectSection projects={props.projectsData.projects} />
+      <ServicesSection services={props?.homeData?.serviceSection} />
+      <OurProjectSection projects={props?.projectsData?.projects} />
       <TalkSection
         title={talkSectionTitle}
         description={talkSectionDescription}

@@ -11,24 +11,25 @@ import { GET_PROJECTS_DATA } from "../../queries/getProjects.js";
 
 const UxUi = (props) => {
   const { heroTitle, heroDescription, heroImage, buttons } =
-    props.uxUiData.hero;
-  const { steps } = props.uxUiData;
+    props?.uxUiData?.hero;
+  const { steps } = props?.uxUiData;
   const {
     talkSectionTitle,
     talkSectionDescription,
     talkSectionImage,
     talkButton,
-  } = props.talkSectionData.talk;
+  } = props?.talkSectionData?.talk;
   return (
     <div>
-      <Hero
+      {/* <Hero
         title={heroTitle}
         description={heroDescription}
         heroImage={heroImage}
         buttons={buttons}
-      />
+        primaryButtonLink="/contact"
+      /> */}
       <ServiceSteps steps={steps} />
-      <OurProjectSection projects={props.projectsData.projects} />
+      <OurProjectSection projects={props?.projectsData?.projects} />
       <TalkSection
         title={talkSectionTitle}
         description={talkSectionDescription}

@@ -86,7 +86,7 @@ const OurApproach = ({
             {approachInfo.map((info, key) => {
               return (
                 slider === key && (
-                  <>
+                  <Box key={key}>
                     <Typography sx={ourApproachSubtitle} variant="h2">
                       {info?.approachFields?.title}
                     </Typography>
@@ -97,11 +97,8 @@ const OurApproach = ({
                       }}
                     />
 
-                    <PrimaryButton
-                      btnText="Learn More"
-                      link={info.approachFields.button.buttonLink.uri}
-                    />
-                  </>
+                    {/* <PrimaryButton btnText="Learn More" link="/contact" /> */}
+                  </Box>
                 )
               );
             })}
