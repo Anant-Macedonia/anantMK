@@ -20,7 +20,7 @@ export const heroImageContainer = {
   zIndex: "-10",
 };
 
-export const heroTitle = {
+export const heroTitle = (theme) => ({
   fontFamily: "Poppins",
   fontWeight: 500,
   fontSize: "50px",
@@ -28,19 +28,36 @@ export const heroTitle = {
   letterSpacing: "-0.035em,",
   color: "#EE6F57",
   marginBottom: "30px",
-};
+  [theme.breakpoints.down("sm")]: {
+    fontSize: "23px",
+    fontWeight: 600,
+    letterSpacing: "-0.02em",
+    lineHeight: "32px",
+  },
+});
 
-export const heroSubtitle = {
+export const heroSubtitle = (theme) => ({
   color: "#2161FF",
   marginBottom: "10px",
-};
+  [theme.breakpoints.down("sm")]: {
+    fontSize: "23px",
+    fontWeight: 600,
+    letterSpacing: "-0.02em",
+    lineHeight: "32px",
+  },
+});
 
-export const heroDesc = {
+export const heroDesc = (theme) => ({
   fontFamily: "Montserrat",
   fontSize: "18px",
   lineHeight: "23px",
   letterSpacing: "-0.07em",
-};
+  [theme.breakpoints.down("sm")]: {
+    fontWeight: 500,
+    fontSize: "13px",
+    lineHeight: "17px",
+  },
+});
 
 export const contactInfoText = {
   fontFamily: "Montserrat",

@@ -11,6 +11,14 @@ export const talkContentContainer = {
   justifyContent: "space-between",
 };
 
+export const titleAndDescContainer = (theme) => ({
+  [theme.breakpoints.down("sm")]: {
+    display: "flex",
+    flexDirection: "column",
+    alignItems: "center",
+  },
+});
+
 export const talkSectionTitle = {
   color: "#EE6F57",
   fontFamily: "Poppins",
@@ -21,7 +29,7 @@ export const talkSectionTitle = {
   marginBottom: "43px",
 };
 
-export const talkSectionDesc = {
+export const talkSectionDesc = (theme) => ({
   fontFamily: "Montserrat",
   fontWeight: 400,
   fontSize: "20px",
@@ -29,4 +37,7 @@ export const talkSectionDesc = {
   letterSpacing: "-0.07em",
   maxWidth: "490px",
   marginBottom: "65px",
-};
+  [theme.breakpoints.down("sm")]: {
+    marginBottom: "36px",
+  },
+});

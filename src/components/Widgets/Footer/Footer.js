@@ -85,6 +85,7 @@ const Footer = () => {
             </Typography>
           )}
         </Grid>
+
         <Grid item xs={6} md={1.8}>
           <Typography
             variant="h6"

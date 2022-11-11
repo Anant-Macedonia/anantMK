@@ -1,4 +1,4 @@
-export const sectionTitle = {
+export const sectionTitle = (theme) => ({
   color: "#EE6F57",
   fontFamily: "Poppins",
   fontWeight: 600,
@@ -6,7 +6,11 @@ export const sectionTitle = {
   lineHeight: "63px",
   letterSpacing: "-0.035em",
   marginBottom: "70px",
-};
+  [theme.breakpoints.down("sm")]: {
+    fontWight: 600,
+    fontSize: "23px",
+  },
+});
 
 export const cardLine = {
   backgroundColor: "#EE6F57",
@@ -24,7 +28,7 @@ export const servicesCard = (theme) => ({
     borderRadius: "20px",
   },
   [theme.breakpoints.down("sm")]: {
-    maxWidth: "225px",
+    maxWidth: "255px",
     background: " #124F70",
     boxShadow: "7px 10px 7px rgba(0, 0, 0, 0.2)",
     borderRadius: "20px",
@@ -44,24 +48,37 @@ export const imageContainer = (theme) => ({
     display: "flex",
     justifyContent: "center",
     alignItems: "center",
-    height: "120px",
+    height: "130px",
   },
 });
 
-export const cardTitle = {
+export const cardTitle = (theme) => ({
   fontFamily: "Montserrat",
   fontWeight: 700,
   fontSize: "30px",
   lineHeight: "39px",
   textAlign: "center",
   letterSpacing: "-0.07em",
+  color: "#EE6F57",
   margin: "30px 0",
-};
+  [theme.breakpoints.down("sm")]: {
+    fontSize: "14px",
+    letterSpacing: "-0.015em",
+    lineHeight: "33px",
+    margin: "14px 0",
+  },
+});
 
-export const cardDescription = {
+export const cardDescription = (theme) => ({
   fontFamily: "Montserrat",
   fontSize: "18px",
   lineHeight: "23px",
   textAlign: "justify",
   letterSpacing: "-0.07em",
-};
+  [theme.breakpoints.down("sm")]: {
+    fontSize: "11px",
+    fontWeight: 400,
+    lineHeight: "16px",
+    letterSpacing: "-0.04em",
+  },
+});

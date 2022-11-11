@@ -7,7 +7,7 @@ import {
   InputLabel,
   Typography,
 } from "@mui/material";
-import React, { useState } from "react";
+import React, { useState, useRef } from "react";
 import {
   contactContainer,
   formInput,
@@ -16,7 +16,10 @@ import {
   formTitles,
 } from "./contactFormStyle";
 
+import emailjs from "@emailjs/browser";
+
 const ContactForm = () => {
+  const form = useRef();
   const [formValues, setFormValues] = useState([]);
 
   const handleInputChange = (e) => {
@@ -27,8 +30,25 @@ const ContactForm = () => {
     });
   };
 
-  const handleSubmit = (event) => {
-    event.preventDefault();
+  const sendEmail = (e) => {
+    e.preventDefault();
+
+    emailjs
+      .sendForm(
+        "service_xg7g26b",
+        "template_my97nt6",
+        form.current,
+        "9whx0Rq5J4a2B5JxH"
+      )
+      .then(
+        (result) => {
+          console.log(result.text);
+        },
+        (error) => {
+          console.log(error.text);
+        }
+      );
+    alert("Message sent!");
   };
 
   return (
@@ -42,7 +62,7 @@ const ContactForm = () => {
             <Typography sx={formTitles}>Say Hello</Typography>
           </Grid>
           <Grid item xs={12} md={6}>
-            <FormControl required>
+            <form ref={form} onSubmit={sendEmail}>
               <Box>
                 <InputLabel htmlFor="email" sx={formLabel}>
                   Email address
@@ -58,8 +78,7 @@ const ContactForm = () => {
                   sx={formInput}
                 />
               </Box>
-            </FormControl>
-            <FormControl required>
+
               <Box>
                 <InputLabel htmlFor="firstName" sx={formLabel}>
                   First Name
@@ -75,8 +94,7 @@ const ContactForm = () => {
                   sx={formInput}
                 />
               </Box>
-            </FormControl>
-            <FormControl required>
+
               <Box>
                 <InputLabel htmlFor="lastName" sx={formLabel}>
                   Last Name
@@ -92,9 +110,7 @@ const ContactForm = () => {
                   sx={formInput}
                 />
               </Box>
-            </FormControl>
 
-            <FormControl required>
               <Box>
                 <InputLabel htmlFor="phone" sx={formLabel}>
                   Phone Number
@@ -110,9 +126,7 @@ const ContactForm = () => {
                   sx={formInput}
                 />
               </Box>
-            </FormControl>
 
-            <FormControl required>
               <Box>
                 <InputLabel htmlFor="message" sx={formLabel}>
                   Your message
@@ -129,12 +143,24 @@ const ContactForm = () => {
                   style={formTextBox}
                 />
               </Box>
-              {/* <PrimaryButton
-                btnText="Submit"
-                link={null}
-                handleSubmit={handleSubmit}
-              /> */}
-            </FormControl>
+              <Box
+                sx={{
+                  padding: "12px 32px",
+                  background: "#EE6F57",
+                  width: "181px",
+                  height: "42px",
+                  borderRadius: "20px",
+                  fontWeight: 800,
+                  fontSize: "18px",
+                  fontFamily: "Mulish",
+                  cursor: "pointer",
+                  display: "flex",
+                  justifyContent: "center",
+                }}
+              >
+                <Input disableUnderline type="submit" value="Submit" />
+              </Box>
+            </form>
           </Grid>
         </Grid>
       </Container>

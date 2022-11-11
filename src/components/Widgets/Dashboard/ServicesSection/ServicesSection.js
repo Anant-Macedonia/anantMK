@@ -45,19 +45,22 @@ const ServicesSection = ({ services }) => {
           <Stack
             spacing={2}
             display="flex"
-            direction={{ xs: "column", sm: "row" }}
+            direction={{ xs: "column", md: "row" }}
             justifyContent="space-between"
           >
             {services.map((service, key) => {
               return (
-                <Box key={key}>
+                <Box
+                  key={key}
+                  sx={{ display: "flex", justifyContent: "center" }}
+                >
                   {!smallScreenSize && <Box sx={cardLine}></Box>}
                   <Card sx={servicesCard}>
                     <Box sx={imageContainer}>
                       <Image
                         src={service.serviceFileds.serviceImage.sourceUrl}
                         width={!smallScreenSize ? 248 : 132}
-                        height={!smallScreenSize ? 170 : 86}
+                        height={!smallScreenSize ? 170 : 90}
                         alt="ux-image"
                       />
                     </Box>

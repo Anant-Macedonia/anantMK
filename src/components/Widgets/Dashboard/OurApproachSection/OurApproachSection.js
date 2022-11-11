@@ -77,7 +77,7 @@ const OurApproach = ({
     <Box sx={ourApproachContainer}>
       <Container>
         <Grid container sx={{ columnGap: "75px" }}>
-          <Grid item sm={12} md={7.2}>
+          <Grid item xs={12} md={7.2}>
             <Typography sx={ourApproachTitle} variant="h1">
               {heroData?.heroTitle}
               Learn more about us and take a look at our approach.
