@@ -14,14 +14,13 @@ export const contactContainer = {
 };
 
 export const formLabel = {
-  paddingTop: "22px",
   paddingLeft: "22px",
 };
 
 export const formInput = {
   width: "571px",
   height: "69px",
-  marginBottom: "37px",
+  marginBottom: "35px",
   borderRadius: "26px",
   background: "#145374",
   boxShadow: "7px 10px 7px rgba(0, 0, 0, 0.2)",

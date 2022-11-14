@@ -64,9 +64,11 @@ const Hero = ({
           <Grid container>
             <Grid
               item
-              sm={12}
+              xs={12}
               md={contactInfo ? 5 : 7.5}
-              sx={{ marginTop: "40px" }}
+              sx={
+                !smallScreenSize ? { marginTop: "40px" } : { marginTop: "37px" }
+              }
             >
               <Typography sx={heroTitle} variant="h1">
                 {title}
@@ -86,24 +88,39 @@ const Hero = ({
                       <AiOutlineMail style={{ marginRight: "15px" }} />
                       {contactEmail}
                     </Typography>
-                    <Typography sx={contactInfoText}>
-                      <MdPhonelinkRing style={{ marginRight: "15px" }} />
-                      {contactMobile}
-                    </Typography>
+                    {contactMobile && (
+                      <Typography sx={contactInfoText}>
+                        <MdPhonelinkRing style={{ marginRight: "15px" }} />
+                        {contactMobile}
+                      </Typography>
+                    )}
+
                     <Typography sx={contactInfoText}>
                       <MdPhonelinkRing style={{ marginRight: "15px" }} />
                       {contactPhone}
                     </Typography>
                   </Box>
                   <Box sx={{ marginTop: "42px" }}>
-                    <AiOutlineGithub
-                      size={33}
-                      style={{ marginRight: "17px", color: "#EE6F57" }}
-                    />
-                    <BsLinkedin
-                      size={33}
-                      style={{ marginRight: "17px", color: "#EE6F57" }}
-                    />
+                    <a
+                      href="https://github.com/Anant-Macedonia"
+                      target="_blank"
+                      rel="noreferrer"
+                    >
+                      <AiOutlineGithub
+                        size={33}
+                        style={{ marginRight: "17px", color: "#EE6F57" }}
+                      />
+                    </a>
+                    <a
+                      href="https://www.linkedin.com/company/anant-macedonia/about/?viewAsMember=true"
+                      target="_blank"
+                      rel="noreferrer"
+                    >
+                      <BsLinkedin
+                        size={33}
+                        style={{ marginRight: "17px", color: "#EE6F57" }}
+                      />
+                    </a>
                   </Box>
                 </>
               )}

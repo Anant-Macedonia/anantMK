@@ -17,7 +17,13 @@ export const primaryBtn = (theme) => ({
   },
   [theme.breakpoints.down("sm")]: {
     marginRight: "15px",
-    width: "156px",
     height: "34px",
+    lineHeight: "24px",
+    letterSpacing: "0.02em",
+    borderRadius: "16px",
+    fontSize: "16px",
+    display: "flex",
+    alignItems: "center",
+    textAlign: "center",
   },
 });

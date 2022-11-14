@@ -14,3 +14,13 @@ export const contactBtn = {
     color: "#000000",
   },
 };
+
+export const contactBtnWithoutStyle = {
+  fontWeight: 600,
+  fontSize: "23px",
+  lineHeight: "32px",
+  letterSpacing: "-0.02em",
+  color: "#E5E5E5",
+  paddingLeft: "17px",
+  textTransform: "capitalize",
+};

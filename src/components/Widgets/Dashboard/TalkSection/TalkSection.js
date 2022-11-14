@@ -17,6 +17,7 @@ import {
   talkSectionDesc,
   talkSectionTitle,
   talkContainer,
+  titleAndDescContainer,
 } from "./talkStyle";
 
 const theme = createTheme({
@@ -38,25 +39,50 @@ const TalkSection = ({ title, description, talkImage, talkButton }) => {
       <Container>
         <Box sx={talkSectionContainer}>
           <Grid container sx={talkContentContainer}>
-            <Grid item md={5}>
+            <Grid item xs={12} md={5} sx={titleAndDescContainer}>
               <Typography sx={talkSectionTitle}>{title}</Typography>
               <Box
                 sx={talkSectionDesc}
                 dangerouslySetInnerHTML={{ __html: description }}
               />
-              <PrimaryButton
-                btnText={talkButton.talkButtonText}
-                link="/contact"
-              />
+              {!smallScreenSize && (
+                <PrimaryButton
+                  btnText={talkButton.talkButtonText}
+                  link="/contact"
+                />
+              )}
             </Grid>
 
-            <Grid item xs={12} md={5.5}>
+            <Grid
+              item
+              xs={12}
+              md={5.5}
+              sx={
+                smallScreenSize && {
+                  display: "flex",
+                  justifyContent: "center",
+                  marginBottom: "46px",
+                }
+              }
+            >
               <Image
                 src={talkImage.sourceUrl}
                 width={!smallScreenSize ? 530 : 200}
                 height={!smallScreenSize ? 478 : 180}
                 alt="project image"
               />
+            </Grid>
+            <Grid
+              item
+              xs={12}
+              sx={{ display: "flex", justifyContent: "center" }}
+            >
+              {smallScreenSize && (
+                <PrimaryButton
+                  btnText={talkButton.talkButtonText}
+                  link="/contact"
+                />
+              )}
             </Grid>
           </Grid>
         </Box>

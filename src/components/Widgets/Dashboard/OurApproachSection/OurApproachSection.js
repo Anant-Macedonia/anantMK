@@ -9,6 +9,7 @@ import {
   Typography,
   createTheme,
   useMediaQuery,
+  Stack,
 } from "@mui/material";
 import PrimaryButton from "../../../UI/Buttons/PrimaryButton/PrimaryButton.js";
 // import circleImage from "../../../../../public/CircleGroup.svg"
@@ -48,7 +49,14 @@ const OurApproach = ({
   const [slider, setSlider] = useState(0);
   const [delay, setDelay] = useState("5s");
   const [play, setPlay] = useState("running");
-  if (slider >= 3) {
+
+  const smallScreenSize = useMediaQuery(theme.breakpoints.down("sm"));
+
+  if (!smallScreenSize && slider >= 3) {
+    setSlider(0);
+  }
+
+  if (smallScreenSize && slider > 3) {
     setSlider(0);
   }
 
@@ -71,13 +79,11 @@ const OurApproach = ({
     return () => clearInterval(interval);
   }, []);
 
-  const smallScreenSize = useMediaQuery(theme.breakpoints.down("sm"));
-
   return (
     <Box sx={ourApproachContainer}>
       <Container>
         <Grid container sx={{ columnGap: "75px" }}>
-          <Grid item sm={12} md={7.2}>
+          <Grid item xs={12} md={7.2}>
             <Typography sx={ourApproachTitle} variant="h1">
               {heroData?.heroTitle}
               Learn more about us and take a look at our approach.
@@ -96,6 +102,38 @@ const OurApproach = ({
                         __html: info?.approachFields?.description,
                       }}
                     />
+
+                    {smallScreenSize && (
+                      <Stack
+                        spacing={2}
+                        direction="row"
+                        sx={{
+                          display: "flex",
+                          justifyContent: "space-between",
+                          marginTop: "35px",
+                          marginBottom: "35px",
+                        }}
+                      >
+                        {approachInfo.map((item, key) => {
+                          return (
+                            <Box
+                              key={key}
+                              sx={{
+                                width: "100%",
+                                height: "11px",
+                                borderRadius: "20px",
+                                background: `${
+                                  slider === key ? "#DF6B56" : "#003049"
+                                }`,
+                                // marginRight: "13px",
+                                cursor: "pointer",
+                              }}
+                              onClick={() => setSlider(key)}
+                            ></Box>
+                          );
+                        })}
+                      </Stack>
+                    )}
 
                     <PrimaryButton btnText="Learn More" link="/contact" />
                   </Box>
