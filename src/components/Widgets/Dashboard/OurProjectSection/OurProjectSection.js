@@ -15,6 +15,7 @@ import {
   ourProjectContainer,
   projectTitle,
   projectDesc,
+  ourProjectMobileContainer,
 } from "./ourProjectStyle";
 
 const theme = createTheme({
@@ -48,62 +49,76 @@ const OurProjectSection = ({ projects }) => {
     <Container>
       <Box sx={ourProjectSectionContainer}>
         <Typography sx={ourProjectSectionTitle}>
-          Take a look at some of our projects.
+          Take a look at our projects.
         </Typography>
-        <Box sx={ourProjectContainer}>
-          {!smallScreenSize
-            ? projects.map((project, key) => {
-                return (
-                  <Grid container key={key}>
-                    <Grid item md={7.2}>
-                      {projectNum === key && (
-                        <>
-                          <Typography sx={projectTitle}>
-                            {project.projectFields.projectTitle}
-                          </Typography>
-                          <Box
-                            sx={projectDesc}
-                            dangerouslySetInnerHTML={{
-                              __html: project.projectFields.projectDescription,
-                            }}
-                          />
-                          <PrimaryButton
-                            btnText="View Project"
-                            link={project.projectFields.projectLink}
-                          />
-                        </>
-                      )}
-                    </Grid>
-                    <Grid
-                      item
-                      md={4.8}
-                      sx={{
-                        display: "flex",
-                        alignItems: "center",
-                      }}
-                    >
-                      {projectNum === key && (
-                        <Image
-                          src={project.projectFields.projectImage.sourceUrl}
-                          alt=" "
-                          width={428}
-                          height={360}
-                          quality={100}
-                          style={{ marginTop: "25px" }}
+        <Box
+          sx={
+            !smallScreenSize ? ourProjectContainer : ourProjectMobileContainer
+          }
+        >
+          {projects.map((project, key) => {
+            return (
+              <Grid container key={key}>
+                {!smallScreenSize && (
+                  <Grid item md={7.2}>
+                    {projectNum === key && (
+                      <>
+                        <Typography sx={projectTitle}>
+                          {project.projectFields.projectTitle}
+                        </Typography>
+                        <Box
+                          sx={projectDesc}
+                          dangerouslySetInnerHTML={{
+                            __html: project.projectFields.projectDescription,
+                          }}
                         />
-                      )}
-                    </Grid>
+                        <PrimaryButton
+                          btnText="View Project"
+                          link={project.projectFields.projectLink}
+                        />
+                      </>
+                    )}
                   </Grid>
-                );
-              })
-            : "image"}
+                )}
+                <Grid
+                  item
+                  xs={12}
+                  md={4.8}
+                  sx={{
+                    display: "flex",
+                    alignItems: "center",
+                    justifyContent: "center",
+                  }}
+                >
+                  {projectNum === key && (
+                    <Image
+                      src={project.projectFields.projectImage.sourceUrl}
+                      alt=" "
+                      width={!smallScreenSize ? 428 : 324}
+                      height={!smallScreenSize ? 360 : 226}
+                      quality={100}
+                      style={{ marginTop: "25px" }}
+                    />
+                  )}
+                </Grid>
+              </Grid>
+            );
+          })}
           <Grid
             container
-            sx={{
-              display: "flex",
-              justifyContent: "center",
-              marginTop: "90px",
-            }}
+            sx={
+              !smallScreenSize
+                ? {
+                    display: "flex",
+                    justifyContent: "center",
+                    marginTop: "90px",
+                  }
+                : {
+                    display: "flex",
+                    justifyContent: "center",
+                    marginTop: "30px",
+                  }
+            }
           >
             {projects.map((item, key) => {
               return (

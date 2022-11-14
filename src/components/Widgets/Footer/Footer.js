@@ -13,7 +13,14 @@ import classes from "./footer.module.css";
 import logo from "../../../../public/footer-logo.png";
 import { AiOutlineGithub, AiOutlineCopyrightCircle } from "react-icons/ai";
 import { BsLinkedin } from "react-icons/bs";
-import { contactText, linkText } from "./footerStyles";
+import {
+  contactText,
+  footerContact,
+  footerContainer,
+  footerCopyright,
+  footerTrademark,
+  linkText,
+} from "./footerStyles";
 
 const theme = createTheme({
   breakpoints: {
@@ -31,15 +38,10 @@ const Footer = () => {
   const smallScreenSize = useMediaQuery(theme.breakpoints.down("sm"));
   return (
     <Container>
-      <Grid
-        container
-        spacing={4}
-        className={classes.footer}
-        sx={{ justifyContent: "space-between" }}
-      >
+      <Grid container sx={footerContainer}>
         <Grid
           item
-          xs={4}
+          xs={3}
           md={12}
           sx={
             !smallScreenSize
@@ -55,17 +57,33 @@ const Footer = () => {
                 }
           }
         >
-          <Image src={logo} alt="anant.mk logo" />
+          <Image src={logo} alt="anant.mk logo" height={58} width={63} />
         </Grid>
-        <Grid item xs={8} md={2.7}>
+        <Grid
+          item
+          xs={9}
+          md={2.7}
+          sx={smallScreenSize && { display: "flex", alignItems: "center" }}
+        >
           <Typography
             variant="h6"
-            sx={{
-              marginBottom: "25px",
-              fontSize: "22px",
-              fontWeight: 600,
-              letterSpacing: "0.15em",
-            }}
+            sx={
+              !smallScreenSize
+                ? {
+                    marginBottom: "25px",
+                    fontSize: "22px",
+                    fontWeight: 600,
+                    letterSpacing: "0.15em",
+                  }
+                : {
+                    // marginBottom: "25px",
+                    fontSize: "20px",
+                    fontWeight: 600,
+                    letterSpacing: "0.185em",
+                    lineHeight: "26px",
+                    fontFamily: "Montserrat",
+                  }
+            }
           >
             Anant Macedonia
           </Typography>
@@ -86,77 +104,96 @@ const Footer = () => {
           )}
         </Grid>
 
-        <Grid item xs={6} md={1.8}>
-          <Typography
-            variant="h6"
-            sx={{ marginBottom: "25px", fontSize: "22px", fontWeight: 600 }}
-          >
-            Browse
-          </Typography>
-          <Link>
-            <Typography sx={linkText}>Our Company</Typography>
-          </Link>
-          <Link>
-            <Typography sx={linkText}>Services</Typography>
-          </Link>
-          <Link>
-            <Typography sx={linkText}>Portfolio</Typography>
-          </Link>
-          <Link>
-            <Typography sx={linkText}>Contact Us</Typography>
-          </Link>
-        </Grid>
-        <Grid item xs={6} md={1.8}>
-          <Typography
-            variant="h6"
-            sx={{ marginBottom: "25px", fontSize: "22px", fontWeight: 600 }}
-          >
-            Services
-          </Typography>
-          <Link>
-            <Typography sx={linkText}>UX/UI Design</Typography>
-          </Link>
-          <Link>
-            <Typography sx={linkText}>Development</Typography>
-          </Link>
-        </Grid>
-        <Grid item xs={6} md={3}>
-          <Box>
+        {!smallScreenSize && (
+          <Grid item xs={6} md={1.8}>
             <Typography
               variant="h6"
               sx={{ marginBottom: "25px", fontSize: "22px", fontWeight: 600 }}
             >
-              Contact
+              Browse
             </Typography>
+            <Link>
+              <Typography sx={linkText}>Our Company</Typography>
+            </Link>
+            <Link>
+              <Typography sx={linkText}>Services</Typography>
+            </Link>
+            <Link>
+              <Typography sx={linkText}>Portfolio</Typography>
+            </Link>
+            <Link>
+              <Typography sx={linkText}>Contact Us</Typography>
+            </Link>
+          </Grid>
+        )}
+
+        {!smallScreenSize && (
+          <Grid item xs={6} md={1.8}>
+            <Typography
+              variant="h6"
+              sx={{ marginBottom: "25px", fontSize: "22px", fontWeight: 600 }}
+            >
+              Services
+            </Typography>
+            <Link>
+              <Typography sx={linkText}>UX/UI Design</Typography>
+            </Link>
+            <Link>
+              <Typography sx={linkText}>Development</Typography>
+            </Link>
+          </Grid>
+        )}
+        <Grid item xs={7} md={3} sx={smallScreenSize && { marginTop: "30px" }}>
+          <Box>
+            <Typography sx={footerContact}>CONTACT INFO</Typography>
             <Typography sx={contactText}>info@anantmacedonia.mk</Typography>
             <Typography sx={contactText}>0038970 333 333</Typography>
             <Typography sx={contactText}>0038970 333 333</Typography>
           </Box>
         </Grid>
+        {smallScreenSize && (
+          <Grid item xs={5} md={3} sx={{ marginTop: "30px" }}>
+            <Typography sx={footerContact}>FOLLOW US</Typography>
+            <Box>
+              <Typography>
+                <AiOutlineGithub style={{ marginRight: "8px" }} />
+                GitHub
+              </Typography>
+              <Typography>
+                <BsLinkedin style={{ marginRight: "8px" }} />
+                LinkedIn
+              </Typography>
+            </Box>
+          </Grid>
+        )}
       </Grid>
       <Grid
         container
         spacing={2}
         sx={{ justifyContent: "space-between", paddingBottom: "50px" }}
       >
-        <Grid item xs={6} md={5}>
-          <Typography
-            sx={{ fontSize: "18px", display: "flex", alignItems: "center" }}
-          >
-            <AiOutlineCopyrightCircle style={{ marginRight: "10px" }} />{" "}
-            Copyright - Anant Macedonia, Skopje 2022
+        <Grid item xs={12} md={5}>
+          <Typography sx={footerCopyright}>
+            <AiOutlineCopyrightCircle style={{ marginRight: "10px" }} /> 2022
+            Anant MK, All Rights Reserved.
+          </Typography>
+          <Typography sx={footerTrademark}>
+            All logos, trademarks and registered trademarks are the property of
+            their respective owners.
           </Typography>
         </Grid>
-        <Grid item xs={6} md={3} sx={{ paddingLeft: "0" }}>
-          <Typography
-            sx={{
-              fontSize: "22px",
-            }}
-          >
-            Folow Us <AiOutlineGithub style={{ marginLeft: "30px" }} />
-            <BsLinkedin style={{ marginLeft: "12px" }} />
-          </Typography>
-        </Grid>
+        {!smallScreenSize && (
+          <Grid item xs={6} md={3} sx={{ paddingLeft: "0" }}>
+            <Typography
+              sx={{
+                fontSize: "22px",
+              }}
+            >
+              Folow Us <AiOutlineGithub style={{ marginLeft: "30px" }} />
+              <BsLinkedin style={{ marginLeft: "12px" }} />
+            </Typography>
+          </Grid>
+        )}
       </Grid>
     </Container>
   );

@@ -8,7 +8,7 @@ export const heroContainer = (theme) => ({
     paddingBottom: "180px",
   },
   [theme.breakpoints.down("sm")]: {
-    paddingTop: "37px",
+    marginTop: "37px",
     paddingBottom: "53px",
   },
 });

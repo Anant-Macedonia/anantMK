@@ -64,10 +64,10 @@ const Hero = ({
           <Grid container>
             <Grid
               item
-              sm={12}
+              xs={12}
               md={contactInfo ? 5 : 7.5}
               sx={
-                !smallScreenSize ? { marginTop: "40px" } : { marginTop: "60px" }
+                !smallScreenSize ? { marginTop: "40px" } : { marginTop: "37px" }
               }
             >
               <Typography sx={heroTitle} variant="h1">
@@ -104,6 +104,7 @@ const Hero = ({
                     <a
                       href="https://github.com/Anant-Macedonia"
                       target="_blank"
+                      rel="noreferrer"
                     >
                       <AiOutlineGithub
                         size={33}
@@ -113,6 +114,7 @@ const Hero = ({
                     <a
                       href="https://www.linkedin.com/company/anant-macedonia/about/?viewAsMember=true"
                       target="_blank"
+                      rel="noreferrer"
                     >
                       <BsLinkedin
                         size={33}

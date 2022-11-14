@@ -1,3 +1,12 @@
+export const servicesSectionContainer = (theme) => ({
+  paddingTop: "110px",
+  paddingBottom: "100px",
+  [theme.breakpoints.down("sm")]: {
+    paddingTop: "35px",
+    paddingBottom: "35px",
+  },
+});
+
 export const sectionTitle = (theme) => ({
   color: "#EE6F57",
   fontFamily: "Poppins",
@@ -9,6 +18,7 @@ export const sectionTitle = (theme) => ({
   [theme.breakpoints.down("sm")]: {
     fontWight: 600,
     fontSize: "23px",
+    marginBottom: "30px",
   },
 });
 

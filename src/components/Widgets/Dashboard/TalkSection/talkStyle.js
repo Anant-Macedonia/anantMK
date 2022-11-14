@@ -1,10 +1,19 @@
-export const talkContainer = {
+export const talkContainer = (theme) => ({
   background: "linear-gradient(#003049, #145374)",
   paddingTop: "110px",
   paddingBottom: "85px",
-};
+  [theme.breakpoints.down("sm")]: {
+    paddingTop: "20px",
+    paddingBottom: "65px",
+  },
+});
 
-export const talkSectionContainer = { marginBottom: "130px" };
+export const talkSectionContainer = (theme) => ({
+  marginBottom: "130px",
+  [theme.breakpoints.down("sm")]: {
+    marginBottom: "20px",
+  },
+});
 
 export const talkContentContainer = {
   display: "flex",
@@ -19,7 +28,7 @@ export const titleAndDescContainer = (theme) => ({
   },
 });
 
-export const talkSectionTitle = {
+export const talkSectionTitle = (theme) => ({
   color: "#EE6F57",
   fontFamily: "Poppins",
   fontWeight: 600,
@@ -27,7 +36,12 @@ export const talkSectionTitle = {
   lineHeight: "63px",
   letterSpacing: " -0.035em",
   marginBottom: "43px",
-};
+  [theme.breakpoints.down("sm")]: {
+    fontSize: "23px",
+    lineHeight: "32px",
+    letterSpacing: " -0.02em",
+  },
+});
 
 export const talkSectionDesc = (theme) => ({
   fontFamily: "Montserrat",
@@ -39,5 +53,9 @@ export const talkSectionDesc = (theme) => ({
   marginBottom: "65px",
   [theme.breakpoints.down("sm")]: {
     marginBottom: "36px",
+    fontWeight: 500,
+    fontSize: "13px",
+    lineHeight: "17px",
+    letterSpacing: "-0.02em",
   },
 });
