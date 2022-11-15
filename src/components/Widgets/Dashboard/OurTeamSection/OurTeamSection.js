@@ -1,7 +1,13 @@
 import Image from "next/future/image";
 import { useState } from "react";
 import React from "react";
-import { Box, Container, Typography } from "@mui/material";
+import {
+  Box,
+  Container,
+  Typography,
+  createTheme,
+  useMediaQuery,
+} from "@mui/material";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Pagination, Navigation, Autoplay } from "swiper";
 
@@ -11,22 +17,38 @@ import "swiper/css/pagination";
 import "swiper/css/navigation";
 
 import {
+  imageContainer,
+  nameContainer,
   teamCardContainerActive,
   teamCardContainerNoActive,
   teamCardTitle,
+  teamSectionContainer,
   teamSectionTitle,
 } from "./ourTeamStyle.js";
 import classes from "./ourTeam.module.css";
 
+const theme = createTheme({
+  breakpoints: {
+    values: {
+      xs: 0,
+      sm: 600,
+      md: 900,
+      lg: 1280,
+      xl: 1920,
+    },
+  },
+});
+
 const OurTeamSection = ({ teamMembers }) => {
+  const smallScreenSize = useMediaQuery(theme.breakpoints.down("sm"));
   const [projectNum, setProjectNum] = useState(0);
 
   return (
-    <Container sx={{ marginTop: "105px" }}>
-      <Typography sx={teamSectionTitle}>Meet Our Team...</Typography>
+    <Container sx={teamSectionContainer}>
+      <Typography sx={teamSectionTitle}>Meet Our Team.</Typography>
 
       <Swiper
-        slidesPerView={3}
+        slidesPerView={!smallScreenSize ? 3 : 1}
         spaceBetween={120}
         slidesPerGroup={1}
         centeredSlides={true}
@@ -50,29 +72,17 @@ const OurTeamSection = ({ teamMembers }) => {
                       : teamCardContainerNoActive
                   }
                 >
-                  <Box
-                    sx={{
-                      height: "336px",
-                      width: "300px",
-                    }}
-                  >
+                  <Box sx={imageContainer}>
                     <Image
                       src={data.teamMemberFields.image.sourceUrl}
-                      width={300}
-                      height={336.53}
+                      width={!smallScreenSize ? 300 : 210}
+                      height={!smallScreenSize ? 336.53 : 233}
                       style={{ borderTopRightRadius: "20px" }}
                       alt=""
                     />
                   </Box>
 
-                  <Box
-                    sx={{
-                      height: "110px",
-                      width: "300px",
-                      backgroundColor: "#D36B5B",
-                      borderBottomRightRadius: "20px",
-                    }}
-                  >
+                  <Box sx={nameContainer}>
                     <Typography sx={teamCardTitle}>
                       {data.teamMemberFields.fullName}
                     </Typography>

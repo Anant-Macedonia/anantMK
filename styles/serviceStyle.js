@@ -1,20 +1,27 @@
-export const uxContainer = {
+export const uxContainer = (theme) => ({
   paddingBottom: "147px",
   paddingTop: "147px",
   backgroundColor: "#EE6F57",
   display: "flex",
   flexDirection: "column",
   alignItems: "center",
-};
+  [theme.breakpoints.down("sm")]: {
+    paddingTop: "120px",
+    paddingBottom: "120px",
+  },
+});
 
-export const developmentContainer = {
+export const developmentContainer = (theme) => ({
   paddingBottom: "147px",
   paddingTop: "147px",
   backgroundColor: "#145374",
   display: "flex",
   flexDirection: "column",
   alignItems: "center",
-};
+  [theme.breakpoints.down("sm")]: {
+    paddingTop: "120px",
+  },
+});
 
 export const smallContainer = {
   writingMode: "vertical-rl",
@@ -32,11 +39,15 @@ export const smallDevelopmentContainer = {
   color: "#EE6F57 ",
 };
 
-export const title = {
+export const title = (theme) => ({
   fontWeight: "700",
   fontSize: "80px",
   letterSpacing: "-0.02em",
-};
+  [theme.breakpoints.down("sm")]: {
+    fontSize: "40px",
+    lineHeight: "51px",
+  },
+});
 
 export const uxTitle = {
   color: "#145374",
@@ -46,15 +57,18 @@ export const developTitle = {
   color: "#EE6F57",
 };
 
-export const hoveredTitle = {
+export const hoveredTitle = (theme) => ({
   fontFamily: "Poppins",
   fontWeight: "700",
   fontSize: "100px",
   letterSpacing: "-0.02em",
   lineHeight: "128px",
-
   marginBottom: "40px",
-};
+  [theme.breakpoints.down("sm")]: {
+    fontSize: "50px",
+    lineHeight: "64px",
+  },
+});
 
 export const uxHoveredTitle = {
   color: "#145374",

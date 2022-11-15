@@ -18,5 +18,6 @@ export const secondaryButton = (theme) => ({
     marginRight: "15px",
     width: "156px",
     height: "34px",
+    fontSize: "14px",
   },
 });

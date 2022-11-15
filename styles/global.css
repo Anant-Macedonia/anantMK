@@ -41,3 +41,19 @@ a:hover {
 .MuiInputLabel-root {
   color: white !important;
 }
+
+@media only screen and (max-width: 900px) {
+  .swiper-pagination-bullet {
+    width: 15px !important;
+    height: 15px !important;
+    margin-inline: 6px !important;
+    background-color: #df6b56e0 !important;
+    opacity: 1 !important;
+  }
+
+  .swiper-pagination-bullet-active {
+    width: 20px !important;
+    height: 20px !important;
+    background-color: #df6b56 !important;
+  }
+}
