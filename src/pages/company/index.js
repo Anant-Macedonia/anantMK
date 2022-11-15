@@ -23,9 +23,9 @@ const Company = (props) => {
     <Box sx={{ marginTop: "105px" }}>
       <OurApproach approachInfo={approachInfo} />
       <OurTeamSection teamMembers={members} />
-      <Box sx={{ marginTop: "180px" }}>
-        <OurProjectSection projects={props?.projectsData?.projects} />
-      </Box>
+
+      <OurProjectSection projects={props?.projectsData?.projects} />
+
       <TalkSection
         title={talkSectionTitle}
         description={talkSectionDescription}

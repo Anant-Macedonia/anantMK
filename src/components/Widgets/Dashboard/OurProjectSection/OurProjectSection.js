@@ -125,15 +125,15 @@ const OurProjectSection = ({ projects }) => {
                 <Box
                   key={key}
                   sx={{
-                    width: "18px",
-                    height: "18px",
+                    width: !smallScreenSize ? "18px" : "15px",
+                    height: !smallScreenSize ? "18px" : "15px",
                     borderRadius: "100%",
                     background: `${
                       projectNum === key
                         ? "#DF6B56"
                         : "rgba(223, 107, 86, 0.88)"
                     }`,
-                    marginRight: "18px",
+                    marginRight: "12px",
                     transform: `${projectNum === key && "scale(1.3)"}`,
                     cursor: "pointer",
                   }}
