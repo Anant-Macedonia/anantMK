@@ -8,6 +8,44 @@ export const footerContainer = (theme) => ({
   },
 });
 
+export const footerLogo = (theme) => ({
+  marginBottom: "20px",
+  marginTop: "65px",
+  maxHeight: "125px",
+  [theme.breakpoints.down("sm")]: {
+    marginBottom: "0",
+    marginTop: "0",
+    maxHeight: "125px",
+  },
+});
+
+export const footerCompanyNameContainer = (theme) => ({
+  [theme.breakpoints.down("sm")]: {
+    display: "flex",
+    alignItems: "center",
+  },
+});
+
+export const footerCompanyName = (theme) => ({
+  marginBottom: "25px",
+  fontSize: "22px",
+  fontWeight: 600,
+  letterSpacing: "0.15em",
+  [theme.breakpoints.down("sm")]: {
+    fontSize: "20px",
+    fontWeight: 600,
+    letterSpacing: "0.185em",
+    lineHeight: "26px",
+    fontFamily: "Montserrat",
+  },
+});
+
+export const footerContactInfoContainer = (theme) => ({
+  [theme.breakpoints.down("sm")]: {
+    marginTop: "30px",
+  },
+});
+
 export const linkText = {
   fontSize: "20px",
   color: "#FFFFFF",

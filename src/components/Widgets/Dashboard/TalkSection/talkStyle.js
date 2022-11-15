@@ -15,10 +15,10 @@ export const talkSectionContainer = (theme) => ({
   },
 });
 
-export const talkContentContainer = {
+export const talkContentContainer = (theme) => ({
   display: "flex",
   justifyContent: "space-between",
-};
+});
 
 export const titleAndDescContainer = (theme) => ({
   [theme.breakpoints.down("sm")]: {
@@ -57,5 +57,13 @@ export const talkSectionDesc = (theme) => ({
     fontSize: "13px",
     lineHeight: "17px",
     letterSpacing: "-0.02em",
+  },
+});
+
+export const talkImageContainer = (theme) => ({
+  [theme.breakpoints.down("sm")]: {
+    display: "flex",
+    justifyContent: "center",
+    marginBottom: "46px",
   },
 });

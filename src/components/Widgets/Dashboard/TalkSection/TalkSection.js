@@ -13,11 +13,12 @@ import TalkImage from "../../../../../public/talk-us.svg";
 
 import {
   talkSectionContainer,
-  talkContentContainer,
+  // talkContentContainer,
   talkSectionDesc,
   talkSectionTitle,
   talkContainer,
   titleAndDescContainer,
+  talkImageContainer,
 } from "./talkStyle";
 
 const theme = createTheme({
@@ -38,7 +39,7 @@ const TalkSection = ({ title, description, talkImage, talkButton }) => {
     <Box sx={talkContainer}>
       <Container>
         <Box sx={talkSectionContainer}>
-          <Grid container sx={talkContentContainer}>
+          <Grid container>
             <Grid item xs={12} md={5} sx={titleAndDescContainer}>
               <Typography sx={talkSectionTitle}>{title}</Typography>
               <Box
@@ -53,18 +54,7 @@ const TalkSection = ({ title, description, talkImage, talkButton }) => {
               )}
             </Grid>
 
-            <Grid
-              item
-              xs={12}
-              md={5.5}
-              sx={
-                smallScreenSize && {
-                  display: "flex",
-                  justifyContent: "center",
-                  marginBottom: "46px",
-                }
-              }
-            >
+            <Grid item xs={12} md={5.5} sx={talkImageContainer}>
               <Image
                 src={talkImage.sourceUrl}
                 width={!smallScreenSize ? 530 : 200}

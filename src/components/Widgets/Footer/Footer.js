@@ -15,9 +15,13 @@ import { AiOutlineGithub, AiOutlineCopyrightCircle } from "react-icons/ai";
 import { BsLinkedin } from "react-icons/bs";
 import {
   contactText,
+  footerCompanyName,
+  footerCompanyNameContainer,
   footerContact,
+  footerContactInfoContainer,
   footerContainer,
   footerCopyright,
+  footerLogo,
   footerTrademark,
   linkText,
 } from "./footerStyles";
@@ -39,52 +43,11 @@ const Footer = () => {
   return (
     <Container>
       <Grid container sx={footerContainer}>
-        <Grid
-          item
-          xs={3}
-          md={12}
-          sx={
-            !smallScreenSize
-              ? {
-                  marginBottom: "20px",
-                  marginTop: "65px",
-                  maxHeight: "125px",
-                }
-              : {
-                  marginBottom: "0",
-                  marginTop: "0",
-                  maxHeight: "125px",
-                }
-          }
-        >
+        <Grid item xs={3} md={12} sx={footerLogo}>
           <Image src={logo} alt="anant.mk logo" height={58} width={63} />
         </Grid>
-        <Grid
-          item
-          xs={9}
-          md={2.7}
-          sx={smallScreenSize && { display: "flex", alignItems: "center" }}
-        >
-          <Typography
-            variant="h6"
-            sx={
-              !smallScreenSize
-                ? {
-                    marginBottom: "25px",
-                    fontSize: "22px",
-                    fontWeight: 600,
-                    letterSpacing: "0.15em",
-                  }
-                : {
-                    // marginBottom: "25px",
-                    fontSize: "20px",
-                    fontWeight: 600,
-                    letterSpacing: "0.185em",
-                    lineHeight: "26px",
-                    fontFamily: "Montserrat",
-                  }
-            }
-          >
+        <Grid item xs={9} md={2.7} sx={footerCompanyNameContainer}>
+          <Typography variant="h6" sx={footerCompanyName}>
             Anant Macedonia
           </Typography>
           {!smallScreenSize && (
@@ -143,7 +106,7 @@ const Footer = () => {
             </Link>
           </Grid>
         )}
-        <Grid item xs={7} md={3} sx={smallScreenSize && { marginTop: "30px" }}>
+        <Grid item xs={7} md={3} sx={footerContactInfoContainer}>
           <Box>
             <Typography sx={footerContact}>CONTACT INFO</Typography>
             <Typography sx={contactText}>info@anantmacedonia.mk</Typography>
