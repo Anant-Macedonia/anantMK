@@ -15,6 +15,7 @@ import {
   heroDesc,
   btnContainer,
   contactInfoText,
+  imageContainer,
 } from "./heroStyle";
 import { AiOutlineGithub, AiOutlineMail } from "react-icons/ai";
 import { MdPhonelinkRing } from "react-icons/md";
@@ -68,8 +69,7 @@ const Hero = ({
               md={contactInfo ? 5 : 7.5}
               sx={
                 !smallScreenSize ? { marginTop: "40px" } : { marginTop: "37px" }
-              }
-            >
+              }>
               <Typography sx={heroTitle} variant="h1">
                 {title}
                 <Box variant="span" sx={{ fontWeight: 700 }}>
@@ -81,7 +81,7 @@ const Hero = ({
                 dangerouslySetInnerHTML={{ __html: description }}
               />
 
-              {contactInfo && (
+              {contactInfo && !smallScreenSize && (
                 <>
                   <Box sx={{ marginTop: "63px" }}>
                     <Typography sx={contactInfoText}>
@@ -104,8 +104,7 @@ const Hero = ({
                     <a
                       href="https://github.com/Anant-Macedonia"
                       target="_blank"
-                      rel="noreferrer"
-                    >
+                      rel="noreferrer">
                       <AiOutlineGithub
                         size={33}
                         style={{ marginRight: "17px", color: "#EE6F57" }}
@@ -114,8 +113,7 @@ const Hero = ({
                     <a
                       href="https://www.linkedin.com/company/anant-macedonia/about/?viewAsMember=true"
                       target="_blank"
-                      rel="noreferrer"
-                    >
+                      rel="noreferrer">
                       <BsLinkedin
                         size={33}
                         style={{ marginRight: "17px", color: "#EE6F57" }}
@@ -148,16 +146,13 @@ const Hero = ({
               </Grid>
             ) : (
               contactInfo && (
-                <Grid
-                  item
-                  md={7}
-                  sx={{
-                    justifyContent: "flex-end",
-                    alignItems: "center",
-                    display: "flex",
-                  }}
-                >
-                  <Image src={contactImage} alt="development img" />
+                <Grid item xs={12} md={7} sx={imageContainer}>
+                  <Image
+                    src={contactImage}
+                    alt="development img"
+                    height={smallScreenSize && 228}
+                    width={smallScreenSize && 254}
+                  />
                 </Grid>
               )
             )}

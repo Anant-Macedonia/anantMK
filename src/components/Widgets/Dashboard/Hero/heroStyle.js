@@ -79,3 +79,13 @@ export const btnContainer = (theme) => ({
     marginTop: "35px",
   },
 });
+
+export const imageContainer = (theme) => ({
+  display: "flex",
+  justifyContent: "flex-end",
+  alignItems: "center",
+  [theme.breakpoints.down("sm")]: {
+    justifyContent: "center",
+    marginTop: "50px",
+  },
+});
