@@ -1,10 +1,33 @@
-export const serviceStepsContainer = {
+export const stepsSectionContainer = (theme) => ({
+  marginBottom: "160px",
+  marginTop: "95px",
+  [theme.breakpoints.down("sm")]: {
+    marginBottom: "35px",
+    marginTop: "0px",
+  },
+});
+
+export const serviceStepsContainer = (theme) => ({
   marginInline: "auto",
-  minHeight: "470px",
   display: "flex",
   flexDirection: "column",
   justifyContent: "space-between",
-};
+  [theme.breakpoints.down("sm")]: {
+    width: "225px",
+    // height: "320px"
+  },
+});
+
+export const stepsNumberMainContainer = (theme) => ({
+  background: "#EE6F57",
+  height: "150px",
+  display: "flex",
+  alignItems: "center",
+  borderRadius: "18px 18px 0 0",
+  [theme.breakpoints.down("sm")]: {
+    height: "120px",
+  },
+});
 
 export const stepsNumberContainer = {
   width: "80px",
@@ -16,7 +39,6 @@ export const stepsNumberContainer = {
   justifyContent: "center",
   alignItems: "center",
   marginInline: "auto",
-  marginBottom: "50px",
 };
 
 export const activeStepsNumberContainer = {
@@ -29,7 +51,6 @@ export const activeStepsNumberContainer = {
   justifyContent: "center",
   alignItems: "center",
   marginInline: "auto",
-  marginBottom: "50px",
 };
 
 export const stepsNumber = {
@@ -50,12 +71,27 @@ export const activeStepNumber = {
   color: "#145374",
 };
 
-export const stepsTextContainer = {
+export const cardInformationContainer = (theme) => ({
+  backgroundColor: "#145374",
+  padding: "3px 0 20px 0",
+  borderRadius: "0 0 18px 18px",
+  [theme.breakpoints.down("sm")]: {
+    height: "200px",
+    display: "flex",
+    flexDirection: "column",
+    justifyContent: "space-between",
+  },
+});
+
+export const stepsTextContainer = (theme) => ({
   textAlign: "center",
   marginBottom: "60px",
-};
+  [theme.breakpoints.down("sm")]: {
+    marginBottom: "25px",
+  },
+});
 
-export const stepsTitle = {
+export const stepsTitle = (theme) => ({
   marginBottom: "36px",
   color: "#EE6F57",
   fontWeight: 700,
@@ -63,14 +99,25 @@ export const stepsTitle = {
   lineHeight: "39px",
   letterSpacing: "-0.07em",
   fontFamily: "Montserrat",
-};
+  [theme.breakpoints.down("sm")]: {
+    fontSize: "14px",
+    lineHeight: "33px",
+    letterSpacing: "-0.015em",
+    marginBottom: "0px",
+  },
+});
 
-export const cardDescription = {
+export const cardDescription = (theme) => ({
   fontFamily: "Montserrat",
   fontWeight: "400",
   fontSize: "18px",
   lineHeight: "23px",
   letterSpacing: "-0.07em",
-};
+  [theme.breakpoints.down("sm")]: {
+    fontSize: "11px",
+    lineHeight: "16px",
+    letterSpacing: "-0.04em",
+  },
+});
 
 export const btnContainer = { display: "flex", justifyContent: "center" };
