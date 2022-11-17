@@ -23,6 +23,7 @@ const darkTheme = createTheme({
       styleOverrides: {
         maxWidthLg: {
           maxWidth: "1220px !important",
+          padding: "0 30px",
         },
       },
     },

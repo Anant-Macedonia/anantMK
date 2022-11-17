@@ -1,14 +1,16 @@
 import {
   Box,
   Container,
-  FormControl,
   Grid,
   Input,
   InputLabel,
   Typography,
+  createTheme,
+  useMediaQuery,
 } from "@mui/material";
 import React, { useState, useRef } from "react";
 import {
+  btnContainer,
   contactContainer,
   formInput,
   formLabel,
@@ -18,9 +20,22 @@ import {
 
 import emailjs from "@emailjs/browser";
 
+const theme = createTheme({
+  breakpoints: {
+    values: {
+      xs: 0,
+      sm: 600,
+      md: 900,
+      lg: 1280,
+      xl: 1920,
+    },
+  },
+});
+
 const ContactForm = () => {
   const form = useRef();
   const [formValues, setFormValues] = useState([]);
+  const smallScreenSize = useMediaQuery(theme.breakpoints.down("sm"));
 
   const handleInputChange = (e) => {
     const { name, value } = e.target;
@@ -53,26 +68,29 @@ const ContactForm = () => {
 
   return (
     <Box sx={contactContainer}>
-      <Container sx={{ marginTop: "100px" }}>
+      <Container>
         <Grid container>
-          <Grid item xs={12} md={6}>
-            <Typography sx={formTitles}>Start New Project</Typography>
-            <Typography sx={formTitles}>Redesign Project</Typography>
-            <Typography sx={formTitles}>Ask a Question</Typography>
-            <Typography sx={formTitles}>Say Hello</Typography>
-          </Grid>
+          {!smallScreenSize && (
+            <Grid item xs={12} md={6}>
+              <Typography sx={formTitles}>Start New Project</Typography>
+              <Typography sx={formTitles}>Redesign Project</Typography>
+              <Typography sx={formTitles}>Ask a Question</Typography>
+              <Typography sx={formTitles}>Say Hello</Typography>
+            </Grid>
+          )}
           <Grid item xs={12} md={6}>
             <form ref={form} onSubmit={sendEmail}>
               <Box>
-                <InputLabel htmlFor="email" sx={formLabel}>
+                {/* <InputLabel htmlFor="email" sx={formLabel}>
                   Email address
-                </InputLabel>
+                </InputLabel> */}
                 <Input
                   required
                   disableUnderline
                   id="email"
                   name="email"
                   type="email"
+                  placeholder="Email Address *"
                   value={formValues.email}
                   onChange={handleInputChange}
                   sx={formInput}
@@ -80,15 +98,16 @@ const ContactForm = () => {
               </Box>
 
               <Box>
-                <InputLabel htmlFor="firstName" sx={formLabel}>
+                {/* <InputLabel htmlFor="firstName" sx={formLabel}>
                   First Name
-                </InputLabel>
+                </InputLabel> */}
                 <Input
                   required
                   disableUnderline
                   id="firstName"
                   name="firstName"
                   type="text"
+                  placeholder="First Name *"
                   value={formValues.firstName}
                   onChange={handleInputChange}
                   sx={formInput}
@@ -96,15 +115,16 @@ const ContactForm = () => {
               </Box>
 
               <Box>
-                <InputLabel htmlFor="lastName" sx={formLabel}>
+                {/* <InputLabel htmlFor="lastName" sx={formLabel}>
                   Last Name
-                </InputLabel>
+                </InputLabel> */}
                 <Input
                   required
                   disableUnderline
                   id="lastName"
                   name="lastName"
                   type="text"
+                  placeholder="Last Name *"
                   value={formValues.lastName}
                   onChange={handleInputChange}
                   sx={formInput}
@@ -112,15 +132,15 @@ const ContactForm = () => {
               </Box>
 
               <Box>
-                <InputLabel htmlFor="phone" sx={formLabel}>
+                {/* <InputLabel htmlFor="phone" sx={formLabel}>
                   Phone Number
-                </InputLabel>
+                </InputLabel> */}
                 <Input
-                  required
                   disableUnderline
                   id="phone"
                   name="phone"
-                  type="tel"
+                  type="number"
+                  placeholder="Phone Number"
                   value={formValues.phone}
                   onChange={handleInputChange}
                   sx={formInput}
@@ -128,36 +148,23 @@ const ContactForm = () => {
               </Box>
 
               <Box>
-                <InputLabel htmlFor="message" sx={formLabel}>
+                {/* <InputLabel htmlFor="message" sx={formLabel}>
                   Your message
-                </InputLabel>
+                </InputLabel> */}
                 <Input
                   required
                   id="message"
                   name="message"
+                  placeholder="Your Message *"
                   value={formValues.message}
                   onChange={handleInputChange}
                   multiline
                   minRows={7}
                   disableUnderline
-                  style={formTextBox}
+                  sx={formTextBox}
                 />
               </Box>
-              <Box
-                sx={{
-                  padding: "12px 32px",
-                  background: "#EE6F57",
-                  width: "181px",
-                  height: "42px",
-                  borderRadius: "20px",
-                  fontWeight: 800,
-                  fontSize: "18px",
-                  fontFamily: "Mulish",
-                  cursor: "pointer",
-                  display: "flex",
-                  justifyContent: "center",
-                }}
-              >
+              <Box sx={btnContainer}>
                 <Input disableUnderline type="submit" value="Submit" />
               </Box>
             </form>
