@@ -86,7 +86,7 @@ const OurApproach = ({
           <Grid item xs={12} md={7.2}>
             <Typography sx={ourApproachTitle} variant="h1">
               {heroData?.heroTitle}
-              Learn more about us and take a look at our approach.
+              Learn more about us and our agile teamwork
             </Typography>
 
             {approachInfo.map((info, key) => {
@@ -112,7 +112,8 @@ const OurApproach = ({
                           justifyContent: "space-between",
                           marginTop: "35px",
                           marginBottom: "35px",
-                        }}>
+                        }}
+                      >
                         {approachInfo.map((item, key) => {
                           return (
                             <Box
@@ -127,7 +128,8 @@ const OurApproach = ({
                                 // marginRight: "13px",
                                 cursor: "pointer",
                               }}
-                              onClick={() => setSlider(key)}></Box>
+                              onClick={() => setSlider(key)}
+                            ></Box>
                           );
                         })}
                       </Stack>
@@ -181,7 +183,8 @@ const OurApproach = ({
                           transform: `rotate(${360 + deg}deg)`,
                         },
                       },
-                    }}>
+                    }}
+                  >
                     <Image
                       src={ellipseImage}
                       quality={100}
