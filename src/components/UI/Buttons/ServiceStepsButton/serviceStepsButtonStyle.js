@@ -1,4 +1,4 @@
-export const serviceStepsButton = {
+export const serviceStepsButton = (theme) => ({
   backgroundColor: "#EE6F57",
   color: "#f6f5f5",
   fontFamily: "Mulish !important",
@@ -15,4 +15,15 @@ export const serviceStepsButton = {
     backgroundColor: "#ffffff",
     color: "#000000",
   },
-};
+  [theme.breakpoints.down("sm")]: {
+    width: "90px",
+    height: "23px",
+    lineHeight: "24px",
+    letterSpacing: "0.02em",
+    borderRadius: "16px",
+    fontSize: "10px",
+    display: "flex",
+    alignItems: "center",
+    textAlign: "center",
+  },
+});
