@@ -81,9 +81,9 @@ const Footer = () => {
             <Link>
               <Typography sx={linkText}>Services</Typography>
             </Link>
-            <Link>
+            {/* <Link>
               <Typography sx={linkText}>Portfolio</Typography>
-            </Link>
+            </Link> */}
             <Link>
               <Typography sx={linkText}>Contact Us</Typography>
             </Link>
@@ -109,9 +109,10 @@ const Footer = () => {
         <Grid item xs={7} md={3} sx={footerContactInfoContainer}>
           <Box>
             <Typography sx={footerContact}>CONTACT INFO</Typography>
-            <Typography sx={contactText}>info@anantmacedonia.mk</Typography>
-            <Typography sx={contactText}>0038970 333 333</Typography>
-            <Typography sx={contactText}>0038970 333 333</Typography>
+            <Typography sx={contactText}>
+              stefan.nikolovski@bilans.dev
+            </Typography>
+            <Typography sx={contactText}>+1 702-595-2344</Typography>
           </Box>
         </Grid>
         {smallScreenSize && (

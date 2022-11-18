@@ -57,11 +57,9 @@ export const linkText = {
 
 export const contactText = (theme) => ({
   fontSize: "22px",
-  letterSpacing: "-0.125em",
   lineHeight: "44px",
   [theme.breakpoints.down("sm")]: {
     fontSize: "13px",
-    letterSpacing: "-0.07em",
     lineHeight: "16px",
     marginBottom: "18px",
   },

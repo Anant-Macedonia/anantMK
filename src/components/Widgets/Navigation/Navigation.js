@@ -22,7 +22,7 @@ import { link, nav, navLogo } from "./navigationStyle";
 const navigationLinks = [
   { name: "Our Company", href: "/company" },
   { name: "Services", href: "/services" },
-  { name: "Portfolio", href: "/portfolio" },
+  // { name: "Portfolio", href: "/portfolio" },
 ];
 
 const theme = createTheme({
