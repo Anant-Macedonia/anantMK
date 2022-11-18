@@ -6,7 +6,7 @@ import {
   createTheme,
   useMediaQuery,
 } from "@mui/material";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import uxImage from "../../../public/ux-ui-service.svg";
 import developImage from "../../../public/development-service.svg";
 import Image from "next/future/image";
@@ -44,6 +44,36 @@ const theme = createTheme({
 const Services = () => {
   const smallScreenSize = useMediaQuery(theme.breakpoints.down("sm"));
   const [hoveredItem, setHoveredItem] = useState(null);
+  const [touchStart, setTouchStart] = useState(null);
+  const [touchEnd, setTouchEnd] = useState(null);
+
+  const minSwipeDistance = 50;
+
+  const onTouchStart = (e) => {
+    setTouchEnd(null);
+    setTouchStart(e.targetTouches[0].clientX);
+  };
+
+  const onTouchMove = (e) => setTouchEnd(e.targetTouches[0].clientX);
+
+  const onTouchEnd = () => {
+    if (!touchStart || !touchEnd) return;
+    const distance = touchStart - touchEnd;
+    const isLeftSwipe = distance > minSwipeDistance;
+    const isRightSwipe = distance < -minSwipeDistance;
+    if (isLeftSwipe || isRightSwipe)
+      isLeftSwipe && !hoveredItem
+        ? setHoveredItem("Development")
+        : isRightSwipe && !hoveredItem && setHoveredItem("UI");
+
+    if (isLeftSwipe && distance > 20 && hoveredItem === "UI") {
+      setHoveredItem(null);
+    }
+
+    if (isRightSwipe && distance < 0 && hoveredItem === "Development") {
+      setHoveredItem(null);
+    }
+  };
 
   return (
     <Grid
@@ -53,9 +83,12 @@ const Services = () => {
         marginTop: "120px",
       }}
     >
-      {!hoveredItem ? (
+      {hoveredItem == null ? (
         <>
           <Grid
+            onTouchStart={onTouchStart}
+            onTouchMove={onTouchMove}
+            onTouchEnd={onTouchEnd}
             onMouseEnter={() => setHoveredItem("UI")}
             item
             xs={6}
@@ -73,6 +106,9 @@ const Services = () => {
             )}
           </Grid>
           <Grid
+            onTouchStart={onTouchStart}
+            onTouchMove={onTouchMove}
+            onTouchEnd={onTouchEnd}
             onMouseEnter={() => setHoveredItem("Development")}
             item
             xs={6}
@@ -131,16 +167,17 @@ const Services = () => {
               )}
             </>
           ) : (
-            <Grid item xs={12} sx={uxContainer}>
+            <Grid
+              item
+              xs={12}
+              sx={uxContainer}
+              onTouchStart={onTouchStart}
+              onTouchMove={onTouchMove}
+              onTouchEnd={onTouchEnd}
+            >
               <Typography sx={[hoveredTitle, uxHoveredTitle]}>
                 UX/UI Design
               </Typography>
-              {/* <Stack direction="row" spacing={8}>
-                <Box sx={subTitle}>Research</Box>
-                <Box sx={subTitle}>Design</Box>
-                <Box sx={subTitle}>Prototyping</Box>
-                <Box sx={subTitle}>Testing</Box>
-              </Stack> */}
               <Box sx={{ marginTop: "60px" }}>
                 <SecondaryButton link="/services/ux-ui" btnText="Learn More" />
               </Box>
@@ -181,16 +218,17 @@ const Services = () => {
                 </Grid>
               </>
             ) : (
-              <Grid item xs={12} sx={developmentContainer}>
+              <Grid
+                item
+                xs={12}
+                sx={developmentContainer}
+                onTouchStart={onTouchStart}
+                onTouchMove={onTouchMove}
+                onTouchEnd={onTouchEnd}
+              >
                 <Typography sx={[hoveredTitle, developmentHoveredTitle]}>
                   Development
                 </Typography>
-                {/* <Stack direction="row" spacing={8}>
-                  <Box sx={developmentSubTitle}>Research</Box>
-                  <Box sx={developmentSubTitle}>Design</Box>
-                  <Box sx={developmentSubTitle}>Prototyping</Box>
-                  <Box sx={developmentSubTitle}>Testing</Box>
-                </Stack> */}
                 <Box sx={{ marginTop: "60px" }}>
                   <SecondaryButton
                     link="/services/development"
