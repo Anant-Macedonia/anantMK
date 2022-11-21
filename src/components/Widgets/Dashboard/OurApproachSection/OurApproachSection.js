@@ -52,7 +52,7 @@ const OurApproach = ({
 
   const smallScreenSize = useMediaQuery(theme.breakpoints.down("sm"));
 
-  if (!smallScreenSize && slider >= 3) {
+  if (!smallScreenSize && slider > 3) {
     setSlider(0);
   }
 

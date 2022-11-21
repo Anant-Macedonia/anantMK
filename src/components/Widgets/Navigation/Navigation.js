@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import Link from "next/link";
+import { useRouter } from "next/router";
 import Image from "next/future/image";
 import {
   AppBar,
@@ -17,12 +18,18 @@ import ChevronRightIcon from "@mui/icons-material/ChevronRight";
 import { List, ListItem, createTheme, useMediaQuery } from "@mui/material";
 import ContactButton from "../../UI/Buttons/ContactButton/ContactButton";
 import logo from "../../../../public/logo-anant-mk.svg";
-import { link, nav, navLogo } from "./navigationStyle";
+import { link, activeLink, nav, navLogo } from "./navigationStyle";
 
 const navigationLinks = [
   { name: "Our Company", href: "/company" },
   { name: "Services", href: "/services" },
   // { name: "Portfolio", href: "/portfolio" },
+];
+
+const navigationMobileLinks = [
+  { name: "Our Company", href: "/company" },
+  { name: "Services", href: "/services" },
+  { name: "Contact Us", href: "/contact" },
 ];
 
 const theme = createTheme({
@@ -40,6 +47,7 @@ const theme = createTheme({
 function Navigation() {
   const [open, setOpen] = useState(false);
 
+  const router = useRouter();
   const smallScreenSize = useMediaQuery(theme.breakpoints.down("sm"));
 
   return (
@@ -68,7 +76,11 @@ function Navigation() {
                   href={item.href}
                   passHref
                 >
-                  <Typography sx={link}>{item.name}</Typography>
+                  <Typography
+                    sx={router.pathname == item.href ? activeLink : link}
+                  >
+                    {item.name}
+                  </Typography>
                 </Link>
               );
             })}
@@ -95,21 +107,30 @@ function Navigation() {
         </Box>
 
         <List sx={{ width: "273px", paddingLeft: "34px" }}>
-          {navigationLinks.map((item) => {
+          {navigationMobileLinks.map((item) => {
             return (
-              <ListItem key={item.name}>
+              <ListItem key={item.name} onClick={() => setOpen(false)}>
                 <Link
                   key={item.name}
                   style={{ textDecoration: "none" }}
                   href={item.href}
                   passHref
                 >
-                  <Typography sx={link}>{item.name}</Typography>
+                  <Typography
+                    sx={router.pathname == item.href ? activeLink : link}
+                  >
+                    {item.name}
+                  </Typography>
                 </Link>
               </ListItem>
             );
           })}
-          <ContactButton hamburgerContact btnText="Contact Us" />
+
+          {/* <ContactButton
+            hamburgerContact
+            btnText="Contact Us"
+            onClick={() => setOpen(false)}
+          /> */}
         </List>
       </SwipeableDrawer>
     </AppBar>

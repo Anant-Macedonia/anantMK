@@ -1,6 +1,6 @@
 export const footerContainer = (theme) => ({
   justifyContent: "space-between",
-  marginBottom: "140px",
+  marginBottom: "55px",
   marginTop: "65px",
   [theme.breakpoints.down("sm")]: {
     marginBottom: "30px",
@@ -53,6 +53,7 @@ export const linkText = {
   textDecoration: "underline",
   letterSpacing: "-0.02em",
   lineHeight: "34.7px",
+  cursor: "pointer",
 };
 
 export const contactText = (theme) => ({

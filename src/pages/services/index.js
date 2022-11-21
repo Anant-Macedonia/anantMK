@@ -80,7 +80,7 @@ const Services = () => {
       onMouseLeave={() => setHoveredItem(null)}
       container
       sx={{
-        marginTop: "120px",
+        marginTop: "110px",
       }}
     >
       {hoveredItem == null ? (

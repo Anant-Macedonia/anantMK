@@ -1,5 +1,5 @@
 export const teamSectionContainer = (theme) => ({
-  marginTop: "105px",
+  marginTop: "150px",
   [theme.breakpoints.down("sm")]: {
     marginTop: "35px",
   },
@@ -16,6 +16,15 @@ export const teamSectionTitle = (theme) => ({
     fontSize: "23px",
     lineHeight: "32px",
   },
+});
+
+export const teamSectionDescription = (theme) => ({
+  fontFamily: "Montserrat",
+  fontWeight: 400,
+  fontSize: "18px",
+  lineHeight: "23px",
+  marginBottom: "120px",
+  letterSpacing: "-0.01em",
 });
 
 export const teamCardContainerActive = (theme) => ({

@@ -23,6 +23,7 @@ import {
   teamCardContainerNoActive,
   teamCardTitle,
   teamSectionContainer,
+  teamSectionDescription,
   teamSectionTitle,
 } from "./ourTeamStyle.js";
 import classes from "./ourTeam.module.css";
@@ -45,6 +46,16 @@ const OurTeamSection = ({ teamMembers }) => {
 
   return (
     <Container sx={teamSectionContainer}>
+      <Typography sx={teamSectionDescription}>
+        We are group of developers and deisgners based in Macedonia. We are
+        extremely passionate and committed to what we do since we love and enjoy
+        our work. Through our products, we aim to reflect that exact same energy
+        to our clients and users. We help business owners to carry out their
+        ideas and visions. We define our success by our people. We believe in
+        your success and we believe our people are well-equipped to bring your
+        operations to the next level. Our business objective is to help you meet
+        your business objectives.
+      </Typography>
       <Typography sx={teamSectionTitle}>Meet Our Team.</Typography>
 
       <Swiper
