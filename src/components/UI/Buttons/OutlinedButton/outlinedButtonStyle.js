@@ -18,5 +18,7 @@ export const outlinedBtn = (theme) => ({
     marginRight: "15px",
     width: "156px",
     height: "34px",
+    letterSpacing: "-0.01em",
+    fontSize: "14px",
   },
 });

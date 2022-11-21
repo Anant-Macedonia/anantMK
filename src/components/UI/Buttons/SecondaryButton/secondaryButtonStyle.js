@@ -19,5 +19,6 @@ export const secondaryButton = (theme) => ({
     width: "156px",
     height: "34px",
     fontSize: "14px",
+    letterSpacing: "-0.01em",
   },
 });

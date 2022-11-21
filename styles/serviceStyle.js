@@ -5,6 +5,7 @@ export const uxContainer = (theme) => ({
   display: "flex",
   flexDirection: "column",
   alignItems: "center",
+  transition: "all 0.3s ease-in-out",
   [theme.breakpoints.down("sm")]: {
     paddingTop: "120px",
     paddingBottom: "120px",
@@ -18,6 +19,7 @@ export const developmentContainer = (theme) => ({
   display: "flex",
   flexDirection: "column",
   alignItems: "center",
+  transition: "all 0.3s ease-in-out",
   [theme.breakpoints.down("sm")]: {
     paddingTop: "120px",
   },
@@ -33,10 +35,12 @@ export const smallContainer = {
 
 export const smallUxContainer = {
   color: "#145374",
+  transition: "all 0.3s ease-in-out",
 };
 
 export const smallDevelopmentContainer = {
   color: "#EE6F57 ",
+  transition: "all 0.3s ease-in-out",
 };
 
 export const title = (theme) => ({

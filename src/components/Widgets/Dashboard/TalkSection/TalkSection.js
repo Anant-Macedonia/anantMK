@@ -9,7 +9,6 @@ import {
   useMediaQuery,
 } from "@mui/material";
 import PrimaryButton from "../../../UI/Buttons/PrimaryButton/PrimaryButton";
-import TalkImage from "../../../../../public/talk-us.svg";
 
 import {
   talkSectionContainer,
@@ -40,7 +39,7 @@ const TalkSection = ({ title, description, talkImage, talkButton }) => {
       <Container>
         <Box sx={talkSectionContainer}>
           <Grid container>
-            <Grid item xs={12} md={5} sx={titleAndDescContainer}>
+            <Grid item xs={12} md={6.5} sx={titleAndDescContainer}>
               <Typography sx={talkSectionTitle}>{title}</Typography>
               <Box
                 sx={talkSectionDesc}

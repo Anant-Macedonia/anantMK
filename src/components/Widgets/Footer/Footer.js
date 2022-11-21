@@ -1,15 +1,13 @@
 import {
   Grid,
   Typography,
-  Link,
   Box,
-  Divider,
   Container,
   createTheme,
   useMediaQuery,
 } from "@mui/material";
 import Image from "next/image";
-import classes from "./footer.module.css";
+import Link from "next/link";
 import logo from "../../../../public/footer-logo.png";
 import { AiOutlineGithub, AiOutlineCopyrightCircle } from "react-icons/ai";
 import { BsLinkedin } from "react-icons/bs";
@@ -53,16 +51,17 @@ const Footer = () => {
           {!smallScreenSize && (
             <Typography
               sx={{
+                fontFamily: "Montserrat",
                 fontSize: "16px",
-                letterSpacing: " -0.04em",
                 fontWeight: 400,
-                lineHeight: "20x",
+                lineHeight: "23px",
               }}
             >
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque
-              mollis lectus id quam posuere ultrices. Donec magna metus,
-              porttitor in enim sed, vestibulum eleifend purus. Morbi mauris
-              orci, mollis non enim vitae, euismod pellentesque
+              We are group of developers and deisgners based in Macedonia. We
+              are extremely passionate and committed to what we do since we love
+              and enjoy our work. Through our products, we aim to reflect that
+              exact same energy to our clients and users. We help business
+              owners to carry out their ideas and visions.
             </Typography>
           )}
         </Grid>
@@ -75,16 +74,16 @@ const Footer = () => {
             >
               Browse
             </Typography>
-            <Link>
+            <Link href="/company" passHref>
               <Typography sx={linkText}>Our Company</Typography>
             </Link>
-            <Link>
+            <Link href="/services" passHref>
               <Typography sx={linkText}>Services</Typography>
             </Link>
             {/* <Link>
               <Typography sx={linkText}>Portfolio</Typography>
             </Link> */}
-            <Link>
+            <Link href="/contact" passHref>
               <Typography sx={linkText}>Contact Us</Typography>
             </Link>
           </Grid>
@@ -98,15 +97,15 @@ const Footer = () => {
             >
               Services
             </Typography>
-            <Link>
+            <Link href="/services/ux-ui" passHref>
               <Typography sx={linkText}>UX/UI Design</Typography>
             </Link>
-            <Link>
+            <Link href="/services/development" passHref>
               <Typography sx={linkText}>Development</Typography>
             </Link>
           </Grid>
         )}
-        <Grid item xs={7} md={3} sx={footerContactInfoContainer}>
+        <Grid item xs={7.5} md={3} sx={footerContactInfoContainer}>
           <Box>
             <Typography sx={footerContact}>CONTACT INFO</Typography>
             <Typography sx={contactText}>
@@ -116,7 +115,7 @@ const Footer = () => {
           </Box>
         </Grid>
         {smallScreenSize && (
-          <Grid item xs={5} md={3} sx={{ marginTop: "30px" }}>
+          <Grid item xs={4.5} md={3} sx={{ marginTop: "30px" }}>
             <Typography sx={footerContact}>FOLLOW US</Typography>
             <Box>
               <Typography>
