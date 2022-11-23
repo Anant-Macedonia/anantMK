@@ -118,14 +118,21 @@ const Footer = () => {
           <Grid item xs={4.5} md={3} sx={{ marginTop: "30px" }}>
             <Typography sx={footerContact}>FOLLOW US</Typography>
             <Box>
-              <Typography>
-                <AiOutlineGithub style={{ marginRight: "8px" }} />
-                GitHub
-              </Typography>
-              <Typography>
-                <BsLinkedin style={{ marginRight: "8px" }} />
-                LinkedIn
-              </Typography>
+              <a href="https://github.com/Anant-Macedonia" rel="noreferrer">
+                <Typography>
+                  <AiOutlineGithub style={{ marginRight: "8px" }} />
+                  GitHub
+                </Typography>
+              </a>
+              <a
+                href="https://www.linkedin.com/company/anant-macedonia/about/?viewAsMember=true"
+                rel="noreferrer"
+              >
+                <Typography>
+                  <BsLinkedin style={{ marginRight: "8px" }} />
+                  LinkedIn
+                </Typography>
+              </a>
             </Box>
           </Grid>
         )}
@@ -152,8 +159,21 @@ const Footer = () => {
                 fontSize: "22px",
               }}
             >
-              Folow Us <AiOutlineGithub style={{ marginLeft: "30px" }} />
-              <BsLinkedin style={{ marginLeft: "12px" }} />
+              Folow Us
+              <a
+                href="https://github.com/Anant-Macedonia"
+                target="_blank"
+                rel="noreferrer"
+              >
+                <AiOutlineGithub style={{ marginLeft: "30px" }} />
+              </a>
+              <a
+                href="https://www.linkedin.com/company/anant-macedonia/about/?viewAsMember=true"
+                target="_blank"
+                rel="noreferrer"
+              >
+                <BsLinkedin style={{ marginLeft: "12px" }} />
+              </a>
             </Typography>
           </Grid>
         )}
