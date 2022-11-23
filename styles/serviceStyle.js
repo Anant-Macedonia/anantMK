@@ -1,47 +1,73 @@
 export const uxContainer = (theme) => ({
-  paddingBottom: "147px",
-  paddingTop: "147px",
+  height: "700px",
+  // paddingBottom: "147px",
+  // paddingTop: "147px",
   backgroundColor: "#EE6F57",
   display: "flex",
   flexDirection: "column",
   alignItems: "center",
   transition: "all 1.3s ease-in-out",
   [theme.breakpoints.down("sm")]: {
-    paddingTop: "120px",
-    paddingBottom: "120px",
+    height: "350px",
+    // paddingTop: "120px",
+    // paddingBottom: "120px",
   },
 });
 
 export const developmentContainer = (theme) => ({
-  paddingBottom: "147px",
-  paddingTop: "147px",
+  height: "700px",
+  // paddingBottom: "147px",
+  // paddingTop: "147px",
   backgroundColor: "#145374",
   display: "flex",
   flexDirection: "column",
   alignItems: "center",
   transition: "all 1.3s ease-in-out",
   [theme.breakpoints.down("sm")]: {
-    paddingTop: "120px",
+    height: "350px",
+    // paddingTop: "120px",
+    // paddingBottom: "120px",
   },
 });
 
-export const smallContainer = {
+export const smallContainer = (theme) => ({
   writingMode: "vertical-rl",
   transform: "rotate(-180deg)",
   fontWeight: "700",
   fontSize: "80px",
   letterSpacing: "-0.02em",
-};
+  [theme.breakpoints.down("sm")]: {
+    fontSize: "20px",
+  },
+});
 
 export const smallUxContainer = {
   color: "#145374",
-  // transition: "all 1.3s ease-in-out",
+  transition: "all 0.8s ease-in-out",
 };
 
 export const smallDevelopmentContainer = {
   color: "#EE6F57 ",
-  // transition: "all 1.3s ease-in-out",
+  transition: "all 0.8s ease-in-out",
 };
+
+export const imageContainer = {
+  marginTop: "93px",
+  animation: "show 1s ease-in",
+  "@keyframes show": {
+    "0%": {
+      opacity: 0,
+    },
+    "50%": {
+      opacity: 0.2,
+    },
+    "100%": {
+      opacity: 1,
+    },
+  },
+};
+
+// export const noImage = { opacity: "0" };
 
 export const title = (theme) => ({
   fontWeight: "700",
