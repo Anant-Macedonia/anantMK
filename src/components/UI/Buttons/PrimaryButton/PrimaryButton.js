@@ -6,7 +6,7 @@ import { primaryBtn } from "./primaryButtonStyle";
 const PrimaryButton = ({ btnText, btnClass, link, handleSubmit }) => {
   return (
     <Link href={link} passHref>
-      <Button sx={primaryBtn} onClick={handleSubmit}>
+      <Button sx={[primaryBtn]} onClick={handleSubmit}>
         {btnText}
         <ButtonIcon />
       </Button>

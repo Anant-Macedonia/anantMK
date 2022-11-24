@@ -5,6 +5,14 @@ export const nav = {
   paddingTop: "55px",
 };
 
+export const navToolbar = (theme) => ({
+  display: "flex",
+  justifyContent: "center",
+  [theme.breakpoints.down("sm")]: {
+    flexDirection: "row-reverse",
+  },
+});
+
 export const navLogo = (theme) => ({
   marginRight: "auto",
   cursor: "pointer",

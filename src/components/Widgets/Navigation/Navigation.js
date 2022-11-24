@@ -18,7 +18,7 @@ import ChevronRightIcon from "@mui/icons-material/ChevronRight";
 import { List, ListItem, createTheme, useMediaQuery } from "@mui/material";
 import ContactButton from "../../UI/Buttons/ContactButton/ContactButton";
 import logo from "../../../../public/logo-anant-mk.svg";
-import { link, activeLink, nav, navLogo } from "./navigationStyle";
+import { link, activeLink, nav, navLogo, navToolbar } from "./navigationStyle";
 
 const navigationLinks = [
   { name: "Our Company", href: "/company" },
@@ -53,10 +53,7 @@ function Navigation() {
   return (
     <AppBar sx={nav} position="static">
       <Container>
-        <Toolbar
-          disableGutters
-          sx={{ display: "flex", justifyContent: "center" }}
-        >
+        <Toolbar disableGutters sx={navToolbar}>
           <Box sx={navLogo}>
             <Link href="/" passHref>
               <Image

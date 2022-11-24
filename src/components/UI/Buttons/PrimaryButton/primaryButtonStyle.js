@@ -15,6 +15,10 @@ export const primaryBtn = (theme) => ({
     backgroundColor: "#ffffff",
     color: "#000000",
   },
+  "&:last-child": {
+    marginRight: "0px",
+  },
+
   [theme.breakpoints.down("sm")]: {
     marginRight: "15px",
     height: "34px",
