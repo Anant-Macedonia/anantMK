@@ -38,10 +38,12 @@ export const servicesCard = (theme) => ({
     borderRadius: "20px",
   },
   [theme.breakpoints.down("sm")]: {
-    maxWidth: "255px",
+    maxWidth: "225px",
+    height: "445px",
     background: " #124F70",
     boxShadow: "7px 10px 7px rgba(0, 0, 0, 0.2)",
     borderRadius: "20px",
+    paddingBottom: "23px",
   },
 });
 
@@ -58,7 +60,7 @@ export const imageContainer = (theme) => ({
     display: "flex",
     justifyContent: "center",
     alignItems: "center",
-    height: "130px",
+    height: "120px",
   },
 });
 
@@ -75,7 +77,7 @@ export const cardTitle = (theme) => ({
     fontSize: "14px",
     letterSpacing: "-0.015em",
     lineHeight: "33px",
-    margin: "14px 0",
+    margin: "0 0 10px 0",
   },
 });
 

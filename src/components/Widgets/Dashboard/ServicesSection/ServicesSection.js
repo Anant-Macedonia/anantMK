@@ -11,6 +11,7 @@ import {
   useMediaQuery,
 } from "@mui/material";
 import { Swiper, SwiperSlide } from "swiper/react";
+import PrimaryButton from "../../../UI/Buttons/PrimaryButton/PrimaryButton";
 import {
   cardDescription,
   cardLine,
@@ -111,6 +112,15 @@ const ServicesSection = ({ services }) => {
                               {service.serviceFileds.serviceDescription}
                             </Typography>
                           </CardContent>
+                          <Box
+                            sx={{ display: "flex", justifyContent: "center" }}
+                          >
+                            <PrimaryButton
+                              btnText="Learn more"
+                              btnClass="btnMargin"
+                              link="/"
+                            />
+                          </Box>
                         </Card>
                       </Box>
                     </SwiperSlide>

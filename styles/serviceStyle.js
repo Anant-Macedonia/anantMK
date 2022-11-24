@@ -6,6 +6,7 @@ export const uxContainer = (theme) => ({
   display: "flex",
   flexDirection: "column",
   alignItems: "center",
+  justifyContent: "center",
   transition: "all 1.3s ease-in-out",
   [theme.breakpoints.down("sm")]: {
     height: "350px",
@@ -22,6 +23,7 @@ export const developmentContainer = (theme) => ({
   display: "flex",
   flexDirection: "column",
   alignItems: "center",
+  justifyContent: "center",
   transition: "all 1.3s ease-in-out",
   [theme.breakpoints.down("sm")]: {
     height: "350px",
@@ -74,7 +76,7 @@ export const title = (theme) => ({
   fontSize: "80px",
   letterSpacing: "-0.02em",
   [theme.breakpoints.down("sm")]: {
-    fontSize: "40px",
+    fontSize: "35px",
     lineHeight: "51px",
   },
 });

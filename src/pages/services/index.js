@@ -85,9 +85,9 @@ const Services = () => {
       }}
     >
       <Grid
-        // onTouchStart={onTouchStart}
-        // onTouchMove={onTouchMove}
-        // onTouchEnd={onTouchEnd}
+        onTouchStart={onTouchStart}
+        onTouchMove={onTouchMove}
+        onTouchEnd={onTouchEnd}
         onMouseEnter={() => setHoveredItem("UI")}
         item
         xs={!hoveredItem ? 6 : hoveredItem == "UI" ? 10 : 2}
@@ -101,23 +101,39 @@ const Services = () => {
               : [title, uxTitle]
           }
         >
-          UX/UI
+          {!smallScreenSize ? "UX/UI Design" : "UX/UI"}
         </Typography>
+
+        {!smallScreenSize && hoveredItem == "UI" && (
+          <>
+            <Stack direction="row" spacing={8}>
+              <Box sx={subTitle}>Research</Box>
+              <Box sx={subTitle}>Design</Box>
+              <Box sx={subTitle}>Prototyping</Box>
+              <Box sx={subTitle}>Testing</Box>
+            </Stack>
+            <Box sx={{ marginTop: "125px" }}>
+              <SecondaryButton link="/services/ux-ui" btnText="Learn More" />
+            </Box>
+          </>
+        )}
 
         {!smallScreenSize && !hoveredItem ? (
           <Box sx={imageContainer}>
             <Image src={uxImage} alt="ux-image" />
           </Box>
         ) : (
-          <Box sx={{ marginTop: "35px" }}>
-            <FiArrowRightCircle size="33px" color="#145374" />
-          </Box>
+          smallScreenSize && (
+            <Box sx={{ marginTop: "35px" }}>
+              <FiArrowRightCircle size="33px" color="#145374" />
+            </Box>
+          )
         )}
       </Grid>
       <Grid
-        // onTouchStart={onTouchStart}
-        // onTouchMove={onTouchMove}
-        // onTouchEnd={onTouchEnd}
+        onTouchStart={onTouchStart}
+        onTouchMove={onTouchMove}
+        onTouchEnd={onTouchEnd}
         onMouseEnter={() => setHoveredItem("Development")}
         item
         xs={!hoveredItem ? 6 : hoveredItem == "Development" ? 10 : 2}
@@ -131,16 +147,36 @@ const Services = () => {
               : [title, developTitle]
           }
         >
-          Dev
+          {!smallScreenSize ? "Development" : "Dev"}
         </Typography>
+
+        {!smallScreenSize && hoveredItem == "Development" && (
+          <>
+            <Stack direction="row" spacing={8}>
+              <Box sx={developmentSubTitle}>Research</Box>
+              <Box sx={developmentSubTitle}>Design</Box>
+              <Box sx={developmentSubTitle}>Prototyping</Box>
+              <Box sx={developmentSubTitle}>Testing</Box>
+            </Stack>
+            <Box sx={{ marginTop: "125px" }}>
+              <SecondaryButton
+                link="/services/development"
+                btnText="Learn More"
+              />
+            </Box>
+          </>
+        )}
+
         {!smallScreenSize && !hoveredItem ? (
           <Box sx={imageContainer}>
             <Image src={developImage} alt="ux-image" />
           </Box>
         ) : (
-          <Box sx={{ marginTop: "35px" }}>
-            <FiArrowLeftCircle size="33px" color="#EE6F57" />
-          </Box>
+          smallScreenSize && (
+            <Box sx={{ marginTop: "35px" }}>
+              <FiArrowLeftCircle size="33px" color="#EE6F57" />
+            </Box>
+          )
         )}
       </Grid>
     </Grid>

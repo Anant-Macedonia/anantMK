@@ -49,6 +49,7 @@ const Hero = ({
   buttons,
   primaryButtonLink,
   secondaryButtonLink,
+  heroImage,
 }) => {
   const defaultOptions = {
     loop: true,
@@ -66,10 +67,11 @@ const Hero = ({
             <Grid
               item
               xs={12}
-              md={contactInfo ? 5 : 7.5}
+              md={contactInfo || heroImage ? 5 : 7.5}
               sx={
                 !smallScreenSize ? { marginTop: "40px" } : { marginTop: "37px" }
-              }>
+              }
+            >
               <Typography sx={heroTitle} variant="h1">
                 {title}
                 <Box variant="span" sx={{ fontWeight: 700 }}>
@@ -104,7 +106,8 @@ const Hero = ({
                     <a
                       href="https://github.com/Anant-Macedonia"
                       target="_blank"
-                      rel="noreferrer">
+                      rel="noreferrer"
+                    >
                       <AiOutlineGithub
                         size={33}
                         style={{ marginRight: "17px", color: "#EE6F57" }}
@@ -113,7 +116,8 @@ const Hero = ({
                     <a
                       href="https://www.linkedin.com/company/anant-macedonia/about/?viewAsMember=true"
                       target="_blank"
-                      rel="noreferrer">
+                      rel="noreferrer"
+                    >
                       <BsLinkedin
                         size={33}
                         style={{ marginRight: "17px", color: "#EE6F57" }}
@@ -144,14 +148,23 @@ const Hero = ({
               <Grid item md={4.5}>
                 <Lottie options={defaultOptions} height={450} width={500} />
               </Grid>
+            ) : contactInfo ? (
+              <Grid item xs={12} md={7} sx={imageContainer}>
+                <Image
+                  src={contactImage}
+                  alt="development img"
+                  height={smallScreenSize && 228}
+                  width={smallScreenSize && 254}
+                />
+              </Grid>
             ) : (
-              contactInfo && (
+              heroImage && (
                 <Grid item xs={12} md={7} sx={imageContainer}>
                   <Image
-                    src={contactImage}
+                    src={heroImage.sourceUrl}
                     alt="development img"
-                    height={smallScreenSize && 228}
-                    width={smallScreenSize && 254}
+                    height={!smallScreenSize && 486}
+                    width={!smallScreenSize && 519}
                   />
                 </Grid>
               )

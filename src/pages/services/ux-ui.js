@@ -19,6 +19,8 @@ const UxUi = (props) => {
     talkSectionImage,
     talkButton,
   } = props?.talkSectionData?.talk;
+
+  console.log(heroImage);
   return (
     <div>
       <Hero
