@@ -158,7 +158,8 @@ const Hero = ({
                 />
               </Grid>
             ) : (
-              heroImage && (
+              heroImage &&
+              !smallScreenSize && (
                 <Grid item xs={12} md={7} sx={imageContainer}>
                   <Image
                     src={heroImage.sourceUrl}

@@ -39,7 +39,6 @@ export const servicesCard = (theme) => ({
   },
   [theme.breakpoints.down("sm")]: {
     maxWidth: "225px",
-    height: "445px",
     background: " #124F70",
     boxShadow: "7px 10px 7px rgba(0, 0, 0, 0.2)",
     borderRadius: "20px",

@@ -29,6 +29,7 @@ import {
   uxTitle,
 } from "../../../styles/serviceStyle";
 import SecondaryButton from "../../components/UI/Buttons/SecondaryButton/SecondaryButton";
+import Router from "next/router";
 
 const theme = createTheme({
   breakpoints: {
@@ -63,9 +64,18 @@ const Services = () => {
     const isLeftSwipe = distance > minSwipeDistance;
     const isRightSwipe = distance < -minSwipeDistance;
     if (isLeftSwipe || isRightSwipe)
-      isLeftSwipe && !hoveredItem
-        ? setHoveredItem("Development")
-        : isRightSwipe && !hoveredItem && setHoveredItem("UI");
+      if (isLeftSwipe && !hoveredItem) {
+        setHoveredItem("Development");
+        setTimeout(() => {
+          Router.push("/services/development");
+        }, 500);
+      }
+    if (isRightSwipe && !hoveredItem) {
+      setHoveredItem("UI");
+      setTimeout(() => {
+        Router.push("/services/ux-ui-design");
+      }, 500);
+    }
 
     if (isLeftSwipe && distance > 20 && hoveredItem === "UI") {
       setHoveredItem(null);
@@ -113,7 +123,10 @@ const Services = () => {
               <Box sx={subTitle}>Testing</Box>
             </Stack>
             <Box sx={{ marginTop: "125px" }}>
-              <SecondaryButton link="/services/ux-ui" btnText="Learn More" />
+              <SecondaryButton
+                link="/services/ux-ui-design"
+                btnText="Learn More"
+              />
             </Box>
           </>
         )}
