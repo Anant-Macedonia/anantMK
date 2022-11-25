@@ -108,7 +108,10 @@ const ServicesSection = ({ services }) => {
                             <Typography sx={cardTitle}>
                               {service.serviceFileds.serviceTitle}
                             </Typography>
-                            <Typography sx={cardDescription}>
+                            <Typography
+                              sx={cardDescription}
+                              className={styles.shortDescription}
+                            >
                               {service.serviceFileds.serviceDescription}
                             </Typography>
                           </CardContent>
@@ -116,9 +119,9 @@ const ServicesSection = ({ services }) => {
                             sx={{ display: "flex", justifyContent: "center" }}
                           >
                             <PrimaryButton
-                              btnText="Learn more"
+                              btnText={service.serviceFileds.button.textButton}
                               btnClass="btnMargin"
-                              link="/"
+                              link={service.serviceFileds.button.buttonLink.uri}
                             />
                           </Box>
                         </Card>

@@ -7,7 +7,7 @@ export const uxContainer = (theme) => ({
   flexDirection: "column",
   alignItems: "center",
   justifyContent: "center",
-  transition: "all 1.3s ease-in-out",
+  transition: "all 0.5s ease-in-out",
   [theme.breakpoints.down("sm")]: {
     height: "350px",
     // paddingTop: "120px",
@@ -24,7 +24,7 @@ export const developmentContainer = (theme) => ({
   flexDirection: "column",
   alignItems: "center",
   justifyContent: "center",
-  transition: "all 1.3s ease-in-out",
+  transition: "all 0.5s ease-in-out",
   [theme.breakpoints.down("sm")]: {
     height: "350px",
     // paddingTop: "120px",
@@ -45,12 +45,12 @@ export const smallContainer = (theme) => ({
 
 export const smallUxContainer = {
   color: "#145374",
-  transition: "all 0.8s ease-in-out",
+  transition: "all 0.5s ease-in-out",
 };
 
 export const smallDevelopmentContainer = {
   color: "#EE6F57 ",
-  transition: "all 0.8s ease-in-out",
+  transition: "all 0.5s ease-in-out",
 };
 
 export const imageContainer = {

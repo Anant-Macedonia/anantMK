@@ -97,7 +97,7 @@ const Footer = () => {
             >
               Services
             </Typography>
-            <Link href="/services/ux-ui" passHref>
+            <Link href="/services/ux-ui-design" passHref>
               <Typography sx={linkText}>UX/UI Design</Typography>
             </Link>
             <Link href="/services/development" passHref>

@@ -34,6 +34,14 @@ export const GET_HOME_DATA = gql`
           serviceImage {
             sourceUrl
           }
+          button {
+            buttonLink {
+              ... on Page {
+                uri
+              }
+            }
+            textButton
+          }
         }
       }
     }
