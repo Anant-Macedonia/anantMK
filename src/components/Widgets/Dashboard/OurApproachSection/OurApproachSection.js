@@ -49,6 +49,8 @@ const OurApproach = ({
   const [slider, setSlider] = useState(0);
   const [delay, setDelay] = useState("5s");
   const [play, setPlay] = useState("running");
+  const [touchStart, setTouchStart] = useState(null);
+  const [touchEnd, setTouchEnd] = useState(null);
 
   const smallScreenSize = useMediaQuery(theme.breakpoints.down("sm"));
 
@@ -59,6 +61,31 @@ const OurApproach = ({
   if (smallScreenSize && slider > 3) {
     setSlider(0);
   }
+
+  const minSwipeDistance = 50;
+
+  const onTouchStart = (e) => {
+    setTouchEnd(null);
+    setTouchStart(e.targetTouches[0].clientX);
+  };
+
+  const onTouchMove = (e) => setTouchEnd(e.targetTouches[0].clientX);
+
+  const onTouchEnd = () => {
+    if (!touchStart || !touchEnd) return;
+    const distance = touchStart - touchEnd;
+    const isLeftSwipe = distance > minSwipeDistance;
+    const isRightSwipe = distance < -minSwipeDistance;
+    if (isLeftSwipe || isRightSwipe)
+      if (isLeftSwipe) {
+        setSlider((prevSlider) => prevSlider + 1);
+      }
+    if (isRightSwipe) {
+      if (slider > 0) {
+        setSlider((prevSlider) => prevSlider - 1);
+      }
+    }
+  };
 
   // const clickHandler = () => {
   //   setSlider((prevSlider) => prevSlider + 1);
@@ -92,7 +119,12 @@ const OurApproach = ({
             {approachInfo.map((info, key) => {
               return (
                 slider === key && (
-                  <Box key={key}>
+                  <Box
+                    key={key}
+                    onTouchStart={onTouchStart}
+                    onTouchMove={onTouchMove}
+                    onTouchEnd={onTouchEnd}
+                  >
                     <Typography sx={ourApproachSubtitle} variant="h2">
                       {info?.approachFields?.title}
                     </Typography>
