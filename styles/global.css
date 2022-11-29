@@ -42,18 +42,29 @@ a:hover {
   color: white !important;
 }
 
+.swiper-button-prev,
+.swiper-button-next {
+  color: #e5e5e5 !important;
+}
+
 @media only screen and (max-width: 900px) {
   .swiper-pagination-bullet {
-    width: 15px !important;
-    height: 15px !important;
+    width: 72px !important;
+    height: 11px !important;
+    border-radius: 20px !important;
     margin-inline: 6px !important;
-    background-color: #df6b56e0 !important;
+    background-color: #df6b569d !important;
     opacity: 1 !important;
   }
 
+  .feature-pagination {
+    background-color: #003049 !important;
+  }
+
   .swiper-pagination-bullet-active {
-    width: 20px !important;
-    height: 20px !important;
+    width: 72px !important;
+    height: 11px !important;
+    border-radius: 20px !important;
     background-color: #df6b56 !important;
   }
 

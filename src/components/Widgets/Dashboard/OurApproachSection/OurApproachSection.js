@@ -12,8 +12,6 @@ import {
   Stack,
 } from "@mui/material";
 import PrimaryButton from "../../../UI/Buttons/PrimaryButton/PrimaryButton.js";
-// import circleImage from "../../../../../public/CircleGroup.svg"
-// import circleImage from "../../../../../public/circle.svg";
 import ellipseImage from "../../../../../public/ellipse.svg";
 import styles from "./ourApproach.module.css";
 
@@ -26,6 +24,10 @@ import {
   ellipseImage1,
   imageContainer,
 } from "./ourApproachStyle";
+import { Swiper, SwiperSlide } from "swiper/react";
+import { Navigation, Pagination } from "swiper";
+import "swiper/css";
+import "swiper/css/pagination";
 
 const theme = createTheme({
   breakpoints: {
@@ -116,62 +118,59 @@ const OurApproach = ({
               Learn more about us and our agile teamwork
             </Typography>
 
-            {approachInfo.map((info, key) => {
-              return (
-                slider === key && (
-                  <Box
-                    key={key}
-                    onTouchStart={onTouchStart}
-                    onTouchMove={onTouchMove}
-                    onTouchEnd={onTouchEnd}
-                  >
-                    <Typography sx={ourApproachSubtitle} variant="h2">
-                      {info?.approachFields?.title}
-                    </Typography>
+            {!smallScreenSize ? (
+              approachInfo.map((info, key) => {
+                return (
+                  slider === key && (
                     <Box
-                      sx={ourApproachDesc}
-                      dangerouslySetInnerHTML={{
-                        __html: info?.approachFields?.description,
-                      }}
-                    />
-
-                    {smallScreenSize && (
-                      <Stack
-                        spacing={2}
-                        direction="row"
-                        sx={{
-                          display: "flex",
-                          justifyContent: "space-between",
-                          marginTop: "35px",
-                          marginBottom: "35px",
+                      key={key}
+                      onTouchStart={onTouchStart}
+                      onTouchMove={onTouchMove}
+                      onTouchEnd={onTouchEnd}
+                    >
+                      <Typography sx={ourApproachSubtitle} variant="h2">
+                        {info?.approachFields?.title}
+                      </Typography>
+                      <Box
+                        sx={ourApproachDesc}
+                        dangerouslySetInnerHTML={{
+                          __html: info?.approachFields?.description,
                         }}
-                      >
-                        {approachInfo.map((item, key) => {
-                          return (
-                            <Box
-                              key={key}
-                              sx={{
-                                width: "100%",
-                                height: "11px",
-                                borderRadius: "20px",
-                                background: `${
-                                  slider === key ? "#DF6B56" : "#003049"
-                                }`,
-                                // marginRight: "13px",
-                                cursor: "pointer",
-                              }}
-                              onClick={() => setSlider(key)}
-                            ></Box>
-                          );
-                        })}
-                      </Stack>
-                    )}
+                      />
 
-                    <PrimaryButton btnText="Learn More" link="/contact" />
-                  </Box>
-                )
-              );
-            })}
+                      <PrimaryButton btnText="Learn More" link="/contact" />
+                    </Box>
+                  )
+                );
+              })
+            ) : (
+              <Box>
+                <Swiper
+                  pagination={{
+                    clickable: true,
+                    bulletClass: `swiper-pagination-bullet feature-pagination`,
+                  }}
+                  modules={[Pagination]}
+                  className="mySwiper"
+                >
+                  {approachInfo.map((info, key) => {
+                    return (
+                      <SwiperSlide key={key}>
+                        <Typography sx={ourApproachSubtitle} variant="h2">
+                          {info?.approachFields?.title}
+                        </Typography>
+                        <Box
+                          sx={ourApproachDesc}
+                          dangerouslySetInnerHTML={{
+                            __html: info?.approachFields?.description,
+                          }}
+                        />
+                      </SwiperSlide>
+                    );
+                  })}
+                </Swiper>
+              </Box>
+            )}
           </Grid>
           {!smallScreenSize && (
             <Grid item md={4} sx={imageContainer}>

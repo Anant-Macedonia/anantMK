@@ -44,7 +44,7 @@ export const ourApproachSubtitle = (theme) => ({
 export const ourApproachDesc = (theme) => ({
   fontFamily: "Montserrat",
   fontSize: "18px",
-  marginBottom: "35px",
+  marginBottom: "70px",
   lineHeight: "23px",
   letterSpacing: "-0.03em",
   [theme.breakpoints.down("sm")]: {

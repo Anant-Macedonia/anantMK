@@ -13,7 +13,7 @@ import { Pagination, Navigation, Autoplay } from "swiper";
 
 // Import Swiper styles
 import "swiper/css";
-import "swiper/css/pagination";
+// import "swiper/css/pagination";
 import "swiper/css/navigation";
 
 import {
@@ -68,9 +68,10 @@ const OurTeamSection = ({ teamMembers }) => {
         centeredSlides={true}
         loop={true}
         loopFillGroupWithBlank={true}
-        pagination={{
-          clickable: true,
-        }}
+        navigation={true}
+        // pagination={{
+        //   clickable: true,
+        // }}
         autoplay={{ delay: 5000 }}
         modules={[Pagination, Navigation, Autoplay]}
         className={classes.swiper}
