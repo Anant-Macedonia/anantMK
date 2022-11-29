@@ -17,6 +17,8 @@ import {
   projectDesc,
   ourProjectMobileContainer,
 } from "./ourProjectStyle";
+import { Swiper, SwiperSlide } from "swiper/react";
+import { Pagination } from "swiper";
 
 const theme = createTheme({
   breakpoints: {
@@ -83,95 +85,121 @@ const OurProjectSection = ({ projects }) => {
             !smallScreenSize ? ourProjectContainer : ourProjectMobileContainer
           }
         >
-          {projects.map((project, key) => {
-            return (
-              <Grid container key={key}>
-                {!smallScreenSize && (
-                  <Grid item md={7.2}>
+          {!smallScreenSize ? (
+            projects.map((project, key) => {
+              return (
+                <Grid container key={key}>
+                  {!smallScreenSize && (
+                    <Grid item md={7.2}>
+                      {projectNum === key && (
+                        <>
+                          <Typography sx={projectTitle}>
+                            {project.projectFields.projectTitle}
+                          </Typography>
+                          <Box
+                            sx={projectDesc}
+                            dangerouslySetInnerHTML={{
+                              __html: project.projectFields.projectDescription,
+                            }}
+                          />
+                          <PrimaryButton
+                            btnText="View Project"
+                            link={project.projectFields.projectLink}
+                          />
+                        </>
+                      )}
+                    </Grid>
+                  )}
+                  <Grid
+                    item
+                    xs={12}
+                    md={4.8}
+                    sx={{
+                      display: "flex",
+                      alignItems: "center",
+                      justifyContent: "center",
+                    }}
+                    onTouchStart={onTouchStart}
+                    onTouchMove={onTouchMove}
+                    onTouchEnd={onTouchEnd}
+                  >
                     {projectNum === key && (
-                      <>
-                        <Typography sx={projectTitle}>
-                          {project.projectFields.projectTitle}
-                        </Typography>
-                        <Box
-                          sx={projectDesc}
-                          dangerouslySetInnerHTML={{
-                            __html: project.projectFields.projectDescription,
-                          }}
-                        />
-                        <PrimaryButton
-                          btnText="View Project"
-                          link={project.projectFields.projectLink}
-                        />
-                      </>
+                      <Image
+                        src={project.projectFields.projectImage.sourceUrl}
+                        alt=" "
+                        width={428}
+                        height={360}
+                        quality={100}
+                        style={{ marginTop: "25px" }}
+                      />
                     )}
                   </Grid>
-                )}
-                <Grid
-                  item
-                  xs={12}
-                  md={4.8}
-                  sx={{
-                    display: "flex",
-                    alignItems: "center",
-                    justifyContent: "center",
-                  }}
-                  onTouchStart={onTouchStart}
-                  onTouchMove={onTouchMove}
-                  onTouchEnd={onTouchEnd}
-                >
-                  {projectNum === key && (
-                    <Image
-                      src={project.projectFields.projectImage.sourceUrl}
-                      alt=" "
-                      width={!smallScreenSize ? 428 : 324}
-                      height={!smallScreenSize ? 360 : 226}
-                      quality={100}
-                      style={{ marginTop: "25px" }}
-                    />
-                  )}
                 </Grid>
-              </Grid>
-            );
-          })}
-          <Grid
-            container
-            sx={
-              !smallScreenSize
-                ? {
-                    display: "flex",
-                    justifyContent: "center",
-                    marginTop: "90px",
-                  }
-                : {
-                    display: "flex",
-                    justifyContent: "center",
-                    marginTop: "30px",
-                  }
-            }
-          >
-            {projects.map((item, key) => {
-              return (
-                <Box
-                  key={key}
-                  sx={{
-                    width: !smallScreenSize ? "18px" : "15px",
-                    height: !smallScreenSize ? "18px" : "15px",
-                    borderRadius: "100%",
-                    background: `${
-                      projectNum === key
-                        ? "#DF6B56"
-                        : "rgba(223, 107, 86, 0.88)"
-                    }`,
-                    marginRight: "12px",
-                    transform: `${projectNum === key && "scale(1.3)"}`,
-                    cursor: "pointer",
-                  }}
-                  onClick={() => setProjectNum(key)}
-                ></Box>
               );
-            })}
-          </Grid>
+            })
+          ) : (
+            <Box>
+              <Swiper
+                pagination={{ clickable: true }}
+                modules={[Pagination]}
+                className="mySwiper"
+              >
+                {projects.map((project, key) => {
+                  return (
+                    <SwiperSlide
+                      key={key}
+                      style={{
+                        display: "flex",
+                        justifyContent: "center",
+                      }}
+                    >
+                      <Image
+                        src={project.projectFields.projectImage.sourceUrl}
+                        alt=" "
+                        width={324}
+                        height={226}
+                        quality={100}
+                        style={{ marginTop: "25px", marginBottom: "60px" }}
+                      />
+                    </SwiperSlide>
+                  );
+                })}
+              </Swiper>
+            </Box>
+          )}
+
+          {!smallScreenSize && (
+            <Grid
+              container
+              sx={{
+                display: "flex",
+                justifyContent: "center",
+                marginTop: "90px",
+              }}
+            >
+              {projects.map((item, key) => {
+                return (
+                  <Box
+                    key={key}
+                    sx={{
+                      width: "18px",
+                      height: "18px",
+                      borderRadius: "100%",
+                      background: `${
+                        projectNum === key
+                          ? "#DF6B56"
+                          : "rgba(223, 107, 86, 0.88)"
+                      }`,
+                      marginRight: "12px",
+                      transform: `${projectNum === key && "scale(1.3)"}`,
+                      cursor: "pointer",
+                    }}
+                    onClick={() => setProjectNum(key)}
+                  ></Box>
+                );
+              })}
+            </Grid>
+          )}
         </Box>
       </Box>
     </Container>
