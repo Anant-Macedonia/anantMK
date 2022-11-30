@@ -107,6 +107,7 @@ const Hero = ({
                       href="https://github.com/Anant-Macedonia"
                       target="_blank"
                       rel="noreferrer"
+                      aria-label="Github"
                     >
                       <AiOutlineGithub
                         size={33}
@@ -117,6 +118,7 @@ const Hero = ({
                       href="https://www.linkedin.com/company/anant-macedonia/about/?viewAsMember=true"
                       target="_blank"
                       rel="noreferrer"
+                      aria-label="linkedin"
                     >
                       <BsLinkedin
                         size={33}

@@ -186,7 +186,7 @@ const Services = () => {
 
         {!smallScreenSize && !hoveredItem ? (
           <Box sx={imageContainer}>
-            <Image src={developImage} alt="ux-image" />
+            <Image src={developImage} alt="dev-image" />
           </Box>
         ) : (
           smallScreenSize && (
