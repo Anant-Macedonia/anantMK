@@ -93,7 +93,7 @@ const OurTeamSection = ({ teamMembers }) => {
                       width={!smallScreenSize ? 300 : 210}
                       height={!smallScreenSize ? 336.53 : 233}
                       style={{ borderTopRightRadius: "20px" }}
-                      alt=""
+                      alt="team"
                     />
                   </Box>
 

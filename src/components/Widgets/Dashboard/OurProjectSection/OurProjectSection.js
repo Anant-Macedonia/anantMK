@@ -126,7 +126,7 @@ const OurProjectSection = ({ projects }) => {
                     {projectNum === key && (
                       <Image
                         src={project.projectFields.projectImage.sourceUrl}
-                        alt=" "
+                        alt="project"
                         width={428}
                         height={360}
                         quality={100}
@@ -155,7 +155,7 @@ const OurProjectSection = ({ projects }) => {
                     >
                       <Image
                         src={project.projectFields.projectImage.sourceUrl}
-                        alt=" "
+                        alt="project"
                         width={324}
                         height={226}
                         quality={100}

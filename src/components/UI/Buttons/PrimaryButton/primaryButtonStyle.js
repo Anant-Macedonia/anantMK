@@ -22,11 +22,11 @@ export const primaryBtn = (theme) => ({
   [theme.breakpoints.down("sm")]: {
     marginRight: "15px",
     height: "34px",
-    width: "156px",
+    width: "165px",
     lineHeight: "24px",
     letterSpacing: "-0.02em",
     borderRadius: "16px",
-    fontSize: "13.5px",
+    fontSize: "12px",
     display: "flex",
     alignItems: "center",
     textAlign: "center",

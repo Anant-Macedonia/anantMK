@@ -47,9 +47,17 @@ a:hover {
   color: #e5e5e5 !important;
 }
 
+.swiper-button-prev {
+  left: 0 !important;
+}
+
+.swiper-button-next {
+  right: -1px !important;
+}
+
 @media only screen and (max-width: 900px) {
   .swiper-pagination-bullet {
-    width: 72px !important;
+    width: 50px !important;
     height: 11px !important;
     border-radius: 20px !important;
     margin-inline: 6px !important;
@@ -62,7 +70,7 @@ a:hover {
   }
 
   .swiper-pagination-bullet-active {
-    width: 72px !important;
+    width: 50px !important;
     height: 11px !important;
     border-radius: 20px !important;
     background-color: #df6b56 !important;

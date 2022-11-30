@@ -45,9 +45,7 @@ const Footer = () => {
           <Image src={logo} alt="anant.mk logo" height={58} width={63} />
         </Grid>
         <Grid item xs={9} md={2.7} sx={footerCompanyNameContainer}>
-          <Typography variant="h6" sx={footerCompanyName}>
-            Anant Macedonia
-          </Typography>
+          <Typography sx={footerCompanyName}>Anant Macedonia</Typography>
           {!smallScreenSize && (
             <Typography
               sx={{
@@ -118,7 +116,11 @@ const Footer = () => {
           <Grid item xs={4.5} md={3} sx={{ marginTop: "30px" }}>
             <Typography sx={footerContact}>FOLLOW US</Typography>
             <Box>
-              <a href="https://github.com/Anant-Macedonia" rel="noreferrer">
+              <a
+                href="https://github.com/Anant-Macedonia"
+                rel="noreferrer"
+                aria-label="Github"
+              >
                 <Typography>
                   <AiOutlineGithub style={{ marginRight: "8px" }} />
                   GitHub
@@ -127,6 +129,7 @@ const Footer = () => {
               <a
                 href="https://www.linkedin.com/company/anant-macedonia/about/?viewAsMember=true"
                 rel="noreferrer"
+                aria-label="LinkedIn"
               >
                 <Typography>
                   <BsLinkedin style={{ marginRight: "8px" }} />
@@ -164,6 +167,7 @@ const Footer = () => {
                 href="https://github.com/Anant-Macedonia"
                 target="_blank"
                 rel="noreferrer"
+                aria-label="Github"
               >
                 <AiOutlineGithub style={{ marginLeft: "30px" }} />
               </a>
@@ -171,6 +175,7 @@ const Footer = () => {
                 href="https://www.linkedin.com/company/anant-macedonia/about/?viewAsMember=true"
                 target="_blank"
                 rel="noreferrer"
+                aria-label="LinkedIn"
               >
                 <BsLinkedin style={{ marginLeft: "12px" }} />
               </a>
