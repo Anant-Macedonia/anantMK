@@ -2,7 +2,7 @@ export const talkContainer = (theme) => ({
   background: "linear-gradient(#003049, #145374)",
   paddingTop: "110px",
   paddingBottom: "85px",
-  [theme.breakpoints.down("sm")]: {
+  [theme.breakpoints.down("md")]: {
     paddingTop: "20px",
     paddingBottom: "65px",
   },
@@ -49,7 +49,7 @@ export const talkSectionDesc = (theme) => ({
   fontSize: "20px",
   lineHeight: "26px",
   letterSpacing: "-0.07em",
-  maxWidth: "490px",
+
   marginBottom: "65px",
   [theme.breakpoints.down("sm")]: {
     marginBottom: "36px",
@@ -61,7 +61,7 @@ export const talkSectionDesc = (theme) => ({
 });
 
 export const talkImageContainer = (theme) => ({
-  [theme.breakpoints.down("sm")]: {
+  [theme.breakpoints.down("md")]: {
     display: "flex",
     justifyContent: "center",
     marginBottom: "46px",

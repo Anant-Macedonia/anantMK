@@ -33,7 +33,7 @@ const theme = createTheme({
 });
 
 const OurProjectSection = ({ projects }) => {
-  const smallScreenSize = useMediaQuery(theme.breakpoints.down("sm"));
+  const smallScreenSize = useMediaQuery(theme.breakpoints.down("md"));
   const [projectNum, setProjectNum] = useState(0);
   const [touchStart, setTouchStart] = useState(null);
   const [touchEnd, setTouchEnd] = useState(null);
@@ -90,7 +90,7 @@ const OurProjectSection = ({ projects }) => {
               return (
                 <Grid container key={key}>
                   {!smallScreenSize && (
-                    <Grid item md={7.2}>
+                    <Grid item md={6.5} lg={7.2}>
                       {projectNum === key && (
                         <>
                           <Typography sx={projectTitle}>
@@ -113,7 +113,8 @@ const OurProjectSection = ({ projects }) => {
                   <Grid
                     item
                     xs={12}
-                    md={4.8}
+                    md={5.5}
+                    lg={4.8}
                     sx={{
                       display: "flex",
                       alignItems: "center",
@@ -127,8 +128,8 @@ const OurProjectSection = ({ projects }) => {
                       <Image
                         src={project.projectFields.projectImage.sourceUrl}
                         alt="project"
-                        width={428}
-                        height={360}
+                        width={410}
+                        height={350}
                         quality={100}
                         style={{ marginTop: "25px" }}
                       />
@@ -156,8 +157,8 @@ const OurProjectSection = ({ projects }) => {
                       <Image
                         src={project.projectFields.projectImage.sourceUrl}
                         alt="project"
-                        width={324}
-                        height={226}
+                        width={354}
+                        height={230}
                         quality={100}
                         style={{ marginTop: "25px", marginBottom: "60px" }}
                       />

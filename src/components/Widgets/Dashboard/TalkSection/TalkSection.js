@@ -34,6 +34,7 @@ const theme = createTheme({
 
 const TalkSection = ({ title, description, talkImage, talkButton }) => {
   const smallScreenSize = useMediaQuery(theme.breakpoints.down("sm"));
+  const mediumScreenSize = useMediaQuery(theme.breakpoints.down("lg"));
   return (
     <Box sx={talkContainer}>
       <Container>
@@ -45,7 +46,7 @@ const TalkSection = ({ title, description, talkImage, talkButton }) => {
                 sx={talkSectionDesc}
                 dangerouslySetInnerHTML={{ __html: description }}
               />
-              {!smallScreenSize && (
+              {!mediumScreenSize && (
                 <PrimaryButton
                   btnText={talkButton.talkButtonText}
                   link="/contact"
@@ -56,8 +57,8 @@ const TalkSection = ({ title, description, talkImage, talkButton }) => {
             <Grid item xs={12} md={5.5} sx={talkImageContainer}>
               <Image
                 src={talkImage.sourceUrl}
-                width={!smallScreenSize ? 530 : 200}
-                height={!smallScreenSize ? 478 : 180}
+                width={smallScreenSize ? 200 : mediumScreenSize ? 400 : 530} //520 i 200
+                height={smallScreenSize ? 180 : mediumScreenSize ? 350 : 478} // 478 i 180
                 alt="project image"
               />
             </Grid>
@@ -66,7 +67,7 @@ const TalkSection = ({ title, description, talkImage, talkButton }) => {
               xs={12}
               sx={{ display: "flex", justifyContent: "center" }}
             >
-              {smallScreenSize && (
+              {mediumScreenSize && (
                 <PrimaryButton
                   btnText={talkButton.talkButtonText}
                   link="/contact"

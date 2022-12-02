@@ -54,7 +54,7 @@ const OurApproach = ({
   const [touchStart, setTouchStart] = useState(null);
   const [touchEnd, setTouchEnd] = useState(null);
 
-  const smallScreenSize = useMediaQuery(theme.breakpoints.down("sm"));
+  const smallScreenSize = useMediaQuery(theme.breakpoints.down("md"));
 
   if (!smallScreenSize && slider > 3) {
     setSlider(0);
@@ -111,9 +111,9 @@ const OurApproach = ({
   return (
     <Box sx={ourApproachContainer}>
       <Container>
-        <Grid container sx={{ columnGap: "75px" }}>
-          <Grid item xs={12} md={7.2}>
-            <Typography sx={ourApproachTitle} variant="h1">
+        <Grid container sx={{ columnGap: "65px" }}>
+          <Grid item xs={12} md={5.5} lg={7.2}>
+            <Typography sx={ourApproachTitle}>
               {heroData?.heroTitle}
               Learn more about us and our agile teamwork
             </Typography>
@@ -173,7 +173,7 @@ const OurApproach = ({
             )}
           </Grid>
           {!smallScreenSize && (
-            <Grid item md={4} sx={imageContainer}>
+            <Grid item md={5} lg={4} sx={imageContainer}>
               <div className={styles.container}>
                 <div className={styles.circle}>
                   <Box

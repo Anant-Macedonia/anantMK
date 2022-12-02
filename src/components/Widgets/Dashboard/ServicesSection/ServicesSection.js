@@ -40,7 +40,7 @@ const theme = createTheme({
 });
 
 const ServicesSection = ({ services }) => {
-  const smallScreenSize = useMediaQuery(theme.breakpoints.down("sm"));
+  const smallScreenSize = useMediaQuery(theme.breakpoints.down("md"));
   return (
     <Box className={styles.servicesContainer} sx={servicesSectionContainer}>
       <Container>
@@ -50,7 +50,7 @@ const ServicesSection = ({ services }) => {
             <Stack
               spacing={2}
               display="flex"
-              direction={{ xs: "column", md: "row" }}
+              direction={{ xs: "column", sm: "row" }}
               justifyContent="space-between"
             >
               {services.map((service, key) => {
