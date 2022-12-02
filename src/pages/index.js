@@ -8,6 +8,7 @@ import { GET_HOME_DATA } from "../queries/getHome";
 import { GET_TALK_SECTION_DATA } from "../queries/getTalkSection";
 import { GET_PROJECTS_DATA } from "../queries/getProjects.js";
 import { GET_APPROACH_SECTION_DATA } from "../queries/getApproachSection";
+import Head from "next/head";
 
 export default function Home(props) {
   const { heroTitle, heroSubtitle, heroDescription, buttons } =
@@ -24,6 +25,14 @@ export default function Home(props) {
 
   return (
     <>
+      <Head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta
+          name="description"
+          content="Anant MK is marketing digital agency"
+        />
+        <title> Anant MK </title>
+      </Head>
       <Hero
         title={heroTitle}
         subtitle={heroSubtitle}

@@ -16,6 +16,11 @@ export const ourApproachTitle = (theme) => ({
   marginBottom: "70px",
   letterSpacing: "-0.015em",
   lineHeight: "63px",
+  [theme.breakpoints.down("lg")]: {
+    fontSize: "40px",
+    lineHeight: "50px",
+    marginBottom: "50px",
+  },
   [theme.breakpoints.down("sm")]: {
     fontSize: "23px",
     letterSpacing: "-0.02em",
@@ -32,6 +37,9 @@ export const ourApproachSubtitle = (theme) => ({
   marginBottom: "30px",
   lineHeight: "39px",
   letterSpacing: "-0.03em",
+  [theme.breakpoints.down("lg")]: {
+    fontSize: "25px",
+  },
   [theme.breakpoints.down("sm")]: {
     fontSize: "20px",
     fontWeight: 600,

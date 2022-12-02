@@ -5,17 +5,9 @@ class MyDocument extends Document {
     return (
       <Html lang="en">
         <Head>
-          <meta charset="UTF-8" />
+          <meta charSet="UTF-8" />
           <meta httpEquiv="X-UA-Compatible" content="IE=edge" />
-          <meta
-            name="viewport"
-            content="width=device-width, initial-scale=1.0"
-          />
-          <meta
-            name="description"
-            content="Anant MK is marketing digital agency"
-          />
-          <title> Anant MK </title>
+
           <link rel="preconnect" href="https://fonts.googleapis.com" />
           <link rel="preconnect" href="https://fonts.gstatic.com" />
           <link

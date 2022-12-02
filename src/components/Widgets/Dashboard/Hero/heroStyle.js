@@ -7,6 +7,9 @@ export const heroContainer = (theme) => ({
     paddingTop: "215px",
     paddingBottom: "180px",
   },
+  [theme.breakpoints.down("md")]: {
+    paddingBottom: "85px",
+  },
   [theme.breakpoints.down("sm")]: {
     marginTop: "37px",
     paddingBottom: "53px",
@@ -28,6 +31,9 @@ export const heroTitle = (theme) => ({
   letterSpacing: "-0.035em,",
   color: "#EE6F57",
   marginBottom: "30px",
+  [theme.breakpoints.down("lg")]: {
+    fontSize: "40px",
+  },
   [theme.breakpoints.down("sm")]: {
     fontSize: "23px",
     fontWeight: 600,

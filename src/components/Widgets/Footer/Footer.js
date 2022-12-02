@@ -37,7 +37,7 @@ const theme = createTheme({
 });
 
 const Footer = () => {
-  const smallScreenSize = useMediaQuery(theme.breakpoints.down("sm"));
+  const smallScreenSize = useMediaQuery(theme.breakpoints.down("lg"));
   return (
     <Container>
       <Grid container sx={footerContainer}>

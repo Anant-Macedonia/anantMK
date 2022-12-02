@@ -2,7 +2,7 @@ export const ourProjectSectionContainer = (theme) => ({
   marginTop: "180px",
   marginBottom: "155px",
   fontSize: "36px",
-  [theme.breakpoints.down("sm")]: {
+  [theme.breakpoints.down("md")]: {
     marginTop: "35px",
     marginBottom: "45px",
   },
@@ -15,9 +15,14 @@ export const ourProjectSectionTitle = (theme) => ({
   fontSize: "50px",
   lineHeight: "63px",
   letterSpacing: "0.035em",
+  [theme.breakpoints.down("md")]: {
+    fontSize: "40px",
+    marginBottom: "45px",
+  },
   [theme.breakpoints.down("sm")]: {
     fontSize: "23px",
     lineHeight: "32px",
+    marginBottom: "15px",
   },
 });
 
@@ -37,7 +42,7 @@ export const ourProjectMobileContainer = (theme) => ({
   margin: "0 auto",
 });
 
-export const projectTitle = {
+export const projectTitle = (theme) => ({
   fontFamily: "Montserrat",
   fontWeight: 700,
   fontSize: "36px",
@@ -45,14 +50,25 @@ export const projectTitle = {
   letterSpacing: " -0.07em",
   marginTop: "25px",
   marginBottom: "30px",
-};
+  [theme.breakpoints.down("lg")]: {
+    fontSize: "30px",
+    lineHeight: "40px",
+    marginBottom: "25px",
+  },
+});
 
-export const projectDesc = {
+export const projectDesc = (theme) => ({
   fontFamily: "Montserrat",
   fontWeight: 400,
   fontSize: "18px",
   lineHeight: "20px",
   letterSpacing: "-0.04em",
-  maxWidth: "590px",
+  maxWidth: "570px",
   marginBottom: "50px",
-};
+  [theme.breakpoints.down("lg")]: {
+    fontSize: "16px",
+    lineHeight: "18px",
+    maxWidth: "410px",
+    marginBottom: "30px",
+  },
+});

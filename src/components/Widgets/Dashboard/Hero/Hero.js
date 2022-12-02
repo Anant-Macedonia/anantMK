@@ -57,7 +57,7 @@ const Hero = ({
     animationData: animationData,
   };
 
-  const smallScreenSize = useMediaQuery(theme.breakpoints.down("sm"));
+  const smallScreenSize = useMediaQuery(theme.breakpoints.down("md"));
 
   return (
     <Box className={styles.heroContainer}>
@@ -67,7 +67,8 @@ const Hero = ({
             <Grid
               item
               xs={12}
-              md={contactInfo || heroImage ? 5 : 7.5}
+              md={6}
+              lg={contactInfo || heroImage ? 5 : 7.5}
               sx={
                 !smallScreenSize ? { marginTop: "40px" } : { marginTop: "37px" }
               }
@@ -147,8 +148,8 @@ const Hero = ({
               )}
             </Grid>
             {homeAnimation && !smallScreenSize ? (
-              <Grid item md={4.5}>
-                <Lottie options={defaultOptions} height={450} width={500} />
+              <Grid item md={6} lg={4.5}>
+                <Lottie options={defaultOptions} height={350} width={400} />
               </Grid>
             ) : contactInfo ? (
               <Grid item xs={12} md={7} sx={imageContainer}>

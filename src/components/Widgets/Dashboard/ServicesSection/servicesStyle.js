@@ -15,6 +15,9 @@ export const sectionTitle = (theme) => ({
   lineHeight: "63px",
   letterSpacing: "-0.035em",
   marginBottom: "70px",
+  [theme.breakpoints.down("md")]: {
+    fontSize: "40px",
+  },
   [theme.breakpoints.down("sm")]: {
     fontWight: 600,
     fontSize: "23px",
@@ -31,11 +34,14 @@ export const cardLine = {
 };
 
 export const servicesCard = (theme) => ({
-  [theme.breakpoints.up("sm")]: {
-    maxWidth: "470px",
-    background: " #124F70",
-    boxShadow: "7px 10px 7px rgba(0, 0, 0, 0.2)",
-    borderRadius: "20px",
+  maxWidth: "470px",
+  background: " #124F70",
+  boxShadow: "7px 10px 7px rgba(0, 0, 0, 0.2)",
+  borderRadius: "20px",
+
+  [theme.breakpoints.down("md")]: {
+    maxWidth: "380px",
+    height: "500px",
   },
   [theme.breakpoints.down("sm")]: {
     maxWidth: "225px",
@@ -43,6 +49,7 @@ export const servicesCard = (theme) => ({
     boxShadow: "7px 10px 7px rgba(0, 0, 0, 0.2)",
     borderRadius: "20px",
     paddingBottom: "23px",
+    height: "330px",
   },
 });
 
