@@ -21,7 +21,7 @@ export const talkContentContainer = (theme) => ({
 });
 
 export const titleAndDescContainer = (theme) => ({
-  [theme.breakpoints.down("sm")]: {
+  [theme.breakpoints.down("md")]: {
     display: "flex",
     flexDirection: "column",
     alignItems: "center",
@@ -49,7 +49,6 @@ export const talkSectionDesc = (theme) => ({
   fontSize: "20px",
   lineHeight: "26px",
   letterSpacing: "-0.07em",
-
   marginBottom: "65px",
   [theme.breakpoints.down("sm")]: {
     marginBottom: "36px",

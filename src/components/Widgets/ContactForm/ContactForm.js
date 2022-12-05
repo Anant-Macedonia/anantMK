@@ -3,7 +3,6 @@ import {
   Container,
   Grid,
   Input,
-  InputLabel,
   Typography,
   createTheme,
   useMediaQuery,
@@ -12,8 +11,8 @@ import React, { useState, useRef } from "react";
 import {
   btnContainer,
   contactContainer,
+  formGrid,
   formInput,
-  formLabel,
   formTextBox,
   formTitles,
 } from "./contactFormStyle";
@@ -35,7 +34,7 @@ const theme = createTheme({
 const ContactForm = () => {
   const form = useRef();
   const [formValues, setFormValues] = useState([]);
-  const smallScreenSize = useMediaQuery(theme.breakpoints.down("sm"));
+  const smallScreenSize = useMediaQuery(theme.breakpoints.down("md"));
 
   const handleInputChange = (e) => {
     const { name, value } = e.target;
@@ -71,19 +70,16 @@ const ContactForm = () => {
       <Container>
         <Grid container>
           {!smallScreenSize && (
-            <Grid item xs={12} md={6}>
+            <Grid item xs={12} md={5} lg={6}>
               <Typography sx={formTitles}>Start New Project</Typography>
               <Typography sx={formTitles}>Redesign Project</Typography>
               <Typography sx={formTitles}>Ask a Question</Typography>
               <Typography sx={formTitles}>Say Hello</Typography>
             </Grid>
           )}
-          <Grid item xs={12} md={6}>
+          <Grid item xs={12} md={6} sx={formGrid}>
             <form ref={form} onSubmit={sendEmail}>
               <Box>
-                {/* <InputLabel htmlFor="email" sx={formLabel}>
-                  Email address
-                </InputLabel> */}
                 <Input
                   required
                   disableUnderline
@@ -98,9 +94,6 @@ const ContactForm = () => {
               </Box>
 
               <Box>
-                {/* <InputLabel htmlFor="firstName" sx={formLabel}>
-                  First Name
-                </InputLabel> */}
                 <Input
                   required
                   disableUnderline
@@ -115,9 +108,6 @@ const ContactForm = () => {
               </Box>
 
               <Box>
-                {/* <InputLabel htmlFor="lastName" sx={formLabel}>
-                  Last Name
-                </InputLabel> */}
                 <Input
                   required
                   disableUnderline
@@ -132,9 +122,6 @@ const ContactForm = () => {
               </Box>
 
               <Box>
-                {/* <InputLabel htmlFor="phone" sx={formLabel}>
-                  Phone Number
-                </InputLabel> */}
                 <Input
                   disableUnderline
                   id="phone"
@@ -148,9 +135,6 @@ const ContactForm = () => {
               </Box>
 
               <Box>
-                {/* <InputLabel htmlFor="message" sx={formLabel}>
-                  Your message
-                </InputLabel> */}
                 <Input
                   required
                   id="message"
