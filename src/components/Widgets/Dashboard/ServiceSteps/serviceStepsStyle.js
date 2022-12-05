@@ -30,8 +30,8 @@ export const stepsNumberMainContainer = (theme) => ({
 });
 
 export const stepsNumberContainer = {
-  width: "80px",
-  height: "80px",
+  width: "124px",
+  height: "124px",
   backgroundColor: "#145374",
   boxShadow: "4px 4px 4px rgba(0, 0, 0, 0.2)",
   borderRadius: "100%",

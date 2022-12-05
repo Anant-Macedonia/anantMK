@@ -1,3 +1,4 @@
+import Image from "next/image";
 import {
   Box,
   Container,
@@ -6,7 +7,7 @@ import {
   createTheme,
   useMediaQuery,
 } from "@mui/material";
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useRef } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Pagination, Navigation, Autoplay } from "swiper";
 import ServiceStepsButton from "../../../UI/Buttons/ServiceStepsButton/ServiceStepsButton";
@@ -29,6 +30,8 @@ import "swiper/css";
 import "swiper/css/pagination";
 import "swiper/css/navigation";
 
+import designIcon from "../../../../../public/DesignIcon.svg";
+
 const theme = createTheme({
   breakpoints: {
     values: {
@@ -44,6 +47,7 @@ const theme = createTheme({
 const ServiceSteps = ({ steps }) => {
   const smallScreenSize = useMediaQuery(theme.breakpoints.down("sm"));
   const [stepNum, setStepNum] = useState(0);
+  const [showPopup, setShowPopup] = useState(false);
 
   if (stepNum > 3) {
     setStepNum(0);
@@ -56,8 +60,33 @@ const ServiceSteps = ({ steps }) => {
     return () => clearInterval(interval);
   }, [stepNum]);
 
+  useEffect(() => {
+    if (showPopup) {
+      document.body.style.overflow = "hidden";
+    }
+    if (!showPopup) {
+      document.body.style.overflow = "unset";
+    }
+  }, [showPopup]);
+
   return (
     <Container sx={stepsSectionContainer}>
+      {showPopup && (
+        <Box
+          onClick={() => setShowPopup(false)}
+          sx={{
+            opacity: "0.75",
+            position: "fixed",
+            top: "0",
+            left: "0",
+            background: "rgba(0, 48, 73)",
+            width: "100%",
+            height: "100vh",
+            zIndex: "1",
+          }}
+        ></Box>
+      )}
+
       <Grid container sx={{ justifyContent: "center" }}>
         {smallScreenSize ? (
           <Swiper
@@ -119,6 +148,30 @@ const ServiceSteps = ({ steps }) => {
           </Swiper>
         ) : (
           <>
+            {showPopup && (
+              <Box
+                sx={{
+                  zIndex: "1",
+                  top: "100px",
+                  position: "fixed",
+                  display: "flex",
+                  alignItems: "center",
+                  justifyContent: "center",
+                  height: "70vh",
+                  width: "60vw",
+                  background: "#145374",
+                  border: "10px solid #EE6F57",
+                  borderRadius: "26px",
+                }}
+              >
+                <Box
+                  dangerouslySetInnerHTML={{
+                    __html: showPopup,
+                  }}
+                />
+                <button onClick={() => setShowPopup(false)}>Close Popup</button>
+              </Box>
+            )}
             {steps.map((step, key) => {
               return (
                 <Grid
@@ -131,26 +184,19 @@ const ServiceSteps = ({ steps }) => {
                 >
                   <Box>
                     <Box
-                      sx={{
-                        height: "150px",
-                        display: "flex",
-                        alignItems: "center",
-                      }}
+                      sx={stepsNumberContainer}
+                      onClick={() =>
+                        setShowPopup(
+                          step.uxStepFields
+                            ? step.uxStepFields.description
+                            : step.developmentStepFileds &&
+                                step.developmentStepFileds.description
+                        )
+                      }
                     >
-                      <Box
-                        sx={
-                          stepNum === key
-                            ? activeStepsNumberContainer
-                            : stepsNumberContainer
-                        }
-                      >
-                        <Typography
-                          sx={stepNum === key ? activeStepNumber : stepsNumber}
-                        >
-                          {key + 1}
-                        </Typography>
-                      </Box>
+                      <Image src={designIcon} alt="step" />
                     </Box>
+
                     <Box sx={stepsTextContainer}>
                       <Typography variant="h3" sx={stepsTitle}>
                         {step.uxStepFields
@@ -159,7 +205,7 @@ const ServiceSteps = ({ steps }) => {
                             step.developmentStepFileds.title}
                       </Typography>
 
-                      <Box
+                      {/* <Box
                         sx={cardDescription}
                         dangerouslySetInnerHTML={{
                           __html: step.uxStepFields
@@ -167,11 +213,8 @@ const ServiceSteps = ({ steps }) => {
                             : step.developmentStepFileds &&
                               step.developmentStepFileds.description,
                         }}
-                      />
+                      /> */}
                     </Box>
-                  </Box>
-                  <Box sx={btnContainer}>
-                    <ServiceStepsButton btnText="Read more" />
                   </Box>
                 </Grid>
               );
