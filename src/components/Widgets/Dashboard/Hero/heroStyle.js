@@ -31,8 +31,12 @@ export const heroTitle = (theme) => ({
   letterSpacing: "-0.035em,",
   color: "#EE6F57",
   marginBottom: "30px",
-  [theme.breakpoints.down("lg")]: {
-    fontSize: "40px",
+  [theme.breakpoints.down("md")]: {
+    fontSize: "50px",
+    display: "flex",
+    flexDirection: "column",
+    justifyContent: "center",
+    alignItems: "center",
   },
   [theme.breakpoints.down("sm")]: {
     fontSize: "23px",
@@ -58,6 +62,10 @@ export const heroDesc = (theme) => ({
   fontSize: "18px",
   lineHeight: "23px",
   letterSpacing: "-0.07em",
+  [theme.breakpoints.down("md")]: {
+    display: "flex",
+    justifyContent: "center",
+  },
   [theme.breakpoints.down("sm")]: {
     fontWeight: 500,
     fontSize: "13px",
@@ -90,7 +98,7 @@ export const imageContainer = (theme) => ({
   display: "flex",
   justifyContent: "flex-end",
   alignItems: "center",
-  [theme.breakpoints.down("sm")]: {
+  [theme.breakpoints.down("md")]: {
     justifyContent: "center",
     marginTop: "50px",
   },

@@ -1,16 +1,33 @@
-export const formTitles = {
+export const formTitles = (theme) => ({
   fontFamily: "Montserrat",
   fontWeight: 700,
   fontSize: "40px",
   color: " #EE6F57",
   letterSpacing: "-0.07em",
   marginBottom: "109px",
-};
+  [theme.breakpoints.down("lg")]: {
+    fontSize: "30px",
+  },
+});
+
+export const formGrid = (theme) => ({
+  [theme.breakpoints.down("md")]: {
+    display: "flex",
+    justifyContent: "center",
+  },
+  [theme.breakpoints.down("sm")]: {
+    display: "block",
+  },
+});
 
 export const contactContainer = (theme) => ({
   background: "linear-gradient(to bottom, #003049 50%, #145374)",
   paddingTop: "210px",
   paddingBottom: "85px",
+  [theme.breakpoints.down("md")]: {
+    paddingTop: "0",
+    paddingBottom: "30px",
+  },
   [theme.breakpoints.down("sm")]: {
     paddingTop: "0",
     paddingBottom: "30px",
@@ -29,6 +46,13 @@ export const formInput = (theme) => ({
   background: "#145374",
   boxShadow: "7px 10px 7px rgba(0, 0, 0, 0.2)",
   paddingLeft: "22px",
+  [theme.breakpoints.down("lg")]: {
+    width: "520px",
+    height: "65px",
+  },
+  [theme.breakpoints.down("md")]: {
+    marginBottom: "22px",
+  },
   [theme.breakpoints.down("sm")]: {
     width: "100%",
     height: "43px",
@@ -43,6 +67,9 @@ export const formTextBox = (theme) => ({
   marginBottom: "47px",
   paddingLeft: "22px",
   paddingTop: "22px",
+  [theme.breakpoints.down("lg")]: {
+    width: "520px",
+  },
   [theme.breakpoints.down("sm")]: {
     width: "100%",
   },

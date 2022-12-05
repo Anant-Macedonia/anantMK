@@ -58,6 +58,7 @@ const Hero = ({
   };
 
   const smallScreenSize = useMediaQuery(theme.breakpoints.down("md"));
+  const xsScreenSize = useMediaQuery(theme.breakpoints.down("sm"));
 
   return (
     <Box className={styles.heroContainer}>
@@ -152,12 +153,12 @@ const Hero = ({
                 <Lottie options={defaultOptions} height={350} width={400} />
               </Grid>
             ) : contactInfo ? (
-              <Grid item xs={12} md={7} sx={imageContainer}>
+              <Grid item xs={12} md={6} lg={7} sx={imageContainer}>
                 <Image
                   src={contactImage}
                   alt="development img"
-                  height={smallScreenSize && 228}
-                  width={smallScreenSize && 254}
+                  height={xsScreenSize ? 228 : smallScreenSize ? 328 : 430}
+                  width={xsScreenSize ? 254 : smallScreenSize ? 354 : 480}
                 />
               </Grid>
             ) : (

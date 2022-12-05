@@ -18,6 +18,8 @@ export const ourProjectSectionTitle = (theme) => ({
   [theme.breakpoints.down("md")]: {
     fontSize: "40px",
     marginBottom: "45px",
+    display: "flex",
+    justifyContent: "center",
   },
   [theme.breakpoints.down("sm")]: {
     fontSize: "23px",
