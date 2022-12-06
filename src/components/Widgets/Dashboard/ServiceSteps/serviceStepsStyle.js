@@ -32,6 +32,7 @@ export const stepsNumberMainContainer = (theme) => ({
 export const stepsNumberContainer = {
   width: "124px",
   height: "124px",
+  marginBottom: "30px",
   backgroundColor: "#145374",
   boxShadow: "4px 4px 4px rgba(0, 0, 0, 0.2)",
   borderRadius: "100%",
@@ -39,6 +40,11 @@ export const stepsNumberContainer = {
   justifyContent: "center",
   alignItems: "center",
   marginInline: "auto",
+  transition: "0.4s",
+  cursor: "pointer",
+  "&:hover": {
+    backgroundColor: "#db9d90",
+  },
 };
 
 export const activeStepsNumberContainer = {
@@ -117,6 +123,20 @@ export const cardDescription = (theme) => ({
     fontSize: "11px",
     lineHeight: "16px",
     letterSpacing: "-0.04em",
+  },
+});
+
+export const popupText = (theme) => ({
+  padding: "30px",
+  fontSize: "20px",
+  fontWeight: 400,
+  letterSpacing: "-0.07em",
+  lineHeight: "26px",
+  [theme.breakpoints.down("lg")]: {
+    fontSize: "16px",
+  },
+  [theme.breakpoints.down("md")]: {
+    fontSize: "13px",
   },
 });
 

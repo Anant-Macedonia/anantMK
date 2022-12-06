@@ -7,16 +7,16 @@ import {
   createTheme,
   useMediaQuery,
 } from "@mui/material";
-import React, { useEffect, useState, useRef } from "react";
+import React, { useEffect, useState } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Pagination, Navigation, Autoplay } from "swiper";
 import ServiceStepsButton from "../../../UI/Buttons/ServiceStepsButton/ServiceStepsButton";
+import { AiOutlineClose } from "react-icons/ai";
 import {
-  activeStepNumber,
-  activeStepsNumberContainer,
   btnContainer,
   cardDescription,
   cardInformationContainer,
+  popupText,
   serviceStepsContainer,
   stepsNumber,
   stepsNumberContainer,
@@ -29,8 +29,6 @@ import {
 import "swiper/css";
 import "swiper/css/pagination";
 import "swiper/css/navigation";
-
-import designIcon from "../../../../../public/DesignIcon.svg";
 
 const theme = createTheme({
   breakpoints: {
@@ -157,19 +155,30 @@ const ServiceSteps = ({ steps }) => {
                   display: "flex",
                   alignItems: "center",
                   justifyContent: "center",
-                  height: "70vh",
-                  width: "60vw",
+                  height: "80vh",
+                  width: "65vw",
                   background: "#145374",
                   border: "10px solid #EE6F57",
                   borderRadius: "26px",
                 }}
               >
+                <AiOutlineClose
+                  style={{
+                    position: "absolute",
+                    top: "20px",
+                    right: "20px",
+                    cursor: "pointer",
+                  }}
+                  onClick={() => setShowPopup(false)}
+                  size={30}
+                  color="#EE6F57"
+                />
                 <Box
+                  sx={popupText}
                   dangerouslySetInnerHTML={{
                     __html: showPopup,
                   }}
                 />
-                <button onClick={() => setShowPopup(false)}>Close Popup</button>
               </Box>
             )}
             {steps.map((step, key) => {
@@ -194,26 +203,26 @@ const ServiceSteps = ({ steps }) => {
                         )
                       }
                     >
-                      <Image src={designIcon} alt="step" />
+                      <Image
+                        src={
+                          step.uxStepFields
+                            ? step.uxStepFields.icon?.sourceUrl
+                            : step.developmentStepFileds &&
+                              step.developmentStepFileds.icon?.sourceUrl
+                        }
+                        alt="step"
+                        width={80}
+                        height={100}
+                      />
                     </Box>
 
                     <Box sx={stepsTextContainer}>
-                      <Typography variant="h3" sx={stepsTitle}>
+                      <Typography sx={stepsTitle}>
                         {step.uxStepFields
                           ? step.uxStepFields.title
                           : step.developmentStepFileds &&
                             step.developmentStepFileds.title}
                       </Typography>
-
-                      {/* <Box
-                        sx={cardDescription}
-                        dangerouslySetInnerHTML={{
-                          __html: step.uxStepFields
-                            ? step.uxStepFields.description
-                            : step.developmentStepFileds &&
-                              step.developmentStepFileds.description,
-                        }}
-                      /> */}
                     </Box>
                   </Box>
                 </Grid>

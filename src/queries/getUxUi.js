@@ -28,6 +28,10 @@ export const GET_UX_UI_DATA = gql`
         uxStepFields {
           title
           description
+          icon {
+            altText
+            sourceUrl
+          }
         }
       }
     }

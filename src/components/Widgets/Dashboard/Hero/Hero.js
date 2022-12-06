@@ -57,6 +57,7 @@ const Hero = ({
     animationData: animationData,
   };
 
+  const midScreenSize = useMediaQuery(theme.breakpoints.down("lg"));
   const smallScreenSize = useMediaQuery(theme.breakpoints.down("md"));
   const xsScreenSize = useMediaQuery(theme.breakpoints.down("sm"));
 
@@ -164,12 +165,12 @@ const Hero = ({
             ) : (
               heroImage &&
               !smallScreenSize && (
-                <Grid item xs={12} md={7} sx={imageContainer}>
+                <Grid item xs={12} md={6} sx={imageContainer}>
                   <Image
                     src={heroImage.sourceUrl}
                     alt="development img"
-                    height={!smallScreenSize && 486}
-                    width={!smallScreenSize && 519}
+                    height={smallScreenSize ? 228 : midScreenSize ? 400 : 480}
+                    width={smallScreenSize ? 254 : midScreenSize ? 450 : 515}
                   />
                 </Grid>
               )

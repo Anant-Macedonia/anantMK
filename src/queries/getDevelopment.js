@@ -28,6 +28,10 @@ export const GET_DEVELOPMENT_DATA = gql`
         developmentStepFileds {
           title
           description
+          icon {
+            altText
+            sourceUrl
+          }
         }
       }
     }
