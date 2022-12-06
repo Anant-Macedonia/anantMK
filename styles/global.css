@@ -57,7 +57,8 @@ a:hover {
 
 @media only screen and (max-width: 900px) {
   .swiper-pagination-bullet {
-    width: 50px !important;
+    /* width: 50px !important; */
+    width: clamp(2.5rem, 0.2143rem + 11.4286vw, 4.5rem) !important;
     height: 11px !important;
     border-radius: 20px !important;
     margin-inline: 6px !important;
@@ -70,7 +71,8 @@ a:hover {
   }
 
   .swiper-pagination-bullet-active {
-    width: 50px !important;
+    width: clamp(2.5rem, 0.2143rem + 11.4286vw, 4.5rem) !important;
+    /* width: 50px !important; */
     height: 11px !important;
     border-radius: 20px !important;
     background-color: #df6b56 !important;
