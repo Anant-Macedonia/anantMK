@@ -13,7 +13,6 @@ const theme = createTheme({
 });
 
 export const stepsSectionContainer = (theme) => ({
-  // marginBottom: "160px",
   marginTop: "20px",
 
   [theme.breakpoints.down("sm")]: {

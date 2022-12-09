@@ -1,5 +1,4 @@
 export const ourProjectSectionContainer = (theme) => ({
-  // position: "relative",
   zIndex: "-1",
   marginTop: "160px",
   marginBottom: "155px",
@@ -37,9 +36,6 @@ export const ourProjectContainer = (theme) => ({
   borderRadius: "26px",
   marginTop: "58px",
   padding: "34px 50px",
-  // [theme.breakpoints.down("sm")]: {
-  //   background: "none",
-  // },
 });
 
 export const ourProjectMobileContainer = (theme) => ({
