@@ -14,7 +14,6 @@ const theme = createTheme({
 
 export const stepsSectionContainer = (theme) => ({
   marginTop: "20px",
-
   [theme.breakpoints.down("sm")]: {
     marginBottom: "35px",
     marginTop: "0px",
@@ -44,8 +43,8 @@ export const stepsNumberMainContainer = (theme) => ({
 });
 
 export const stepsNumberContainer = {
-  width: "80px",
-  height: "80px",
+  width: "120px",
+  height: "120px",
   margin: "20px 0",
   backgroundColor: "#145374",
   boxShadow: "4px 4px 4px rgba(0, 0, 0, 0.2)",
@@ -58,6 +57,10 @@ export const stepsNumberContainer = {
   cursor: "pointer",
   "&:hover": {
     backgroundColor: "#db9d90",
+  },
+  [theme.breakpoints.down("sm")]: {
+    width: "80px",
+    height: "80px",
   },
 };
 
