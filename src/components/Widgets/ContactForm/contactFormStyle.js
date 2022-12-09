@@ -22,7 +22,7 @@ export const formGrid = (theme) => ({
 
 export const contactContainer = (theme) => ({
   background: "linear-gradient(to bottom, #003049 50%, #145374)",
-  paddingTop: "210px",
+  paddingTop: "50px",
   paddingBottom: "85px",
   [theme.breakpoints.down("md")]: {
     paddingTop: "0",

@@ -104,6 +104,7 @@ const OurProjectSection = ({ projects }) => {
                           />
                           <PrimaryButton
                             btnText="View Project"
+                            target="_blank"
                             link={project.projectFields.projectLink}
                           />
                         </>
