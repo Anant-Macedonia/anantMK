@@ -17,6 +17,7 @@ import {
   cardDescription,
   cardInformationContainer,
   popupText,
+  servicesPopup,
   serviceStepsContainer,
   stepsNumber,
   stepsNumberContainer,
@@ -29,6 +30,7 @@ import {
 import "swiper/css";
 import "swiper/css/pagination";
 import "swiper/css/navigation";
+import styles from "./serviceSteps.module.css";
 
 const theme = createTheme({
   breakpoints: {
@@ -37,7 +39,7 @@ const theme = createTheme({
       sm: 600,
       md: 900,
       lg: 1280,
-      xl: 1920,
+      xl: 1990,
     },
   },
 });
@@ -77,10 +79,11 @@ const ServiceSteps = ({ steps }) => {
             position: "fixed",
             top: "0",
             left: "0",
+            bottom: "0",
             background: "rgba(0, 48, 73)",
             width: "100%",
             height: "100vh",
-            zIndex: "1",
+            zIndex: "100",
           }}
         ></Box>
       )}
@@ -117,14 +120,15 @@ const ServiceSteps = ({ steps }) => {
                     </Box>
                     <Box sx={cardInformationContainer}>
                       <Box sx={stepsTextContainer}>
-                        <Typography variant="h3" sx={stepsTitle}>
+                        {/* <Typography sx={stepsTitle}>
                           {step.uxStepFields
                             ? step.uxStepFields.title
                             : step.developmentStepFileds &&
                               step.developmentStepFileds.title}
-                        </Typography>
+                        </Typography> */}
 
                         <Box
+                          className={styles.cardDescription}
                           sx={cardDescription}
                           dangerouslySetInnerHTML={{
                             __html: step.uxStepFields
@@ -147,21 +151,7 @@ const ServiceSteps = ({ steps }) => {
         ) : (
           <>
             {showPopup && (
-              <Box
-                sx={{
-                  zIndex: "1",
-                  top: "100px",
-                  position: "fixed",
-                  display: "flex",
-                  alignItems: "center",
-                  justifyContent: "center",
-                  height: "80vh",
-                  width: "65vw",
-                  background: "#145374",
-                  border: "10px solid #EE6F57",
-                  borderRadius: "26px",
-                }}
-              >
+              <Box sx={servicesPopup}>
                 <AiOutlineClose
                   style={{
                     position: "absolute",
