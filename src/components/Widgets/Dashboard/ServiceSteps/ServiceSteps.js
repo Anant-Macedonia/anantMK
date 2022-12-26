@@ -201,8 +201,8 @@ const ServiceSteps = ({ steps }) => {
                               step.developmentStepFileds.icon?.sourceUrl
                         }
                         alt="step"
-                        width={80}
-                        height={100}
+                        width={84}
+                        height={84}
                       />
                     </Box>
 
