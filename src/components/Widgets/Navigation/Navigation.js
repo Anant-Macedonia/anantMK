@@ -103,18 +103,22 @@ const theme = createTheme({
 function Navigation() {
   const [open, setOpen] = useState(false);
   const [anchorEl, setAnchorEl] = useState(null);
+  const [openPopover, setOpenPopover] = useState(false);
+
   const [hoveredService, setHoveredService] = useState("Design");
 
   const handleHover = (event) => {
     setAnchorEl(event.currentTarget);
+    setOpenPopover(true);
   };
 
   const handleClose = () => {
     setAnchorEl(null);
+    setOpenPopover(false);
   };
 
-  const openPopup = Boolean(anchorEl);
-  const id = openPopup ? "simple-popover" : undefined;
+  // const openPopup = Boolean(anchorEl);
+  // const id = openPopup ? "simple-popover" : undefined;
 
   const router = useRouter();
   const smallScreenSize = useMediaQuery(theme.breakpoints.down("sm"));
@@ -151,8 +155,6 @@ function Navigation() {
               ) : (
                 <Box key={item.name}>
                   <Typography
-                    aria-owns={openPopup ? "mouse-over-popover" : undefined}
-                    aria-haspopup="true"
                     onMouseEnter={handleHover}
                     sx={router.pathname == item.href ? activeLink : link}
                   >
@@ -160,9 +162,8 @@ function Navigation() {
                   </Typography>
 
                   <Popover
-                    sx={{ marginTop: "50px" }}
-                    id={id}
-                    open={openPopup}
+                    sx={{ marginTop: "30px" }}
+                    open={openPopover}
                     anchorEl={anchorEl}
                     anchorOrigin={{
                       vertical: "bottom",
@@ -173,10 +174,13 @@ function Navigation() {
                       horizontal: "center",
                     }}
                     PaperProps={{
+                      elevation: 8,
                       style: {
                         width: "100%",
                       },
                     }}
+                    onClose={handleClose}
+                    disableEnforceFocus
                   >
                     <Paper onMouseLeave={handleClose}>
                       <Grid container spacing={1} sx={popoverContentContainer}>
