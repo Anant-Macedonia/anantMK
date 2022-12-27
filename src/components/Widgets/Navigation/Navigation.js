@@ -18,7 +18,6 @@ import MenuIcon from "@mui/icons-material/Menu";
 import IconButton from "@mui/material/IconButton";
 import SwipeableDrawer from "@mui/material/SwipeableDrawer";
 import Divider from "@mui/material/Divider";
-import ChevronRightIcon from "@mui/icons-material/ChevronRight";
 import { List, ListItem, createTheme, useMediaQuery } from "@mui/material";
 import ContactButton from "../../UI/Buttons/ContactButton/ContactButton";
 import logo from "../../../../public/logo-anant-mk.svg";
@@ -33,6 +32,9 @@ import {
   hoveredSectionTitle,
   rightHoveredSectionDescription,
   middleHoveredSectionDescription,
+  popoverContentContainer,
+  navigationMobile,
+  menuIcon,
 } from "./navigationStyle";
 
 const navigationLinks = [
@@ -45,6 +47,45 @@ const navigationMobileLinks = [
   { name: "Our Company", href: "/company" },
   { name: "Services", href: "/services" },
   { name: "Contact Us", href: "/contact" },
+];
+
+const designServiceDescription =
+  "Our design service offers a full range of support for all your design needs. Our team of experienced designers will work with you to create visually stunning and effective designs that will help you stand out in the market.";
+const developmentServiceDescription =
+  "Our development service offers a full range of support for all your development needs. Our team will work with you to create innovative and effective solutions that will help you achieve your business goals.";
+
+const designItems = [
+  {
+    title: "UX/UI Design",
+    description:
+      "Creating intuitive and user-friendly interfaces that enhance the overall user experience of your product or service.",
+  },
+  {
+    title: "Marketing Sites",
+    description: "Create a professional and effective online presence.",
+  },
+];
+
+const DevelopmentItems = [
+  {
+    title: "POC",
+    description:
+      "Creating intuitive and user-friendly interfaces that enhance the overall user experience of your product or service.",
+  },
+  {
+    title: "API-based development",
+    description:
+      "Easily connect your systems and data to other applications and platforms.",
+  },
+  {
+    title: "Knowledge sites",
+    description:
+      "Create a comprehensive and user-friendly resource for your customers or employees.",
+  },
+  {
+    title: "Marketing sites",
+    description: "Create a professional and effective online presence.",
+  },
 ];
 
 const theme = createTheme({
@@ -138,12 +179,8 @@ function Navigation() {
                     }}
                   >
                     <Paper onMouseLeave={handleClose}>
-                      <Grid
-                        container
-                        spacing={2}
-                        sx={{ height: "460px", padding: "50px 10px" }}
-                      >
-                        <Grid item xs={4}>
+                      <Grid container spacing={1} sx={popoverContentContainer}>
+                        <Grid item xs={12} md={4}>
                           <Typography
                             sx={
                               hoveredService == "Design"
@@ -175,22 +212,14 @@ function Navigation() {
                           />
                         </Grid>
 
-                        <Grid item xs={3}>
+                        <Grid item xs={5} md={3}>
                           {hoveredService == "Design" ? (
                             <Typography sx={middleHoveredSectionDescription}>
-                              Our design service offers a full range of support
-                              for all your design needs. Our team of experienced
-                              designers will work with you to create visually
-                              stunning and effective designs that will help you
-                              stand out in the market.
+                              {designServiceDescription}
                             </Typography>
                           ) : (
                             <Typography sx={middleHoveredSectionDescription}>
-                              Our development service offers a full range of
-                              support for all your development needs. Our team
-                              will work with you to create innovative and
-                              effective solutions that will help you achieve
-                              your business goals.
+                              {developmentServiceDescription}
                             </Typography>
                           )}
                         </Grid>
@@ -205,57 +234,43 @@ function Navigation() {
                           />
                         </Grid>
                         {hoveredService == "Design" ? (
-                          <Grid item xs={4.5}>
-                            <Typography sx={hoveredSectionTitle}>
-                              UX/UI Design
-                            </Typography>
-                            <Typography sx={rightHoveredSectionDescription}>
-                              Creating intuitive and user-friendly interfaces
-                              that enhance the overall user experience of your
-                              product or service.
-                            </Typography>
-                            <Typography sx={hoveredSectionTitle}>
-                              Marketing Sites
-                            </Typography>
-                            <Typography sx={rightHoveredSectionDescription}>
-                              Create a professional and effective online
-                              presence.
-                            </Typography>
+                          <Grid item xs={6} md={4.5}>
+                            {designItems.map((item) => {
+                              return (
+                                <Box key={item.title}>
+                                  <Typography sx={hoveredSectionTitle}>
+                                    {item.title}
+                                  </Typography>
+                                  <Typography
+                                    sx={rightHoveredSectionDescription}
+                                  >
+                                    {item.description}
+                                  </Typography>
+                                </Box>
+                              );
+                            })}
                           </Grid>
                         ) : (
-                          <Grid item xs={4.5} sx={{ paddingLeft: "64px" }}>
-                            <Typography sx={hoveredSectionTitle}>
-                              POC
-                            </Typography>
-                            <Typography sx={rightHoveredSectionDescription}>
-                              Creating intuitive and user-friendly interfaces
-                              that enhance the overall user experience of your
-                              product or service.
-                            </Typography>
-
-                            <Typography sx={hoveredSectionTitle}>
-                              API-based development
-                            </Typography>
-                            <Typography sx={rightHoveredSectionDescription}>
-                              Easily connect your systems and data to other
-                              applications and platforms.
-                            </Typography>
-
-                            <Typography sx={hoveredSectionTitle}>
-                              Knowledge sitest
-                            </Typography>
-                            <Typography sx={rightHoveredSectionDescription}>
-                              Create a comprehensive and user-friendly resource
-                              for your customers or employees.
-                            </Typography>
-
-                            <Typography sx={hoveredSectionTitle}>
-                              Marketing sites
-                            </Typography>
-                            <Typography sx={rightHoveredSectionDescription}>
-                              Create a professional and effective online
-                              presence.
-                            </Typography>
+                          <Grid
+                            item
+                            xs={6}
+                            md={4.5}
+                            sx={{ paddingLeft: "64px" }}
+                          >
+                            {DevelopmentItems.map((item) => {
+                              return (
+                                <Box key={item.title}>
+                                  <Typography sx={hoveredSectionTitle}>
+                                    {item.title}
+                                  </Typography>
+                                  <Typography
+                                    sx={rightHoveredSectionDescription}
+                                  >
+                                    {item.description}
+                                  </Typography>
+                                </Box>
+                              );
+                            })}
                           </Grid>
                         )}
                       </Grid>
@@ -269,7 +284,7 @@ function Navigation() {
           </Hidden>
           <Hidden smUp>
             <IconButton onClick={() => setOpen(true)}>
-              <MenuIcon sx={{ color: "white" }} />
+              <MenuIcon sx={menuIcon} />
             </IconButton>
           </Hidden>
         </Toolbar>
@@ -283,11 +298,11 @@ function Navigation() {
       >
         <Box>
           <IconButton onClick={() => setOpen(false)}>
-            <MenuIcon sx={{ color: "white" }} />
+            <MenuIcon sx={menuIcon} />
           </IconButton>
         </Box>
 
-        <List sx={{ width: "273px", paddingLeft: "34px" }}>
+        <List sx={navigationMobile}>
           {navigationMobileLinks.map((item) => {
             return (
               <ListItem key={item.name} onClick={() => setOpen(false)}>
@@ -306,12 +321,6 @@ function Navigation() {
               </ListItem>
             );
           })}
-
-          {/* <ContactButton
-            hamburgerContact
-            btnText="Contact Us"
-            onClick={() => setOpen(false)}
-          /> */}
         </List>
       </SwipeableDrawer>
     </AppBar>

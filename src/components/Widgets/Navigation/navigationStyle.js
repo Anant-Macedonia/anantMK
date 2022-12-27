@@ -21,6 +21,10 @@ export const navLogo = (theme) => ({
   },
 });
 
+export const navigationMobile = { width: "273px", paddingLeft: "34px" };
+
+export const menuIcon = { color: "white" };
+
 export const link = (theme) => ({
   fontWeight: 400,
   fontSize: "16px",
@@ -63,7 +67,16 @@ export const service = (theme) => ({
   paddingLeft: "200px",
   color: "#E5E5E5",
   cursor: "pointer",
-  [theme.breakpoints.down("sm")]: {},
+  [theme.breakpoints.down("lg")]: {
+    paddingLeft: "80px",
+    fontSize: "26px",
+  },
+  [theme.breakpoints.down("md")]: {
+    paddingLeft: "60px",
+    fontSize: "22px",
+    lineHeight: "15px",
+    marginBottom: "24px",
+  },
 });
 
 export const activeService = (theme) => ({
@@ -76,7 +89,15 @@ export const activeService = (theme) => ({
   paddingLeft: "200px",
   color: "#EE6F57",
   cursor: "pointer",
-  [theme.breakpoints.down("sm")]: {},
+  [theme.breakpoints.down("lg")]: {
+    paddingLeft: "80px",
+    fontSize: "26px",
+  },
+  [theme.breakpoints.down("md")]: {
+    paddingLeft: "60px",
+    fontSize: "22px",
+    lineHeight: "15px",
+  },
 });
 
 export const hoveredSectionTitle = (theme) => ({
@@ -88,6 +109,10 @@ export const hoveredSectionTitle = (theme) => ({
   color: "#EE6F57",
   paddingLeft: "48px",
   marginBottom: "4px",
+  [theme.breakpoints.down("md")]: {
+    fontSize: "20px",
+    lineHeight: "25px",
+  },
 });
 
 export const rightHoveredSectionDescription = (theme) => ({
@@ -110,4 +135,17 @@ export const middleHoveredSectionDescription = (theme) => ({
   paddingLeft: "60px",
   paddingRight: "50px",
   marginBottom: "19px",
+  [theme.breakpoints.down("md")]: {
+    fontSize: "14px",
+    lineHeight: "17px",
+  },
+});
+
+export const popoverContentContainer = (theme) => ({
+  height: "450px",
+  padding: "50px 10px",
+  [theme.breakpoints.down("md")]: {
+    height: "490px",
+    padding: "30px 10px",
+  },
 });
