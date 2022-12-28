@@ -36,6 +36,8 @@ import {
   navigationMobile,
   menuIcon,
 } from "./navigationStyle";
+import designImage from "../../../../public/designService.png";
+import developImage from "../../../../public/devService.png";
 
 const navigationLinks = [
   { name: "Our Company", href: "/company" },
@@ -103,18 +105,19 @@ const theme = createTheme({
 function Navigation() {
   const [open, setOpen] = useState(false);
   const [anchorEl, setAnchorEl] = useState(null);
+  const [openPopover, setOpenPopover] = useState(false);
+
   const [hoveredService, setHoveredService] = useState("Design");
 
   const handleHover = (event) => {
     setAnchorEl(event.currentTarget);
+    setOpenPopover(true);
   };
 
   const handleClose = () => {
     setAnchorEl(null);
+    setOpenPopover(false);
   };
-
-  const openPopup = Boolean(anchorEl);
-  const id = openPopup ? "simple-popover" : undefined;
 
   const router = useRouter();
   const smallScreenSize = useMediaQuery(theme.breakpoints.down("sm"));
@@ -149,10 +152,8 @@ function Navigation() {
                   </Typography>
                 </Link>
               ) : (
-                <Box key={item.name}>
+                <Box key={item.name} onMouseLeave={handleClose}>
                   <Typography
-                    aria-owns={openPopup ? "mouse-over-popover" : undefined}
-                    aria-haspopup="true"
                     onMouseEnter={handleHover}
                     sx={router.pathname == item.href ? activeLink : link}
                   >
@@ -160,27 +161,31 @@ function Navigation() {
                   </Typography>
 
                   <Popover
-                    sx={{ marginTop: "50px" }}
-                    id={id}
-                    open={openPopup}
+                    onMouseLeave={handleClose}
+                    sx={{ marginTop: "30px" }}
+                    open={openPopover}
                     anchorEl={anchorEl}
                     anchorOrigin={{
                       vertical: "bottom",
-                      horizontal: "center",
+                      horizontal: "left",
                     }}
                     transformOrigin={{
                       vertical: "top",
-                      horizontal: "center",
+                      horizontal: "left",
                     }}
                     PaperProps={{
                       style: {
-                        width: "100%",
+                        display: "flex",
+                        justifyContent: "center",
+                        width: "70%",
                       },
                     }}
+                    onClose={handleClose}
+                    disableEnforceFocus
                   >
                     <Paper onMouseLeave={handleClose}>
                       <Grid container spacing={1} sx={popoverContentContainer}>
-                        <Grid item xs={12} md={4}>
+                        <Grid item xs={12} md={3}>
                           <Typography
                             sx={
                               hoveredService == "Design"
@@ -212,15 +217,73 @@ function Navigation() {
                           />
                         </Grid>
 
-                        <Grid item xs={5} md={3}>
+                        <Grid item xs={5} md={4}>
                           {hoveredService == "Design" ? (
-                            <Typography sx={middleHoveredSectionDescription}>
-                              {designServiceDescription}
-                            </Typography>
+                            <Box
+                              sx={{
+                                display: "flex",
+                                flexDirection: "column",
+                                alignItems: "center",
+                              }}
+                            >
+                              <Image
+                                src={designImage}
+                                width={93}
+                                height={128}
+                                alt="design"
+                              />
+                              <Typography sx={middleHoveredSectionDescription}>
+                                {designServiceDescription}
+                              </Typography>
+                              <Box
+                                sx={{
+                                  width: "100%",
+                                  display: "flex",
+                                  paddingLeft: "50px",
+                                  textDecoration: "underline",
+                                }}
+                                onClick={handleClose}
+                              >
+                                <Link
+                                  href="/services"
+                                  passHref
+                                  onClick={handleClose}
+                                >
+                                  view all services
+                                </Link>
+                              </Box>
+                            </Box>
                           ) : (
-                            <Typography sx={middleHoveredSectionDescription}>
-                              {developmentServiceDescription}
-                            </Typography>
+                            <Box
+                              sx={{
+                                display: "flex",
+                                flexDirection: "column",
+                                alignItems: "center",
+                              }}
+                            >
+                              <Image
+                                src={developImage}
+                                width={93}
+                                height={123}
+                                alt="dev"
+                              />
+                              <Typography sx={middleHoveredSectionDescription}>
+                                {developmentServiceDescription}
+                              </Typography>
+                              <Box
+                                sx={{
+                                  width: "100%",
+                                  display: "flex",
+                                  paddingLeft: "50px",
+                                  textDecoration: "underline",
+                                }}
+                                onClick={handleClose}
+                              >
+                                <Link href="/services" passHref>
+                                  view all services
+                                </Link>
+                              </Box>
+                            </Box>
                           )}
                         </Grid>
                         <Grid item>
