@@ -1,6 +1,6 @@
 export const ourApproachContainer = (theme) => ({
   backgroundColor: "#145374",
-  paddingTop: "110px",
+  paddingTop: "50px",
   paddingBottom: "115px",
   [theme.breakpoints.down("sm")]: {
     paddingTop: "55px",

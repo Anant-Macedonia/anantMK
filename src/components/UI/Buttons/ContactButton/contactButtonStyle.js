@@ -1,4 +1,5 @@
 export const contactBtn = {
+  zIndex: "1000",
   backgroundColor: "#ee6f57",
   color: "#ffffff",
   fontFamily: "Mulish",

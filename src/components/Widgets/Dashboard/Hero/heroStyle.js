@@ -5,7 +5,7 @@ export const heroContainer = (theme) => ({
     alignItems: "center",
     marginTop: "-75px",
     paddingTop: "215px",
-    paddingBottom: "180px",
+    paddingBottom: "50px",
   },
   [theme.breakpoints.down("md")]: {
     paddingBottom: "85px",
