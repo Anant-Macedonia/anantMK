@@ -73,7 +73,7 @@ const ContactButton = ({ btnText, hamburgerContact }) => {
             <Box onMouseLeave={handleMouseLeave}>
               {contactDetails.map((item) => {
                 return (
-                  <Box sx={contactPopoverContainer}>
+                  <Box sx={contactPopoverContainer} key={item.title}>
                     <Link Link href="/contact" passHref>
                       <Typography sx={contactDetailsTitle}>
                         {item.title}
