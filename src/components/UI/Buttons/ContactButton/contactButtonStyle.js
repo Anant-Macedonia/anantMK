@@ -25,3 +25,26 @@ export const contactBtnWithoutStyle = {
   paddingLeft: "17px",
   textTransform: "capitalize",
 };
+
+export const contactPopoverContainer = {
+  paddingTop: "40px",
+};
+
+export const contactDetailsTitle = {
+  cursor: "pointer",
+  fontFamily: "Poppins",
+  fontWeight: 600,
+  fontSize: "24px",
+  lineHeight: "30px",
+  letterSpacing: "-0.035em",
+  color: "#EE6F57",
+  marginBottom: "5px",
+};
+
+export const contactDetailsDescription = {
+  fontFamily: "Lato",
+  fontWeight: 400,
+  fontSize: "12px",
+  lineHeight: "14px",
+  color: "#FFFFFF",
+};
