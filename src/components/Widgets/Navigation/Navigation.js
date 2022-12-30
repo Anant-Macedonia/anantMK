@@ -35,6 +35,7 @@ import {
   popoverContentContainer,
   navigationMobile,
   menuIcon,
+  viewServicesLink,
 } from "./navigationStyle";
 import designImage from "../../../../public/designService.png";
 import developImage from "../../../../public/devService.png";
@@ -235,15 +236,7 @@ function Navigation() {
                               <Typography sx={middleHoveredSectionDescription}>
                                 {designServiceDescription}
                               </Typography>
-                              <Box
-                                sx={{
-                                  width: "100%",
-                                  display: "flex",
-                                  paddingLeft: "50px",
-                                  textDecoration: "underline",
-                                }}
-                                onClick={handleClose}
-                              >
+                              <Box sx={viewServicesLink} onClick={handleClose}>
                                 <Link
                                   href="/services"
                                   passHref
@@ -270,15 +263,7 @@ function Navigation() {
                               <Typography sx={middleHoveredSectionDescription}>
                                 {developmentServiceDescription}
                               </Typography>
-                              <Box
-                                sx={{
-                                  width: "100%",
-                                  display: "flex",
-                                  paddingLeft: "50px",
-                                  textDecoration: "underline",
-                                }}
-                                onClick={handleClose}
-                              >
+                              <Box sx={viewServicesLink} onClick={handleClose}>
                                 <Link href="/services" passHref>
                                   view all services
                                 </Link>
