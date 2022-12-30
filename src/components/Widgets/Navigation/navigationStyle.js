@@ -169,3 +169,10 @@ export const popoverContentContainer = (theme) => ({
     paddingTop: "30px",
   },
 });
+
+export const viewServicesLink = (theme) => ({
+  width: "100%",
+  display: "flex",
+  paddingLeft: "50px",
+  textDecoration: "underline",
+});
