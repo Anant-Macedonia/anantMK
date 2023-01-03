@@ -69,8 +69,8 @@ export const service = (theme) => ({
   letterSpacing: "-0.035em",
   marginBottom: "24px",
   paddingLeft: "10%",
+  color: "#EE6F57",
 
-  color: "#E5E5E5",
   cursor: "pointer",
   [theme.breakpoints.down("lg")]: {
     paddingLeft: "7%",
@@ -92,7 +92,7 @@ export const activeService = (theme) => ({
   letterSpacing: "-0.035em",
   marginBottom: "24px",
   paddingLeft: "10%",
-  color: "#EE6F57",
+  color: "#E5E5E5",
   cursor: "pointer",
   [theme.breakpoints.down("lg")]: {
     paddingLeft: "7%",
