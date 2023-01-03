@@ -85,3 +85,17 @@ a:hover {
 .MuiModal-root {
   z-index: 1 !important;
 }
+
+.css-7bhzqn {
+  background-image: url("../public/design.svg") !important;
+  background-size: contain !important;
+  background-position: 30% 0px !important;
+  background-repeat: no-repeat !important;
+}
+
+.css-123vto5 {
+  background-image: url("../public/development.svg") !important;
+  background-size: contain !important;
+  background-position: 70% 0px !important;
+  background-repeat: no-repeat !important;
+}

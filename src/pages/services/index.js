@@ -31,6 +31,8 @@ import {
 import SecondaryButton from "../../components/UI/Buttons/SecondaryButton/SecondaryButton";
 import Router from "next/router";
 
+import asd from "../../../public/design.svg";
+
 const theme = createTheme({
   breakpoints: {
     values: {
@@ -92,10 +94,10 @@ const Services = () => {
 
   return (
     <Grid
-      onMouseLeave={() => hoverItemSetter(null)}
       container
       sx={{
         marginTop: "110px",
+        border: "4px solid #002b42",
       }}
     >
       <Grid
@@ -117,23 +119,6 @@ const Services = () => {
         >
           {!smallScreenSize ? "UX/UI Design" : "UX/UI"}
         </Typography>
-
-        {!smallScreenSize && hoveredItem == "UI" && (
-          <>
-            <Stack direction="row" spacing={8}>
-              <Box sx={subTitle}>Research</Box>
-              <Box sx={subTitle}>Design</Box>
-              <Box sx={subTitle}>Prototyping</Box>
-              <Box sx={subTitle}>Testing</Box>
-            </Stack>
-            <Box sx={{ marginTop: "125px" }}>
-              <SecondaryButton
-                link="/services/ux-ui-design"
-                btnText="Learn More"
-              />
-            </Box>
-          </>
-        )}
 
         {!smallScreenSize && !hoveredItem ? (
           <Box sx={imageContainer}>
@@ -166,23 +151,6 @@ const Services = () => {
         >
           {!smallScreenSize ? "Development" : "Dev"}
         </Typography>
-
-        {!smallScreenSize && hoveredItem == "Development" && (
-          <>
-            <Stack direction="row" spacing={8}>
-              <Box sx={developmentSubTitle}>Research</Box>
-              <Box sx={developmentSubTitle}>Design</Box>
-              <Box sx={developmentSubTitle}>Prototyping</Box>
-              <Box sx={developmentSubTitle}>Testing</Box>
-            </Stack>
-            <Box sx={{ marginTop: "125px" }}>
-              <SecondaryButton
-                link="/services/development"
-                btnText="Learn More"
-              />
-            </Box>
-          </>
-        )}
 
         {!smallScreenSize && !hoveredItem ? (
           <Box sx={imageContainer}>

@@ -176,14 +176,13 @@ const ServiceSteps = ({ steps }) => {
                 <Grid
                   item
                   xs={12}
-                  sm={6}
+                  sm={4}
                   md={2.4}
-                  sx={serviceStepsContainer}
+                  // sx={serviceStepsContainer}
                   key={key}
                 >
                   <Box>
                     <Box
-                      sx={stepsNumberContainer}
                       onClick={() =>
                         setShowPopup(
                           step.uxStepFields
@@ -201,12 +200,9 @@ const ServiceSteps = ({ steps }) => {
                               step.developmentStepFileds.icon?.sourceUrl
                         }
                         alt="step"
-                        width={84}
-                        height={84}
+                        width={94}
+                        height={94}
                       />
-                    </Box>
-
-                    <Box sx={stepsTextContainer}>
                       <Typography sx={stepsTitle}>
                         {step.uxStepFields
                           ? step.uxStepFields.title

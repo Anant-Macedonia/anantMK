@@ -20,16 +20,16 @@ export const stepsSectionContainer = (theme) => ({
   },
 });
 
-export const serviceStepsContainer = (theme) => ({
-  marginInline: "auto",
-  display: "flex",
-  flexDirection: "column",
-  justifyContent: "space-between",
-  [theme.breakpoints.down("sm")]: {
-    width: "225px",
-    height: "320px",
-  },
-});
+// export const serviceStepsContainer = (theme) => ({
+//   marginInline: "auto",
+//   display: "flex",
+//   flexDirection: "column",
+//   justifyContent: "space-between",
+//   [theme.breakpoints.down("sm")]: {
+//     width: "225px",
+//     height: "320px",
+//   },
+// });
 
 export const stepsNumberMainContainer = (theme) => ({
   background: "#EE6F57",
@@ -115,11 +115,10 @@ export const stepsTextContainer = (theme) => ({
 });
 
 export const stepsTitle = (theme) => ({
-  marginBottom: "36px",
-  color: "#EE6F57",
-  fontWeight: 700,
-  fontSize: "30px",
-  lineHeight: "39px",
+  color: "#FFFFFF",
+  fontWeight: 400,
+  fontSize: "18px",
+  lineHeight: "21px",
   letterSpacing: "-0.07em",
   fontFamily: "Montserrat",
   [theme.breakpoints.down("sm")]: {
