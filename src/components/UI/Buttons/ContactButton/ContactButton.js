@@ -64,7 +64,7 @@ const ContactButton = ({ btnText, hamburgerContact }) => {
                 display: "flex",
                 justifyContent: "center",
                 width: "614px",
-                height: "300px",
+                height: "240px",
                 marginTop: "20px",
               },
             }}

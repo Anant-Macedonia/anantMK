@@ -154,12 +154,18 @@ function Navigation() {
                 </Link>
               ) : (
                 <Box key={item.name} onMouseLeave={handleClose}>
-                  <Typography
-                    onMouseEnter={handleHover}
-                    sx={router.pathname == item.href ? activeLink : link}
+                  <Link
+                    style={{ textDecoration: "none" }}
+                    href={item.href}
+                    passHref
                   >
-                    {item.name}
-                  </Typography>
+                    <Typography
+                      onMouseEnter={handleHover}
+                      sx={router.pathname == item.href ? activeLink : link}
+                    >
+                      {item.name}
+                    </Typography>
+                  </Link>
 
                   <Popover
                     onMouseLeave={handleClose}
