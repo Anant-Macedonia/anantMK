@@ -7,6 +7,7 @@ import {
   useMediaQuery,
 } from "@mui/material";
 import React, { useEffect, useState } from "react";
+import UxDesignComponent from "../../components/Widgets/DesignComponent/UxDesignComponent";
 import uxImage from "../../../public/ux-ui-service.svg";
 import developImage from "../../../public/development-service.svg";
 import Image from "next/future/image";
@@ -14,6 +15,7 @@ import { FiArrowLeftCircle, FiArrowRightCircle } from "react-icons/fi";
 import {
   developmentContainer,
   developmentHoveredTitle,
+  developmentNoHoverContainer,
   developmentSubTitle,
   developmentTitle,
   developTitle,
@@ -26,12 +28,18 @@ import {
   title,
   uxContainer,
   uxHoveredTitle,
+  uxNoHoverContainer,
   uxTitle,
 } from "../../../styles/serviceStyle";
 import SecondaryButton from "../../components/UI/Buttons/SecondaryButton/SecondaryButton";
 import Router from "next/router";
 
-import asd from "../../../public/design.svg";
+import cloud1 from "../../../public/oblache1.png";
+import styles from "../../../styles/service.module.css";
+import { GET_UX_UI_DATA } from "../../queries/getUxUi";
+import { GET_TALK_SECTION_DATA } from "../../queries/getTalkSection";
+import { GET_PROJECTS_DATA } from "../../queries/getProjects";
+import { client } from "../../lib/apollo";
 
 const theme = createTheme({
   breakpoints: {
@@ -45,11 +53,13 @@ const theme = createTheme({
   },
 });
 
-const Services = () => {
+const Services = (props) => {
   const smallScreenSize = useMediaQuery(theme.breakpoints.down("sm"));
   const [hoveredItem, setHoveredItem] = useState(null);
   const [touchStart, setTouchStart] = useState(null);
   const [touchEnd, setTouchEnd] = useState(null);
+
+  const { steps } = props?.uxUiData;
 
   const minSwipeDistance = 50;
 
@@ -93,79 +103,110 @@ const Services = () => {
   };
 
   return (
-    <Grid
-      container
-      sx={{
-        marginTop: "110px",
-        border: "4px solid #002b42",
-      }}
-    >
+    <>
       <Grid
-        onTouchStart={onTouchStart}
-        onTouchMove={onTouchMove}
-        onTouchEnd={onTouchEnd}
-        onMouseEnter={() => hoverItemSetter("UI")}
-        item
-        xs={!hoveredItem ? 6 : hoveredItem == "UI" ? 10 : 2}
-        md={!hoveredItem ? 6 : hoveredItem == "UI" ? 11 : 1}
-        sx={uxContainer}
+        container
+        sx={{
+          marginTop: "110px",
+          border: "4px solid #002b42",
+        }}
       >
-        <Typography
-          sx={
-            hoveredItem == "Development"
-              ? [smallContainer, smallUxContainer]
-              : [title, uxTitle]
-          }
+        <Grid
+          onTouchStart={onTouchStart}
+          onTouchMove={onTouchMove}
+          onTouchEnd={onTouchEnd}
+          onMouseEnter={() => hoverItemSetter("UI")}
+          item
+          xs={!hoveredItem ? 6 : hoveredItem == "UI" ? 10 : 2}
+          md={!hoveredItem ? 6 : hoveredItem == "UI" ? 11 : 1}
+          sx={hoveredItem ? uxContainer : uxNoHoverContainer}
+          className={styles.uxNoHover}
         >
-          {!smallScreenSize ? "UX/UI Design" : "UX/UI"}
-        </Typography>
+          <Typography
+            sx={
+              hoveredItem == "Development"
+                ? [smallContainer, smallUxContainer]
+                : [title, uxTitle]
+            }
+          >
+            {!smallScreenSize ? "UX/UI Design" : "UX/UI"}
+          </Typography>
 
-        {!smallScreenSize && !hoveredItem ? (
-          <Box sx={imageContainer}>
-            <Image src={uxImage} alt="ux-image" />
-          </Box>
-        ) : (
-          smallScreenSize && (
-            <Box sx={{ marginTop: "35px" }}>
-              <FiArrowRightCircle size="33px" color="#145374" />
+          {!smallScreenSize && !hoveredItem ? (
+            <Box sx={imageContainer}>
+              {/* <Image src={uxImage} alt="ux-image" /> */}
             </Box>
-          )
-        )}
-      </Grid>
-      <Grid
-        onTouchStart={onTouchStart}
-        onTouchMove={onTouchMove}
-        onTouchEnd={onTouchEnd}
-        onMouseEnter={() => hoverItemSetter("Development")}
-        item
-        xs={!hoveredItem ? 6 : hoveredItem == "Development" ? 10 : 2}
-        md={!hoveredItem ? 6 : hoveredItem == "Development" ? 11 : 1}
-        sx={developmentContainer}
-      >
-        <Typography
-          sx={
-            hoveredItem == "UI"
-              ? [smallContainer, smallDevelopmentContainer]
-              : [title, developTitle]
-          }
+          ) : (
+            smallScreenSize && (
+              <Box sx={{ marginTop: "35px" }}>
+                <FiArrowRightCircle size="33px" color="#145374" />
+              </Box>
+            )
+          )}
+        </Grid>
+        <Grid
+          onTouchStart={onTouchStart}
+          onTouchMove={onTouchMove}
+          onTouchEnd={onTouchEnd}
+          onMouseEnter={() => hoverItemSetter("Development")}
+          item
+          xs={!hoveredItem ? 6 : hoveredItem == "Development" ? 10 : 2}
+          md={!hoveredItem ? 6 : hoveredItem == "Development" ? 11 : 1}
+          sx={hoveredItem ? developmentContainer : developmentNoHoverContainer}
+          className={styles.developNoHover}
         >
-          {!smallScreenSize ? "Development" : "Dev"}
-        </Typography>
+          <Typography
+            sx={
+              hoveredItem == "UI"
+                ? [smallContainer, smallDevelopmentContainer]
+                : [title, developTitle]
+            }
+          >
+            {!smallScreenSize ? "Development" : "Dev"}
+          </Typography>
 
-        {!smallScreenSize && !hoveredItem ? (
-          <Box sx={imageContainer}>
-            <Image src={developImage} alt="dev-image" />
-          </Box>
-        ) : (
-          smallScreenSize && (
-            <Box sx={{ marginTop: "35px" }}>
-              <FiArrowLeftCircle size="33px" color="#EE6F57" />
+          {!smallScreenSize && !hoveredItem ? (
+            <Box sx={imageContainer}>
+              {/* <Image src={developImage} alt="dev-image" /> */}
             </Box>
-          )
-        )}
+          ) : (
+            smallScreenSize && (
+              <Box sx={{ marginTop: "35px" }}>
+                <FiArrowLeftCircle size="33px" color="#EE6F57" />
+              </Box>
+            )
+          )}
+        </Grid>
       </Grid>
-    </Grid>
+      {hoveredItem == "UI" && <UxDesignComponent steps={steps} />}
+    </>
   );
 };
 
 export default Services;
+
+export async function getStaticProps() {
+  const { data: uxUiData } = await client.query({
+    query: GET_UX_UI_DATA,
+  });
+  const { data: talkSectionData } = await client.query({
+    query: GET_TALK_SECTION_DATA,
+  });
+  const { data: projectsData } = await client.query({
+    query: GET_PROJECTS_DATA,
+  });
+
+  return {
+    props: {
+      uxUiData: {
+        steps: uxUiData?.uxSteps?.nodes,
+      },
+      talkSectionData: {
+        talk: talkSectionData?.nodeByUri?.talkFields,
+      },
+      projectsData: {
+        projects: projectsData?.projects?.nodes,
+      },
+    },
+  };
+}

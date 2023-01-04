@@ -86,16 +86,24 @@ a:hover {
   z-index: 1 !important;
 }
 
-.css-7bhzqn {
+.css-7bhzqn,
+.css-mvio6l-MuiGrid-root {
   background-image: url("../public/design.svg") !important;
   background-size: contain !important;
   background-position: 30% 0px !important;
   background-repeat: no-repeat !important;
 }
 
-.css-123vto5 {
+.css-123vto5,
+.css-1pwdoku-MuiGrid-root {
   background-image: url("../public/development.svg") !important;
   background-size: contain !important;
   background-position: 70% 0px !important;
   background-repeat: no-repeat !important;
 }
+
+/* .css-qtp63u-MuiGrid-root {
+  background-image: url("../public/oblache1.png") !important;
+  background-size: cover !important;
+  background-position: left !important;
+} */

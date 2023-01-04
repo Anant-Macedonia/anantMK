@@ -12,6 +12,33 @@ export const uxContainer = (theme) => ({
   alignItems: "center",
   justifyContent: "center",
   transition: "all 0.5s ease-in-out",
+  [theme.breakpoints.down("sm")]: {
+    height: "350px",
+  },
+});
+
+export const uxNoHoverContainer = (theme) => ({
+  height: "500px",
+  backgroundColor: "#145374",
+  display: "flex",
+  flexDirection: "column",
+  alignItems: "center",
+  justifyContent: "center",
+  // transition: "all 0.5s ease-in-out",
+
+  [theme.breakpoints.down("sm")]: {
+    height: "350px",
+  },
+});
+
+export const developmentNoHoverContainer = (theme) => ({
+  height: "500px",
+  backgroundColor: "#145374",
+  display: "flex",
+  flexDirection: "column",
+  alignItems: "center",
+  justifyContent: "center",
+  // transition: "all 0.5s ease-in-out",
 
   [theme.breakpoints.down("sm")]: {
     height: "350px",

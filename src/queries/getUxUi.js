@@ -27,9 +27,13 @@ export const GET_UX_UI_DATA = gql`
       nodes {
         uxStepFields {
           title
+          subtitle
           description
           icon {
             altText
+            sourceUrl
+          }
+          image {
             sourceUrl
           }
         }
