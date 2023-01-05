@@ -1,8 +1,12 @@
 export const uxContainer = (theme) => ({
-  height: "700px",
-  // paddingBottom: "147px",
-  // paddingTop: "147px",
-  backgroundColor: "#EE6F57",
+  backgroundImage: `url(../public/design.svg)`,
+  backgroundSize: "cover",
+  backgroundPosition: "center",
+  backgroundRepeat: "no-repeat",
+  background:
+    "linear-gradient(to bottom, #003049, #015887), url(../public/design.svg)",
+  backgroundBlendMode: "multiply",
+  height: "500px",
   display: "flex",
   flexDirection: "column",
   alignItems: "center",
@@ -10,33 +14,58 @@ export const uxContainer = (theme) => ({
   transition: "all 0.5s ease-in-out",
   [theme.breakpoints.down("sm")]: {
     height: "350px",
-    // paddingTop: "120px",
-    // paddingBottom: "120px",
   },
 });
 
-export const developmentContainer = (theme) => ({
-  height: "700px",
-  // paddingBottom: "147px",
-  // paddingTop: "147px",
+export const uxNoHoverContainer = (theme) => ({
+  height: "500px",
   backgroundColor: "#145374",
   display: "flex",
   flexDirection: "column",
   alignItems: "center",
   justifyContent: "center",
+  // transition: "all 0.5s ease-in-out",
+
+  [theme.breakpoints.down("sm")]: {
+    height: "350px",
+  },
+});
+
+export const developmentNoHoverContainer = (theme) => ({
+  height: "500px",
+  backgroundColor: "#145374",
+  display: "flex",
+  flexDirection: "column",
+  alignItems: "center",
+  justifyContent: "center",
+  // transition: "all 0.5s ease-in-out",
+
+  [theme.breakpoints.down("sm")]: {
+    height: "350px",
+  },
+});
+
+export const developmentContainer = (theme) => ({
+  height: "500px",
+  display: "flex",
+  flexDirection: "column",
+  alignItems: "center",
+  justifyContent: "center",
   transition: "all 0.5s ease-in-out",
   [theme.breakpoints.down("sm")]: {
     height: "350px",
-    // paddingTop: "120px",
-    // paddingBottom: "120px",
   },
 });
 
 export const smallContainer = (theme) => ({
+  width: "100%",
+  display: "flex",
+  alignItems: "center",
+  justifyContent: "center",
   writingMode: "vertical-rl",
   transform: "rotate(-180deg)",
   fontWeight: "700",
-  fontSize: "80px",
+  fontSize: "56px",
   letterSpacing: "-0.02em",
   [theme.breakpoints.down("sm")]: {
     fontSize: "20px",
@@ -44,12 +73,16 @@ export const smallContainer = (theme) => ({
 });
 
 export const smallUxContainer = {
-  color: "#145374",
+  height: "500px",
+  background: "#145374",
+  color: "#E5E5E5",
   transition: "all 0.5s ease-in-out",
 };
 
 export const smallDevelopmentContainer = {
-  color: "#EE6F57 ",
+  height: "500px",
+  background: "#145374",
+  color: "#E5E5E5 ",
   transition: "all 0.5s ease-in-out",
 };
 
@@ -75,6 +108,7 @@ export const title = (theme) => ({
   fontWeight: "700",
   fontSize: "80px",
   letterSpacing: "-0.02em",
+
   [theme.breakpoints.down("sm")]: {
     fontSize: "35px",
     lineHeight: "51px",
@@ -82,11 +116,15 @@ export const title = (theme) => ({
 });
 
 export const uxTitle = {
-  color: "#145374",
+  background: "linear-gradient(to bottom, #EE6F57, #E5E5E5)",
+  WebkitBackgroundClip: "text",
+  WebkitTextFillColor: "transparent",
 };
 
 export const developTitle = {
-  color: "#EE6F57",
+  background: "linear-gradient(to bottom, #E5E5E5, #EE6F57)",
+  WebkitBackgroundClip: "text",
+  WebkitTextFillColor: "transparent",
 };
 
 export const hoveredTitle = (theme) => ({

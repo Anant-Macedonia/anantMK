@@ -39,6 +39,9 @@ export const contactDetailsTitle = {
   letterSpacing: "-0.035em",
   color: "#EE6F57",
   marginBottom: "5px",
+  "&:hover": {
+    color: "#E5E5E5",
+  },
 };
 
 export const contactDetailsDescription = {

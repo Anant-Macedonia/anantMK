@@ -18,7 +18,6 @@ import {
   cardInformationContainer,
   popupText,
   servicesPopup,
-  serviceStepsContainer,
   stepsNumber,
   stepsNumberContainer,
   stepsNumberMainContainer,
@@ -105,14 +104,7 @@ const ServiceSteps = ({ steps }) => {
             {steps.map((step, key) => {
               return (
                 <SwiperSlide className="swiperSlide" key={key}>
-                  <Grid
-                    item
-                    xs={12}
-                    sm={6}
-                    md={2.4}
-                    sx={serviceStepsContainer}
-                    key={key}
-                  >
+                  <Grid item xs={12} sm={6} md={2.4} key={key}>
                     <Box sx={stepsNumberMainContainer}>
                       <Box sx={stepsNumberContainer}>
                         <Typography sx={stepsNumber}>{key + 1}</Typography>
@@ -120,13 +112,6 @@ const ServiceSteps = ({ steps }) => {
                     </Box>
                     <Box sx={cardInformationContainer}>
                       <Box sx={stepsTextContainer}>
-                        {/* <Typography sx={stepsTitle}>
-                          {step.uxStepFields
-                            ? step.uxStepFields.title
-                            : step.developmentStepFileds &&
-                              step.developmentStepFileds.title}
-                        </Typography> */}
-
                         <Box
                           className={styles.cardDescription}
                           sx={cardDescription}
@@ -173,17 +158,9 @@ const ServiceSteps = ({ steps }) => {
             )}
             {steps.map((step, key) => {
               return (
-                <Grid
-                  item
-                  xs={12}
-                  sm={6}
-                  md={2.4}
-                  sx={serviceStepsContainer}
-                  key={key}
-                >
+                <Grid item xs={12} sm={4} md={2.4} key={key}>
                   <Box>
                     <Box
-                      sx={stepsNumberContainer}
                       onClick={() =>
                         setShowPopup(
                           step.uxStepFields
@@ -201,12 +178,9 @@ const ServiceSteps = ({ steps }) => {
                               step.developmentStepFileds.icon?.sourceUrl
                         }
                         alt="step"
-                        width={84}
-                        height={84}
+                        width={94}
+                        height={94}
                       />
-                    </Box>
-
-                    <Box sx={stepsTextContainer}>
                       <Typography sx={stepsTitle}>
                         {step.uxStepFields
                           ? step.uxStepFields.title
