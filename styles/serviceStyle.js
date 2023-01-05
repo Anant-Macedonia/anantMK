@@ -23,9 +23,6 @@ export const uxNoHoverContainer = (theme) => ({
   display: "flex",
   flexDirection: "column",
   alignItems: "center",
-  justifyContent: "center",
-  // transition: "all 0.5s ease-in-out",
-
   [theme.breakpoints.down("sm")]: {
     height: "350px",
   },
@@ -37,9 +34,6 @@ export const developmentNoHoverContainer = (theme) => ({
   display: "flex",
   flexDirection: "column",
   alignItems: "center",
-  justifyContent: "center",
-  // transition: "all 0.5s ease-in-out",
-
   [theme.breakpoints.down("sm")]: {
     height: "350px",
   },
@@ -102,13 +96,11 @@ export const imageContainer = {
   },
 };
 
-// export const noImage = { opacity: "0" };
-
 export const title = (theme) => ({
   fontWeight: "700",
   fontSize: "80px",
   letterSpacing: "-0.02em",
-
+  marginTop: "20px",
   [theme.breakpoints.down("sm")]: {
     fontSize: "35px",
     lineHeight: "51px",
