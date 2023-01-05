@@ -1,11 +1,10 @@
 .uxNoHover {
-  background-image: url(../public/oblache1.png);
+  background-image: url(../public/cloud111.svg);
   background-repeat: no-repeat;
-  /* background-size: cover; */
 }
 
 .developNoHover {
-  background-image: url(../public/oblache2.png);
+  background-image: url(../public/cloud222.svg);
   background-position: bottom right;
   background-repeat: no-repeat;
 }

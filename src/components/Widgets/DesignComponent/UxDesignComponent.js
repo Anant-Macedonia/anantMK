@@ -23,7 +23,10 @@ const UxDesignComponent = ({ steps }) => {
     },
   ];
 
-  console.log(steps);
+  const handleClick = (elementId) => {
+    const element = document.querySelector(`#${elementId}`);
+    element.scrollIntoView({ behavior: "smooth" });
+  };
 
   return (
     <>
@@ -61,7 +64,15 @@ const UxDesignComponent = ({ steps }) => {
             <Grid container>
               {steps.map((step, key) => {
                 return (
-                  <Grid item xs={6} sm={4} md={2.4} key={key}>
+                  <Grid
+                    item
+                    xs={6}
+                    sm={4}
+                    md={2.4}
+                    key={key}
+                    onClick={() => handleClick(step.uxStepFields.title)}
+                    sx={{ cursor: "pointer" }}
+                  >
                     <Box
                       sx={{
                         display: "flex",
@@ -102,6 +113,7 @@ const UxDesignComponent = ({ steps }) => {
                   container
                   className={styles.mainContainer}
                   sx={mainContainer}
+                  id={step.uxStepFields.title}
                 >
                   <Grid item xs={6} className={styles.designImageContainer}>
                     <Image

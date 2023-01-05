@@ -8,8 +8,8 @@ import {
 } from "@mui/material";
 import React, { useEffect, useState } from "react";
 import UxDesignComponent from "../../components/Widgets/DesignComponent/UxDesignComponent";
-import uxImage from "../../../public/ux-ui-service.svg";
-import developImage from "../../../public/development-service.svg";
+import uxImage from "../../../public/uxSlider.svg";
+import developImage from "../../../public/developmentSlider.svg";
 import Image from "next/future/image";
 import { FiArrowLeftCircle, FiArrowRightCircle } from "react-icons/fi";
 import {
@@ -122,6 +122,18 @@ const Services = (props) => {
           sx={hoveredItem ? uxContainer : uxNoHoverContainer}
           className={styles.uxNoHover}
         >
+          {!smallScreenSize && !hoveredItem ? (
+            <Box sx={imageContainer}>
+              <Image src={uxImage} alt="ux-image" />
+            </Box>
+          ) : (
+            smallScreenSize && (
+              <Box sx={{ marginTop: "35px" }}>
+                <FiArrowRightCircle size="33px" color="#145374" />
+              </Box>
+            )
+          )}
+
           <Typography
             sx={
               hoveredItem == "Development"
@@ -131,18 +143,6 @@ const Services = (props) => {
           >
             {!smallScreenSize ? "UX/UI Design" : "UX/UI"}
           </Typography>
-
-          {!smallScreenSize && !hoveredItem ? (
-            <Box sx={imageContainer}>
-              {/* <Image src={uxImage} alt="ux-image" /> */}
-            </Box>
-          ) : (
-            smallScreenSize && (
-              <Box sx={{ marginTop: "35px" }}>
-                <FiArrowRightCircle size="33px" color="#145374" />
-              </Box>
-            )
-          )}
         </Grid>
         <Grid
           onTouchStart={onTouchStart}
@@ -155,6 +155,18 @@ const Services = (props) => {
           sx={hoveredItem ? developmentContainer : developmentNoHoverContainer}
           className={styles.developNoHover}
         >
+          {!smallScreenSize && !hoveredItem ? (
+            <Box sx={imageContainer}>
+              <Image src={developImage} alt="dev-image" />
+            </Box>
+          ) : (
+            smallScreenSize && (
+              <Box sx={{ marginTop: "35px" }}>
+                <FiArrowLeftCircle size="33px" color="#EE6F57" />
+              </Box>
+            )
+          )}
+
           <Typography
             sx={
               hoveredItem == "UI"
@@ -164,18 +176,6 @@ const Services = (props) => {
           >
             {!smallScreenSize ? "Development" : "Dev"}
           </Typography>
-
-          {!smallScreenSize && !hoveredItem ? (
-            <Box sx={imageContainer}>
-              {/* <Image src={developImage} alt="dev-image" /> */}
-            </Box>
-          ) : (
-            smallScreenSize && (
-              <Box sx={{ marginTop: "35px" }}>
-                <FiArrowLeftCircle size="33px" color="#EE6F57" />
-              </Box>
-            )
-          )}
         </Grid>
       </Grid>
       {hoveredItem == "UI" && <UxDesignComponent steps={steps} />}
