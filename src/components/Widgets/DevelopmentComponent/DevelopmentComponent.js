@@ -3,6 +3,7 @@ import Image from "next/image";
 import React, { useState } from "react";
 import {
   description,
+  iconsVerticalLine,
   imageContainer,
   mainContainer,
   normalItem,
@@ -100,6 +101,7 @@ const DevelopmentComponent = ({ steps }) => {
                         {step.developmentStepFileds &&
                           step.developmentStepFileds.title}
                       </Typography>
+                      <Box sx={iconsVerticalLine}></Box>
                     </Box>
                   </Grid>
                 );

@@ -14,6 +14,13 @@ export const normalItem = {
   cursor: "pointer",
 };
 
+export const iconsVerticalLine = {
+  height: "4px",
+  width: "160px",
+  backgroundColor: "#EE6F57",
+  marginTop: "30px",
+};
+
 export const stepsTitle = {
   marginTop: "25px",
   fontFamily: "Lato",

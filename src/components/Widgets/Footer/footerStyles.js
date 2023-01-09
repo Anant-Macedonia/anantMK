@@ -1,7 +1,7 @@
 export const footerContainer = (theme) => ({
   justifyContent: "space-between",
   marginBottom: "55px",
-  marginTop: "65px",
+  marginTop: "25px",
   [theme.breakpoints.down("sm")]: {
     marginBottom: "30px",
     marginTop: "30px",
@@ -10,7 +10,7 @@ export const footerContainer = (theme) => ({
 
 export const footerLogo = (theme) => ({
   marginBottom: "20px",
-  marginTop: "65px",
+  marginTop: "25px",
   maxHeight: "125px",
   [theme.breakpoints.down("sm")]: {
     marginBottom: "0",

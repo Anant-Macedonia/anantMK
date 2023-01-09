@@ -38,6 +38,7 @@ import { GET_TALK_SECTION_DATA } from "../../queries/getTalkSection";
 import { GET_PROJECTS_DATA } from "../../queries/getProjects";
 import { client } from "../../lib/apollo";
 import { GET_DEVELOPMENT_DATA } from "../../queries/getDevelopment";
+import TalkSection from "../../components/Widgets/Dashboard/TalkSection/TalkSection";
 
 const theme = createTheme({
   breakpoints: {
@@ -56,6 +57,13 @@ const Services = (props) => {
   const [hoveredItem, setHoveredItem] = useState(null);
   const [touchStart, setTouchStart] = useState(null);
   const [touchEnd, setTouchEnd] = useState(null);
+
+  const {
+    talkSectionTitle,
+    talkSectionDescription,
+    talkSectionImage,
+    talkButton,
+  } = props?.talkSectionData?.talk;
 
   const { steps } = props?.uxUiData;
 
@@ -204,6 +212,12 @@ const Services = (props) => {
       {hoveredItem == "Development" && (
         <DevelopmentComponent steps={props?.developmentData.steps} />
       )}
+      <TalkSection
+        title={talkSectionTitle}
+        description={talkSectionDescription}
+        talkImage={talkSectionImage}
+        talkButton={talkButton}
+      />
     </>
   );
 };
