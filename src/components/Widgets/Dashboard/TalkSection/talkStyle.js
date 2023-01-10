@@ -1,7 +1,7 @@
 export const talkContainer = (theme) => ({
-  background: "linear-gradient(#003049, #145374)",
+  background: "linear-gradient(to top, #003049, #145374)",
   paddingTop: "110px",
-  paddingBottom: "85px",
+  paddingBottom: "25px",
   [theme.breakpoints.down("md")]: {
     paddingTop: "20px",
     paddingBottom: "65px",

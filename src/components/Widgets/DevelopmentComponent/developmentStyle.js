@@ -17,7 +17,7 @@ export const normalItem = {
 export const iconsVerticalLine = {
   height: "4px",
   width: "160px",
-  backgroundColor: "#EE6F57",
+  backgroundColor: "#E5E5E5",
   marginTop: "30px",
 };
 

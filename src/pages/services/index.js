@@ -8,18 +8,16 @@ import {
 } from "@mui/material";
 import React, { useEffect, useState } from "react";
 import UxDesignComponent from "../../components/Widgets/DesignComponent/UxDesignComponent";
+import DevelopmentComponent from "../../components/Widgets/DevelopmentComponent/DevelopmentComponent";
 import uxImage from "../../../public/uxSlider.svg";
 import developImage from "../../../public/developmentSlider.svg";
 import Image from "next/future/image";
 import { FiArrowLeftCircle, FiArrowRightCircle } from "react-icons/fi";
 import {
   developmentContainer,
-  developmentHoveredTitle,
   developmentNoHoverContainer,
-  developmentSubTitle,
-  developmentTitle,
   developTitle,
-  hoveredTitle,
+  developTitleStroke,
   imageContainer,
   smallContainer,
   smallDevelopmentContainer,
@@ -30,16 +28,17 @@ import {
   uxHoveredTitle,
   uxNoHoverContainer,
   uxTitle,
+  uxTitleStroke,
 } from "../../../styles/serviceStyle";
-import SecondaryButton from "../../components/UI/Buttons/SecondaryButton/SecondaryButton";
-import Router from "next/router";
 
-import cloud1 from "../../../public/oblache1.png";
+import Router from "next/router";
 import styles from "../../../styles/service.module.css";
 import { GET_UX_UI_DATA } from "../../queries/getUxUi";
 import { GET_TALK_SECTION_DATA } from "../../queries/getTalkSection";
 import { GET_PROJECTS_DATA } from "../../queries/getProjects";
 import { client } from "../../lib/apollo";
+import { GET_DEVELOPMENT_DATA } from "../../queries/getDevelopment";
+import TalkSection from "../../components/Widgets/Dashboard/TalkSection/TalkSection";
 
 const theme = createTheme({
   breakpoints: {
@@ -58,6 +57,13 @@ const Services = (props) => {
   const [hoveredItem, setHoveredItem] = useState(null);
   const [touchStart, setTouchStart] = useState(null);
   const [touchEnd, setTouchEnd] = useState(null);
+
+  const {
+    talkSectionTitle,
+    talkSectionDescription,
+    talkSectionImage,
+    talkButton,
+  } = props?.talkSectionData?.talk;
 
   const { steps } = props?.uxUiData;
 
@@ -134,15 +140,27 @@ const Services = (props) => {
             )
           )}
 
-          <Typography
-            sx={
-              hoveredItem == "Development"
-                ? [smallContainer, smallUxContainer]
-                : [title, uxTitle]
-            }
-          >
-            {!smallScreenSize ? "UX/UI Design" : "UX/UI"}
-          </Typography>
+          {!smallScreenSize && !hoveredItem ? (
+            <Typography
+              sx={
+                hoveredItem == "Development"
+                  ? [smallContainer, smallUxContainer]
+                  : [title, uxTitle]
+              }
+            >
+              {!smallScreenSize ? "UX/UI Design" : "UX/UI"}
+            </Typography>
+          ) : (
+            <Typography
+              sx={
+                hoveredItem == "Development"
+                  ? [smallContainer, smallUxContainer]
+                  : [title, uxTitleStroke]
+              }
+            >
+              {!smallScreenSize ? "UX/UI Design" : "UX/UI"}
+            </Typography>
+          )}
         </Grid>
         <Grid
           onTouchStart={onTouchStart}
@@ -167,18 +185,39 @@ const Services = (props) => {
             )
           )}
 
-          <Typography
-            sx={
-              hoveredItem == "UI"
-                ? [smallContainer, smallDevelopmentContainer]
-                : [title, developTitle]
-            }
-          >
-            {!smallScreenSize ? "Development" : "Dev"}
-          </Typography>
+          {!smallScreenSize && !hoveredItem ? (
+            <Typography
+              sx={
+                hoveredItem == "UI"
+                  ? [smallContainer, smallDevelopmentContainer]
+                  : [title, developTitle]
+              }
+            >
+              {!smallScreenSize ? "Development" : "Dev"}
+            </Typography>
+          ) : (
+            <Typography
+              sx={
+                hoveredItem == "UI"
+                  ? [smallContainer, smallDevelopmentContainer]
+                  : [title, developTitleStroke]
+              }
+            >
+              {!smallScreenSize ? "Development" : "Dev"}
+            </Typography>
+          )}
         </Grid>
       </Grid>
       {hoveredItem == "UI" && <UxDesignComponent steps={steps} />}
+      {hoveredItem == "Development" && (
+        <DevelopmentComponent steps={props?.developmentData.steps} />
+      )}
+      <TalkSection
+        title={talkSectionTitle}
+        description={talkSectionDescription}
+        talkImage={talkSectionImage}
+        talkButton={talkButton}
+      />
     </>
   );
 };
@@ -188,6 +227,9 @@ export default Services;
 export async function getStaticProps() {
   const { data: uxUiData } = await client.query({
     query: GET_UX_UI_DATA,
+  });
+  const { data: developmentData } = await client.query({
+    query: GET_DEVELOPMENT_DATA,
   });
   const { data: talkSectionData } = await client.query({
     query: GET_TALK_SECTION_DATA,
@@ -200,6 +242,9 @@ export async function getStaticProps() {
     props: {
       uxUiData: {
         steps: uxUiData?.uxSteps?.nodes,
+      },
+      developmentData: {
+        steps: developmentData?.developmentSteps?.nodes,
       },
       talkSectionData: {
         talk: talkSectionData?.nodeByUri?.talkFields,

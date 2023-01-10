@@ -108,15 +108,33 @@ export const title = (theme) => ({
 });
 
 export const uxTitle = {
-  background: "linear-gradient(to bottom, #EE6F57, #E5E5E5)",
+  background: "linear-gradient(#EE6F57 40%, #E5E5E5 )",
   WebkitBackgroundClip: "text",
   WebkitTextFillColor: "transparent",
 };
 
+export const uxTitleStroke = {
+  background: "-webkit-linear-gradient(#EE6F57 50%, #E5E5E5 )",
+  WebkitBackgroundClip: "text",
+  WebkitTextStroke: "4px transparent",
+  color: "#002B42",
+  fontFamily: "Poppins",
+  letterSpacing: "0.05em",
+};
+
 export const developTitle = {
-  background: "linear-gradient(to bottom, #E5E5E5, #EE6F57)",
+  background: "linear-gradient(#E5E5E5 40%, #EE6F57)",
   WebkitBackgroundClip: "text",
   WebkitTextFillColor: "transparent",
+};
+
+export const developTitleStroke = {
+  background: "-webkit-linear-gradient(#E5E5E5 50%, #EE6F57 )",
+  WebkitBackgroundClip: "text",
+  WebkitTextStroke: "4px transparent",
+  color: "#002B42",
+  fontFamily: "Poppins",
+  letterSpacing: "0.05em",
 };
 
 export const hoveredTitle = (theme) => ({
@@ -126,6 +144,7 @@ export const hoveredTitle = (theme) => ({
   letterSpacing: "-0.02em",
   lineHeight: "128px",
   marginBottom: "40px",
+
   [theme.breakpoints.down("sm")]: {
     fontSize: "50px",
     lineHeight: "64px",

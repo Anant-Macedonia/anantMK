@@ -10,17 +10,21 @@ import {
   selectedItem,
   stepsTitle,
   subtitle,
-} from "./uxDesignStyle";
-import styles from "./uxDesign.module.css";
+} from "./developmentStyle";
+import styles from "./development.module.css";
 
-const UxDesignComponent = ({ steps }) => {
-  const [selectedDesign, setSelectedDesign] = useState("UX/UI Design");
+const DevelopmentComponent = ({ steps }) => {
+  console.log("steps", steps);
+  const [selectedDesign, setSelectedDesign] = useState("Front-End");
   const uxItems = [
     {
-      name: "UX/UI Design",
+      name: "Front-End",
     },
     {
-      name: "Marketing Sites",
+      name: "POC",
+    },
+    {
+      name: "API-Based Development",
     },
   ];
 
@@ -53,11 +57,11 @@ const UxDesignComponent = ({ steps }) => {
           })}
         </Stack>
       </Box>
-      {selectedDesign == "UX/UI Design" && (
+      {selectedDesign == "Front-End" && (
         <>
           <Box sx={{ marginTop: "100px", marginBottom: "80px" }}>
             <Typography sx={{ fontSize: "32px", textAlign: "center" }}>
-              Our methods enhance the overall user experience of your product or
+              Our methods enhance the overall development of your product or
               service.
             </Typography>
           </Box>
@@ -69,9 +73,11 @@ const UxDesignComponent = ({ steps }) => {
                     item
                     xs={6}
                     sm={4}
-                    md={2.4}
+                    md={3}
                     key={key}
-                    onClick={() => handleClick(step.uxStepFields.title)}
+                    onClick={() =>
+                      handleClick(step.developmentStepFileds.title)
+                    }
                     sx={{ cursor: "pointer" }}
                   >
                     <Box
@@ -84,20 +90,16 @@ const UxDesignComponent = ({ steps }) => {
                     >
                       <Image
                         src={
-                          step.uxStepFields
-                            ? step.uxStepFields.icon?.sourceUrl
-                            : step.developmentStepFileds &&
-                              step.developmentStepFileds.icon?.sourceUrl
+                          step.developmentStepFileds &&
+                          step.developmentStepFileds.icon?.sourceUrl
                         }
                         alt="step"
                         width={94}
                         height={94}
                       />
                       <Typography sx={stepsTitle}>
-                        {step.uxStepFields
-                          ? step.uxStepFields.title
-                          : step.developmentStepFileds &&
-                            step.developmentStepFileds.title}
+                        {step.developmentStepFileds &&
+                          step.developmentStepFileds.title}
                       </Typography>
                       <Box sx={iconsVerticalLine}></Box>
                     </Box>
@@ -115,12 +117,13 @@ const UxDesignComponent = ({ steps }) => {
                   container
                   className={styles.mainContainer}
                   sx={mainContainer}
-                  id={step.uxStepFields.title}
+                  id={step.developmentStepFileds.title}
                 >
                   <Grid item xs={6} className={styles.designImageContainer}>
                     <Image
                       src={
-                        step.uxStepFields && step.uxStepFields.image?.sourceUrl
+                        step.developmentStepFileds &&
+                        step.developmentStepFileds.image?.sourceUrl
                       }
                       height={230}
                       width={400}
@@ -130,13 +133,15 @@ const UxDesignComponent = ({ steps }) => {
 
                   <Grid item xs={6} sx={{ marginBottom: "140px" }}>
                     <Typography className={styles.coloredTitle} sx={subtitle}>
-                      {step.uxStepFields && step.uxStepFields.subtitle}
+                      {step.developmentStepFileds &&
+                        step.developmentStepFileds.subtitle}
                     </Typography>
                     <Typography
                       sx={description}
                       dangerouslySetInnerHTML={{
                         __html:
-                          step.uxStepFields && step.uxStepFields.description,
+                          step.developmentStepFileds &&
+                          step.developmentStepFileds.description,
                       }}
                     />
                   </Grid>
@@ -150,4 +155,4 @@ const UxDesignComponent = ({ steps }) => {
   );
 };
 
-export default UxDesignComponent;
+export default DevelopmentComponent;

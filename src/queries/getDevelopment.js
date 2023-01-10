@@ -27,9 +27,13 @@ export const GET_DEVELOPMENT_DATA = gql`
       nodes {
         developmentStepFileds {
           title
+          subtitle
           description
           icon {
             altText
+            sourceUrl
+          }
+          image {
             sourceUrl
           }
         }

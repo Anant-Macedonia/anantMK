@@ -1,0 +1,16 @@
+.mainContainer:nth-of-type(even) .designImageContainer {
+  order: 2;
+  justify-content: flex-end;
+}
+
+.designImageContainer {
+  display: flex;
+}
+
+.mainContainer:nth-of-type(even) .coloredTitle {
+  color: #437f9e;
+}
+
+.mainContainer:nth-of-type(odd) .coloredTitle {
+  color: #ee6f57;
+}
