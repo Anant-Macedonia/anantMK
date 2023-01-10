@@ -114,6 +114,10 @@ export const hoveredSectionTitle = (theme) => ({
   color: "#EE6F57",
   paddingLeft: "48px",
   marginBottom: "4px",
+  "&:hover": {
+    color: "#E5E5E5",
+    cursor: "pointer",
+  },
   [theme.breakpoints.down("md")]: {
     fontSize: "20px",
     lineHeight: "25px",
@@ -175,4 +179,9 @@ export const viewServicesLink = (theme) => ({
   display: "flex",
   paddingLeft: "50px",
   textDecoration: "underline",
+
+  "&:hover": {
+    color: "#EE6F57",
+    cursor: "pointer",
+  },
 });

@@ -9,6 +9,7 @@ import { GET_TALK_SECTION_DATA } from "../queries/getTalkSection";
 import { GET_PROJECTS_DATA } from "../queries/getProjects.js";
 import { GET_APPROACH_SECTION_DATA } from "../queries/getApproachSection";
 import Head from "next/head";
+import DesignDevSection from "../components/Widgets/Dashboard/DesignDevSection/DesignSection";
 
 export default function Home(props) {
   const { heroTitle, heroSubtitle, heroDescription, buttons } =
@@ -43,7 +44,8 @@ export default function Home(props) {
         secondaryButtonLink="/services"
       />
       <OurApproach approachInfo={approachInfo} />
-      <ServicesSection services={props?.homeData?.serviceSection} />
+      <DesignDevSection />
+      {/* <ServicesSection services={props?.homeData?.serviceSection} /> */}
       <OurProjectSection projects={props?.projectsData?.projects} />
       <TalkSection
         title={talkSectionTitle}
