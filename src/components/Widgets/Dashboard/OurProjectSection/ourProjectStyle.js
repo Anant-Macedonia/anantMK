@@ -1,6 +1,6 @@
 export const ourProjectSectionContainer = (theme) => ({
   zIndex: "-1",
-  marginTop: "160px",
+  marginTop: "60px",
   marginBottom: "155px",
   fontSize: "36px",
   [theme.breakpoints.down("md")]: {

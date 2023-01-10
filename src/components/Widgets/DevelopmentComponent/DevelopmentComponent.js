@@ -4,7 +4,6 @@ import React, { useState } from "react";
 import {
   description,
   iconsVerticalLine,
-  imageContainer,
   mainContainer,
   normalItem,
   selectedItem,
@@ -14,7 +13,6 @@ import {
 import styles from "./development.module.css";
 
 const DevelopmentComponent = ({ steps }) => {
-  console.log("steps", steps);
   const [selectedDesign, setSelectedDesign] = useState("Front-End");
   const uxItems = [
     {

@@ -1,0 +1,10 @@
+.circleContainer {
+  background-image: url("../../../../../public/designCircle.png");
+  background-repeat: no-repeat;
+}
+
+.devCircleContainer {
+  background-image: url("../../../../../public/developmentCircle.png");
+  background-repeat: no-repeat;
+  background-position: right;
+}

@@ -242,15 +242,18 @@ function Navigation() {
                               <Typography sx={middleHoveredSectionDescription}>
                                 {designServiceDescription}
                               </Typography>
-                              <Box sx={viewServicesLink} onClick={handleClose}>
-                                <Link
-                                  href="/services"
-                                  passHref
+                              <Link
+                                href="/services"
+                                passHref
+                                onClick={handleClose}
+                              >
+                                <Box
+                                  sx={viewServicesLink}
                                   onClick={handleClose}
                                 >
                                   view all services
-                                </Link>
-                              </Box>
+                                </Box>
+                              </Link>
                             </Box>
                           ) : (
                             <Box
@@ -269,11 +272,14 @@ function Navigation() {
                               <Typography sx={middleHoveredSectionDescription}>
                                 {developmentServiceDescription}
                               </Typography>
-                              <Box sx={viewServicesLink} onClick={handleClose}>
-                                <Link href="/services" passHref>
+                              <Link href="/services" passHref>
+                                <Box
+                                  sx={viewServicesLink}
+                                  onClick={handleClose}
+                                >
                                   view all services
-                                </Link>
-                              </Box>
+                                </Box>
+                              </Link>
                             </Box>
                           )}
                         </Grid>

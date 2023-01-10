@@ -212,12 +212,15 @@ const Services = (props) => {
       {hoveredItem == "Development" && (
         <DevelopmentComponent steps={props?.developmentData.steps} />
       )}
-      <TalkSection
-        title={talkSectionTitle}
-        description={talkSectionDescription}
-        talkImage={talkSectionImage}
-        talkButton={talkButton}
-      />
+
+      {hoveredItem && (
+        <TalkSection
+          title={talkSectionTitle}
+          description={talkSectionDescription}
+          talkImage={talkSectionImage}
+          talkButton={talkButton}
+        />
+      )}
     </>
   );
 };
