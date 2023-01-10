@@ -4,6 +4,7 @@ import React from "react";
 import arrows from "../../../../../public/Vector.png";
 import {
   designDevContainer,
+  imageTitleContainer,
   itemDescription,
   itemsContainer,
   itemTitle,
@@ -58,17 +59,7 @@ const DesignSection = () => {
         <>
           <Grid container>
             <Grid item xs={12} md={4.9} sx={{ marginRight: "14%" }}>
-              <Box
-                sx={{
-                  height: "170px",
-                  width: "360px",
-                  display: "flex",
-                  justifyContent: "center",
-                  alignItems: "end",
-                  marginBottom: "35px",
-                }}
-                className={styles.circleContainer}
-              >
+              <Box sx={imageTitleContainer} className={styles.circleContainer}>
                 <Typography sx={sectionTitle}>Design</Typography>
               </Box>
               <Typography sx={sectionDescription}>

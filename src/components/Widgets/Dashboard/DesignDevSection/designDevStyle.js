@@ -10,6 +10,15 @@ export const designDevContainer = (theme) => ({
 
 export const sectionContainer = { padding: "40px 0" };
 
+export const imageTitleContainer = {
+  height: "170px",
+  width: "360px",
+  display: "flex",
+  justifyContent: "center",
+  alignItems: "end",
+  marginBottom: "35px",
+};
+
 export const sectionTitle = {
   fontFamily: "Poppins",
   fontWeight: 700,
