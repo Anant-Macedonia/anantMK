@@ -41,13 +41,13 @@ import designImage from "../../../../public/designService.png";
 import developImage from "../../../../public/devService.png";
 
 const navigationLinks = [
-  { name: "Our Company", href: "/company" },
+  // { name: "Our Company", href: "/company" },
   { name: "Services", href: "/services" },
   // { name: "Portfolio", href: "/portfolio" },
 ];
 
 const navigationMobileLinks = [
-  { name: "Our Company", href: "/company" },
+  // { name: "Our Company", href: "/company" },
   { name: "Services", href: "/services" },
   { name: "Contact Us", href: "/contact" },
 ];

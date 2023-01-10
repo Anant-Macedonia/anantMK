@@ -72,9 +72,9 @@ const Footer = () => {
             >
               Browse
             </Typography>
-            <Link href="/company" passHref>
+            {/* <Link href="/company" passHref>
               <Typography sx={linkText}>Our Company</Typography>
-            </Link>
+            </Link> */}
             <Link href="/services" passHref>
               <Typography sx={linkText}>Services</Typography>
             </Link>

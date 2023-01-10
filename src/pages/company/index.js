@@ -21,7 +21,7 @@ const Company = (props) => {
   const { approachInfo } = props?.approachSectionData;
   return (
     <Box sx={{ marginTop: "105px" }}>
-      <OurApproach approachInfo={approachInfo} />
+      {/* <OurApproach approachInfo={approachInfo} />
       <OurTeamSection teamMembers={members} />
 
       <OurProjectSection projects={props?.projectsData?.projects} />
@@ -31,7 +31,7 @@ const Company = (props) => {
         description={talkSectionDescription}
         talkImage={talkSectionImage}
         talkButton={talkButton}
-      />
+      /> */}
     </Box>
   );
 };
