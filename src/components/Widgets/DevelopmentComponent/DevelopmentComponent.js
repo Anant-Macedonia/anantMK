@@ -11,6 +11,7 @@ import {
   subtitle,
 } from "./developmentStyle";
 import styles from "./development.module.css";
+import PocComponent from "./PocComponent";
 
 const DevelopmentComponent = ({ steps }) => {
   const [selectedDesign, setSelectedDesign] = useState("Front-End");
@@ -149,6 +150,7 @@ const DevelopmentComponent = ({ steps }) => {
           </Container>
         </>
       )}
+      {selectedDesign == "POC" && <PocComponent />}
     </>
   );
 };
