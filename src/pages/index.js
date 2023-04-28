@@ -30,7 +30,7 @@ export default function Home(props) {
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <meta
           name="description"
-          content="Anant MK is marketing digital agency"
+          content="Enhance website visibility with optimized user experience design and development."
         />
         <title> Anant MK </title>
       </Head>
