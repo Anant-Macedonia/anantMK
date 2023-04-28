@@ -6,7 +6,7 @@ import {
   createTheme,
   useMediaQuery,
 } from "@mui/material";
-import Lottie from "react-lottie";
+ import Lottie from "lottie-react";
 import PrimaryButton from "../../../UI/Buttons/PrimaryButton/PrimaryButton";
 import OutlinedButton from "../../../UI/Buttons/OutlinedButton/OutlinedButton";
 import {
