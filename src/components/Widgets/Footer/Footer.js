@@ -22,6 +22,7 @@ import {
   footerLogo,
   footerTrademark,
   linkText,
+  linkColor
 } from "./footerStyles";
 
 const theme = createTheme({
@@ -68,7 +69,7 @@ const Footer = () => {
           <Grid item xs={6} md={1.8}>
             <Typography
               variant="h6"
-              sx={{ marginBottom: "25px", fontSize: "22px", fontWeight: 600 }}
+              sx={{ marginBottom: "25px", fontSize: "22px", fontWeight: 600 , color: '#EE6F57' }}
             >
               Browse
             </Typography>
@@ -91,7 +92,7 @@ const Footer = () => {
           <Grid item xs={6} md={1.8}>
             <Typography
               variant="h6"
-              sx={{ marginBottom: "25px", fontSize: "22px", fontWeight: 600 }}
+              sx={{ marginBottom: "25px", fontSize: "22px", fontWeight: 600, color: '#EE6F57' }}
             >
               Services
             </Typography>
@@ -105,7 +106,7 @@ const Footer = () => {
         )}
         <Grid item xs={7.5} md={3} sx={footerContactInfoContainer}>
           <Box>
-            <Typography sx={footerContact}>CONTACT INFO</Typography>
+            <Typography sx={footerContact}>Contact info</Typography>
             <Typography sx={contactText}>
               stefan.nikolovski@bilans.dev
             </Typography>

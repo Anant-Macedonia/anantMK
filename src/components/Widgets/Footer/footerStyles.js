@@ -28,6 +28,7 @@ export const footerCompanyNameContainer = (theme) => ({
 
 export const footerCompanyName = (theme) => ({
   marginBottom: "25px",
+  color: '#EE6F57',
   fontSize: "22px",
   fontWeight: 600,
   letterSpacing: "0.15em",
@@ -56,6 +57,17 @@ export const linkText = {
   cursor: "pointer",
 };
 
+
+export const linkColor = {
+  fontSize: "20px",
+  color: "#EE6F57",
+  fontWeight: "400",
+  textDecoration: "underline",
+  letterSpacing: "-0.02em",
+  lineHeight: "34.7px",
+  cursor: "pointer",
+};
+
 export const contactText = (theme) => ({
   fontSize: "20px",
   lineHeight: "44px",
@@ -69,6 +81,7 @@ export const contactText = (theme) => ({
 
 export const footerContact = (theme) => ({
   marginBottom: "25px",
+  color: '#EE6F57',
   fontSize: "22px",
   fontWeight: 600,
   [theme.breakpoints.down("sm")]: {

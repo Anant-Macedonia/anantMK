@@ -126,7 +126,7 @@ const ContactForm = () => {
                   disableUnderline
                   id="phone"
                   name="phone"
-                  type="number"
+                  type="tel"
                   placeholder="Phone Number"
                   value={formValues.phone}
                   onChange={handleInputChange}

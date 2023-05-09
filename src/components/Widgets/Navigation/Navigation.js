@@ -39,6 +39,7 @@ import {
 } from "./navigationStyle";
 import designImage from "../../../../public/designService.png";
 import developImage from "../../../../public/devService.png";
+import { Helmet } from "react-helmet";
 
 const navigationLinks = [
   // { name: "Our Company", href: "/company" },
@@ -125,6 +126,16 @@ function Navigation() {
 
   return (
     <AppBar sx={nav} position="static">
+      <Helmet>
+        <meta
+          charSet="utf-8"
+          content="width=device-width, initial-scale=1, maximum-scale=1"
+        />
+        <meta
+          name="keywords"
+          content="UX design, UI design, Front-end development, Responsive design, API development, React development, WordPress development"
+        />
+      </Helmet>
       <Container>
         <Toolbar disableGutters sx={navToolbar}>
           <Box sx={navLogo}>
@@ -298,9 +309,20 @@ function Navigation() {
                             {designItems.map((item) => {
                               return (
                                 <Box key={item.title}>
-                                  <Typography sx={hoveredSectionTitle}>
+                                  {/* <Typography sx={hoveredSectionTitle}>
                                     {item.title}
-                                  </Typography>
+                                  </Typography> */}
+
+                                  <Link
+                                    href="/services/ux-ui-design"
+                                    style={{ textDecoration: "none" }}
+                                    passHref
+                                  >
+                                    <Typography sx={hoveredSectionTitle}>
+                                      {item.title}
+                                    </Typography>
+                                  </Link>
+
                                   <Typography
                                     sx={rightHoveredSectionDescription}
                                   >
@@ -320,9 +342,16 @@ function Navigation() {
                             {DevelopmentItems.map((item) => {
                               return (
                                 <Box key={item.title}>
-                                  <Typography sx={hoveredSectionTitle}>
-                                    {item.title}
-                                  </Typography>
+                                  <Link
+                                    href="/services/development"
+                                    style={{ textDecoration: "none" }}
+                                    passHref
+                                  >
+                                    <Typography sx={hoveredSectionTitle}>
+                                      {item.title}
+                                    </Typography>
+                                  </Link>
+
                                   <Typography
                                     sx={rightHoveredSectionDescription}
                                   >
