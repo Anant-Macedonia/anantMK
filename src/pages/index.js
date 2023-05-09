@@ -32,6 +32,7 @@ export default function Home(props) {
           name="description"
           content="Enhance website visibility with optimized user experience design and development."
         />
+          <link rel="icon" type="image/png" href="/logo.png" sizes="32x32" />
         <title> Anant MK </title>
       </Head>
       <Hero

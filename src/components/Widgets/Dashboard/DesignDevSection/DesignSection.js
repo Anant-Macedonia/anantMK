@@ -28,6 +28,10 @@ const DesignSection = () => {
       name: "Marketing Sites",
       description: "Create a professional and effective online presence.",
     },
+    {
+      name: "Knowledge Sites",
+      description:"Creating intuitive and user-friendly interfaces that enhance the overall user experience of your product or service.",
+    },
   ];
   const developmentDescription =
     "Our development service offers a full range of support for all your development needs. Our team will work with you to create innovative and effective solutions that will help you achieve your business goals.";
@@ -41,11 +45,6 @@ const DesignSection = () => {
     {
       name: "API-Based development",
       description: "Create a professional and effective online presence.",
-    },
-    {
-      name: "Knowledge Sites",
-      description:
-        "Creating intuitive and user-friendly interfaces that enhance the overall user experience of your product or service.",
     },
     {
       name: "Marketing Sites",
@@ -67,7 +66,7 @@ const DesignSection = () => {
               </Typography>
             </Grid>
 
-            <Grid item xs={12} md={5.4}>
+            <Grid item xs={12} md={4}>
               {designItems.map((item) => {
                 return (
                   <Link href="/services" passHref key={item.name}>

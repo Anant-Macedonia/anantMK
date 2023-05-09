@@ -2,7 +2,7 @@ import { Box, Container, Divider, Grid, Typography } from "@mui/material";
 import Image from "next/image";
 import React from "react";
 
-import exapmleImage from "../../../../public/example-image.png";
+import exapmleImage from "../../../../public/POC-main-image.svg";
 import PrimaryButton from "../../UI/Buttons/PrimaryButton/PrimaryButton";
 import {
   divider,
@@ -24,16 +24,19 @@ const PocComponent = () => {
       title: "Technical support",
       description:
         "We offer a range of technical and consulting services to support the development and testing of prototypes, including design and engineering support, prototyping resources, and project management.",
+        imageUrl: "/Technical-support.svg"
     },
     {
       title: "Team expertise",
       description:
         "Our team of experts will work with you to understand your concept and identify any potential challenges or issues, and will help you to create a small-scale version of your product or service for testing.",
+        imageUrl: "/Team-Expertise.svg"
     },
     {
       title: "Ideas into reality",
       description:
         "Whether you are looking to bring a new product to market or simply want to explore the potential of a new idea, our POC service can help you to move forward with confidence.",
+        imageUrl: "/Ideas-into-reality.svg"
     },
   ];
 
@@ -103,18 +106,19 @@ const PocComponent = () => {
                     justifyContent: "center",
                   }}
                 >
-                  <Image
+                   {/* <Image
                     src={exapmleImage}
                     width={247}
                     height={173}
                     alt="test"
-                  />
+                  />  */}
+                     <Image src={service.imageUrl} alt="service image" width={247} height={173} />
                 </Box>
                 <Box sx={{ width: "311px" }}>
                   <Typography sx={pocSubtitles}>{service.title}</Typography>
                   <Typography sx={pocDescriptions}>
                     {service.description}
-                  </Typography>
+                  </Typography> 
                 </Box>
               </Grid>
             );
